@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/hexo/2016/09/11/hello-world/</url>
+      <content type="html"><![CDATA[<p><strong> 欢迎您 !  </strong><br><strong> 主人不在随便坐哈 ~ </strong><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 年轻真好 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="all">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
+<link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
+<body>
+  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="�ص��ҵ���ҳ">
+  </script>
+  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
+  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
+</body>
+</html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[404 Not Found：该页无法显示]]></title>
+      <url>/hexo//404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://13189449986.github.io/hexo" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[404 Not Found：该页无法显示]]></title>
+      <url>/hexo//404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://13189449986.github.io/hexo" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/hexo/about/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[friends]]></title>
+      <url>/hexo/friends/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[photo]]></title>
+      <url>/hexo/photo/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签云]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
+</search>
