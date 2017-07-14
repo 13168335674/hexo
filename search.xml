@@ -64,62 +64,9 @@
   
     
     <entry>
-      <title></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<!DOCTYPE HTML>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="robots" content="all">
-  <meta name="robots" content="index,follow">
-  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
-<link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
-<body>
-  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="�ص��ҵ���ҳ">
-  </script>
-  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-</body>
-</html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[404 Not Found：该页无法显示]]></title>
-      <url>/hexo//404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://13189449986.github.io/hexo" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[404 Not Found：该页无法显示]]></title>
-      <url>/hexo//404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://13189449986.github.io/hexo" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/hexo/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[friends]]></title>
-      <url>/hexo/friends/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[photo]]></title>
-      <url>/hexo/photo/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
