@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[Flex语法教程]]></title>
+      <url>/hexo/2017/07/23/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>网页布局（layout）是 CSS 的一个重点应用。<br>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+</blockquote>
+<a id="more"></a>
+<ol>
+<li>什么是Flex<blockquote>
+<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex }    ‘</p>
+</blockquote>
+</li>
+<li><p>属性值 </p>
+<blockquote>
+<h5 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h5><pre><code>* flex-direction :    row | row-reverse | column | column-reverse;
+* flex-wrap : nowrap | wrap | wrap-reverse;
+* flex-flow :    flex-direction | | flex-wrap (属性简写）
+* justify-content : flex-start | flex-end | center | space-between | space-around;
+* align-items : flex-start | flex-end | center | baseline | stretch;
+* align-conten : flex-start | flex-end | center | space-between | space-around | stretch;
+</code></pre><h5 id="项目-子元素-的属性"><a href="#项目-子元素-的属性" class="headerlink" title="项目(子元素)的属性"></a>项目(子元素)的属性</h5><pre><code>* order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)
+*  flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉
+* flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）
+* flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉
+* flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。）
+</code></pre></blockquote>
+</li>
+<li>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue2.0实现在线商城]]></title>
       <url>/hexo/2017/07/22/Vue2-0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB/</url>
       <content type="html"><![CDATA[<h3 id="这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo"><a href="#这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo" class="headerlink" title="这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo."></a>这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo.</h3><a id="more"></a>
