@@ -11,28 +11,29 @@
 <p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
 </blockquote>
 </li>
-<li>属性值 <blockquote>
-<h5 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h5><ol>
+<li><p>属性值 </p>
+<blockquote>
+<p>容器的属性 :</p>
+<ol>
 <li>flex-direction : row | row-reverse | column | column-reverse;</li>
 <li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
 <li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
 <li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
 <li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
 </ol>
+<p>项目(子元素)的属性 :</p>
+<ol>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
+<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
+<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
+<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
+<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
+</ol>
 </blockquote>
 </li>
+<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
+</li>
 </ol>
-<blockquote>
-<h5 id="项目-子元素-的属性"><a href="#项目-子元素-的属性" class="headerlink" title="项目(子元素)的属性"></a>项目(子元素)的属性</h5><pre><code>1. order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)
-2. flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉
-3. flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）
-4. flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉
-5. flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;
-(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）
-</code></pre><ol>
-<li>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></li>
-</ol>
-</blockquote>
 ]]></content>
       
         <categories>
