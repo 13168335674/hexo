@@ -5,10 +5,7 @@
     <entry>
       <title><![CDATA[Flex语法教程]]></title>
       <url>/hexo/2017/07/23/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>网页布局（layout）是 CSS 的一个重点应用。<br>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
-</blockquote>
-<a id="more"></a>
+      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h3 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h3><a id="more"></a>
 <ol>
 <li>什么是Flex<blockquote>
 <p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex }    ‘</p>
