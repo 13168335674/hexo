@@ -3,6 +3,49 @@
   
     
     <entry>
+      <title><![CDATA[Git命令教程]]></title>
+      <url>/hexo/2017/07/24/Git%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h4 id="这篇文章将对git命令进行梳理-巩固一下知识"><a href="#这篇文章将对git命令进行梳理-巩固一下知识" class="headerlink" title="这篇文章将对git命令进行梳理,巩固一下知识"></a>这篇文章将对git命令进行梳理,巩固一下知识</h4><a id="more"></a>
+<h3 id="1-开始"><a href="#1-开始" class="headerlink" title="1. 开始"></a>1. 开始</h3><blockquote>
+<p> 使用Git前，可以使用一个已经本地存在的目录或创建一个空目录作为Git仓库.首先建立使用命令<br><code>git init</code> 创建仓库(repository).</p>
+</blockquote>
+<h3 id="2-操作"><a href="#2-操作" class="headerlink" title="2. 操作"></a>2. 操作</h3><blockquote>
+<p>添加文件 :  <code>git add FlieName</code></p>
+<p>提交 : <code>git commit -m &quot;Adding files&quot;</code></p>
+<p>– 当我们修改了很多文件不想每一个都add，我们可以使用-a标识。<code>git commit -a -m &quot;Changed some files&quot;</code> (<code>-a</code>不会将新文件提交，只能将仓库中已有的文档进行提交修改)</p>
+<p>查看库的当前状态 : <code>git status</code></p>
+<p>查看上次修改的详情 : <code>git diff</code></p>
+<p>查看历史记录 : <code>git log --pretty=oneline</code></p>
+<p>将工作区的版本回退到版本库内容(撤销修改)  : <code>git checkout -- rmfile</code></p>
+<p>克隆库 : <code>git clone ssh://example.com/~/www/project.git</code></p>
+<p>推送本地修改到服务器 : <code>git push ssh://example.com/~/www/project.git</code></p>
+<p>从服务器取得更新 : <code>git pull http://git.example.com/project.git</code></p>
+<p>删除库中文件 : <code>git rm file</code></p>
+<p>创建分支 : <code>git branch newtest</code></p>
+<p>删除分支 : <code>git branch -d newtest</code></p>
+<p>进入分支 : <code>git checkout newtest</code></p>
+<p>回到主分支 : <code>git checkout master</code></p>
+<p>合并分支 : <code>git checkout master  ==&gt; git merge newtest</code><br>– 对其他分支的更改不会反映在主分支上。如果想将更改提交到主分支，则需切换回master分支，然后使用合并。</p>
+</blockquote>
+<hr>
+<h4 id="想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程"><a href="#想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程" class="headerlink" title="想对Git进行充分详细的了解,推荐 廖雪峰老师的Git详细教程"></a><strong>想对Git进行充分详细的了解,推荐</strong> <strong><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰老师的Git详细教程</a></strong></h4>]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Flex语法教程]]></title>
       <url>/hexo/2017/07/23/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
@@ -179,6 +222,25 @@
     </entry>
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/hexo/about/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -201,28 +263,9 @@
     
     <entry>
       <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
       <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>/hexo/about/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
