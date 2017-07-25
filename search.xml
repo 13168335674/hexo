@@ -3,6 +3,188 @@
   
     
     <entry>
+      <title><![CDATA[Flex语法教程]]></title>
+      <url>/hexo/2017/07/25/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
+<ol>
+<li>什么是Flex<blockquote>
+<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
+</blockquote>
+</li>
+<li><p>属性值 </p>
+<blockquote>
+<p>容器的属性 :</p>
+<ol>
+<li>flex-direction : row | row-reverse | column | column-reverse;</li>
+<li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
+<li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
+<li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
+<li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
+</ol>
+<p>项目(子元素)的属性 :</p>
+<ol>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
+<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
+<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
+<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
+<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
+</ol>
+</blockquote>
+</li>
+<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Jquery教程]]></title>
+      <url>/hexo/2017/07/25/Jquery%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="350行jQuery常用脚本"><a href="#350行jQuery常用脚本" class="headerlink" title="350行jQuery常用脚本"></a>350行jQuery常用脚本</h3><a id="more"></a>
+<p>0、常用选择器<br><code>$(&#39;#div1&#39;)   //id为div1的节点，如&lt;div id=&#39;div1&#39;&gt;&lt;/div&gt;</code></p>
+<figcaption>  //所有的span结点，一个包装集</code><br><code>$(&#39;p span&#39;)   //p标签下的所有span节点，后代节点</code><br><code>$(&#39;p&gt;span&#39;)   //p标签下的所有span子节点，子代节点</code></p></figcaption><pre class=" language-$(&#39;span&#39;)"><code class="language-$(&#39;span&#39;)"><p><code>$('.red')  //使用样式red的节点，如<span class="red"></span></code></p>
+<p><code>$('*')  //所有节点</code></p>
+<p><code>$("div,span,p.cls")  //选取所有<div>，<span>和拥有class为cls的<p>标签的一组元素</code></p>
+<p>1、基本筛选器<br><code>$('span:first')    //第一个节点</code><br><code>$('span:last')     //最后一个节点</code></p>
+<p><code>$("td:even")     //索引为偶数的节点，从 0 开始</code><br><code>$("td:odd")      //索引为奇数的节点，从 0 开始</code></p>
+<p><code>$("td:eq(1)")    //给定索引值的节点</code><br><code>$("td:gt(0)")    //大于给定索引值的节点</code><br><code>$("td:lt(2)")    //小于给定索引值的节点</code></p>
+<p><code>$(":focus")      //当前获取焦点的节点</code><br><code>$(":animated")   //正在执行动画效果的节点</code></p>
+<p>2、内容选择器<br><code>$("div:contains('hello')")    //包含hello文本的节点</code><br><code>$("td:empty")    //不包含子节点或者文本的空节点</code><br><code>$("div:has(p)")  //含有选择器所匹配的节点</code><br><code>$("td:parent")   //含有子节点或者文本的节点</code></p>
+<p>3、表单选择器<br><code>$("input:checked")    //所有选中的节点</code><br><code>$("select option:selected")    //select中所有选中的option节点</code></p>
+<p><code>$(":input")      //匹配所有 input, textarea, select 和 button 节点</code><br><code>$(":text")       //所有的单行文本框</code><br><code>$(":password")   //所有密码框</code><br><code>$(":radio")      //所有单选按钮</code><br><code>$(":checkbox")   //所有复选框</code><br><code>$(":submit")     //所有提交按钮</code><br><code>$(":reset")      //所有重置按钮</code><br><code>$(":button")     //所有button按钮</code><br><code>$(":file")       //所有文件域</code></p>
+<p>4、筛选与查找<br><code>$("p").eq(0)       //当前操作中第N个jQuery对象,类似索引</code><br><code>$('li').first()    //第一个节点</code><br><code>$('li').last()     //最后一个节点</code><br><code>$(this).hasClass("node")    //节点是否含有某个特定的类,返回布尔值</code><br><code>$('li').has('ul')  //包含特定后代的节点</code></p>
+<p><code>$("div").children()      //div中的每个子节点,第一层</code><br><code>$("div").find("span")    //查找div下的所有span节点</code></p>
+<p><code>$("p").next()       　　　//紧邻p节点后的一个同辈节点</code><br><code>$("p").nextAll()         //p节点之后所有的同辈节点</code><br><code>$("#node").nextUntil("#node2")    //id为"#node"节点之后到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").prev()            //紧邻p节点前的一个同辈节点</code><br><code>$("p").prevAll()         //p节点之前所有的同辈节点</code><br><code>$("#node").prevUntil("#node2")    //id为"#node"节点之前到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").parent()          //每个p节点的父节点</code><br><code>$("p").parents()         //每个p节点的所有祖先节点,body,html</code><br><code>$("#node").parentsUntil("#node2")    //id为"#node"节点到id为'#node2'之间所有的父级节点,掐头去尾</code></p>
+<p><code>$("div").siblings()      //所有的同辈节点,不包括自己</code></p>
+<p>5、属性操作<br><code>$("img").attr("src");    　　　　　　 //返回文档中所有图像的src属性值</code><br><code>$("img").attr("src","node.jpg");    //设置所有图像的src属性</code><br><code>$("img").removeAttr("src");    　　　//将文档中图像的src属性删除</code></p>
+<p><code>$("input[type='checkbox']").prop("checked", true);    //选中复选框</code><br><code>$("input[type='checkbox']").prop("checked", false);   //不选中复选框</code><br><code>$("img").removeProp("src");    　　 //删除img的src属性</code></p>
+<p>6、样式操作<br><code>$("p").addClass("selected");    　　//为p节点加上 'selected' 类</code><br><code>$("p").removeClass("selected");    //从p节点中删除 'selected' 类</code><br><code>$("p").toggleClass("selected");    //如果存在就删除,否则就添加HTML代码/文本/值</code></p>
+<p>7、内容操作<br><code>$('p').html();    　　　　　　　　　　 //返回p节点的html内容</code><br><code>$("p").html("Hello <b>hello</b>!");  //设置p节点的html内容</code><br><code>$('p').text();    　　　　　　　　　　 //返回p节点的文本内容</code><br><code>$("p").text("hello");    　　　　　　　//设置p节点的文本内容</code><br><code>$("input").val();    　　　　　　　　 //获取文本框中的值</code><br><code>$("input").val("hello");     　　　　 //设置文本框中的内容</code></p>
+<p>8、CSS操作<br><code>$("p").css("color");          //访问查看p节点的color属性</code><br><code>$("p").css("color","red");    //设置p节点的color属性为red</code><br><code>$("p").css({ "color": "red", "background": "yellow" });    //</code>设置p节点的color为red，background属性为yellow（设置多个属性要用{}字典形式）</p>
+<p>9、定位与偏移<br><code>$('p').offset()     //节点在当前视口的相对偏移,对象 {top: 5, left: 9}</code><br><code>$('p').offset().top</code><br><code>$('p').offset().left</code><br><code>$("p").position()   //节点相对父节点的偏移,对可见节点有效，Object {top: 5, left: 8}</code></p>
+<p><code>$(window).scrollTop()    //获取滚轮滑的高度</code><br><code>$(window).scrollLeft()   //获取滚轮滑的宽度</code><br><code>$(window).scrollTop('25')    //设置滚轮滑的高度为25</code></p>
+<p>10、尺寸<br><code>$("p").height();    //获取p节点的高度</code><br><code>$("p").width();     //获取p节点的宽度</code></p>
+<p><code>$("p:first").innerHeight()    //获取第一个匹配节点内部区域高度(包括补白、不包括边框)</code><br><code>$("p:first").innerWidth()     //获取第一个匹配节点内部区域宽度(包括补白、不包括边框)</code></p>
+<p><code>$("p:first").outerHeight()    //匹配节点外部高度(默认包括补白和边框)</code><br><code>$("p:first").outerWidth()     //匹配节点外部宽度(默认包括补白和边框)</code><br><code>$("p:first").outerHeight(true)    //为true时包括边距</code></p>
+<p>11、DOM内部插入<br><code>$("p").append("<b>hello</b>");    //每个p节点内后面追加内容</code><br><code>$("p").appendTo("div");    　　　 //p节点追加到div内后</code><br><code>$("p").prepend("<b>Hello</b>");  //每个p节点内前面追加内容</code><br><code>$("p").prependTo("div");    　   //p节点追加到div内前</code></p>
+<p>12、DOM外部插入<br><code>$("p").after("<b>hello</b>");     //每个p节点同级之后插入内容</code><br><code>$("p").before("<b>hello</b>");    //在每个p节点同级之前插入内容</code><br><code>$("p").insertAfter("#node");     //所有p节点插入到id为node节点的后面</code><br><code>$("p").insertBefore("#node");    //所有p节点插入到id为node节点的前面</code></p>
+<p>13、DOM替换<br><code>$("p").replaceWith("<b>Paragraph. </b>");    //将所有匹配的节点替换成指定的HTML或DOM节点</code><br><code>$("<b>Paragraph. </b>").replaceAll("p");     //用匹配的节点替换掉所有 selector匹配到的节点</code></p>
+<p>14、DOM删除<br><code>$("p").empty();     //删除匹配的节点集合中所有的子节点，不包括本身</code><br><code>$("p").remove();    //删除所有匹配的节点,包括本身</code><br><code>$("p").detach();    //删除所有匹配的节点(和remove()不同的是:所有绑定的事件、附加的数据会保留下来)</code></p>
+<p>15、DOM复制<br><code>$("p").clone()    　　//克隆节点并选中克隆的副本</code><br><code>$("p").clone(true)   //布尔值指事件处理函数是否会被复制</code></p>
+<p>16、DOM加载完成事件<br><code>$(document).ready(function(){
+  您的代码...
+});</code></p>
+<p>//缩写<br><code>$(function($) {
+  您的代码...
+});</code></p>
+<p>17、绑定事件<br>//bind 为每个匹配节点绑定事件处理函数，绑定多个用{}。<br><code>$("p").bind("click", function(){
+  alert( $(this).text() );
+});</code><br><code>$('#div1').bind({
+    "mouseover":function () {
+     $('#div1').parent().removeClass("hide");
+     },"mouseout":function () {
+     $('#div1').parent().addClass("hide");
+}
+});</code>         </p>
+<p><code>$("p").one( "click", function(){})    //事件绑定后只会执行一次</code><br><code>$("p").unbind( "click" )        //反绑一个事件</code></p>
+<p>// 与bind 不同的是当时间发生时才去临时绑定。<br><code>$("p").delegate("click",function(){</code><br>  您的代码<br>});</p>
+<p><code>$("p").undelegate();    　　　//p节点删除由 delegate() 方法添加的所有事件</code><br><code>$("p").undelegate("click")   //从p节点删除由 delegate() 方法添加的所有click事件</code></p>
+<p><code>$("p").click();    　　//单击事件</code><br><code>$("p").dblclick();    //双击事件</code><br><code>$("input[type=text]").focus()  //节点获得焦点时,触发 focus 事件</code><br><code>$("input[type=text]").blur()   //节点失去焦点时,触发 blur事件</code><br><code>$("button").mousedown()//当按下鼠标时触发事件</code><br><code>$("button").mouseup()  //节点上放松鼠标按钮时触发事件</code><br><code>$("p").mousemove()     //当鼠标指针在指定的节点中移动时触发事件</code><br><code>$("p").mouseover()     //当鼠标指针位于节点上方时触发事件</code><br><code>$("p").mouseout()    　//当鼠标指针从节点上移开时触发事件</code><br><code>$(window).keydown()    //当键盘或按钮被按下时触发事件</code><br><code>$(window).keypress()   //当键盘或按钮被按下时触发事件,每输入一个字符都触发一次</code><br><code>$("input").keyup()     //当按钮被松开时触发事件</code><br><code>$(window).scroll()     //当用户滚动时触发事件</code><br><code>$(window).resize()     //当调整浏览器窗口的大小时触发事件</code><br><code>$("input[type='text']").change()    //当节点的值发生改变时触发事件</code><br><code>$("input").select()    //当input 节点中的文本被选择时触发事件</code><br><code>$("form").submit()     //当提交表单时触发事件</code><br><code>$(window).unload()     //用户离开页面时</code></p>
+<p>18、事件对象<br><code>$("p").click(function(event){
+ alert(event.type); //"click"  
+});</code></p>
+<p>(evnet object)属性方法：<br><code>event.pageX 　 //事件发生时，鼠标距离网页左上角的水平距离</code><br><code>event.pageY 　 //事件发生时，鼠标距离网页左上角的垂直距离</code><br><code>event.type 　　//事件的类型</code><br><code>event.which 　 //按下了哪一个键</code><br><code>event.data 　　//在事件对象上绑定数据，然后传入事件处理函数</code><br><code>event.target 　//事件针对的网页节点</code><br><code>event.preventDefault() 　//阻止事件的默认行为(比如点击链接，会自动打开新页面)</code><br><code>event.stopPropagation()  //停止事件向上层节点冒泡</code></p>
+<p>19、动态事件绑定<br><code>$("p").on("click",'span',function(){
+alert( $(this).text() );
+});</code><br>//当p中增加span时仍然有效</p>
+<p>20、动画效果<br><code>$("p").show()    　　　　//显示隐藏的匹配节点</code><br><code>$("p").show("slow");    //参数表示速度,("slow","normal","fast"),也可为600毫秒</code><br><code>$("p").hide()    　　　　//隐藏显示的节点</code><br><code>$("p").toggle();   　　 //切换 显示/隐藏</code></p>
+<p><code>$("p").slideDown("600");    //用600毫秒时间将段落滑下</code><br><code>$("p").slideUp("600");    　//用600毫秒时间将段落滑上</code><br><code>$("p").slideToggle("600");  //用600毫秒时间将段落滑上，滑下淡入淡出</code></p>
+<p><code>$("p").fadeIn("600");    　　  //用600毫秒时间将段落淡入</code><br><code>$("p").fadeOut("600");    　　 //用600毫秒时间将段落淡出</code><br><code>$("p").fadeToggle("600");    　//用600毫秒时间将段落淡入,淡出</code><br><code>$("p").fadeTo("slow", 0.6);    //用600毫秒时间将段落的透明度调整到0.6</code></p>
+<p>21、工具方法<br><code>$("#form1").serialize()    //序列表表格内容为字符串。</code><br><code>$("select, :radio").serializeArray();  //序列化表单元素为数组返回 JSON 数据结构数据</code><br><code>$.trim() 　　//去除字符串两端的空格</code><br><code>$.each() 　　//遍历一个数组或对象，for循环</code><br><code>$.inArray() //返回一个值在数组中的索引位置，不存在返回-1</code><br><code>$.grep() 　 //返回数组中符合某种标准的节点</code><br><code>$.extend({a:1,b:2},{b:3,c:4},{c:5:d:6})  //将多个对象，合并到第一个对象{a:1,b:3,c:5,d:6}</code><br><code>$.makeArray() //将对象转化为数组</code><br><code>$.type()    //判断对象的类别（函数对象、日期对象、数组对象、正则对象等等</code><br><code>$.isArray() //判断某个参数是否为数组</code><br><code>$.isEmptyObject() //判断某个对象是否为空(不含有任何属性)</code><br><code>$.isFunction()    //判断某个参数是否为函数</code><br><code>$.isPlainObject() //判断某个参数是否为用"{}"或"new Object"建立的对象</code><br><code>$.support()       //判断浏览器是否支持某个特性</code></p>
+<p>22、AJAX<br>//保存数据到服务器，成功时显示信息<br><code>$.ajax({
+   type: "POST",
+   url: "some.php",
+   data: "name=John&location=Boston",
+   success: function(msg){
+     alert( "Data Saved: " + msg );
+   }
+});</code></p>
+<p>//加载 feeds.html 文件内容。<br><code>$("#feeds").load("feeds.html");</code></p>
+<p>//请求 test.php 网页，传送2个参数，忽略返回值。<br><code>$.get("test.php", { name: "John", time: "2pm" } );</code></p>
+<p>//从 Flickr JSONP API 载入 4 张最新的关于猫的图片。<br><code>$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format
+=json&jsoncallback=?", function(data){
+  $.each(data.items, function(i,item){
+    $("<img/>").attr("src", item.media.m).appendTo("#images");
+    if ( i == 3 ) return false;
+  });
+});</code></p>
+<p>//加载并执行 test.js ，成功后显示信息<br><code>$.getScript("test.js", function(){
+  alert("Script loaded and executed.");
+});</code></p>
+<p>//向页面 test.php 发送数据，并输出结果（HTML 或 XML，取决于所返回的内容）：<br><code>$.post("test.php", { name: "John", time: "2pm" },
+   function(data){
+     alert("Data Loaded: " + data);
+   });</code></p>
+<p>//AJAX 请求完成时执行函数。<br><code>$("#msg").ajaxComplete(function(event,request, settings){
+   $(this).append("<li>请求完成.</li>");
+ });</code></p>
+<p>//AJAX 请求失败时显示信息。<br><code>$("#msg").ajaxError(function(event,request, settings){
+     $(this).append("<li>出错页面:" + settings.url + "</li>");
+});</code></p>
+<p>//AJAX 请求发送前显示信息。<br><code>$("#msg").ajaxSend(function(evt, request, settings){
+   $(this).append("<li>开始请求: " + settings.url + "</li>");
+ });</code></p>
+<p> //AJAX 请求开始时显示信息。<br><code>$("#loading").ajaxStart(function(){
+   $(this).show();
+ });</code></p>
+<p>//AJAX 请求结束后隐藏信息。<br><code>$("#loading").ajaxStop(function(){
+   $(this).hide();
+ });</code></p>
+<p>//当 AJAX 请求成功后显示消息。<br><code>$("#msg").ajaxSuccess(function(evt, request, settings){
+   $(this).append("<li>请求成功!</li>");
+ });</code></p>
+<p>//请求前过滤<br><code>$.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+   // Modify options, control originalOptions, store jqXHR, etc 
+ });</code></p>
+<p> //设置全局 AJAX 默认选项，设置 AJAX 请求默认地址为 “/xmlhttp/“，禁止触发全局 AJAX 事件，用 POST 代替默认 GET 方法。其后的 AJAX 请求不再设置任何选项参数。<br><code>$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});</code><br><code>$.ajax({ data: myData });</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用Vue-cli搭建项目教程]]></title>
       <url>/hexo/2017/07/24/%E4%BD%BF%E7%94%A8Vue-cli%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="使用-vue-cli-搭建项目"><a href="#使用-vue-cli-搭建项目" class="headerlink" title="使用 vue-cli 搭建项目"></a>使用 vue-cli 搭建项目</h2><h3 id="vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库"><a href="#vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库" class="headerlink" title="vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，Github仓库"></a>vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，<a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">Github仓库</a></h3><a id="more"></a>
@@ -103,55 +285,6 @@
         <tags>
             
             <tag> 分享 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Flex语法教程]]></title>
-      <url>/hexo/2017/07/23/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
-<ol>
-<li>什么是Flex<blockquote>
-<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
-</blockquote>
-</li>
-<li><p>属性值 </p>
-<blockquote>
-<p>容器的属性 :</p>
-<ol>
-<li>flex-direction : row | row-reverse | column | column-reverse;</li>
-<li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
-<li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
-<li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
-<li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
-</ol>
-<p>项目(子元素)的属性 :</p>
-<ol>
-<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
-<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
-<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
-<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
-<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
-</ol>
-</blockquote>
-</li>
-<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CSS </tag>
             
         </tags>
         
@@ -320,15 +453,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/hexo/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
