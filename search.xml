@@ -3,8 +3,159 @@
   
     
     <entry>
+      <title><![CDATA[Flex语法教程]]></title>
+      <url>/hexo/2017/07/25/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
+<ol>
+<li>什么是Flex<blockquote>
+<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
+</blockquote>
+</li>
+<li><p>属性值 </p>
+<blockquote>
+<p>容器的属性 :</p>
+<ol>
+<li>flex-direction : row | row-reverse | column | column-reverse;</li>
+<li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
+<li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
+<li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
+<li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
+</ol>
+<p>项目(子元素)的属性 :</p>
+<ol>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
+<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
+<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
+<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
+<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
+</ol>
+</blockquote>
+</li>
+<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vue2.0实现在线商城]]></title>
+      <url>/hexo/2017/07/22/Vue2-0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB/</url>
+      <content type="html"><![CDATA[<h3 id="这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo"><a href="#这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo" class="headerlink" title="这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo."></a>这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo.</h3><a id="more"></a>
+<h2 id="Demo预览"><a href="#Demo预览" class="headerlink" title="Demo预览"></a><a href="https://13189449986.github.io/VueStore/dist/#/">Demo预览</a></h2><h2 id="Github源码"><a href="#Github源码" class="headerlink" title="Github源码"></a><a href="https://github.com/13189449986/VueStore" target="_blank" rel="external">Github源码</a></h2><h3 id="项目技术栈使用到"><a href="#项目技术栈使用到" class="headerlink" title="项目技术栈使用到"></a>项目技术栈使用到</h3><p><code>vue: ^2.3.3, vue-resource: ^1.3.4, vue-router: ^2.6.0 , lodash: ^4.17.4 ,webpack: ^2.6.1</code></p>
+<hr>
+<h2 id="项目爬过的坑"><a href="#项目爬过的坑" class="headerlink" title="项目爬过的坑"></a>项目爬过的坑</h2><ol>
+<li>vue-cli启动项目 <code>npm run dev</code> 后本地无法正常显示页面<ul>
+<li>此时应该检查本地的 8080 端口是否被占用，需要修改一下配置文件 config&gt;index.js 中调试端口 <code>dev{port:8075}</code></li>
+<li>另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。</li>
+</ul>
+</li>
+<li>vue-cli打包上线 <code>npm run build</code> 后在本地显示正常,在服务器上显示异常<ul>
+<li>第一就是路径问题. 此时修改一下配置文件 config&gt;index.js 中 build 配置属性 assetsPublicPathL 的值为 ‘./‘ </li>
+<li>改完了重新构建发现还是空白，检查下 vue-router 是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
+</ul>
+</li>
+</ol>
+<h3 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h3><p><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/keFIg30fHd.png?imageslim" alt="mark"><br><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/j30Fej8hfb.png?imageslim" alt="mark"><br><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170726/D3m5dfi09f.gif" alt="mark"></p>
+<ul>
+<li>让知识与生活每日同行 , 每天比昨天厉害一点 </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 分享 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[使用Vue-cli搭建项目教程]]></title>
+      <url>/hexo/2017/07/18/%E4%BD%BF%E7%94%A8Vue-cli%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="使用-vue-cli-搭建项目"><a href="#使用-vue-cli-搭建项目" class="headerlink" title="使用 vue-cli 搭建项目"></a>使用 vue-cli 搭建项目</h2><h3 id="vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库"><a href="#vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库" class="headerlink" title="vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，Github仓库"></a>vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，<a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">Github仓库</a></h3><a id="more"></a>
+<ol>
+<li><p>安装 Node.js</p>
+<blockquote>
+<ul>
+<li>首先需要安装node环境，可以直接到<a href="http://nodejs.cn/" target="_blank" rel="external">node官网</a>下载安装包,安装完成后，可以命令行工具中输入 node -v 查看是否成功,不成功清除npm缓存<code>npm cache clean</code>重新安装.</li>
+<li>推荐使用国内淘宝镜像安装(cnpm)<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br>cnpm安装完成后使用<code>cnpm install -g vue-cli</code>安装vue-cli</li>
+</ul>
+</blockquote>
+</li>
+<li><p>生成项目</p>
+<blockquote>
+<ul>
+<li>cd进入项目目录  <code>vue init webpack VueProject</code></li>
+<li>配置完成后，可以看到目录下多出了一个项目文件夹cd进入vue.js 项目 <code>cd VueProject</code></li>
+<li>然后进入项目目录（cd Vue-Project），使用 cnpm 安装依赖 <code>cnpm install</code></li>
+<li>启动项目 <code>npm run dev</code></li>
+</ul>
+</blockquote>
+</li>
+<li><p>爬坑日记</p>
+<blockquote>
+<ul>
+<li>如果浏览器打开之后，没有加载出页面，有可能是本地的 8080 端口被占用，需要修改一下配置文件 <code>config&gt;index.js  ==&gt;  build:{assetsPublicPath: &#39;./&#39;}</code></li>
+<li>建议将端口号改为不常用的端口。另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。<code>dev:{port: 8075}</code></li>
+<li>部署到github需要留意vue-router是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
+</ul>
+</blockquote>
+</li>
+<li><p>打包上线部署</p>
+<blockquote>
+<ul>
+<li>项目开发完成之后，可以输入 <code>npm run build</code> 来进行打包工作</li>
+<li>打包完成后，会生成 dist 文件夹，如果已经修改了文件路径，可以直接打开本地文件查看</li>
+<li>项目上线时，只需要将 dist 文件夹放到服务器就行了。</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ul>
+<li>vuex安装到项目 <code>npm install vuex --save</code></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Jquery教程]]></title>
-      <url>/hexo/2017/07/25/Jquery%E6%95%99%E7%A8%8B/</url>
+      <url>/hexo/2017/06/30/Jquery%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h3 id="350行jQuery常用脚本"><a href="#350行jQuery常用脚本" class="headerlink" title="350行jQuery常用脚本"></a>350行jQuery常用脚本</h3><a id="more"></a>
 <p>0、常用选择器<br><code>$(&#39;#div1&#39;)   //id为div1的节点，如&lt;div id=&#39;div1&#39;&gt;&lt;/div&gt;</code></p>
 <figcaption>  //所有的span结点，一个包装集</code><br><code>$(&#39;p span&#39;)   //p标签下的所有span节点，后代节点</code><br><code>$(&#39;p&gt;span&#39;)   //p标签下的所有span子节点，子代节点</code></p></figcaption><pre class=" language-$(&#39;span&#39;)"><code class="language-$(&#39;span&#39;)"><p><code>$('.red')  //使用样式red的节点，如<span class="red"></span></code></p>
@@ -136,120 +287,8 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[Flex语法教程]]></title>
-      <url>/hexo/2017/07/25/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
-<ol>
-<li>什么是Flex<blockquote>
-<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
-</blockquote>
-</li>
-<li><p>属性值 </p>
-<blockquote>
-<p>容器的属性 :</p>
-<ol>
-<li>flex-direction : row | row-reverse | column | column-reverse;</li>
-<li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
-<li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
-<li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
-<li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
-</ol>
-<p>项目(子元素)的属性 :</p>
-<ol>
-<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
-<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
-<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
-<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
-<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
-</ol>
-</blockquote>
-</li>
-<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CSS </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[使用Vue-cli搭建项目教程]]></title>
-      <url>/hexo/2017/07/24/%E4%BD%BF%E7%94%A8Vue-cli%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h2 id="使用-vue-cli-搭建项目"><a href="#使用-vue-cli-搭建项目" class="headerlink" title="使用 vue-cli 搭建项目"></a>使用 vue-cli 搭建项目</h2><h3 id="vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库"><a href="#vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，Github仓库" class="headerlink" title="vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，Github仓库"></a>vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，<a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">Github仓库</a></h3><a id="more"></a>
-<ol>
-<li><p>安装 Node.js</p>
-<blockquote>
-<ul>
-<li>首先需要安装node环境，可以直接到<a href="http://nodejs.cn/" target="_blank" rel="external">node官网</a>下载安装包,安装完成后，可以命令行工具中输入 node -v 查看是否成功,不成功清除npm缓存<code>npm cache clean</code>重新安装.</li>
-<li>推荐使用国内淘宝镜像安装(cnpm)<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br>cnpm安装完成后使用<code>cnpm install -g vue-cli</code>安装vue-cli</li>
-</ul>
-</blockquote>
-</li>
-<li><p>生成项目</p>
-<blockquote>
-<ul>
-<li>cd进入项目目录  <code>vue init webpack VueProject</code></li>
-<li>配置完成后，可以看到目录下多出了一个项目文件夹cd进入vue.js 项目 <code>cd VueProject</code></li>
-<li>然后进入项目目录（cd Vue-Project），使用 cnpm 安装依赖 <code>cnpm install</code></li>
-<li>启动项目 <code>npm run dev</code></li>
-</ul>
-</blockquote>
-</li>
-<li><p>爬坑日记</p>
-<blockquote>
-<ul>
-<li>如果浏览器打开之后，没有加载出页面，有可能是本地的 8080 端口被占用，需要修改一下配置文件 <code>config&gt;index.js  ==&gt;  build:{assetsPublicPath: &#39;./&#39;}</code></li>
-<li>建议将端口号改为不常用的端口。另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。<code>dev:{port: 8075}</code></li>
-<li>部署到github需要留意vue-router是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
-</ul>
-</blockquote>
-</li>
-<li><p>打包上线部署</p>
-<blockquote>
-<ul>
-<li>项目开发完成之后，可以输入 <code>npm run build</code> 来进行打包工作</li>
-<li>打包完成后，会生成 dist 文件夹，如果已经修改了文件路径，可以直接打开本地文件查看</li>
-<li>项目上线时，只需要将 dist 文件夹放到服务器就行了。</li>
-</ul>
-</blockquote>
-</li>
-</ol>
-<hr>
-<ul>
-<li>vuex安装到项目 <code>npm install vuex --save</code></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 分享 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Git命令教程]]></title>
-      <url>/hexo/2017/07/24/Git%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
+      <url>/hexo/2017/06/24/Git%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h4 id="这篇文章将对git命令进行梳理-巩固一下知识"><a href="#这篇文章将对git命令进行梳理-巩固一下知识" class="headerlink" title="这篇文章将对git命令进行梳理,巩固一下知识"></a>这篇文章将对git命令进行梳理,巩固一下知识</h4><a id="more"></a>
 <h3 id="1-开始"><a href="#1-开始" class="headerlink" title="1. 开始"></a>1. 开始</h3><blockquote>
 <p> 使用Git前，可以使用一个已经本地存在的目录或创建一个空目录作为Git仓库.首先建立使用命令<br><code>git init</code> 创建仓库(repository).</p>
@@ -278,45 +317,6 @@ alert( $(this).text() );
         <categories>
             
             <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 分享 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Vue2.0实现在线商城]]></title>
-      <url>/hexo/2017/07/22/Vue2-0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB/</url>
-      <content type="html"><![CDATA[<h3 id="这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo"><a href="#这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo" class="headerlink" title="这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo."></a>这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo.</h3><a id="more"></a>
-<h2 id="Demo预览"><a href="#Demo预览" class="headerlink" title="Demo预览"></a><a href="https://13189449986.github.io/VueStore/dist/#/">Demo预览</a></h2><h2 id="Github源码"><a href="#Github源码" class="headerlink" title="Github源码"></a><a href="https://github.com/13189449986/VueStore" target="_blank" rel="external">Github源码</a></h2><h3 id="项目技术栈使用到"><a href="#项目技术栈使用到" class="headerlink" title="项目技术栈使用到"></a>项目技术栈使用到</h3><p><code>vue: ^2.3.3, vue-resource: ^1.3.4, vue-router: ^2.6.0 , lodash: ^4.17.4 ,webpack: ^2.6.1</code></p>
-<hr>
-<h2 id="项目爬过的坑"><a href="#项目爬过的坑" class="headerlink" title="项目爬过的坑"></a>项目爬过的坑</h2><ol>
-<li>vue-cli启动项目 <code>npm run dev</code> 后本地无法正常显示页面<ul>
-<li>此时应该检查本地的 8080 端口是否被占用，需要修改一下配置文件 config&gt;index.js 中调试端口 <code>dev{port:8075}</code></li>
-<li>另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。</li>
-</ul>
-</li>
-<li>vue-cli打包上线 <code>npm run build</code> 后在本地显示正常,在服务器上显示异常<ul>
-<li>第一就是路径问题. 此时修改一下配置文件 config&gt;index.js 中 build 配置属性 assetsPublicPathL 的值为 ‘./‘ </li>
-<li>改完了重新构建发现还是空白，检查下 vue-router 是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
-</ul>
-</li>
-</ol>
-<h3 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h3><p><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/keFIg30fHd.png?imageslim" alt="mark"><br><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/j30Fej8hfb.png?imageslim" alt="mark"><br><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170726/D3m5dfi09f.gif" alt="mark"></p>
-<ul>
-<li>让知识与生活每日同行 , 每天比昨天厉害一点 </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 分享 </category>
             
         </categories>
         
@@ -366,7 +366,7 @@ alert( $(this).text() );
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>/hexo/2016/09/11/hello-world/</url>
+      <url>/hexo/2016/12/11/hello-world/</url>
       <content type="html"><![CDATA[<p><strong> 欢迎您 !  </strong><br><strong> 主人不在随便坐哈 ~ </strong><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -425,13 +425,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/index.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -450,6 +443,13 @@ alert( $(this).text() );
   <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
 </body>
 </html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/index.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
