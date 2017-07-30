@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。 let - 块级作用域 var a = [];for (let i = 0; i &amp;lt; 10; i++) {   // 使用let声明i  a[i] = function () {    console.log(i);  };}a6; // 6  基础用">
+<meta name="description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript 6 - let 和 const">
 <meta property="og:url" content="http://13189449986.github.io/hexo/2017/07/30/ES6 - let 和 const/index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。 let - 块级作用域 var a = [];for (let i = 0; i &amp;lt; 10; i++) {   // 使用let声明i  a[i] = function () {    console.log(i);  };}a6; // 6  基础用">
-<meta property="og:updated_time" content="2017-07-30T05:04:28.450Z">
+<meta property="og:description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。">
+<meta property="og:updated_time" content="2017-07-30T05:22:15.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript 6 - let 和 const">
-<meta name="twitter:description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。 let - 块级作用域 var a = [];for (let i = 0; i &amp;lt; 10; i++) {   // 使用let声明i  a[i] = function () {    console.log(i);  };}a6; // 6  基础用">
+<meta name="twitter:description" content="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。">
 
 
 
@@ -342,9 +342,10 @@
       
 
       
-        <h3 id="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"><a href="#let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。" class="headerlink" title="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"></a>let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</h3><!--move-->
+        <h3 id="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"><a href="#let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。" class="headerlink" title="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"></a>let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</h3><a id="more"></a>
 <h3 id="let-块级作用域"><a href="#let-块级作用域" class="headerlink" title="let - 块级作用域"></a>let - 块级作用域</h3><blockquote>
 <p>var a = [];<br>for (let i = 0; i &lt; 10; i++) {   // 使用let声明i<br>  a[i] = function () {<br>    console.log(i);<br>  };<br>}<br>a<a href="">6</a>; // 6</p>
+</blockquote>
 <ol>
 <li>基础用法<br>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6</li>
 <li>不会进行变量提升<br><code>var</code>命令会发生”变量提升“现象，即变量可以在声明之前使用，值为<code>undefined</code><br><code>let</code>命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错<br><code>var=&gt;&gt;
@@ -352,9 +353,19 @@ console.log(foo); // 输出undefined
 var foo = 2;</code><br><code>let=&gt;&gt;
 console.log(bar); // 报错ReferenceError
 let bar = 2;</code></li>
-<li>暂时性死区<br>只要块级作用域内存在<code>let</code>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响<br>var tmp = 123;<br>if (true) {<br>tmp = ‘abc’; // ReferenceError<br>let tmp;<br>}<br>上面代码中，存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</li>
-<li>不允许重复声明<br><code>let</code>不允许在相同作用域内，重复声明同一个变量。<br>// 报错<br>function () {<br>let a = 10;<br>var a = 1;<br>}<br>// 报错<br>function () {<br>let a = 10;<br>let a = 1;<br>}<br>因此，不能在函数内部重新声明参数。<br>function func(arg) {<br>let arg; // 报错<br>}<br>function func(arg) {<br>{<br> let arg; // 不报错<br>}<br>}</li>
+<li><p>暂时性死区<br>只要块级作用域内存在<code>let</code>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响</p>
+<blockquote>
+<p>var tmp = 123;<br>if (true) {<br>tmp = ‘abc’; // ReferenceError<br>let tmp;<br>}<br>上面代码中，存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</p>
+</blockquote>
+</li>
+<li>不允许重复声明<br><code>let</code>不允许在相同作用域内，重复声明同一个变量。<blockquote>
+<p>// 报错<br>function () {<br>let a = 10;<br>var a = 1;<br>}<br>// 报错<br>function () {<br>let a = 10;<br>let a = 1;<br>}</p>
+</blockquote>
+</li>
 </ol>
+<p>因此，不能在函数内部重新声明参数。</p>
+<blockquote>
+<p>function func(arg) {<br>  let arg; // 报错<br>}<br>function func(arg) {<br>  {<br>    let arg; // 不报错<br>  }<br>}</p>
 </blockquote>
 <h3 id="const-常量"><a href="#const-常量" class="headerlink" title="const - 常量"></a>const - 常量</h3><p><code>const</code>声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
 <blockquote>
