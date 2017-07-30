@@ -253,6 +253,161 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/07/30/ES6 - let 和 const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="家伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo/2017/07/30/ES6 - let 和 const/" itemprop="url">ECMAScript 6 - let 和 const</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T12:58:41+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hexo/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"><a href="#let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。" class="headerlink" title="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"></a>let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</h3><!--move-->
+<h3 id="let-块级作用域"><a href="#let-块级作用域" class="headerlink" title="let - 块级作用域"></a>let - 块级作用域</h3><blockquote>
+<p>var a = [];<br>for (let i = 0; i &lt; 10; i++) {   // 使用let声明i<br>  a[i] = function () {<br>    console.log(i);<br>  };<br>}<br>a<a href="">6</a>; // 6</p>
+<ol>
+<li>基础用法<br>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6</li>
+<li>不会进行变量提升<br><code>var</code>命令会发生”变量提升“现象，即变量可以在声明之前使用，值为<code>undefined</code><br><code>let</code>命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错<br><code>var=&gt;&gt;
+console.log(foo); // 输出undefined
+var foo = 2;</code><br><code>let=&gt;&gt;
+console.log(bar); // 报错ReferenceError
+let bar = 2;</code></li>
+<li>暂时性死区<br>只要块级作用域内存在<code>let</code>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响<br>var tmp = 123;<br>if (true) {<br>tmp = ‘abc’; // ReferenceError<br>let tmp;<br>}<br>上面代码中，存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</li>
+<li>不允许重复声明<br><code>let</code>不允许在相同作用域内，重复声明同一个变量。<br>// 报错<br>function () {<br>let a = 10;<br>var a = 1;<br>}<br>// 报错<br>function () {<br>let a = 10;<br>let a = 1;<br>}<br>因此，不能在函数内部重新声明参数。<br>function func(arg) {<br>let arg; // 报错<br>}<br>function func(arg) {<br>{<br> let arg; // 不报错<br>}<br>}</li>
+</ol>
+</blockquote>
+<h3 id="const-常量"><a href="#const-常量" class="headerlink" title="const - 常量"></a>const - 常量</h3><p><code>const</code>声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
+<blockquote>
+<p>const PI = 3.1415;<br>PI // 3.1415<br>PI = 3;<br>// TypeError: Assignment to constant variable.</p>
+</blockquote>
+<p>const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。</p>
+<blockquote>
+<p>const foo;<br>// SyntaxError: Missing initializer in const declaration</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/07/25/Flex语法教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1255,7 +1410,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/hexo/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1277,7 +1432,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/hexo/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

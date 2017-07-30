@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[ECMAScript 6 - let 和 const]]></title>
+      <url>/hexo/2017/07/30/ES6%20-%20let%20%E5%92%8C%20const/</url>
+      <content type="html"><![CDATA[<h3 id="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"><a href="#let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。" class="headerlink" title="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"></a>let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</h3><!--move-->
+<h3 id="let-块级作用域"><a href="#let-块级作用域" class="headerlink" title="let - 块级作用域"></a>let - 块级作用域</h3><blockquote>
+<p>var a = [];<br>for (let i = 0; i &lt; 10; i++) {   // 使用let声明i<br>  a[i] = function () {<br>    console.log(i);<br>  };<br>}<br>a<a href="">6</a>; // 6</p>
+<ol>
+<li>基础用法<br>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6</li>
+<li>不会进行变量提升<br><code>var</code>命令会发生”变量提升“现象，即变量可以在声明之前使用，值为<code>undefined</code><br><code>let</code>命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错<br><code>var=&gt;&gt;
+console.log(foo); // 输出undefined
+var foo = 2;</code><br><code>let=&gt;&gt;
+console.log(bar); // 报错ReferenceError
+let bar = 2;</code></li>
+<li>暂时性死区<br>只要块级作用域内存在<code>let</code>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响<br>var tmp = 123;<br>if (true) {<br>tmp = ‘abc’; // ReferenceError<br>let tmp;<br>}<br>上面代码中，存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</li>
+<li>不允许重复声明<br><code>let</code>不允许在相同作用域内，重复声明同一个变量。<br>// 报错<br>function () {<br>let a = 10;<br>var a = 1;<br>}<br>// 报错<br>function () {<br>let a = 10;<br>let a = 1;<br>}<br>因此，不能在函数内部重新声明参数。<br>function func(arg) {<br>let arg; // 报错<br>}<br>function func(arg) {<br>{<br> let arg; // 不报错<br>}<br>}</li>
+</ol>
+</blockquote>
+<h3 id="const-常量"><a href="#const-常量" class="headerlink" title="const - 常量"></a>const - 常量</h3><p><code>const</code>声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
+<blockquote>
+<p>const PI = 3.1415;<br>PI // 3.1415<br>PI = 3;<br>// TypeError: Assignment to constant variable.</p>
+</blockquote>
+<p>const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。</p>
+<blockquote>
+<p>const foo;<br>// SyntaxError: Missing initializer in const declaration</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Flex语法教程]]></title>
       <url>/hexo/2017/07/25/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
@@ -425,6 +467,13 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/index.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -443,13 +492,6 @@ alert( $(this).text() );
   <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
 </body>
 </html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/index.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
