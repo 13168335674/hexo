@@ -3,6 +3,153 @@
   
     
     <entry>
+      <title><![CDATA[ECMAScript 6 - 解构赋值]]></title>
+      <url>/hexo/2017/07/31/ES6%20-%20%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</url>
+      <content type="html"><![CDATA[<h4 id="ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"><a href="#ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。" class="headerlink" title="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"></a>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</h4><p> 最近在学习vuex中actions的参数中使用到了对象的解构赋值，故此前来学习了解 解构赋值语法<br><a id="more"></a></p>
+<ol>
+<li><p>开始<br>以前，为变量赋值，只能直接指定值。</p>
+<blockquote>
+<p>let a = 1; let b = 2; let c = 3;<br>ES6可以写成下面这样为变量赋值。<br>let [a,b,c] = [1,2,3];</p>
+</blockquote>
+<p>有关模式匹配的规则：</p>
+<blockquote>
+<p>let [foo, [[bar], baz]] = [1, [[2], 3]];<br>  foo // 1<br>  bar // 2<br>  baz // 3<br>  let [ , , third] = [“foo”, “bar”, “baz”];<br>  third // “baz”<br>  let [x, , y] = [1, 2, 3];<br>  x // 1<br>  y // 3<br>  let [head, …tail] = [1, 2, 3, 4];<br>  head // 1<br>  tail // [2, 3, 4]<br>  let [x, y, …z] = [‘a’];<br>  x // “a”<br>  y // undefined<br>  z // []</p>
+</blockquote>
+</li>
+</ol>
+<p>关于解构赋值参数不完整的情况：</p>
+<blockquote>
+<p>let [foo] = [];<br>   let [bar, foo] = [1];</p>
+</blockquote>
+<p>解构不成功的情况下，foo的值等于undefined</p>
+<blockquote>
+<p>let [x,y] = [1,2,3];<br>    x // 1 ,y // 2<br>    let [a,[b],d] = [a,[2,3],4];<br>    a // 1 , b //2 ,d // 4</p>
+</blockquote>
+<p>上面两个栗子，都属于不完全解构，但都可以成功。</p>
+<p>如果等号的右边不是可遍历的结构（数组，Set）那么将会报错。</p>
+<blockquote>
+<p>// 编译报错<br>   let[foo] = 1;<br>   let [foo] = false;<br>   let [foo] = NaN;<br>   let [foo] = undefined;<br>   let [foo] = null;<br>   let [foo] = {}; </p>
+</blockquote>
+<p>对于Set结构进行解构赋值。</p>
+<blockquote>
+<p>let [x,y,z] = new Set([1,2,3]);<br>   x // 1</p>
+</blockquote>
+<p><strong> 解构赋值 - 默认值 </strong></p>
+<blockquote>
+<p>let [foo =  true] = [];<br>   foo  // true<br>   let [x,y = ‘b’] = [‘a’];<br>   x // ‘a’ , y // ‘b’<br>   let [x,y=’b’] = [‘a’,undefined];<br>   x // ‘a’ , y // ‘b’</p>
+</blockquote>
+<ul>
+<li>ES6 内部使用严格相等运算符（===），判断一个位置是否有值。如果一个数组成员不严格等于undefined，默认值是不会生效的。*</li>
+</ul>
+<blockquote>
+<p>let [x = 1] = [ undefined ];记得加上中括号，否则报错<br>   x // 1<br>   let[ x = 1 ] = [ null ];<br>   x // null</p>
+</blockquote>
+<p>上面代码中，如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。</p>
+<p><strong> 对象的解构赋值 </strong><br>解构不仅可以用于数组，还可以用于对象。</p>
+<blockquote>
+<p>let { foo, bar } = { foo: “aaa”, bar: “bbb” };<br>   foo // “aaa”<br>   bar // “bbb”</p>
+</blockquote>
+<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
+<p>如果变量名与属性名不一致，必须写成下面这样。</p>
+<blockquote>
+<p>var { foo: baz } = { foo: ‘aaa’, bar: ‘bbb’ };<br>   baz // “aaa”<br>   let obj = { first: ‘hello’, last: ‘world’ };<br>   let { first: f, last: l } = obj;<br>   f // ‘hello’<br>   l // ‘world’</p>
+</blockquote>
+<p>这实际说明了对象的解构赋值是下面形式的简写。</p>
+<blockquote>
+<p>let { foo: foo, bar :bar } = { foo:’aaa’,bar :’bbb’ };</p>
+</blockquote>
+<p>也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
+<blockquote>
+<p>let { foo: baz } = { foo: “aaa”, bar: “bbb” };<br>   baz // “aaa”<br>   foo // error: foo is not defined</p>
+</blockquote>
+<p>上面代码中，foo是匹配的模式，baz才是变量。真正被赋值的是变量baz，而不是模式foo。</p>
+<p><strong> 解构失败 </strong><br>默认值生效的条件是，对象的属性值严格等于undefined。</p>
+<blockquote>
+<p>var {x = 3} = {x: undefined};<br>   x // 3<br>   var {x = 3} = {x: null};<br>   x // null</p>
+</blockquote>
+<p>解构失败变量的值等于<code>undefined</code>。</p>
+<blockquote>
+<p>let { foo } = { bar : ‘baz’ };<br>   foo // undefined</p>
+</blockquote>
+<p>如果解构模式是嵌套的对象，而且子对象所在的父属性不存在，那么将会报错。</p>
+<blockquote>
+<p>let {foo: {bar}} = {baz: ‘baz’};</p>
+</blockquote>
+<p>对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量。</p>
+<blockquote>
+<p>let { log, sin, cos } = Math;</p>
+</blockquote>
+<p>上面代码将Math对象的对数、正弦、余弦三个方法，赋值到对应的变量上，使用起来就会方便很多。</p>
+<p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。</p>
+<blockquote>
+<p>let arr = [1, 2, 3];<br>   let {0 : first, [arr.length - 1] : last} = arr;<br>   first // 1   ，   last // 3</p>
+</blockquote>
+<p>上面代码对数组进行对象解构。数组arr的0键对应的值是1，[arr.length - 1]就是2键，对应的值是3。方括号这种写法，属于“属性名表达式”</p>
+<p><strong> 字符串的解构赋值 </strong><br>字符串能被转换成一个类似数组的对象，因此字符串也可以解构赋值</p>
+<blockquote>
+<p>const [a, b, c, d, e] = ‘hello’;<br>   a // “h”<br>   b // “e”<br>   c // “l”<br>   d // “l”<br>   e // “o”</p>
+</blockquote>
+<p>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
+<blockquote>
+<p>let {length : len} = ‘hello’;<br>   len // 5</p>
+</blockquote>
+<p><strong> 数值和布尔值的解构赋值  </strong><br>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
+<blockquote>
+<p>let {toString: s} = 123;<br>   s === Number.prototype.toString // true<br>   let {toString: s} = true;<br>   s === Boolean.prototype.toString // true</p>
+</blockquote>
+<p>上面代码中，数值和布尔值的包装对象都有toString属性，因此变量s都能取到值。</p>
+<p>解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于undefined和null无法转为对象，所以对它们进行解构赋值，都会报错。</p>
+<blockquote>
+<p>let { prop: x } = undefined; // TypeError<br>   let { prop: y } = null; // TypeError</p>
+</blockquote>
+<p><strong> 函数参数的解构赋值 </strong><br>函数的参数也可以使用解构赋值。</p>
+<blockquote>
+<p>function add([x, y]){<br>     return x + y;<br>   }</p>
+<p>add([1, 2]); // 3</p>
+</blockquote>
+<p>上面代码中，函数add的参数表面上是一个数组，但在传入参数的那一刻，数组参数就被解构成变量x和y。对于函数内部的代码来说，它们能感受到的参数就是x和y。</p>
+<p>下面是另一个例子。</p>
+<blockquote>
+<p>[[1, 2], [3, 4]].map(([a, b]) =&gt; a + b);<br>    // [ 3, 7 ]</p>
+</blockquote>
+<p>函数参数的解构也可以使用默认值。</p>
+<blockquote>
+<p>function move({x = 0, y = 0} = {}) {<br>     return [x, y];<br>   }</p>
+<p>move({x: 3, y: 8}); // [3, 8]<br>   move({x: 3}); // [3, 0]<br>   move({}); // [0, 0]<br>   move(); // [0, 0]</p>
+</blockquote>
+<p>上面代码中，函数move的参数是一个对象，通过对这个对象进行解构，得到变量x和y的值。如果解构失败，x和y等于默认值。</p>
+<p>注意，下面的写法会得到不一样的结果。</p>
+<blockquote>
+<p>function move({x, y} = { x: 0, y: 0 }) {<br>    return [x, y];<br>   }</p>
+<p>move({x: 3, y: 8}); // [3, 8]<br>   move({x: 3}); // [3, undefined]<br>   move({}); // [undefined, undefined]<br>   move(); // [0, 0]</p>
+</blockquote>
+<p>上面代码是为函数move的参数指定默认值，而不是为变量x和y指定默认值，所以会得到与前一种写法不同的结果。</p>
+<p>undefined就会触发函数参数的默认值。</p>
+<blockquote>
+<p>[1, undefined, 3].map((x = ‘yes’) =&gt; x);<br>  // [ 1, ‘yes’, 3 ]</p>
+</blockquote>
+<hr>
+<ul>
+<li><a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="external">阮一峰老师的ES6-解构赋值 详细教程</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ECMAScript 6 - let 和 const]]></title>
       <url>/hexo/2017/07/30/ES6%20-%20let%20%E5%92%8C%20const/</url>
       <content type="html"><![CDATA[<h3 id="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"><a href="#let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。" class="headerlink" title="let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。"></a>let和const是es6新规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</h3><a id="more"></a>
