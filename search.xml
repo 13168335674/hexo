@@ -3,6 +3,41 @@
   
     
     <entry>
+      <title><![CDATA[input[type=file]属性]]></title>
+      <url>/hexo/2017/08/11/input%5Btype=file%5D%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<h3 id="input-type-file-控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。"><a href="#input-type-file-控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。" class="headerlink" title=" input[type=file]  控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。"></a><strong> input[type=file] </strong> 控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File" target="_blank" rel="external">File</a>对象。</h3><a id="more"></a>
+<blockquote>
+<p>在Android手机webview中，是不支持上传文件的，网上说是修改Android端的代码导致的。</p>
+</blockquote>
+<ol>
+<li><p>accept属性<br>该属性表明了服务器端可接受的文件类型，可以限制你手机选择相关的文件，如果限制多个，可以用逗号分割，下面的代码就表示只能选择图片与音频相关的文件：<code>&lt;input accept=&quot;image/*,audio/*&quot; type=&quot;file&quot;/&gt;</code> </p>
+<p><img src="http://images2015.cnblogs.com/blog/211606/201602/211606-20160204150544007-405501771.jpg" alt="属性值"></p>
+</li>
+<li><p>change事件<br> 当用户点击控件上传文件会触发change事件，在移动端点击控件时会弹出键盘，体验非常不友好，通过设置属性<code>onfocus=&quot;this.blur()&quot;</code>使其失去焦点<br><code>&lt;input type=&quot;file&quot; id=&quot;upload&quot; onfocus=&quot;this.blur()&quot;/&gt;</code></p>
+</li>
+<li><p>file对象<br> 用户所选择的文件都存储在了一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileList" target="_blank" rel="external">FileList</a>对象上，其中每个文件都对应了一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File" target="_blank" rel="external">File</a>对象<br>file对象一共由9个属性 获取上次修改的时间<code>file[0].lastModifiedDate)</code> 获取文件名<code>file[0].name</code> 获取大小<code>file[0].size</code> 获取类型<code>file[0].type</code></p>
+</li>
+<li><p>参考资料：<br><a href="http://www.cnblogs.com/strick/p/5181701.html" target="_blank" rel="external">http://www.cnblogs.com/strick/p/5181701.html</a>  移动端图片操作（一）<br><a href="https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications</a>    在web应用中使用文件<br><a href="http://javascript.ruanyifeng.com/htmlapi/file.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/htmlapi/file.html</a>  文件和二进制数据的操作<a href="http://www.iunbug.com/archives/2012/06/04/208.html" target="_blank" rel="external">http://www.iunbug.com/archives/2012/06/04/208.html</a>   [译]JavaScript文件操作基础<br><a href="http://www.iunbug.com/archives/2012/06/05/254.html" target="_blank" rel="external">http://www.iunbug.com/archives/2012/06/05/254.html</a>   [译]JavaScript文件操作URL对象<a href="http://www.html5rocks.com/zh/tutorials/file/dndfiles" target="_blank" rel="external">http://www.html5rocks.com/zh/tutorials/file/dndfiles</a>     通过 File API 使用 JavaScript 读取文件</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ECMAScript 6 - 解构赋值]]></title>
       <url>/hexo/2017/07/31/ES6%20-%20%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</url>
       <content type="html"><![CDATA[<h4 id="ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"><a href="#ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。" class="headerlink" title="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"></a>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</h4><p> 最近在学习vuex中actions的参数中使用到了对象的解构赋值，故此前来学习了解 解构赋值语法<br><a id="more"></a></p>
@@ -221,15 +256,22 @@ let bar = 2;</code></li>
 <li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
 <li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
 </ol>
-<p>项目(子元素)的属性 :</p>
+</blockquote>
+</li>
+<li><p>项目(子元素)的属性 :</p>
+<blockquote>
 <ol>
-<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)<ol>
 <li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
 <li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
 <li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
 <li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
 </ol>
+</li>
+</ol>
 </blockquote>
+</li>
+<li><p><img src="https://dn-mhke0kuv.qbox.me/0dd26d8e99257ff36443.png" alt="汇总"></p>
 </li>
 <li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
 </li>

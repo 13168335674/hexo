@@ -94,10 +94,12 @@
 <meta property="og:url" content="http://13189449986.github.io/hexo/2017/07/25/Flex语法教程/index.html">
 <meta property="og:site_name" content="前端学习笔记">
 <meta property="og:description" content="网页布局（layout）是 CSS 的一个重点应用。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。">
-<meta property="og:updated_time" content="2017-07-25T09:51:14.516Z">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/0dd26d8e99257ff36443.png">
+<meta property="og:updated_time" content="2017-08-11T14:32:41.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flex语法教程">
 <meta name="twitter:description" content="网页布局（layout）是 CSS 的一个重点应用。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。">
+<meta name="twitter:image" content="https://dn-mhke0kuv.qbox.me/0dd26d8e99257ff36443.png">
 
 
 
@@ -358,15 +360,22 @@
 <li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
 <li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
 </ol>
-<p>项目(子元素)的属性 :</p>
+</blockquote>
+</li>
+<li><p>项目(子元素)的属性 :</p>
+<blockquote>
 <ol>
-<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)</li>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)<ol>
 <li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
 <li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
 <li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
 <li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
 </ol>
+</li>
+</ol>
 </blockquote>
+</li>
+<li><p><img src="https://dn-mhke0kuv.qbox.me/0dd26d8e99257ff36443.png" alt="汇总"></p>
 </li>
 <li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
 </li>
@@ -518,7 +527,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/hexo/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +549,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/hexo/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
