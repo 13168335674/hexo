@@ -3,9 +3,59 @@
   
     
     <entry>
+      <title><![CDATA[在vue 中使用Stylus]]></title>
+      <url>/hexo/2017/08/16/%E5%9C%A8vue%20%E4%B8%AD%E4%BD%BF%E7%94%A8Stylus/</url>
+      <content type="html"><![CDATA[<h3 id="Stylus-gt-一个CSS预处理器"><a href="#Stylus-gt-一个CSS预处理器" class="headerlink" title="Stylus =&gt; 一个CSS预处理器"></a>Stylus =&gt; 一个CSS预处理器</h3><a id="more"></a>
+<ol>
+<li><p>安装<br><code>cnpm install stylus</code></p>
+</li>
+<li><p>初始化项目</p>
+<ul>
+<li>vue init webpack filename</li>
+<li>cd filename</li>
+<li>cnpm install</li>
+<li>cnpm install stylus –save-dev</li>
+<li>cnpm install stylus-loader –save-dev</li>
+<li>npm run dev</li>
+</ul>
+</li>
+<li><p>使用</p>
+<blockquote>
+<p>vue中使用Stylus</p>
+   <style lang="stylus">
+     .box
+        background:red
+        ....
+  </style>
+</blockquote>
+</li>
+<li><p>引入</p>
+<blockquote>
+<p> 引入单独的.styl文件<br> 新建stylus文件 <strong>filename.styl</strong><br> 编写样式后<br> 通过<code>script</code>标签<code>import</code>引入<br> import ‘./filename.styl’<br>   或<br>   在<code>style</code>标签<code>@import</code>引入<br>  @import “./common/stylus/mixin.styl”</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSS选择器]]></title>
       <url>/hexo/2017/08/16/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a><a href="https://13189449986.github.io/MyBckup/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">CSS选择器</a></h3><a id="more"></a>
+      <content type="html"><![CDATA[<h3 id="CSS选择器的一些使用总结"><a href="#CSS选择器的一些使用总结" class="headerlink" title="CSS选择器的一些使用总结"></a><a href="https://13189449986.github.io/MyBckup/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">CSS选择器</a>的一些使用总结</h3><a id="more"></a>
 <p><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="external">CSS 选择器参考手册</a></p>
 <p><a href="http://www.w3cplus.com/css3/basic-selectors" target="_blank" rel="external">CSS3 选择器——基本选择器 </a></p>
 <p><a href="http://www.w3cplus.com/css3/attribute-selectors" target="_blank" rel="external">CSS3 选择器——属性选择器</a></p>
@@ -655,13 +705,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/index.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -680,6 +723,13 @@ alert( $(this).text() );
   <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
 </body>
 </html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/index.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
