@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://13189449986.github.io/hexo/2017/08/18/npm命令教程/index.html">
 <meta property="og:site_name" content="前端学习笔记">
 <meta property="og:description" content="总结npm常用命令npm (Node Package Manager)">
-<meta property="og:updated_time" content="2017-08-18T06:58:59.167Z">
+<meta property="og:updated_time" content="2017-08-18T07:24:47.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm命令教程">
 <meta name="twitter:description" content="总结npm常用命令npm (Node Package Manager)">
@@ -352,17 +352,14 @@
       
         <h3 id="总结npm常用命令"><a href="#总结npm常用命令" class="headerlink" title="总结npm常用命令"></a>总结npm常用命令</h3><p>npm (Node Package Manager)</p>
 <a id="more"></a>
-<p>##安装 </p>
-<blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
 <ul>
 <li>npm 默认与Node绑定在一起的，所以安装Node，自然就安装了npm。<br><a href="https://www.npmjs.com/" target="_blank" rel="external">npm 的官网</a></li>
 <li><strong>PS:</strong> npm安装插件过程：从<a href="http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器" target="_blank" rel="external">http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器</a> cnpm </li>
 <li>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
 </ul>
 </blockquote>
-<p>##安装模块</p>
-<p>######本地安装</p>
-<blockquote>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><h5 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h5><blockquote>
 <ul>
 <li><p>npm install gulp –save-dev<br>–save： 将该模配置信息保存至 package.json 文件中的Dependencies属性内。<br>-dev : 指明将配置信息保存至 package.json 文件中的的 Devdependencies 内。</p>
 </li>
@@ -374,50 +371,41 @@
 </li>
 </ul>
 </blockquote>
-<p>######速记安装</p>
-<blockquote>
+<h5 id="速记安装"><a href="#速记安装" class="headerlink" title="速记安装"></a>速记安装</h5><blockquote>
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#112;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#112;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#x6d;&#x65;&#x5b;&#64;&#118;&#x65;&#114;&#115;&#105;&#x6f;&#110;&#x5d;">&#112;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#x6d;&#x65;&#x5b;&#64;&#118;&#x65;&#114;&#115;&#105;&#x6f;&#110;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
-<p>##卸载模块</p>
-<p>######卸载本地模块</p>
-<blockquote>
+<h2 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h2><h5 id="卸载本地模块"><a href="#卸载本地模块" class="headerlink" title="卸载本地模块"></a>卸载本地模块</h5><blockquote>
 <ul>
 <li>npm uninstall rimraf<br>或者也可以简写为</li>
 <li>npm uni rimraf</li>
 </ul>
 </blockquote>
-<p>######卸载全局模块</p>
-<blockquote>
+<h5 id="卸载全局模块"><a href="#卸载全局模块" class="headerlink" title="卸载全局模块"></a>卸载全局模块</h5><blockquote>
 <ul>
 <li>npm uninstall gulp -g</li>
 </ul>
 </blockquote>
-<p>######删除模块并卸载配置信息</p>
-<blockquote>
+<h5 id="删除模块并卸载配置信息"><a href="#删除模块并卸载配置信息" class="headerlink" title="删除模块并卸载配置信息"></a>删除模块并卸载配置信息</h5><blockquote>
 <ul>
 <li>npm uninstall rimraf –save-dev</li>
 </ul>
 </blockquote>
-<p>######总的来说，卸载模块的格式：</p>
-<blockquote>
+<h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x70;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#x72;&#x73;&#x69;&#x6f;&#110;&#93;">&#x70;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#x72;&#x73;&#x69;&#x6f;&#110;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#112;&#x61;&#x63;&#107;&#97;&#x67;&#101;&#x4e;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#93;">&#112;&#x61;&#x63;&#107;&#97;&#x67;&#101;&#x4e;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
-<p>##更新模块</p>
-<p>######模块的更新与模块的安装和卸载在使用上格式相同</p>
-<blockquote>
+<h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
 <ul>
 <li>npm update [packageName] [-g] [–save-dev]</li>
 </ul>
 </blockquote>
-<p>######如果你要更新所有的插件的话</p>
-<blockquote>
+<h5 id="如果你要更新所有的插件的话"><a href="#如果你要更新所有的插件的话" class="headerlink" title="如果你要更新所有的插件的话"></a>如果你要更新所有的插件的话</h5><blockquote>
 <ul>
 <li>npm update [–save-dev]</li>
 </ul>
@@ -622,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结npm常用命令"><span class="nav-number">1.</span> <span class="nav-text">总结npm常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结npm常用命令"><span class="nav-number">1.</span> <span class="nav-text">总结npm常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number"></span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装模块"><span class="nav-number"></span> <span class="nav-text">安装模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本地安装"><span class="nav-number">0.0.1.</span> <span class="nav-text">本地安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#速记安装"><span class="nav-number">0.0.2.</span> <span class="nav-text">速记安装</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载模块"><span class="nav-number"></span> <span class="nav-text">卸载模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#卸载本地模块"><span class="nav-number">0.0.1.</span> <span class="nav-text">卸载本地模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卸载全局模块"><span class="nav-number">0.0.2.</span> <span class="nav-text">卸载全局模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除模块并卸载配置信息"><span class="nav-number">0.0.3.</span> <span class="nav-text">删除模块并卸载配置信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总的来说，卸载模块的格式："><span class="nav-number">0.0.4.</span> <span class="nav-text">总的来说，卸载模块的格式：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新模块"><span class="nav-number"></span> <span class="nav-text">更新模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模块的更新与模块的安装和卸载在使用上格式相同"><span class="nav-number">0.0.1.</span> <span class="nav-text">模块的更新与模块的安装和卸载在使用上格式相同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如果你要更新所有的插件的话"><span class="nav-number">0.0.2.</span> <span class="nav-text">如果你要更新所有的插件的话</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
