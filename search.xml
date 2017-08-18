@@ -3,6 +3,98 @@
   
     
     <entry>
+      <title><![CDATA[npm命令教程]]></title>
+      <url>/hexo/2017/08/18/npm%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="总结npm常用命令"><a href="#总结npm常用命令" class="headerlink" title="总结npm常用命令"></a>总结npm常用命令</h3><p>npm (Node Package Manager)</p>
+<a id="more"></a>
+<p>##安装 </p>
+<blockquote>
+<ul>
+<li>npm 默认与Node绑定在一起的，所以安装Node，自然就安装了npm。<br><a href="https://www.npmjs.com/" target="_blank" rel="external">npm 的官网</a></li>
+<li><strong>PS:</strong> npm安装插件过程：从<a href="http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器" target="_blank" rel="external">http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器</a> cnpm </li>
+<li>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
+</ul>
+</blockquote>
+<p>##安装模块</p>
+<p>######本地安装</p>
+<blockquote>
+<ul>
+<li><p>npm install gulp –save-dev<br>–save： 将该模配置信息保存至 package.json 文件中的Dependencies属性内。<br>-dev : 指明将配置信息保存至 package.json 文件中的的 Devdependencies 内。</p>
+</li>
+<li><p>全局安装<br>npm install gulp -g</p>
+</li>
+<li><p>安装指定版本号的模块<br>npm install rimraf@2.6.1</p>
+</li>
+<li><p>根据package.json配置文件安装模块<br>npm install</p>
+</li>
+</ul>
+</blockquote>
+<p>######速记安装</p>
+<blockquote>
+<ul>
+<li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
+</li>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#112;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+</li>
+</ul>
+</blockquote>
+<p>##卸载模块</p>
+<p>######卸载本地模块</p>
+<blockquote>
+<ul>
+<li>npm uninstall rimraf<br>或者也可以简写为</li>
+<li>npm uni rimraf</li>
+</ul>
+</blockquote>
+<p>######卸载全局模块</p>
+<blockquote>
+<ul>
+<li>npm uninstall gulp -g</li>
+</ul>
+</blockquote>
+<p>######删除模块并卸载配置信息</p>
+<blockquote>
+<ul>
+<li>npm uninstall rimraf –save-dev</li>
+</ul>
+</blockquote>
+<p>######总的来说，卸载模块的格式：</p>
+<blockquote>
+<ul>
+<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x70;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#x72;&#x73;&#x69;&#x6f;&#110;&#93;">&#x70;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#x72;&#x73;&#x69;&#x6f;&#110;&#93;</a> [-g] [–save-dev]</li>
+</ul>
+</blockquote>
+<p>##更新模块</p>
+<p>######模块的更新与模块的安装和卸载在使用上格式相同</p>
+<blockquote>
+<ul>
+<li>npm update [packageName] [-g] [–save-dev]</li>
+</ul>
+</blockquote>
+<p>######如果你要更新所有的插件的话</p>
+<blockquote>
+<ul>
+<li>npm update [–save-dev]</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSS3实现流星动画]]></title>
       <url>/hexo/2017/08/18/CSS3%E5%AE%9E%E7%8E%B0%E6%B5%81%E6%98%9F%E5%8A%A8%E7%94%BB/</url>
       <content type="html"><![CDATA[<h3 id="来个青春时尚的流星雨吧！"><a href="#来个青春时尚的流星雨吧！" class="headerlink" title="来个青春时尚的流星雨吧！"></a>来个青春时尚的流星雨吧！</h3><a id="more"></a>
@@ -730,6 +822,13 @@ alert( $(this).text() );
   
     
     <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -751,6 +850,13 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/index.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -773,28 +879,14 @@ alert( $(this).text() );
     
     <entry>
       <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/index.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[关于]]></title>
       <url>/hexo/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
