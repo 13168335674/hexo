@@ -30,7 +30,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x70;&#97;&#x63;&#x6b;&#x61;&#x67;&#101;&#78;&#x61;&#109;&#x65;&#91;&#64;&#118;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#x5d;">&#x70;&#97;&#x63;&#x6b;&#x61;&#x67;&#101;&#78;&#x61;&#109;&#x65;&#91;&#64;&#118;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#x5d;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x70;&#x61;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#97;&#109;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#93;">&#x70;&#x61;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#97;&#109;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#93;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -52,7 +52,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#x6d;&#x65;&#x5b;&#x40;&#118;&#x65;&#x72;&#x73;&#105;&#111;&#110;&#x5d;">&#x70;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#x6d;&#x65;&#x5b;&#x40;&#118;&#x65;&#x72;&#x73;&#105;&#111;&#110;&#x5d;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x70;&#97;&#x63;&#x6b;&#97;&#x67;&#x65;&#x4e;&#x61;&#109;&#x65;&#x5b;&#64;&#118;&#101;&#x72;&#115;&#x69;&#111;&#110;&#93;">&#x70;&#97;&#x63;&#x6b;&#97;&#x67;&#x65;&#x4e;&#x61;&#109;&#x65;&#x5b;&#64;&#118;&#101;&#x72;&#115;&#x69;&#111;&#110;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -853,14 +853,14 @@ alert( $(this).text() );
     
     <entry>
       <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
+      <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[标签]]></title>
-      <url>/hexo/404/index.html</url>
+      <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
