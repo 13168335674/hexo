@@ -79,7 +79,7 @@
 <link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="实用工具," />
+  <meta name="keywords" content="教程," />
 
 
 
@@ -95,19 +95,19 @@
 
 
 
-<meta name="description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta name="keywords" content="实用工具">
+<meta name="description" content="localStroages是HMTL5新型客户端数据存取新方式IE">
+<meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微博图床">
-<meta property="og:url" content="http://13189449986.github.io/hexo/2017/01/11/微博图床/index.html">
+<meta property="og:title" content="封装localStorage本地数据存取方法">
+<meta property="og:url" content="http://13189449986.github.io/hexo/2017/08/29/封装localStorage本地数据存取方法/index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-22T04:09:16.686Z">
+<meta property="og:description" content="localStroages是HMTL5新型客户端数据存取新方式IE">
+<meta property="og:image" content="http://orf1ycv0g.bkt.clouddn.com/blog/170828/7a7AI6hj7A.png?imageslim">
+<meta property="og:updated_time" content="2017-08-29T06:49:08.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微博图床">
-<meta name="twitter:description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="封装localStorage本地数据存取方法">
+<meta name="twitter:description" content="localStroages是HMTL5新型客户端数据存取新方式IE">
+<meta name="twitter:image" content="http://orf1ycv0g.bkt.clouddn.com/blog/170828/7a7AI6hj7A.png?imageslim">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/01/11/微博图床/"/>
+  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/08/29/封装localStorage本地数据存取方法/"/>
 
 
 
 
 
-  <title>微博图床 | 前端学习笔记</title>
+  <title>封装localStorage本地数据存取方法 | 前端学习笔记</title>
 <link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/01/11/微博图床/">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/08/29/封装localStorage本地数据存取方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="家伟">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微博图床</h1>
+          <h1 class="post-title" itemprop="name headline">封装localStorage本地数据存取方法</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T15:45:28+08:00">
-                2017-01-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T14:27:18+08:00">
+                2017-08-29
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/hexo/categories/实用工具/" itemprop="url" rel="index">
-                    <span itemprop="name">实用工具</span>
+                  <a href="/hexo/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
                   </a>
                 </span>
 
@@ -352,21 +352,33 @@
       
 
       
-        <p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+        <h3 id="localStroages是HMTL5新型客户端数据存取新方式IE"><a href="#localStroages是HMTL5新型客户端数据存取新方式IE" class="headerlink" title="localStroages是HMTL5新型客户端数据存取新方式IE"></a>localStroages是HMTL5新型客户端数据存取新方式IE</h3><a id="more"></a>
+<blockquote>
+<p>欢迎收看饿了么系列 之 localStroage封装</p>
+</blockquote>
 <ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+<li><p><em>window.localStorage</em></p>
+<ul>
+<li>读取： localStroage.getItem(‘key’)</li>
+<li>储存： localStroage.setItem(‘key’,’value’)</li>
+<li>兼容性： IE8+</li>
+<li>大小： 5M</li>
+<li>数据类型： String</li>
+<li>有效期： 永久</li>
+<li>在浏览器的隐私模式下面是不可读取且无法给爬虫抓取数据</li>
+</ul>
+</li>
+<li><p>封装localStroage</p>
+<ul>
+<li>getter  saveToLocal(id,key,value){}</li>
+<li>setter loadFromLocal(id,key,def){}</li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<p>实用微博图床推荐 </p>
+<p>源码地址 <a href="https://github.com/13189449986/MyBckup/blob/master/local.js" target="_blank" rel="external">My Github</a></p>
 </blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+<p><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170828/7a7AI6hj7A.png?imageslim" alt="mark"></p>
 
       
     </div>
@@ -417,7 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/hexo/tags/实用工具/" rel="tag"># 实用工具</a>
+            <a href="/hexo/tags/教程/" rel="tag"># 教程</a>
           
         </div>
       
@@ -430,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo/2016/12/11/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/hexo/2017/08/28/封装时间格式化函数/" rel="next" title="封装时间格式化函数">
+                <i class="fa fa-chevron-left"></i> 封装时间格式化函数
               </a>
             
           </div>
@@ -439,10 +451,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo/2017/06/24/Git命令教程/" rel="prev" title="Git命令教程">
-                Git命令教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg"
@@ -552,6 +569,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStroages是HMTL5新型客户端数据存取新方式IE"><span class="nav-number">1.</span> <span class="nav-text">localStroages是HMTL5新型客户端数据存取新方式IE</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -3,6 +3,89 @@
   
     
     <entry>
+      <title><![CDATA[封装localStorage本地数据存取方法]]></title>
+      <url>/hexo/2017/08/29/%E5%B0%81%E8%A3%85localStorage%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="localStroages是HMTL5新型客户端数据存取新方式IE"><a href="#localStroages是HMTL5新型客户端数据存取新方式IE" class="headerlink" title="localStroages是HMTL5新型客户端数据存取新方式IE"></a>localStroages是HMTL5新型客户端数据存取新方式IE</h3><a id="more"></a>
+<blockquote>
+<p>欢迎收看饿了么系列 之 localStroage封装</p>
+</blockquote>
+<ul>
+<li><p><em>window.localStorage</em></p>
+<ul>
+<li>读取： localStroage.getItem(‘key’)</li>
+<li>储存： localStroage.setItem(‘key’,’value’)</li>
+<li>兼容性： IE8+</li>
+<li>大小： 5M</li>
+<li>数据类型： String</li>
+<li>有效期： 永久</li>
+<li>在浏览器的隐私模式下面是不可读取且无法给爬虫抓取数据</li>
+</ul>
+</li>
+<li><p>封装localStroage</p>
+<ul>
+<li>getter  saveToLocal(id,key,value){}</li>
+<li>setter loadFromLocal(id,key,def){}</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>源码地址 <a href="https://github.com/13189449986/MyBckup/blob/master/local.js" target="_blank" rel="external">My Github</a></p>
+</blockquote>
+<p><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170828/7a7AI6hj7A.png?imageslim" alt="mark"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[封装时间格式化函数]]></title>
+      <url>/hexo/2017/08/28/%E5%B0%81%E8%A3%85%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%87%BD%E6%95%B0/</url>
+      <content type="html"><![CDATA[<h3 id="处理服务器返回的毫秒数时间格式"><a href="#处理服务器返回的毫秒数时间格式" class="headerlink" title="处理服务器返回的毫秒数时间格式"></a>处理服务器返回的毫秒数时间格式</h3><a id="more"></a>
+<blockquote>
+<p>欢迎收看饿了么系列 之 时间方法封装</p>
+</blockquote>
+<ul>
+<li>封装localStroage<ul>
+<li>formatDate(date, fmt){}</li>
+<li>date:Number ,fmt:String</li>
+<li>return fmt</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>源码地址 <a href="https://github.com/13189449986/MyBckup/blob/master/date.js" target="_blank" rel="external">myGithub</a></p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-70cb6b2353da1f82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="时间封装方法"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[npm命令教程]]></title>
       <url>/hexo/2017/08/18/npm%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h3 id="总结npm常用命令"><a href="#总结npm常用命令" class="headerlink" title="总结npm常用命令"></a>总结npm常用命令</h3><p>npm (Node Package Manager)</p>
@@ -30,7 +113,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#112;&#x61;&#99;&#107;&#97;&#103;&#x65;&#x4e;&#97;&#109;&#101;&#x5b;&#x40;&#x76;&#101;&#114;&#x73;&#105;&#111;&#x6e;&#93;">&#112;&#x61;&#99;&#107;&#97;&#103;&#x65;&#x4e;&#97;&#109;&#101;&#x5b;&#x40;&#x76;&#101;&#114;&#x73;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x70;&#97;&#x63;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#x72;&#115;&#105;&#x6f;&#x6e;&#x5d;">&#x70;&#97;&#x63;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#x6d;&#101;&#91;&#64;&#118;&#x65;&#x72;&#115;&#105;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -52,7 +135,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#112;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#78;&#97;&#x6d;&#101;&#x5b;&#64;&#118;&#x65;&#x72;&#x73;&#105;&#111;&#110;&#93;">&#112;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#78;&#97;&#x6d;&#101;&#x5b;&#64;&#118;&#x65;&#x72;&#x73;&#105;&#111;&#110;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#112;&#97;&#99;&#107;&#x61;&#103;&#101;&#x4e;&#x61;&#x6d;&#101;&#x5b;&#x40;&#x76;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#x5d;">&#112;&#97;&#99;&#107;&#x61;&#103;&#101;&#x4e;&#x61;&#x6d;&#101;&#x5b;&#x40;&#x76;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -447,50 +530,6 @@
 <li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
 </li>
 </ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> css </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[11111]]></title>
-      <url>/hexo/2017/07/25/%E5%B0%81%E8%A3%85localStorage%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h3 id="localStroages是HMTL5新型客户端数据存取新方式IE"><a href="#localStroages是HMTL5新型客户端数据存取新方式IE" class="headerlink" title="localStroages是HMTL5新型客户端数据存取新方式IE"></a>localStroages是HMTL5新型客户端数据存取新方式IE</h3><a id="more"></a>
-<blockquote>
-<p>欢迎收看饿了么系列 之 localStroage封装</p>
-<ul>
-<li><em>window.localStorage</em><ul>
-<li>读取： localStroage.getItem(‘key’)</li>
-<li>储存： localStroage.setItem(‘key’,’value’)</li>
-<li>兼容性： IE8+</li>
-<li>大小： 5M</li>
-<li>数据类型： String</li>
-<li>有效期： 永久</li>
-<li>在浏览器的隐私模式下面是不可读取且无法给爬虫抓取数据</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>封装localStroage<ul>
-<li>getter  saveToLocal(id,key,value){}</li>
-<li>setter loadFromLocal(id,key,def){}</li>
-</ul>
-</li>
-</ul>
-<p><img src="http://orf1ycv0g.bkt.clouddn.com/blog/170828/7a7AI6hj7A.png?imageslim" alt="mark"></p>
 ]]></content>
       
         <categories>
