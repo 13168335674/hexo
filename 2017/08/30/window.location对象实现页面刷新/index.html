@@ -79,7 +79,7 @@
 <link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="教程," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="Git命令这篇文章将对git命令进行梳理,巩固一下知识">
-<meta name="keywords" content="教程">
+<meta name="description" content="用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git命令教程">
-<meta property="og:url" content="http://13189449986.github.io/hexo/2017/06/24/Git命令教程/index.html">
+<meta property="og:title" content="window.location对象实现页面刷新">
+<meta property="og:url" content="http://13189449986.github.io/hexo/2017/08/30/window.location对象实现页面刷新/index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="Git命令这篇文章将对git命令进行梳理,巩固一下知识">
-<meta property="og:updated_time" content="2017-08-28T08:52:10.169Z">
+<meta property="og:description" content="用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据">
+<meta property="og:updated_time" content="2017-08-30T02:09:17.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git命令教程">
-<meta name="twitter:description" content="Git命令这篇文章将对git命令进行梳理,巩固一下知识">
+<meta name="twitter:title" content="window.location对象实现页面刷新">
+<meta name="twitter:description" content="用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/06/24/Git命令教程/"/>
+  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/08/30/window.location对象实现页面刷新/"/>
 
 
 
 
 
-  <title>Git命令教程 | 前端学习笔记</title>
+  <title>window.location对象实现页面刷新 | 前端学习笔记</title>
 <link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/06/24/Git命令教程/">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/08/30/window.location对象实现页面刷新/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="家伟">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git命令教程</h1>
+          <h1 class="post-title" itemprop="name headline">window.location对象实现页面刷新</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T12:58:41+08:00">
-                2017-06-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T10:01:59+08:00">
+                2017-08-30
               </time>
             
 
@@ -350,30 +350,11 @@
       
 
       
-        <h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h4 id="这篇文章将对git命令进行梳理-巩固一下知识"><a href="#这篇文章将对git命令进行梳理-巩固一下知识" class="headerlink" title="这篇文章将对git命令进行梳理,巩固一下知识"></a>这篇文章将对git命令进行梳理,巩固一下知识</h4><a id="more"></a>
-<h3 id="1-开始"><a href="#1-开始" class="headerlink" title="1. 开始"></a>1. 开始</h3><blockquote>
-<p> 使用Git前，可以使用一个已经本地存在的目录或创建一个空目录作为Git仓库.首先建立使用命令<br><code>git init</code> 创建仓库(repository).</p>
-</blockquote>
-<h3 id="2-操作"><a href="#2-操作" class="headerlink" title="2. 操作"></a>2. 操作</h3><blockquote>
-<p>添加文件 :  <code>git add FlieName</code></p>
-<p>提交 : <code>git commit -m &quot;Adding files&quot;</code></p>
-<p>– 当我们修改了很多文件不想每一个都add，我们可以使用-a标识。<code>git commit -a -m &quot;Changed some files&quot;</code> (<code>-a</code>不会将新文件提交，只能将仓库中已有的文档进行提交修改)</p>
-<p>查看库的当前状态 : <code>git status</code></p>
-<p>查看上次修改的详情 : <code>git diff</code></p>
-<p>查看历史记录 : <code>git log --pretty=oneline</code></p>
-<p>将工作区的版本回退到版本库内容(撤销修改)  : <code>git checkout -- rmfile</code></p>
-<p>克隆库 : <code>git clone ssh://example.com/~/www/project.git</code></p>
-<p>推送本地修改到服务器 : <code>git push ssh://example.com/~/www/project.git</code></p>
-<p>从服务器取得更新 : <code>git pull http://git.example.com/project.git</code></p>
-<p>删除库中文件 : <code>git rm file</code></p>
-<p>创建分支 : <code>git branch newtest</code></p>
-<p>删除分支 : <code>git branch -d newtest</code></p>
-<p>进入分支 : <code>git checkout newtest</code></p>
-<p>回到主分支 : <code>git checkout master</code></p>
-<p>合并分支 : <code>git checkout master  ==&gt; git merge newtest</code><br>– 对其他分支的更改不会反映在主分支上。如果想将更改提交到主分支，则需切换回master分支，然后使用合并。</p>
-</blockquote>
-<hr>
-<h4 id="想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程"><a href="#想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程" class="headerlink" title="想对Git进行充分详细的了解,推荐 廖雪峰老师的Git详细教程"></a><strong>想对Git进行充分详细的了解,推荐</strong> <strong><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰老师的Git详细教程</a></strong></h4>
+        <h4 id="用户点击浏览器后退按钮后页面ajax没有更新-通过使用windowlocation对象的方法属性实现页面刷新并刷新数据"><a href="#用户点击浏览器后退按钮后页面ajax没有更新-通过使用windowlocation对象的方法属性实现页面刷新并刷新数据" class="headerlink" title="用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据"></a>用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据</h4><a id="more"></a>
+<p><strong>window.location.reload()</strong><br>该方法使浏览器刷新当前页面。<br>语法： location.reload()<br>参数： 可选参数， 默认为 false，从客户端缓存里取当前页进行F5刷新。 true, 则以GET  方式，从服务端取最新的页面, 相当于客户端点击 Shift + F5(“刷新”)。该方法在刷新时会<br>事件: 如果有数据提交的话，会弹窗提示是否提交<br>bug: 安卓微信浏览器中location.reload方法失效无法跳转?<br>解决办法: 使用location.href代替reload()来进行页面刷新或者跳转。<br><code>window.location.href = location.href+&#39;?time=&#39;+((new Date()).getTime());</code></p>
+<p><strong>location.href</strong><br>location.href是最常用的属性,用于获得或设置窗口的URL，类似于document.url属性。<br>window.location.href = window.location.href;<br>// 这样也可以实现页面刷新并提交数据，数据提交时无弹窗提示</p>
+<p><strong>location.replace()</strong><br>该方法通过指定URL替换当前缓存在历史里（客户端）的项目，因此当使用replace方法之后，你不能通过“前进”和“后退”来访问已经被替换的URL。<br>使用location.href属性跳转会被加入到浏览器的历史栈中，这意味着可以通过后退键来撤退。如果用户为了提高安全级别可以采用location.reolace(),这种方法不会有历史记录，使其无法后退到当前页.</p>
+
       
     </div>
 
@@ -423,7 +404,7 @@
       
         <div class="post-tags">
           
-            <a href="/hexo/tags/教程/" rel="tag"># 教程</a>
+            <a href="/hexo/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -436,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo/2017/01/11/微博图床/" rel="next" title="微博图床">
-                <i class="fa fa-chevron-left"></i> 微博图床
+              <a href="/hexo/2017/08/29/封装localStorage本地数据存取方法/" rel="next" title="封装localStorage本地数据存取方法">
+                <i class="fa fa-chevron-left"></i> 封装localStorage本地数据存取方法
               </a>
             
           </div>
@@ -445,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo/2017/06/30/Jquery教程/" rel="prev" title="Jquery教程">
-                Jquery教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git命令"><span class="nav-number">1.</span> <span class="nav-text">Git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这篇文章将对git命令进行梳理-巩固一下知识"><span class="nav-number">1.0.1.</span> <span class="nav-text">这篇文章将对git命令进行梳理,巩固一下知识</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-开始"><span class="nav-number">1.1.</span> <span class="nav-text">1. 开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-操作"><span class="nav-number">1.2.</span> <span class="nav-text">2. 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程"><span class="nav-number">1.2.1.</span> <span class="nav-text">想对Git进行充分详细的了解,推荐 廖雪峰老师的Git详细教程</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户点击浏览器后退按钮后页面ajax没有更新-通过使用windowlocation对象的方法属性实现页面刷新并刷新数据"><span class="nav-number">1.</span> <span class="nav-text">用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据</span></a></li></ol></div>
             
 
           </div>
