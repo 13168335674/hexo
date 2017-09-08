@@ -5,7 +5,8 @@
     <entry>
       <title><![CDATA[字符串、数组处理方法总结]]></title>
       <url>/hexo/2017/09/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E6%95%B0%E7%BB%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<blockquote>
+      <content type="html"><![CDATA[<p>字符串、数组处理方法总结<br><a id="more"></a></p>
+<blockquote>
 <p><strong>String转Array</strong><br> let str = “Hello”;<br> let arr = [];<br>arr = str.split(‘’);  // [ ‘H’, ‘e’, ‘l’, ‘l’, ‘o’ ]<br><img src="http://upload-images.jianshu.io/upload_images/4985324-18484e14e0fc11ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="split.png"></p>
 <p><strong>Array转String</strong><br> let str = ‘’;<br> let arr = [ ‘H’, ‘e’, ‘l’, ‘l’, ‘o’ ];<br>str = arr.join(); //  Hello<br><img src="http://upload-images.jianshu.io/upload_images/4985324-fbb79a405a3d79a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="join.png"></p>
 <p><strong>slice()</strong><br>*arrayObject.slice(start,end)<br>可从已有的数组中返回选定的元素(返回新数组)<br><img src="http://upload-images.jianshu.io/upload_images/4985324-b4d148ec11da7a71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="slice.png"></p>
@@ -209,7 +210,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x70;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#109;&#101;&#x5b;&#x40;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#x6e;&#93;">&#x70;&#x61;&#99;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#109;&#101;&#x5b;&#x40;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x70;&#97;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#x76;&#x65;&#114;&#115;&#105;&#x6f;&#x6e;&#93;">&#x70;&#97;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#97;&#x6d;&#101;&#91;&#64;&#x76;&#x65;&#114;&#115;&#105;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -231,7 +232,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x70;&#x61;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#97;&#109;&#101;&#x5b;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;">&#x70;&#x61;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#97;&#109;&#101;&#x5b;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x70;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#101;&#114;&#115;&#105;&#x6f;&#x6e;&#93;">&#x70;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#x4e;&#x61;&#109;&#x65;&#91;&#64;&#118;&#101;&#114;&#115;&#105;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -922,6 +923,41 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[http状态码]]></title>
       <url>/hexo/2017/01/11/http%E7%8A%B6%E6%80%81%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="状态码查询"><a href="#状态码查询" class="headerlink" title="状态码查询"></a>状态码查询</h3><a id="more"></a>
@@ -1000,41 +1036,6 @@ alert( $(this).text() );
 </code></pre></li>
 </ul>
 <p><strong>常见的HTTP相应状态码</strong><br>200：请求被正常处理<br>204：请求被受理但没有资源可以返回<br>206：客户端只是请求资源的一部分，服务器只对请求的部分资源执行GET方法，相应报文中通过Content-Range指定范围的资源。<br>301：永久性重定向<br>302：临时重定向<br>303：与302状态码有相似功能，只是它希望客户端在请求一个URI的时候，能通过GET方法重定向到另一个URI上<br>304：发送附带条件的请求时，条件不满足时返回，与重定向无关<br>307：临时重定向，与302类似，只是强制要求使用POST方法<br>400：请求报文语法有误，服务器无法识别<br>401：请求需要认证<br>403：请求的对应资源禁止被访问<br>404：服务器无法找到对应资源<br>500：服务器内部错误<br>503：服务器正忙</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 实用工具 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 实用工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[微博图床]]></title>
-      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
-      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
-<ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
-</ul>
-<blockquote>
-<p>实用微博图床推荐 </p>
-</blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
 ]]></content>
       
         <categories>
@@ -1141,15 +1142,15 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/hexo/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
