@@ -79,7 +79,7 @@
 <link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -96,7 +96,7 @@
 
 
 <meta name="description" content="vue2.0父子组件及非父子组件间实现通信">
-<meta name="keywords" content="css">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue2.0组件间通信">
 <meta property="og:url" content="http://13189449986.github.io/hexo/2017/09/08/vue2.0父子组件以及非父子组件如何通信/index.html">
@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4985324-e2e43d46d207324f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4985324-f76db22b2bde6354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-08T14:15:04.001Z">
+<meta property="og:updated_time" content="2017-09-08T15:08:17.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue2.0组件间通信">
 <meta name="twitter:description" content="vue2.0父子组件及非父子组件间实现通信">
@@ -372,11 +372,7 @@
 <p>###2.子组件与父组件通信<br><strong>在vue中是不允许子组件直接修改父组件的值，在vue中只允许单向数据传递</strong></p>
 <blockquote>
 <p>子组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f2e0c20c7ffc0fd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-子组件.png"></p>
-<p>父组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-c140d859e0b96880.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-父组件.png"></p>
-</blockquote>
-<p>3.非父子组件间通信</p>
-<blockquote>
-<p>创建事件中心<br><img src="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="busJs.png"></p>
+<p>父组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-c140d859e0b96880.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-父组件.png"><br><strong>PS</strong><br><em>vue2.3可以使用.sync修饰符进行子组件改变props值(注意这里是改变。想使用props值的话通过computed进行处理)</em><br>3.非父子组件间通信<br>创建事件中心<br><img src="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="busJs.png"></p>
 <p>组件1触发：<br><img src="http://upload-images.jianshu.io/upload_images/4985324-e2e43d46d207324f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HiVue.png"></p>
 <p>组件2接收:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f76db22b2bde6354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hellloVue.png"></p>
 </blockquote>
@@ -430,7 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/hexo/tags/css/" rel="tag"># css</a>
+            <a href="/hexo/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
