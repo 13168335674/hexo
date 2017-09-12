@@ -3,6 +3,113 @@
   
     
     <entry>
+      <title><![CDATA[不定宽高水平居中]]></title>
+      <url>/hexo/2017/09/12/CSS-%E4%B8%8D%E5%AE%9A%E5%AE%BD%E9%AB%98%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/</url>
+      <content type="html"><![CDATA[<h3 id="设置不定宽高元素进行水平居中"><a href="#设置不定宽高元素进行水平居中" class="headerlink" title="设置不定宽高元素进行水平居中"></a>设置不定宽高元素进行水平居中</h3><a id="more"></a>
+<blockquote>
+<p>1.最爱的flex实现<br><img src="http://upload-images.jianshu.io/upload_images/4985324-cdd7fa73d4e46515.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="flex.png"><br>2.通过设置relative和transform进行位置偏移<br><img src="http://upload-images.jianshu.io/upload_images/4985324-8176219b9e5ef6f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不定高.png"></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS布局-绝对尾部(Css Sticty Footer)]]></title>
+      <url>/hexo/2017/09/12/CSS%E5%B8%83%E5%B1%80-%E7%BB%9D%E5%AF%B9%E5%B0%BE%E9%83%A8/</url>
+      <content type="html"><![CDATA[<h3 id="当做一个页面时，如果页面内容很少，不足于填充一屏的窗口区域，通过Css-Sticty-Footer-实现页脚始终保持在页面的底部"><a href="#当做一个页面时，如果页面内容很少，不足于填充一屏的窗口区域，通过Css-Sticty-Footer-实现页脚始终保持在页面的底部" class="headerlink" title="当做一个页面时，如果页面内容很少，不足于填充一屏的窗口区域，通过Css Sticty Footer 实现页脚始终保持在页面的底部"></a>当做一个页面时，如果页面内容很少，不足于填充一屏的窗口区域，通过Css Sticty Footer 实现页脚始终保持在页面的底部</h3><a id="more"></a>
+<blockquote>
+<ol>
+<li><p>设置padding-bottom和负margin-bottom实现<br><img src="http://upload-images.jianshu.io/upload_images/4985324-3218ef3aa05863df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="-margin-bottom+padding-bottom.png"></p>
+</li>
+<li><p>使用display：flex实现<br><img src="http://upload-images.jianshu.io/upload_images/4985324-920c73481d9506f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="flex.png"></p>
+</li>
+</ol>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[web安全之XSS攻击]]></title>
+      <url>/hexo/2017/09/10/web%E5%AE%89%E5%85%A8%E4%B9%8BXSS%E6%94%BB%E5%87%BB/</url>
+      <content type="html"><![CDATA[<p><strong> XSS攻击及防范 </strong><br><a id="more"></a></p>
+<h3 id="1-什么是XSS"><a href="#1-什么是XSS" class="headerlink" title="1. 什么是XSS?"></a>1. 什么是XSS?</h3><p>CSRF（Cross-site request forgery），中文名称：跨站请求伪造。<br>将恶意代码植入到提供给其他用户使用的页面中，简单的理解为一种javascript代码注入。</p>
+<h3 id="2-XSS危害"><a href="#2-XSS危害" class="headerlink" title="2. XSS危害"></a>2. XSS危害</h3><ul>
+<li>挂马</li>
+<li>盗取用户Cookie。</li>
+<li>DOS（拒绝服务）客户端浏览器。</li>
+<li>钓鱼攻击，高级的钓鱼技巧。</li>
+<li>删除目标文章、恶意篡改数据、嫁祸。</li>
+<li>劫持用户Web行为，甚至进一步渗透内网。</li>
+<li>爆发Web2.0蠕虫。</li>
+<li>蠕虫式的DDoS攻击。</li>
+<li>蠕虫式挂马攻击、刷广告、刷浏量、破坏网上数据</li>
+</ul>
+<h3 id="3-XSS分类"><a href="#3-XSS分类" class="headerlink" title="3.XSS分类"></a>3.XSS分类</h3><p>XSS分为三类：</p>
+<ul>
+<li>反射型XSS(非持久型) <ul>
+<li>发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。这个过程像一次反射，故叫反射型XSS。</li>
+</ul>
+</li>
+<li>存储型XSS(持久型) <ul>
+<li>存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端（数据库，内存，文件系统等），下次请求目标页面时不用再提交XSS代码。</li>
+</ul>
+</li>
+<li>DOM XSS(客户端)<ul>
+<li>DOM XSS和反射型XSS、存储型XSS的差别在于DOM XSS的代码并不需要服务器参与，触发XSS靠的是浏览器端的DOM解析，完全是客户端的事情。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-XSS的防御措施："><a href="#4-XSS的防御措施：" class="headerlink" title="4.XSS的防御措施："></a>4.XSS的防御措施：</h3><ul>
+<li>过滤转义输入输出</li>
+<li>避免使用eval、new Function等执行字符串的方法，除非确定字符串和用户输入无关</li>
+<li>使用cookie的httpOnly属性，加上了这个属性的cookie字段，js是无法进行读写的</li>
+<li>使用innerHTML、document.write的时候，如果数据是用户输入的，那么需要对象关键字符进行过滤与转义</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[字符串、数组处理方法总结]]></title>
       <url>/hexo/2017/09/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E6%95%B0%E7%BB%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<p>字符串、数组处理方法总结<br><a id="more"></a></p>
@@ -206,7 +313,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x70;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#109;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#x6e;&#93;">&#x70;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#109;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#112;&#x61;&#99;&#x6b;&#97;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#x6b;&#97;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -228,7 +335,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x70;&#97;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#109;&#101;&#91;&#64;&#x76;&#101;&#114;&#x73;&#105;&#111;&#x6e;&#93;">&#x70;&#97;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#97;&#109;&#101;&#91;&#64;&#x76;&#101;&#114;&#x73;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#112;&#x61;&#99;&#x6b;&#97;&#x67;&#x65;&#x4e;&#97;&#x6d;&#x65;&#91;&#64;&#x76;&#x65;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#x6b;&#97;&#x67;&#x65;&#x4e;&#97;&#x6d;&#x65;&#91;&#64;&#x76;&#x65;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
