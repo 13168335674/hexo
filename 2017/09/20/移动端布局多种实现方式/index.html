@@ -79,7 +79,7 @@
 <link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="实用工具," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -95,19 +95,17 @@
 
 
 
-<meta name="description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta name="keywords" content="实用工具">
+<meta name="description" content="对比总结一下热门的解决方案">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微博图床">
-<meta property="og:url" content="http://13189449986.github.io/hexo/2017/01/11/微博图床/index.html">
+<meta property="og:title" content="移动端布局多种实现方式">
+<meta property="og:url" content="http://13189449986.github.io/hexo/2017/09/20/移动端布局多种实现方式/index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-22T04:09:16.686Z">
+<meta property="og:description" content="对比总结一下热门的解决方案">
+<meta property="og:updated_time" content="2017-09-19T16:01:01.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微博图床">
-<meta name="twitter:description" content="首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="移动端布局多种实现方式">
+<meta name="twitter:description" content="对比总结一下热门的解决方案">
 
 
 
@@ -135,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/01/11/微博图床/"/>
+  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/09/20/移动端布局多种实现方式/"/>
 
 
 
 
 
-  <title>微博图床 | 前端学习笔记</title>
+  <title>移动端布局多种实现方式 | 前端学习笔记</title>
 <link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/01/11/微博图床/">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/09/20/移动端布局多种实现方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="家伟">
@@ -283,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微博图床</h1>
+          <h1 class="post-title" itemprop="name headline">移动端布局多种实现方式</h1>
         
 
         <div class="post-meta">
@@ -295,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T15:45:28+08:00">
-                2017-01-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T00:00:35+08:00">
+                2017-09-20
               </time>
             
 
@@ -318,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/hexo/categories/实用工具/" itemprop="url" rel="index">
-                    <span itemprop="name">实用工具</span>
+                  <a href="/hexo/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
                   </a>
                 </span>
 
@@ -352,21 +350,50 @@
       
 
       
-        <p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+        <h3 id="对比总结一下热门的解决方案"><a href="#对比总结一下热门的解决方案" class="headerlink" title="对比总结一下热门的解决方案"></a>对比总结一下热门的解决方案</h3><a id="more"></a>
+<ol>
+<li>通过媒体查询的方式即CSS3的 @media</li>
+<li>天猫首页使用的 flex 弹性布局</li>
+<li>淘宝首页使用的 rem+viewport缩放（Flexible.js）</li>
+<li>hot.css</li>
+</ol>
+<hr>
+<p>####@media媒体查询</p>
 <ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+<li>使用方法:<br> <em>@media screen and (max-width: 600px) { /</em>当屏幕尺寸小于600px时，应用下面的CSS样式<em>/<br> /</em>你的css代码<em>/<br> }</em></li>
+<li>优点:<ul>
+<li>移动端和PC维护使用同一套代码时，方法简单，成本低。</li>
+<li>可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒<br>体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</li>
+<li>调整屏幕宽度的时候不用刷新页面即可响应式展示。</li>
 </ul>
-<blockquote>
-<p>实用微博图床推荐 </p>
-</blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+</li>
+<li>缺点:<ul>
+<li>@media书写代码多，维护不方便</li>
+<li>为了兼顾大屏幕或高清设备，会造成其他设备资源浪费。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>####Flex 弹性布局<br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">建议参考阮一峰老师的flex教程</a><br>使用display:flex；进行移动端布局</p>
+<hr>
+<p>####Flexible- 使用rem+viewport进行布局<br><strong>淘宝使用的方案，根据屏幕宽度设定 rem 值，需要适配的元素都使用 rem 为单位，不需要适配的元素还是使用 px 为单位。<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external">lib-flexible</a>是一个制作H5适配的开源库</strong></p>
+<ol>
+<li>首先添加meta标签设置viewport<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"></li>
+<li>引入Flexible的阿里CDN <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>或者可以通过github进行npm安装下载引入<script src="build/flexible_css.debug.js"></script> 和 <script src="build/flexible.debug.js"></script>
+
+</li>
+</ol>
+<p><strong>具体的入门教程可以看大漠大大的 “<a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a> “教程进行学习进阶)</strong></p>
+<hr>
+<p>####<strong><a href="http://imochen.github.io/hotcss/" target="_blank" rel="external">hotcss · Github</a></strong><br><strong>插件描述：hotcss不是一个库，也不是一个框架。它是一个移动端布局开发解决方案。使用hotcss可以让移动端布局开发更容易。</strong></p>
+<ul>
+<li>谁在用hotcss:<ul>
+<li><a href="http://www.panda.tv/?from=hotcss" target="_blank" rel="external">熊猫TV</a></li>
+<li><a href="http://higo.meilishuo.com/" target="_blank" rel="external">美丽说HIGO</a></li>
+<li><a href="http://www.360.com/" target="_blank" rel="external">奇虎360</a></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -417,7 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/hexo/tags/实用工具/" rel="tag"># 实用工具</a>
+            <a href="/hexo/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -430,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo/2017/01/11/http状态码/" rel="next" title="http状态码">
-                <i class="fa fa-chevron-left"></i> http状态码
+              <a href="/hexo/2017/09/12/CSS-不定宽高水平居中/" rel="next" title="不定宽高水平居中">
+                <i class="fa fa-chevron-left"></i> 不定宽高水平居中
               </a>
             
           </div>
@@ -439,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo/2017/06/24/Git命令教程/" rel="prev" title="Git命令教程">
-                Git命令教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,8 +512,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg"
@@ -552,6 +584,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对比总结一下热门的解决方案"><span class="nav-number">1.</span> <span class="nav-text">对比总结一下热门的解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

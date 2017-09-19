@@ -3,6 +3,70 @@
   
     
     <entry>
+      <title><![CDATA[移动端布局多种实现方式]]></title>
+      <url>/hexo/2017/09/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80%E5%A4%9A%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h3 id="对比总结一下热门的解决方案"><a href="#对比总结一下热门的解决方案" class="headerlink" title="对比总结一下热门的解决方案"></a>对比总结一下热门的解决方案</h3><a id="more"></a>
+<ol>
+<li>通过媒体查询的方式即CSS3的 @media</li>
+<li>天猫首页使用的 flex 弹性布局</li>
+<li>淘宝首页使用的 rem+viewport缩放（Flexible.js）</li>
+<li>hot.css</li>
+</ol>
+<hr>
+<p>####@media媒体查询</p>
+<ul>
+<li>使用方法:<br> <em>@media screen and (max-width: 600px) { /</em>当屏幕尺寸小于600px时，应用下面的CSS样式<em>/<br> /</em>你的css代码<em>/<br> }</em></li>
+<li>优点:<ul>
+<li>移动端和PC维护使用同一套代码时，方法简单，成本低。</li>
+<li>可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒<br>体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</li>
+<li>调整屏幕宽度的时候不用刷新页面即可响应式展示。</li>
+</ul>
+</li>
+<li>缺点:<ul>
+<li>@media书写代码多，维护不方便</li>
+<li>为了兼顾大屏幕或高清设备，会造成其他设备资源浪费。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>####Flex 弹性布局<br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">建议参考阮一峰老师的flex教程</a><br>使用display:flex；进行移动端布局</p>
+<hr>
+<p>####Flexible- 使用rem+viewport进行布局<br><strong>淘宝使用的方案，根据屏幕宽度设定 rem 值，需要适配的元素都使用 rem 为单位，不需要适配的元素还是使用 px 为单位。<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external">lib-flexible</a>是一个制作H5适配的开源库</strong></p>
+<ol>
+<li>首先添加meta标签设置viewport<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"></li>
+<li>引入Flexible的阿里CDN <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>或者可以通过github进行npm安装下载引入<script src="build/flexible_css.debug.js"></script> 和 <script src="build/flexible.debug.js"></script>
+
+</li>
+</ol>
+<p><strong>具体的入门教程可以看大漠大大的 “<a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a> “教程进行学习进阶)</strong></p>
+<hr>
+<p>####<strong><a href="http://imochen.github.io/hotcss/" target="_blank" rel="external">hotcss · Github</a></strong><br><strong>插件描述：hotcss不是一个库，也不是一个框架。它是一个移动端布局开发解决方案。使用hotcss可以让移动端布局开发更容易。</strong></p>
+<ul>
+<li>谁在用hotcss:<ul>
+<li><a href="http://www.panda.tv/?from=hotcss" target="_blank" rel="external">熊猫TV</a></li>
+<li><a href="http://higo.meilishuo.com/" target="_blank" rel="external">美丽说HIGO</a></li>
+<li><a href="http://www.360.com/" target="_blank" rel="external">奇虎360</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[不定宽高水平居中]]></title>
       <url>/hexo/2017/09/12/CSS-%E4%B8%8D%E5%AE%9A%E5%AE%BD%E9%AB%98%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/</url>
       <content type="html"><![CDATA[<h3 id="设置不定宽高元素进行水平居中"><a href="#设置不定宽高元素进行水平居中" class="headerlink" title="设置不定宽高元素进行水平居中"></a>设置不定宽高元素进行水平居中</h3><a id="more"></a>
@@ -313,7 +377,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#112;&#x61;&#99;&#x6b;&#97;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#x6b;&#97;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#x61;&#99;&#x6b;&#97;&#x67;&#101;&#78;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#x5d;">&#x70;&#x61;&#99;&#x6b;&#97;&#x67;&#101;&#78;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -335,7 +399,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#112;&#x61;&#99;&#x6b;&#97;&#x67;&#x65;&#x4e;&#97;&#x6d;&#x65;&#91;&#64;&#x76;&#x65;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;">&#112;&#x61;&#99;&#x6b;&#97;&#x67;&#x65;&#x4e;&#97;&#x6d;&#x65;&#91;&#64;&#x76;&#x65;&#x72;&#x73;&#105;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#112;&#x61;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;">&#112;&#x61;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -1210,6 +1274,18 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/hexo/about/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -1242,18 +1318,6 @@ alert( $(this).text() );
       <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>/hexo/about/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
