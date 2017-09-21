@@ -3,6 +3,46 @@
   
     
     <entry>
+      <title><![CDATA[JS浅拷贝与深拷贝的学习记录]]></title>
+      <url>/hexo/2017/09/22/JS%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/4985324-7682cb0008d57c3e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>很久之前就留意到深浅拷贝,这次用js来进行深浅拷贝的学习 go!go!go!</strong><br><a id="more"></a></p>
+<hr>
+<p>###First：<br>浅/深拷贝是当对Object，Array这样的复杂对象的进行拷贝时两种拷贝方式。浅拷贝只拷贝一层对象的属性，而深拷贝则递归拷贝了所有层级对象属性。</p>
+<hr>
+<p><strong>浅拷贝</strong></p>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-9f4a03ff157fc691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浅拷贝.png"></p>
+<hr>
+</blockquote>
+<p><strong>深拷贝</strong></p>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-a912f6de0943d186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深拷贝.png"></p>
+</blockquote>
+<hr>
+<p><strong>PS:</strong></p>
+<ul>
+<li>jQuery的extend可以深拷贝也可以浅拷贝。</li>
+<li>需要注意的是，如果对象比较大，层级也比较多，深复制会带来性能上的问题。 </li>
+<li>在遇到需要采用深复制的场景时，可以考虑有没有其他替代的方案。在实际的应用场景中，也是浅复制更为常用。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[移动端布局多种实现方式]]></title>
       <url>/hexo/2017/09/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80%E5%A4%9A%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h3 id="对比总结一下热门的解决方案"><a href="#对比总结一下热门的解决方案" class="headerlink" title="对比总结一下热门的解决方案"></a>对比总结一下热门的解决方案</h3><a id="more"></a>
@@ -377,7 +417,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#x61;&#99;&#x6b;&#97;&#x67;&#101;&#78;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#x5d;">&#x70;&#x61;&#99;&#x6b;&#97;&#x67;&#101;&#78;&#x61;&#x6d;&#101;&#x5b;&#64;&#x76;&#x65;&#x72;&#x73;&#x69;&#111;&#110;&#x5d;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x70;&#97;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#x65;&#91;&#x40;&#118;&#101;&#114;&#x73;&#105;&#111;&#110;&#93;">&#x70;&#97;&#99;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#x65;&#91;&#x40;&#118;&#101;&#114;&#x73;&#105;&#111;&#110;&#93;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -399,7 +439,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#112;&#x61;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;">&#112;&#x61;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x70;&#x61;&#99;&#107;&#97;&#103;&#x65;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#111;&#110;&#93;">&#x70;&#x61;&#99;&#107;&#97;&#103;&#x65;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#111;&#110;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -1090,41 +1130,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[微博图床]]></title>
-      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
-      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
-<ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
-</ul>
-<blockquote>
-<p>实用微博图床推荐 </p>
-</blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 实用工具 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 实用工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[http状态码]]></title>
       <url>/hexo/2017/01/11/http%E7%8A%B6%E6%80%81%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="状态码查询"><a href="#状态码查询" class="headerlink" title="状态码查询"></a>状态码查询</h3><a id="more"></a>
@@ -1221,6 +1226,41 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/hexo/2016/12/11/hello-world/</url>
       <content type="html"><![CDATA[<p><strong> 欢迎您 !  </strong><br><strong> 主人不在随便坐哈 ~ </strong><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
@@ -1274,18 +1314,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>/hexo/about/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -1318,6 +1346,18 @@ alert( $(this).text() );
       <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/hexo/about/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
     </entry>
     
   
