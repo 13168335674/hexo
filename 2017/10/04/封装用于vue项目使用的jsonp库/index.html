@@ -79,7 +79,7 @@
 <link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, jiawei" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -95,12 +95,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端学习笔记">
-<meta property="og:url" content="http://13189449986.github.io/hexo/archives/index.html">
+<meta name="description" content="一个方便使用的jsonp库">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="封装用于vue项目使用的jsonp库">
+<meta property="og:url" content="http://13189449986.github.io/hexo/2017/10/04/封装用于vue项目使用的jsonp库/index.html">
 <meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="一个方便使用的jsonp库">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4985324-836edf60b57fed15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4985324-a5f7026354c10e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-04T10:22:07.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端学习笔记">
+<meta name="twitter:title" content="封装用于vue项目使用的jsonp库">
+<meta name="twitter:description" content="一个方便使用的jsonp库">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4985324-836edf60b57fed15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -128,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://13189449986.github.io/hexo/archives/"/>
+  <link rel="canonical" href="http://13189449986.github.io/hexo/2017/10/04/封装用于vue项目使用的jsonp库/"/>
 
 
 
 
 
-  <title>归档 | 前端学习笔记</title>
+  <title>封装用于vue项目使用的jsonp库 | 前端学习笔记</title>
 <link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,403 +257,213 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 27 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2017/10/04/封装用于vue项目使用的jsonp库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="家伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习笔记">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">封装用于vue项目使用的jsonp库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-04T18:21:39+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hexo/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p><strong>一个方便使用的jsonp库</strong><br><a id="more"></a><br>API: jsonp(url, data, option)<br>    /<em><br>形参 :<br>        url(String) , 拼接数据(Object) , 选项(Object) {<br>            param (String) 指定回调函数名称(defaults is callback),<br>            timeout (Number) 响应时长(defaults is 60000)<br>        } 
+    </em>/</p>
+<hr>
+<ul>
+<li><ul>
+<li>cnpm install jsonp –save       // 项目中 npm 安装 jsonp</li>
+</ul>
+</li>
+<li><ul>
+<li>new jsonp.js                    // 建立自己的jsonp.js文件<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-836edf60b57fed15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jsonp.png"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>使用<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-a5f7026354c10e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="play.png"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/hk9DdBjd0G.jpg?imageslim" alt="家伟 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://orf1ycv0g.bkt.clouddn.com/blog/170612/DAk9B8g72H.jpg?imageslim" alt="家伟 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/hexo/2017/10/04/封装用于vue项目使用的jsonp库/" itemprop="url">
-              
-                <span itemprop="name">封装用于vue项目使用的jsonp库</span>
-              
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-04T18:21:39+08:00"
-              content="2017-10-04" >
-          10-04
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hexo/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/2017/09/22/JS浅拷贝与深拷贝的学习记录/" rel="next" title="JS浅拷贝与深拷贝的学习记录">
+                <i class="fa fa-chevron-left"></i> JS浅拷贝与深拷贝的学习记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/22/JS浅拷贝与深拷贝的学习记录/" itemprop="url">
-              
-                <span itemprop="name">JS浅拷贝与深拷贝的学习记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-22T00:34:06+08:00"
-              content="2017-09-22" >
-          09-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/20/移动端布局多种实现方式/" itemprop="url">
-              
-                <span itemprop="name">移动端布局多种实现方式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T00:00:35+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/12/CSS-不定宽高水平居中/" itemprop="url">
-              
-                <span itemprop="name">不定宽高水平居中</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-12T12:48:12+08:00"
-              content="2017-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/12/CSS布局-绝对尾部/" itemprop="url">
-              
-                <span itemprop="name">CSS布局-绝对尾部(Css Sticty Footer)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-12T12:47:25+08:00"
-              content="2017-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/10/web安全之XSS攻击/" itemprop="url">
-              
-                <span itemprop="name">web安全之XSS攻击</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-10T16:55:40+08:00"
-              content="2017-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/08/字符串、数组处理方法总结/" itemprop="url">
-              
-                <span itemprop="name">字符串、数组处理方法总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T22:19:59+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/09/08/vue2.0父子组件以及非父子组件如何通信/" itemprop="url">
-              
-                <span itemprop="name">vue2.0组件间通信</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T20:44:59+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/08/30/window.location对象实现页面刷新/" itemprop="url">
-              
-                <span itemprop="name">window.location对象实现页面刷新</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-30T10:01:59+08:00"
-              content="2017-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo/2017/08/29/封装localStorage本地数据存取方法/" itemprop="url">
-              
-                <span itemprop="name">封装localStorage本地数据存取方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-29T14:27:18+08:00"
-              content="2017-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/hexo/archives/page/2/">2</a><a class="page-number" href="/hexo/archives/page/3/">3</a><a class="extend next" rel="next" href="/hexo/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -653,6 +471,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -864,11 +686,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/hexo/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/hexo/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
