@@ -3,6 +3,423 @@
   
     
     <entry>
+      <title><![CDATA[Git]]></title>
+      <url>/hexo/2018/07/24/Git/</url>
+      <content type="html"><![CDATA[<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h4 id="这篇文章将对git命令进行梳理-巩固一下知识"><a href="#这篇文章将对git命令进行梳理-巩固一下知识" class="headerlink" title="这篇文章将对git命令进行梳理,巩固一下知识"></a>这篇文章将对git命令进行梳理,巩固一下知识</h4><a id="more"></a>
+<h3 id="1-开始"><a href="#1-开始" class="headerlink" title="1. 开始"></a>1. 开始</h3><blockquote>
+<p> 使用Git前，可以使用一个已经本地存在的目录或创建一个空目录作为Git仓库.首先建立使用命令<br><code>git init</code> 创建仓库(repository).</p>
+</blockquote>
+<h3 id="2-操作"><a href="#2-操作" class="headerlink" title="2. 操作"></a>2. 操作</h3><blockquote>
+<p>添加文件 :  <code>git add FlieName</code></p>
+<p>提交 : <code>git commit -m &quot;Adding files&quot;</code></p>
+<p>– 当我们修改了很多文件不想每一个都add，我们可以使用-a标识。<code>git commit -a -m &quot;Changed some files&quot;</code> (<code>-a</code>不会将新文件提交，只能将仓库中已有的文档进行提交修改)</p>
+<p>查看库的当前状态 : <code>git status</code></p>
+<p>查看上次修改的详情 : <code>git diff</code></p>
+<p>查看历史记录 : <code>git log --pretty=oneline</code></p>
+<p>将工作区的版本回退到版本库内容(撤销修改)  : <code>git checkout -- rmfile</code></p>
+<p>克隆库 : <code>git clone ssh://example.com/~/www/project.git</code></p>
+<p>推送本地修改到服务器 : <code>git push ssh://example.com/~/www/project.git</code></p>
+<p>从服务器取得更新 : <code>git pull http://git.example.com/project.git</code></p>
+<p>删除库中文件 : <code>git rm file</code></p>
+<p>创建分支 : <code>git branch newtest</code></p>
+<p>删除分支 : <code>git branch -d newtest</code></p>
+<p>进入分支 : <code>git checkout newtest</code></p>
+<p>回到主分支 : <code>git checkout master</code></p>
+<p>合并分支 : <code>git checkout master  ==&gt; git merge newtest</code><br>– 对其他分支的更改不会反映在主分支上。如果想将更改提交到主分支，则需切换回master分支，然后使用合并。</p>
+</blockquote>
+<hr>
+<h4 id="想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程"><a href="#想对Git进行充分详细的了解-推荐-廖雪峰老师的Git详细教程" class="headerlink" title="想对Git进行充分详细的了解,推荐 廖雪峰老师的Git详细教程"></a><strong>想对Git进行充分详细的了解,推荐</strong> <strong><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰老师的Git详细教程</a></strong></h4>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[New]Vue项目使用vw实现移动端适配教程]]></title>
+      <url>/hexo/2018/05/07/%5BNew%5DVue%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8vw%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="New-Vue项目使用vw实现移动端适配教程"><a href="#New-Vue项目使用vw实现移动端适配教程" class="headerlink" title="[New]Vue项目使用vw实现移动端适配教程"></a>[New]Vue项目使用vw实现移动端适配教程</h3><a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-d67caf6cfcbad697.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="268223-106.jpg"><br>2018年1月25日 11:58:01 最新的大漠老师移动端适配方案,<br>使用这套方案可以取代<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>flexible.js</code></a><br>首先建议读者先去学习大漠老师的这篇文章,看完能有大大的收获</p>
+<h2 id="如何在Vue项目中使用vw实现移动端适配"><a href="#如何在Vue项目中使用vw实现移动端适配" class="headerlink" title="如何在Vue项目中使用vw实现移动端适配"></a><a href="https://www.w3cplus.com/mobile/vw-layout-in-vue.html" target="_blank" rel="external">如何在Vue项目中使用vw实现移动端适配</a></h2><p>####正文开始<br><strong>使用vue-cli新建项目</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vue init webpack vue-demo</div><div class="line">cd vue-demo</div><div class="line">npm run dev</div></pre></td></tr></table></figure></p>
+<p><strong>安装依赖</strong></p>
+<ul>
+<li><p>复制以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i postcss-aspect-ratio-mini postcss-px-to-viewport postcss-write-svg postcss-cssnext postcss-viewport-units cssnano cssnano-preset-advanced --S</div></pre></td></tr></table></figure>
+</li>
+<li><p>复制进行 postcssrc.js 配置<br><strong>.postcssrc.js配置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  &quot;plugins&quot;: &#123;</div><div class="line">    &quot;postcss-import&quot;: &#123;&#125;,</div><div class="line">    &quot;postcss-url&quot;: &#123;&#125;,</div><div class="line">    &quot;postcss-aspect-ratio-mini&quot;: &#123;&#125;,</div><div class="line">    &quot;postcss-write-svg&quot;: &#123; utf8: false &#125;,</div><div class="line">    &quot;postcss-cssnext&quot;: &#123;&#125;,</div><div class="line">    &quot;postcss-px-to-viewport&quot;: &#123;</div><div class="line">      viewportWidth: 750,</div><div class="line">      unitPrecision: 3,</div><div class="line">      viewportUnit: &apos;vw&apos;,</div><div class="line">      selectorBlackList: [&apos;.ignore&apos;, &apos;.hairlines&apos;],</div><div class="line">      minPixelValue: 1,</div><div class="line">      mediaQuery: false</div><div class="line">    &#125;,</div><div class="line">    &quot;postcss-viewport-units&quot;: &#123;&#125;,</div><div class="line">    &quot;cssnano&quot;: &#123;</div><div class="line">      preset: &quot;advanced&quot;,</div><div class="line">      autoprefixer: false,</div><div class="line">      &quot;postcss-zindex&quot;: false</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###各插件的功能：</p>
+<hr>
+<p><strong>postcss-px-to-viewport : 将项目中的px转化为vw</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&quot;postcss-px-to-viewport&quot;: &#123; </div><div class="line">    viewportWidth: 750, // 视窗的宽度，对应的是我们设计稿的宽度，一般是750 </div><div class="line">    viewportHeight: 1334, // 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置 </div><div class="line">    unitPrecision: 3, // 指定`px`转换为视窗单位值的小数位数（很多时候无法整除） </div><div class="line">    viewportUnit: &apos;vw&apos;, // 指定需要转换成的视窗单位，建议使用vw </div><div class="line">    selectorBlackList: [&apos;.ignore&apos;, &apos;.hairlines&apos;], // 指定不转换为视窗单位的类，可以自定义，可以无限添加,建议定义一至两个通用的类名 </div><div class="line">    minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值 </div><div class="line">    mediaQuery: false // 允许在媒体查询中转换`px` </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>容器适配，可以使用vw</li>
+<li>文本的适配，可以使用vw</li>
+<li>大于1px的边框、圆角、阴影都可以使用vw</li>
+<li>内距和外距，可以使用vw</li>
+</ul>
+<p><a href="&#39;https://github.com/evrone/postcss-px-to-viewport&#39;">postcss-px-to-viewport文档</a></p>
+<hr>
+<p><strong>postcss-write-svg 实现Retina屏1像素边框</strong><br>首先记得在heade头加入</p>
+<p><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"></p>
+<p>######实例不成功，换插件实现吧<br>方式一:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">方式二:</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">**最重要的 降级处理**</div><div class="line">使用 [Viewport Units Buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill) 插件</div><div class="line">在vue项目的index.html文件head标签添加引用</div><div class="line">``&lt;script src=&quot;//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">``</div><div class="line">在Index.html文件body标签后添加以下代码</div></pre></td></tr></table></figure>
+<p><script><br>  // vw兼容性处理viewport-units-buggyfill<br>    window.onload = function () {<br>      window.viewportUnitsBuggyfill.init({ hacks: window.viewportUnitsBuggyfillHacks });<br>      //以下代码用户测试<br>      // var winDPI = window.devicePixelRatio;<br>      // var uAgent = window.navigator.userAgent;<br>      // var screenHeight = window.screen.height;<br>      // var screenWidth = window.screen.width;<br>      // var winWidth = window.innerWidth;<br>      // var winHeight = window.innerHeight;<br>      // console.log(“Windows DPI:” + winDPI + “;\ruAgent:” + uAgent + “;\rScreen Width:” +<br>      //   screenWidth + “;\rScreen Height:” + screenHeight + “;\rWindow Width:” + winWidth +<br>      //   “;\rWindow Height:” + winHeight)<br>    }<br>  </script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">最后做个对img兼容处理，在全局添加(在main.js 用 Import &apos;@/common/index.css&apos;)</div></pre></td></tr></table></figure></p>
+<p>img {<br>  content: normal !important;<br>}<br>```</p>
+<p>#####这样就可以用vw进行移动端项目开发啦!</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[Hot] Vue-cli 引入VueAwesomeSwiper]]></title>
+      <url>/hexo/2018/05/07/%5BHot%5D%20Vue-cli%20%E5%BC%95%E5%85%A5VueAwesomeSwiper/</url>
+      <content type="html"><![CDATA[<h3 id="Hot-Vue-cli-引入VueAwesomeSwiper"><a href="#Hot-Vue-cli-引入VueAwesomeSwiper" class="headerlink" title="[Hot] Vue-cli 引入VueAwesomeSwiper"></a>[Hot] Vue-cli 引入VueAwesomeSwiper</h3><a id="more"></a>
+<p>Vue脚手架引入Swiper最新实操步骤:</p>
+<blockquote>
+<p>//npm<br>npm install vue-awesome-swiper –save</p>
+</blockquote>
+<p>//可以全局 or 局部引用<br>全局:</p>
+<blockquote>
+<p>//main.js<br>import Vue from ‘vue’<br>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’  //<strong>这个css要去官网下载然后放进项目引入</strong><br>Vue.use(VueAwesomeSwiper)</p>
+</blockquote>
+<p>局部:</p>
+<blockquote>
+<p>// *.vue<br>import { swiper, swiperSlide } from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’<br>//  <script><br>  components: {<br>    swiper,<br>    swiperSlide<br>  }</p>
+</blockquote>
+<p><strong>使用</strong></p>
+<blockquote>
+<template><br>  <div id="app"><br>    <swiper :options="swiperOption" ref="mySwiper"><br>    <!-- slides --><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <!-- Optional controls --><br>    <div class="swiper-pagination"  slot="pagination"></div><br>    <div class="swiper-button-prev" slot="button-prev"></div><br>    <div class="swiper-button-next" slot="button-next"></div><br>    <div class="swiper-scrollbar"   slot="scrollbar"></div><br>  </swiper><br>  </div><br></template>
+
+</blockquote>
+<p><strong>js and css</strong></p>
+<blockquote>
+<script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import './swiper4/swiper.css'
+export default {
+  name: 'carrousel',
+  data() {
+    return {
+      swiperOption: {
+        notNextTick: true, // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+        autoplay: true,
+        autoplay: {
+          disableOnInteraction: false,  //用户左划右划后恢复自动轮播
+          delay: 1000
+        },
+        loop: true,
+        direction: 'horizontal',
+        grabCursor: true,
+        setWrapperSize: true,
+        autoHeight: true,
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        centeredSlides: true,
+        paginationClickable: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        keyboard: true,
+        mousewheelControl: true,
+        observeParents: true, // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
+        debugger: true
+      }
+    }
+  },computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  mounted() {
+    // current swiper instance
+    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+    // this.swiper.slideTo(3, 1000, false)
+  },
+  components: {
+    swiper, swiperSlide
+  }
+}
+</script>
+
+<style>
+.jia {
+  height: 300px;
+  line-height: 300px;
+  font-size: 30px;
+  color: #fff;
+  background: red;
+  text-align: center;
+}
+</style>
+
+</p></blockquote>
+<p><strong>提示</strong><br>新版的VueAwesomeSwiper是从Swiper4改写的,<br>api写法有变化,老版本的写法会引起组件失效<br>比如autoplay,pagination,prevButton,nextButton等属性</p>
+<p>在新版的api文档中新增了组件选项,使用新写法就可以正常使用了<br><a href="&quot;http://www.swiper.com.cn/api/pagination/pagination.html&quot;">查看新版api文档</a><br><img src="http://upload-images.jianshu.io/upload_images/4985324-04515dc6038756fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<p>点个赞就成功啦哈!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[推荐]Vue-devtools安装]]></title>
+      <url>/hexo/2018/05/07/%5B%E6%8E%A8%E8%8D%90%5DVue-devtools%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h3 id="推荐-Vue-devtools安装"><a href="#推荐-Vue-devtools安装" class="headerlink" title="[推荐]Vue-devtools安装"></a>[推荐]Vue-devtools安装</h3><a id="more"></a>
+<p><strong>vue-devtools是一款vue浏览器开发者工具调试插件</strong></p>
+<ol>
+<li><p>首先从github上将vue-devtools clone到本地</p>
+<blockquote>
+<p>git clone <a href="https://github.com/vuejs/vue-devtools.git" target="_blank" rel="external">https://github.com/vuejs/vue-devtools.git</a></p>
+</blockquote>
+</li>
+<li><p>安装项目所需要的包</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+</li>
+<li><p>编译文件</p>
+<blockquote>
+<p>npm run build</p>
+</blockquote>
+</li>
+</ol>
+<p>4.添加至游览器<br><img src="http://upload-images.jianshu.io/upload_images/4985324-91d61d942d4bf82c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Developer Tools.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-371400af30129003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="select.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-7ea206f2e105b08f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="success.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-38aa7eaf9634950f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="result.png"></p>
+<p><strong>结束撒花~</strong></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Flex语法教程]]></title>
+      <url>/hexo/2018/05/07/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B%C2%96/</url>
+      <content type="html"><![CDATA[<h3 id="网页布局（layout）是-CSS-的一个重点应用。"><a href="#网页布局（layout）是-CSS-的一个重点应用。" class="headerlink" title="网页布局（layout）是 CSS 的一个重点应用。"></a>网页布局（layout）是 CSS 的一个重点应用。</h3><h5 id="布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"><a href="#布局的传统解决方案，基于盒状模型，依赖-display-属性-position属性-float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C-提出了一种新的方案—-Flex-布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。" class="headerlink" title="布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。"></a>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</h5><a id="more"></a>
+<ol>
+<li>什么是Flex<blockquote>
+<p>Flex是Flexible Box的缩写，意为”弹性芾局”，用来为盒状模型提供最大的炅活性。<br>任何一个容器都可以指定为Flex布局。任何一个容器都可以指定为Flex布局。<br>Webkit内核的浏览器，必须加上-webkit前缀。<br>、div{ display:flex } span{ displayiflex } p{ -webkit-display:flex } ‘</p>
+</blockquote>
+</li>
+<li><p>属性值 </p>
+<blockquote>
+<p>容器的属性 :</p>
+<ol>
+<li>flex-direction : row | row-reverse | column | column-reverse;</li>
+<li>flex-wrap : nowrap | wrap | wrap-reverse;<br>3 flex-flow :   flex-direction | | flex-wrap (属性简写）</li>
+<li>justify-content : flex-start | flex-end | center | space-between | space-around;</li>
+<li>align-items : flex-start | flex-end | center | baseline | stretch;</li>
+<li>align-conten : flex-start | flex-end | center | space-between | space-around | stretch;</li>
+</ol>
+</blockquote>
+</li>
+<li><p>项目(子元素)的属性 :</p>
+<blockquote>
+<ol>
+<li>order : number (属性定义项目的排列顺序。数值越小，排列越靠前，默认为0)<ol>
+<li>flex-grow : number (定义项目的放大比例，默认为0 ,即如果存在剰余空间，也不放大。1为放大,2为放大 两倍〉</li>
+<li>flex-shrink : number (定义了项目的缩小比例，默认为1 ,即如果空间不足，该项目将缩小。0为不缩小）</li>
+<li>flex-basis : auto|px (属性定义了在分配多余空间之前，项目占据的主轴空间（main size)。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto,即项目的本来大小。〉</li>
+<li>flex : auto| none (flex-grow, flex-shrink 和 flex-basis的简写,auto (1 1 auto)和 none (0 0 auto)0 ) align-self : auto | flex-start | flex-end | center | baseline | stretch;<br>(项目可以单独设置这个属性覆盖align-itmes的值,auto表示继承父元素的align-items属性，如果没有父元素，则等同于stretch）</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p><img src="http://upload-images.jianshu.io/upload_images/4985324-0dee536275b10d5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="汇总"></p>
+</li>
+<li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vue2.0实现在线商城]]></title>
+      <url>/hexo/2018/05/07/%C2%96Vue2-0%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[我对移动端适配的了解]]></title>
+      <url>/hexo/2018/03/08/%5B%E6%80%BB%E7%BB%93%5D%E6%88%91%E5%AF%B9%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9A%84%E4%BA%86%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h3 id="我对移动端适配的了解"><a href="#我对移动端适配的了解" class="headerlink" title="我对移动端适配的了解"></a>我对移动端适配的了解</h3><a id="more"></a>
+<p>  不知不觉做前端已经两年了，从PC端，移动端，微信小程序一路走来到今天刚刚开放注册的快应用(手机厂商对抗小程序的新技能,所以在注册时用的是qq邮箱的话要去垃圾箱里才能找到注册邮件)，对于前端圈日新月异的磅礴发展对于大前端发展是喜闻乐见的，这次的快应用的手机厂商们为其开放了应用入口和系统推广引流入口。这些新能力为前端开发者们带来更强的作战能力。</p>
+<p>  我们在开发PC站时经常在浏览器兼容问题上耗费巨大的时间，到了移动端，面对webkit内核的Safari与Chrome会舒心很多。but，我们要对于市面上的手机各式各样的分辨率进行适配，刚接触移动端开发的时候是不是有点猝不及防哈哈，尤其是去年年中以前老版本的微信内置浏览器用的X5内核，给网友们戏称移动端IE…<br><img src="https://upload-images.jianshu.io/upload_images/4985324-aa50e99413bd064e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<p>  今天的主题是讲的是我对移动端多终端适配的解决方案和移动端适配的有关布局的知识总结，下面正式开始。</p>
+<h4 id="基本概念和原理"><a href="#基本概念和原理" class="headerlink" title="基本概念和原理"></a>基本概念和原理</h4><h6 id="首先要了解的重要的基础知识点：物理像素，设备独立像素，设备像素比，css像素，布局视口，可视视口-理想视口以及css单位rem。"><a href="#首先要了解的重要的基础知识点：物理像素，设备独立像素，设备像素比，css像素，布局视口，可视视口-理想视口以及css单位rem。" class="headerlink" title="首先要了解的重要的基础知识点：物理像素，设备独立像素，设备像素比，css像素，布局视口，可视视口,理想视口以及css单位rem。"></a>首先要了解的重要的基础知识点：物理像素，设备独立像素，设备像素比，css像素，布局视口，可视视口,理想视口以及css单位rem。</h6><p>  <strong>物理像素（设备像素）</strong><br>屏幕的物理像素，又被称为设备像素。任何设备屏幕的物理像素出厂时就确定了，是固定不变的。<br>  <strong>设备独立像素</strong><br>设备独立像素也可以理解为CSS像素，可以认为是计算机坐标系统中的一个点，这个点代表一个可以由程序使用的虚拟像素(比如说CSS像素)。<br>  <strong>设备像素比</strong><br>设备像素比简称为dpr，dpr = 物理像素 / 设备独立像素。(以iphone6为例: dpr = 750 / 375 , 所以它的像素密度比为2，即 1个CSS像素 跨越了 2个物理像素)，我们可以通多 <code>window.devicePixelRatio</code> 来获取设备的像素密度，像素密度大于1就是高清屏。<br>  <strong>CSS像素</strong><br>在CSS、JS中使用的一个长度单位，单位px。<br>注：在pc端1物理像素等于1px，但是移动端1物理像素不一定等于1px(高清屏)。</p>
+<p> <strong>布局视口（layout viewport</strong><br>  可以看作是html元素的上一级容器即顶级容器，默认情况或者将html元素的width属性设为100%时，会占满这个顶级容器，此时用  <code>document.documentElement.clientWidth</code> 获取到html元素的布局宽度也就是布局视口的宽度，使用媒体查询时 max-width 和 min-width 的值指的也是布局视口的宽。<br>  在html中一般在meta中的name为viewport字段就是控制的布局视口。布局视口一般都是浏览器厂商给的一个值。在手机互联网没有普及前，网络上绝大部分页面都是为电脑端浏览而做的，根本没有做移动端的适配。<br>  随着移动端的发展，在手机上看电脑端的页面已成为非常普及现象。而电脑端页面宽度较大，移动端宽度有限，要想看到整个网页，会有很长的滚动条，看起来非常麻烦。于是浏览器厂商为了让用户在小屏幕下网页也能够显示地很好，所以把布局视口设置的很大，一般在768px ~ 1024px 之间，最常用的宽度就是 980。<br>  这样用户就能看到绝大部分内容，并根据具体内容选择缩放。<br>故布局视口是看不见的，浏览器厂商设置的一个固定值，如980px，并将980px的内容缩放到手机屏内。一块手机屏幕，物理像素的数量是固定不变的。<br>视觉视口的大小是继承自布局视口的大小，视觉视口和布局视口的宽度为CSS的px数(可变的)。</p>
+<p><strong>理想视口</strong><br>  布局视口虽然解决了移动端查看pc端网页的问题，但是完全忽略了手机本身的尺寸。所以苹果引入了理想视口，它对设备来说是最理想的布局视口，用户不需要对页面进行缩放就能完美的显示整个页面。最简单的做法就是使布局视口宽度设置为手机屏幕的宽度。移动端到底怎么适配不同的屏幕呢？最简单的方法是设置如下视口：<br><figure class="highlight plain"><figcaption><span>name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">复习一下： dpr = 物理像素 / 设备独立像素。</div><div class="line">  以iphone6为例，iphone6的物理像素为750，如果没有设置布局视口时，布局视口viewport默认为980px</div><div class="line">此时：dpr = 750 / 980 = 0.76531，等于1个CSS像素有0.76531个物理像素。接近于1像素密度所以pc端的页面在手机端看时不会太小。</div><div class="line">当在meta中设置了如下配置时:</div><div class="line"> `&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;`</div><div class="line">相当于把布局视口设置为设备的宽度(即设备独立像素)，</div><div class="line">iphone6的设备独立像素为 375px。</div><div class="line">此时：dpr = 750 / 375 = 2，等于1个CSS像素有2个物理像素。此时把pc端的尺寸拿来手机端看时字体和元素会特别大只。</div><div class="line"></div><div class="line">  现在移动端设计稿都是基于iphone设计的，一般为750px或640px，对应的是iphone6和iphone5的物理像素。在设计稿中，1px像素边框对应的是1物理像素。而在iphone5和iphone6中，当布局视口width=device-width时，css的1px显示出来的是2个物理像素，所以用户看到的是2px的边框。怎么解决呢？1px边框效果其实有很多hack方法，其中一种就是通过缩放viewport。</div><div class="line">`&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no&quot;&gt;  `</div><div class="line">  **viewport缩放**</div><div class="line">initial-scale是对布局视口进行缩放，initial-scale是相对于理想视口的，即initial-scale=1与width=device-width是一样的效果。initial-scale=0.5等效于width= 2倍的 device-width，所以设置initial-scale和width都可以改变布局视口的大小。</div><div class="line">对于可视视口的缩放可以理解为，用户用双指对页面进行缩放，当用户缩小页面时，可视视口变大用户可以看到的东西越多，当用户放大页面时，可视视口</div><div class="line">变小，用户看到的东西越少。</div><div class="line">对于iphone6当添加如上设置后，initial-scale=0.5时。</div><div class="line">布局视口： 375px * 2 = 750px;</div><div class="line">所以此时布局视口为750px，此时1px等于1物理像素了。(移动端一像素有很多hack写法比如用伪类实现，svg实现等等)</div><div class="line">  看到这是不是觉得要消化的知识点有点多，不怕，休息一下消化消化，每个人都是这样过来的。猥琐发育~</div><div class="line"></div><div class="line">###### 多种适配方案探究</div><div class="line">当设计师给出ui图时，面对市场上各式各样的手机它们屏幕大小不同，dpr不同，屏幕尺寸也是各种大小，那么我们应该怎么做到对ui设计图的充分还原，使得项目在各式各样的手机里运行呢？为了解决这种情况出现了许多的适配方案，各方案的实现方法不一样，还原程度也不一样，下面来总结一下常见的几种适配方案及其原理。</div><div class="line">**方案一：固定高度，使其宽度自适应**</div><div class="line">这也是我接触移动端适配第一次使用的方案。</div><div class="line">这个方案使用了理想视口,使得布局视口等于设备宽度。</div><div class="line"> `&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1, maximum-scale=1,     minimum-scale=1, user-scalable=no&quot;&gt;`</div><div class="line"> 在布局方面纵向使用固定px值,横向使用自适应布局(百分比，felx，小额定值)。</div><div class="line"> 这种方案相对简单，ui还原度比较低。</div><div class="line"></div><div class="line"> **方案二：固定布局视口宽度，使用viewport进行缩放（网易、荔枝FM）**</div></pre></td></tr></table></figure></p>
+<pre><code>if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+    var version = parseFloat(RegExp.$1);
+    if(version&gt;2.3){
+        var phoneScale = parseInt(window.screen.width)/640;
+        if(/MZ-M571C/.test(navigator.userAgent)){
+            document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, minimum-scale = 0.5, maximum-scale= 0.5&quot;&gt;&apos;);
+        }else if(/M571C/.test(navigator.userAgent)&amp;&amp;/LizhiFM/.test(navigator.userAgent)){
+            document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, minimum-scale = 0.5, maximum-scale= 0.5&quot;&gt;&apos;);
+        }else{
+            document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, minimum-scale = &apos;+ phoneScale +&apos;, maximum-scale = &apos;+ phoneScale +&apos;, target-densitydpi=device-dpi&quot;&gt;&apos;);
+        }
+    }else{
+        document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, target-densitydpi=device-dpi&quot;&gt;&apos;);
+    }
+}else{
+    document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, user-scalable=no, target-densitydpi=device-dpi&quot;&gt;&apos;);
+}
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> 固定布局视口，宽度设置固定的值，总宽度为640px，根据屏幕宽度动态生成viewport。（设计稿宽度为640px）</div><div class="line"> 这种布局方案页面宽度始终为640px通过设置缩放比例scale实现适配:</div><div class="line"> var scale = window.screen.width / 640;</div><div class="line"> 当设计稿为640px时，我们可以直接用1：1px来写像素单位。这种布局方案中的1px不一定等于1px，当设备为iphone6时</div><div class="line"> 1px(css) = window.screen.width*dpr = 640 = 375 * 2 / 640 = 1.171875(设备物理像素)</div><div class="line"> 荔枝FM这种适配方案用到了target-densitydpi ， 这是一个将被抛弃的属性，因此不推荐使用这套方案(学习一下思路也不错)</div><div class="line"></div><div class="line">**方案三：根据不同屏幕动态写入font-size，以rem作为宽度单位，固定布局视口。(网易新闻)**</div><div class="line">首先设置理想视口:</div><div class="line">`&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no&quot;&gt;`</div><div class="line">接下来计算 html 元素的 font-size,将可视视口的宽度乘以一个系数:</div><div class="line">&gt;理论上这个系数可以是任意值，假设将这个系数取 1，则 html 元素的 font-size 即1 rem等于可视视口的宽度，此时以 rem 为单位的长度 n rem 就可以理解为 n 倍可视视口的长，这个系数取 0.01 时，1 rem 等于可视视口宽的 1/100，也就等于布局视口宽的 1/100，也就等于 1vw。实际使用过程中这个系数的选择尽可能方便将设计稿长度数值换算为css中的长度数值</div><div class="line">网易新闻[手机网易网](https://link.zhihu.com/?target=http%3A//3g.163.com/)选择的系数为 100 / 750，这个系数可以如下推出：</div><div class="line"></div><div class="line">&gt;750px 是设计稿的宽度（以iphone6的物理像素数为标准），100是期望的换算比例，即设计稿中 100px 的长度对应css中 1rem，将设计稿中的长度数值除以 100 得到的就是以 rem 为单位的 css 长度的数值，设计稿的宽换算为以 rem 为单位的 css 长度应为 (750/100) rem，同时设计稿的宽对应可视视口的宽，即有 (750/100) rem = 可视视口宽，1 rem = 可视视口宽 * (100/750)，(100/750)就是我们要的系数</div><div class="line">在页面初始化时设置一下 html 元素的 font-size:</div><div class="line"></div><div class="line">&gt;在750宽的设计稿：document.documentElement.style.fontSize = window.innerWidth / 7.5 + &apos;px&apos;;</div><div class="line">在640宽的设计稿：document.documentElement.style.fontSize = window.innerWidth / 7.5 + &apos;px&apos;;</div><div class="line">这套方案能百分比还原设计稿。</div><div class="line"></div><div class="line">**方案四：根据不同屏幕动态写入font-size和viewport，以rem作为宽度单位**.</div><div class="line">将屏幕分为固定的块数10：</div><div class="line">&gt;var width = document.documentElement.clientWidth;   // 屏幕的布局视口宽度</div><div class="line">var rem = width / 10;                               // 将布局视口分为10份</div><div class="line">这样在任何屏幕下，总长度都为10rem。1rem对应的值也不固定，与屏幕的布局视口宽度有关。</div><div class="line"></div><div class="line">动态缩放view:</div></pre></td></tr></table></figure>
+<p>var devicePixelRatio = window.devicePixelRatio;<br>var isIPhone = window.navigator.appVersion.match(/iphone/gi);<br>var dpr,scale;<br>if (isIPhone) {<br>  if (devicePixelRatio &gt;=3) {<br>    dpr = 3;<br>  } else if (devicePixelRatio &gt;=2) {<br>    dpr = 2;<br>  } else {<br>    dpr = 1;<br>  }<br>} else {<br>  dpr = 1;<br>}<br>scale = 1 / dpr;<br>```<br>淘宝只对iphone做了缩放处理，对于android所有dpr=1，scale=1即没有缩放处理。</p>
+<p>此方案与方案三相似，增进了viewport缩放使得在iphone上1px(css) = 1px(物理像素)，这套方案能百分比还原设计稿。<br><a href="&#39;https://github.com/amfe/article/issues/17&#39;">Flexible实现手淘H5页面的终端适配</a><br><strong>方案五：</strong><br>可以来看看我总结的 ： <a href="&#39;https://www.jianshu.com/p/eb0d00e8ffed&#39;">大漠老师最新的vw移动端适配方案</a></p>
+<hr>
+<p>#####最后看到这里相信大家心里都有个底，知道选择哪一种方案更能适配自己所开发的项目<br>(～￣▽￣)～ </p>
+<p>#see u ~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vue-cli引入lib-flexible&&ElementUI]]></title>
+      <url>/hexo/2018/03/07/Vue-cli%E5%BC%95%E5%85%A5lib-flexible&amp;&ElementUI/</url>
+      <content type="html"><![CDATA[<p>2018年1月23日 18:27:19<br>好久不见我的小伙伴们,从毕业到参加参加工作已经三个月了,这段时间过的很有意义哈哈<br>参加工作为了快速上手项目这两个月都是996,学到了 很多好东西,接下来的日子不加班我就晚上回去把他们分享出来,摸摸哒~ </p>
+<hr>
+<p><strong>移动端自适应</strong><br>来自手淘的 flexible</p>
+<blockquote>
+<p><strong>cnpm i lib-flexible -S</strong><br><strong>cnpm install px2rem-loader -S-d</strong></p>
+</blockquote>
+<p>在项目入口文件 main.js 里 引入 lib-flexible</p>
+<blockquote>
+<p>// main.js<br><strong>import ‘lib-flexible’</strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-54ae330238609ef3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mian.png"></p>
+</blockquote>
+<p><em>搞定后到开发者工具查看根节点有没有添加data-dpr=”1”来判断是否引入成功</em></p>
+<p>lib-flexible引入完成,下面引入方便一个插件px2rem-loader<br>接下来引入开发用的 px转rem插件</p>
+<blockquote>
+<p>// build/utils.js<br>var cssLoader = {<br>  loader: ‘css-loader’,<br>  options: {<br>    minimize: process.env.NODE_ENV === ‘production’,<br>    sourceMap: options.sourceMap<br>  }<br>}<br><strong>var px2remLoader = {<br>  loader: ‘px2rem-loader’,<br>  options: {<br>    remUnit: 75<br>  }<br>}</strong><br>// …</p>
+</blockquote>
+<p>放进 loaders 数组中</p>
+<blockquote>
+<p>// utils.js<br>function generateLoaders(loader, loaderOptions) {<br>        const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader, px2remLoader]<br>  // …<br><img src="http://upload-images.jianshu.io/upload_images/4985324-9db25f3cd1ed8f16.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="utils.png"></p>
+</blockquote>
+<p>修改配置后需要重启，然后我们在组件中写单位直接写 px , 设计稿多少就写多少 , 自动转rpx，美滋滋哈哈<br><em>搞定后到开发者工具查看css中的px是否转换为rem来判断是否引入成功</em><br><img src="http://upload-images.jianshu.io/upload_images/4985324-2614293f00b8a8f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vue.png"></p>
+<hr>
+<p><strong>Vue引入饿了么ElementUI</strong><br><a href="http://element-cn.eleme.io/#/zh-CN/component/quickstart" target="_blank" rel="external">Element-ui 中文文档</a><br>下面教程 快速上手</p>
+<blockquote>
+<p><strong>npm i element-ui -S</strong></p>
+<p>//main.js<br>import Vue from ‘vue’<br>import App from ‘./App’<br>import router from ‘./router’<br><strong>import ElementUI from ‘element-ui’</strong><br><strong>import ‘element-ui/lib/theme-chalk/index.css’</strong><br>Vue.config.productionTip = false<br>/<em> eslint-disable no-new </em>/<br><strong>Vue.use(ElementUI)</strong></p>
+<p>//.Vue中直接使用<br><strong><el-button>默认按钮</el-button></strong><br><strong><el-button type="primary">主要按钮</el-button></strong><br> <strong><el-button type="text">文字按钮</el-button></strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-ad7f39100bbdeaf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="element.png"></p>
+</blockquote>
+<hr>
+<p>npm run dev 后显示空白修改config/index.js 中 build对象中的assetsPublicPath: ‘/‘, 为 <strong>‘./</strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-2e7fb54229126a23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="index.png"></p>
+<p>加油宝宝们~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ES6-Promise]]></title>
+      <url>/hexo/2018/01/03/p/</url>
+      <content type="html"><![CDATA[<h3 id="回调函数真正的问题在于他剥夺了我们使用-return-和-throw-这些关键字的能力。而-Promise-很好地解决了这一切。"><a href="#回调函数真正的问题在于他剥夺了我们使用-return-和-throw-这些关键字的能力。而-Promise-很好地解决了这一切。" class="headerlink" title="回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切。"></a>回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切。</h3><a id="more"></a>
+<h4 id="ES6-原生提供了-Promise-对象。"><a href="#ES6-原生提供了-Promise-对象。" class="headerlink" title="ES6 原生提供了 Promise 对象。"></a>ES6 原生提供了 Promise 对象。</h4><h4 id="所谓-Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的-API，可供进一步处理。"><a href="#所谓-Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的-API，可供进一步处理。" class="headerlink" title="所谓 Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理。"></a>所谓 Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理。</h4><h4 id="Promise-对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称-Fulfilled）和-Rejected（已失败）"><a href="#Promise-对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称-Fulfilled）和-Rejected（已失败）" class="headerlink" title="Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）"></a>Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）</h4><p>#### </p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[VSCode安装与配置]]></title>
       <url>/hexo/2017/10/15/%E6%88%91%E7%9A%84VsCode%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h3 id="总结各种vscode插件-备份自己的设置"><a href="#总结各种vscode插件-备份自己的设置" class="headerlink" title="总结各种vscode插件,备份自己的设置"></a>总结各种vscode插件,备份自己的设置</h3><hr>
@@ -369,6 +786,82 @@
     </entry>
     
     <entry>
+      <title><![CDATA[[New] Vue中使用Sass]]></title>
+      <url>/hexo/2017/09/07/%5BNew%5D%20Vue%E4%B8%AD%E4%BD%BF%E7%94%A8Sass/</url>
+      <content type="html"><![CDATA[<h3 id="New-Vue中使用Sass"><a href="#New-Vue中使用Sass" class="headerlink" title="[New] Vue中使用Sass"></a>[New] Vue中使用Sass</h3><a id="more"></a>
+<p><strong>安装依赖</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm install --save-dev sass-loader</div><div class="line">cnpm install --save-dev node-sass</div></pre></td></tr></table></figure></p>
+<p><strong>在build文件夹下的webpack.base.conf.js的rules里面添加配置</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-284b328b33e4ac0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="webpack.png"></p>
+<p><strong>.vue中修改style标签</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;sass&quot;&gt; or &lt;style lang=&quot;scss&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-84f67b7ab6ef92c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="change.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-6a0f4a63b1749d14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="scss.png"></p>
+<p><strong>漂亮完成</strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-28376a6eaf595ba0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="style.png"></p>
+<p><strong>谢邀退场，有事私信call我</strong></p>
+<p>ps:<br><a href="https://segmentfault.com/q/1010000009187765" target="_blank" rel="external">postcss-px2rem在vue-cli中，为什么.vue页面内的样式可以转变，@import ‘.css’样式却不能转变？</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[CSS预处理器]Stylus in Vue]]></title>
+      <url>/hexo/2017/09/07/%5BCSS%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%5DStylus%20in%20Vue/</url>
+      <content type="html"><![CDATA[<h3 id="CSS预处理器-Stylus-in-Vue"><a href="#CSS预处理器-Stylus-in-Vue" class="headerlink" title="[CSS预处理器]Stylus in Vue"></a>[CSS预处理器]Stylus in Vue</h3><a id="more"></a>
+<p><em>为什么选择Stylus做预处理呢?</em></p>
+<ul>
+<li>那么在SaaS，Less和Stylus中，为什么选择后者呢？因为Stylus是来源于Node.js社区，与js关系密切，所以基于Vue.js的开发，我们选择使用Stylus。</li>
+</ul>
+<hr>
+<p><strong>配置Stylus环境</strong></p>
+<blockquote>
+<p>npm install stylus</p>
+</blockquote>
+<p><strong>在vue项目中安装stylus和stylus-loader</strong></p>
+<blockquote>
+<p>npm install stylus –save-dev<br>npm install stylus-loader –save-dev</p>
+</blockquote>
+<p><strong>.vue单文件中使用</strong></p>
+<blockquote>
+<p><styl lang="stylus"><br>html,bodu<br>  padding:0;margin:0;<br>…<br>(无需花括号)<br></styl></p>
+</blockquote>
+<p><strong>单文件引入 .stylus</strong></p>
+<blockquote>
+<p>//.vue</p>
+<p><script><br>import “./assets/food.stylus”<br></script></p>
+<hr>
+<p><strong>需要的资料</strong><br><a href="&quot;http://www.zhangxinxu.com/jq/stylus/&quot;">中文文档</a></p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-c20cecc2effdc1b2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="346871-106.jpg"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[window.location对象实现页面刷新]]></title>
       <url>/hexo/2017/08/30/window.location%E5%AF%B9%E8%B1%A1%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0/</url>
       <content type="html"><![CDATA[<h4 id="用户点击浏览器后退按钮后页面ajax没有更新-通过使用windowlocation对象的方法属性实现页面刷新并刷新数据"><a href="#用户点击浏览器后退按钮后页面ajax没有更新-通过使用windowlocation对象的方法属性实现页面刷新并刷新数据" class="headerlink" title="用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据"></a>用户点击浏览器后退按钮后页面ajax没有更新,通过使用windowlocation对象的方法属性实现页面刷新并刷新数据</h4><a id="more"></a>
@@ -503,7 +996,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#112;&#97;&#99;&#x6b;&#97;&#x67;&#x65;&#78;&#97;&#x6d;&#x65;&#x5b;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#111;&#x6e;&#93;">&#112;&#97;&#99;&#x6b;&#97;&#x67;&#x65;&#78;&#97;&#x6d;&#x65;&#x5b;&#x40;&#118;&#x65;&#x72;&#115;&#x69;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#112;&#97;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#x61;&#x6d;&#x65;&#91;&#x40;&#x76;&#x65;&#114;&#115;&#105;&#x6f;&#x6e;&#x5d;">&#112;&#97;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#x61;&#x6d;&#x65;&#91;&#x40;&#x76;&#x65;&#114;&#115;&#105;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -525,7 +1018,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x70;&#97;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#x61;&#109;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#105;&#111;&#x6e;&#93;">&#x70;&#97;&#x63;&#x6b;&#x61;&#103;&#101;&#78;&#x61;&#109;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#112;&#x61;&#x63;&#x6b;&#97;&#x67;&#101;&#78;&#97;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#110;&#x5d;">&#112;&#x61;&#x63;&#x6b;&#97;&#x67;&#101;&#78;&#97;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#x72;&#115;&#105;&#111;&#110;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -708,6 +1201,193 @@
         <tags>
             
             <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vue2.0父子组件及非父子组件间实现通信]]></title>
+      <url>/hexo/2017/08/07/vue2.0%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E5%8F%8A%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%97%B4%E5%AE%9E%E7%8E%B0%E9%80%9A%E4%BF%A1/</url>
+      <content type="html"><![CDATA[<p>tags: css<br>categories: 教程</p>
+<h2 id="author-“JiaWei”"><a href="#author-“JiaWei”" class="headerlink" title="author: “JiaWei”"></a>author: “JiaWei”</h2><h3 id="vue2-0父子组件及非父子组件间实现通信"><a href="#vue2-0父子组件及非父子组件间实现通信" class="headerlink" title="vue2.0父子组件及非父子组件间实现通信"></a>vue2.0父子组件及非父子组件间实现通信</h3><a id="more"></a>
+<h3 id="1-父组件与子组件通信"><a href="#1-父组件与子组件通信" class="headerlink" title="1. 父组件与子组件通信"></a>1. 父组件与子组件通信</h3><blockquote>
+<p>父组件<br><img src="http://upload-images.jianshu.io/upload_images/4985324-50d0c3c290608967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="父组件与子组件通信-父组件.png"></p>
+<p>子组件通过props来接收数据:<br>格式1：<br><code>props: [&#39;childMsg&#39;]</code><br>格式2 :<br><code>props: {
+    childMsg: Array //指定传入的类型
+}</code><br>格式3：<br><code>props: {
+    childMsg: {
+        type: Array,
+        default: [0,0,0] //指定默认的值
+    }
+}</code></p>
+</blockquote>
+<p>###2.子组件与父组件通信<br><strong>在vue中是不允许子组件直接修改父组件的值，在vue中只允许单向数据传递</strong></p>
+<blockquote>
+<p>子组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f2e0c20c7ffc0fd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-子组件.png"></p>
+<p>父组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-c140d859e0b96880.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-父组件.png"><br><strong>PS</strong><br><em>vue2.3可以使用.sync修饰符进行子组件改变props值(注意这里是改变。想使用props值的话通过computed进行处理)</em><br>3.非父子组件间通信<br>创建事件中心<br><img src="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="busJs.png"></p>
+<p>组件1触发：<br><img src="http://upload-images.jianshu.io/upload_images/4985324-e2e43d46d207324f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HiVue.png"></p>
+<p>组件2接收:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f76db22b2bde6354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hellloVue.png"></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ECMAScript 6 - 解构赋值]]></title>
+      <url>/hexo/2017/08/07/ECMAScript%206%20-%20%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</url>
+      <content type="html"><![CDATA[<h4 id="ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"><a href="#ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。" class="headerlink" title="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"></a>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</h4><p> 最近在学习vuex中actions的参数中使用到了对象的解构赋值，故此前来学习了解 解构赋值语法<br><a id="more"></a></p>
+<ol>
+<li><p>开始<br>以前，为变量赋值，只能直接指定值。</p>
+<blockquote>
+<p>let a = 1; let b = 2; let c = 3;<br>ES6可以写成下面这样为变量赋值。<br>let [a,b,c] = [1,2,3];</p>
+</blockquote>
+<p>有关模式匹配的规则：</p>
+<blockquote>
+<p>let [foo, [[bar], baz]] = [1, [[2], 3]];<br>  foo // 1<br>  bar // 2<br>  baz // 3<br>  let [ , , third] = [“foo”, “bar”, “baz”];<br>  third // “baz”<br>  let [x, , y] = [1, 2, 3];<br>  x // 1<br>  y // 3<br>  let [head, …tail] = [1, 2, 3, 4];<br>  head // 1<br>  tail // [2, 3, 4]<br>  let [x, y, …z] = [‘a’];<br>  x // “a”<br>  y // undefined<br>  z // []</p>
+</blockquote>
+</li>
+</ol>
+<p>关于解构赋值参数不完整的情况：</p>
+<blockquote>
+<p>let [foo] = [];<br>   let [bar, foo] = [1];</p>
+</blockquote>
+<p>解构不成功的情况下，foo的值等于undefined</p>
+<blockquote>
+<p>let [x,y] = [1,2,3];<br>    x // 1 ,y // 2<br>    let [a,[b],d] = [a,[2,3],4];<br>    a // 1 , b //2 ,d // 4</p>
+</blockquote>
+<p>上面两个栗子，都属于不完全解构，但都可以成功。</p>
+<p>如果等号的右边不是可遍历的结构（数组，Set）那么将会报错。</p>
+<blockquote>
+<p>// 编译报错<br>   let[foo] = 1;<br>   let [foo] = false;<br>   let [foo] = NaN;<br>   let [foo] = undefined;<br>   let [foo] = null;<br>   let [foo] = {}; </p>
+</blockquote>
+<p>对于Set结构进行解构赋值。</p>
+<blockquote>
+<p>let [x,y,z] = new Set([1,2,3]);<br>   x // 1</p>
+</blockquote>
+<p><strong> 解构赋值 - 默认值 </strong></p>
+<blockquote>
+<p>let [foo =  true] = [];<br>   foo  // true<br>   let [x,y = ‘b’] = [‘a’];<br>   x // ‘a’ , y // ‘b’<br>   let [x,y=’b’] = [‘a’,undefined];<br>   x // ‘a’ , y // ‘b’</p>
+</blockquote>
+<ul>
+<li>ES6 内部使用严格相等运算符（===），判断一个位置是否有值。如果一个数组成员不严格等于undefined，默认值是不会生效的。*</li>
+</ul>
+<blockquote>
+<p>let [x = 1] = [ undefined ];记得加上中括号，否则报错<br>   x // 1<br>   let[ x = 1 ] = [ null ];<br>   x // null</p>
+</blockquote>
+<p>上面代码中，如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。</p>
+<p><strong> 对象的解构赋值 </strong><br>解构不仅可以用于数组，还可以用于对象。</p>
+<blockquote>
+<p>let { foo, bar } = { foo: “aaa”, bar: “bbb” };<br>   foo // “aaa”<br>   bar // “bbb”</p>
+</blockquote>
+<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
+<p>如果变量名与属性名不一致，必须写成下面这样。</p>
+<blockquote>
+<p>var { foo: baz } = { foo: ‘aaa’, bar: ‘bbb’ };<br>   baz // “aaa”<br>   let obj = { first: ‘hello’, last: ‘world’ };<br>   let { first: f, last: l } = obj;<br>   f // ‘hello’<br>   l // ‘world’</p>
+</blockquote>
+<p>这实际说明了对象的解构赋值是下面形式的简写。</p>
+<blockquote>
+<p>let { foo: foo, bar :bar } = { foo:’aaa’,bar :’bbb’ };</p>
+</blockquote>
+<p>也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
+<blockquote>
+<p>let { foo: baz } = { foo: “aaa”, bar: “bbb” };<br>   baz // “aaa”<br>   foo // error: foo is not defined</p>
+</blockquote>
+<p>上面代码中，foo是匹配的模式，baz才是变量。真正被赋值的是变量baz，而不是模式foo。</p>
+<p><strong> 解构失败 </strong><br>默认值生效的条件是，对象的属性值严格等于undefined。</p>
+<blockquote>
+<p>var {x = 3} = {x: undefined};<br>   x // 3<br>   var {x = 3} = {x: null};<br>   x // null</p>
+</blockquote>
+<p>解构失败变量的值等于<code>undefined</code>。</p>
+<blockquote>
+<p>let { foo } = { bar : ‘baz’ };<br>   foo // undefined</p>
+</blockquote>
+<p>如果解构模式是嵌套的对象，而且子对象所在的父属性不存在，那么将会报错。</p>
+<blockquote>
+<p>let {foo: {bar}} = {baz: ‘baz’};</p>
+</blockquote>
+<p>对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量。</p>
+<blockquote>
+<p>let { log, sin, cos } = Math;</p>
+</blockquote>
+<p>上面代码将Math对象的对数、正弦、余弦三个方法，赋值到对应的变量上，使用起来就会方便很多。</p>
+<p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。</p>
+<blockquote>
+<p>let arr = [1, 2, 3];<br>   let {0 : first, [arr.length - 1] : last} = arr;<br>   first // 1   ，   last // 3</p>
+</blockquote>
+<p>上面代码对数组进行对象解构。数组arr的0键对应的值是1，[arr.length - 1]就是2键，对应的值是3。方括号这种写法，属于“属性名表达式”</p>
+<p><strong> 字符串的解构赋值 </strong><br>字符串能被转换成一个类似数组的对象，因此字符串也可以解构赋值</p>
+<blockquote>
+<p>const [a, b, c, d, e] = ‘hello’;<br>   a // “h”<br>   b // “e”<br>   c // “l”<br>   d // “l”<br>   e // “o”</p>
+</blockquote>
+<p>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
+<blockquote>
+<p>let {length : len} = ‘hello’;<br>   len // 5</p>
+</blockquote>
+<p><strong> 数值和布尔值的解构赋值  </strong><br>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
+<blockquote>
+<p>let {toString: s} = 123;<br>   s === Number.prototype.toString // true<br>   let {toString: s} = true;<br>   s === Boolean.prototype.toString // true</p>
+</blockquote>
+<p>上面代码中，数值和布尔值的包装对象都有toString属性，因此变量s都能取到值。</p>
+<p>解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于undefined和null无法转为对象，所以对它们进行解构赋值，都会报错。</p>
+<blockquote>
+<p>let { prop: x } = undefined; // TypeError<br>   let { prop: y } = null; // TypeError</p>
+</blockquote>
+<p><strong> 函数参数的解构赋值 </strong><br>函数的参数也可以使用解构赋值。</p>
+<blockquote>
+<p>function add([x, y]){<br>     return x + y;<br>   }</p>
+<p>add([1, 2]); // 3</p>
+</blockquote>
+<p>上面代码中，函数add的参数表面上是一个数组，但在传入参数的那一刻，数组参数就被解构成变量x和y。对于函数内部的代码来说，它们能感受到的参数就是x和y。</p>
+<p>下面是另一个例子。</p>
+<blockquote>
+<p>[[1, 2], [3, 4]].map(([a, b]) =&gt; a + b);<br>    // [ 3, 7 ]</p>
+</blockquote>
+<p>函数参数的解构也可以使用默认值。</p>
+<blockquote>
+<p>function move({x = 0, y = 0} = {}) {<br>     return [x, y];<br>   }</p>
+<p>move({x: 3, y: 8}); // [3, 8]<br>   move({x: 3}); // [3, 0]<br>   move({}); // [0, 0]<br>   move(); // [0, 0]</p>
+</blockquote>
+<p>上面代码中，函数move的参数是一个对象，通过对这个对象进行解构，得到变量x和y的值。如果解构失败，x和y等于默认值。</p>
+<p>注意，下面的写法会得到不一样的结果。</p>
+<blockquote>
+<p>function move({x, y} = { x: 0, y: 0 }) {<br>    return [x, y];<br>   }</p>
+<p>move({x: 3, y: 8}); // [3, 8]<br>   move({x: 3}); // [3, undefined]<br>   move({}); // [undefined, undefined]<br>   move(); // [0, 0]</p>
+</blockquote>
+<p>上面代码是为函数move的参数指定默认值，而不是为变量x和y指定默认值，所以会得到与前一种写法不同的结果。</p>
+<p>undefined就会触发函数参数的默认值。</p>
+<blockquote>
+<p>[1, undefined, 3].map((x = ‘yes’) =&gt; x);<br>  // [ 1, ‘yes’, 3 ]</p>
+</blockquote>
+<hr>
+<ul>
+<li><a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="external">阮一峰老师的ES6-解构赋值 详细教程</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
             
         </tags>
         
@@ -1216,6 +1896,616 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[移动端适配iPhoneX方案]]></title>
+      <url>/hexo/2017/06/07/%5BHOT%5D%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8DiPhoneX%E6%96%B9%E6%A1%88/</url>
+      <content type="html"><![CDATA[<h3 id="移动端适配iPhoneX方案"><a href="#移动端适配iPhoneX方案" class="headerlink" title="移动端适配iPhoneX方案"></a>移动端适配iPhoneX方案</h3><a id="more"></a>
+<p><strong>对页面进行iPhoneX适配处理教程</strong></p>
+<ul>
+<li><strong>在viewport 中添加 viewport-fit=cover 属性</strong><br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0, viewport-fit=cover&quot;&gt;</code></li>
+<li><strong>安全区设置</strong><br>iOS 11中包含了一个新的CSS函数 env()，以及一组四个预定义的常量：<code>safe-area-inset-left</code>, <code>safe-area-inset-right</code>, <code>safe-area-inset-top</code>和 <code>safe-area-inset-bottom</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123; </div><div class="line">  padding-bottom: env(safe-area-inset-bottom); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-3c315c9bdb8b3e0b..png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>一般我们只希望 iPhoneX 适配样式，可以配合 <a href="https://www.w3cplus.com/css3/css3-supports.html" target="_blank" rel="external">@supports</a> 进行css条件判断使用样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@supports (bottom: constant(safe-area-inset-bottom)) &#123; </div><div class="line">  div &#123; </div><div class="line">    margin-bottom: constant(safe-area-inset-bottom); </div><div class="line">  &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>拓展阅读<br><a href="https://www.w3cplus.com/mobile/designing-websites-for-iphone-x.html" target="_blank" rel="external">iPhone X的Web设计</a><br><a href="https://github.com/2877025939/iOS11" target="_blank" rel="external">这里总结了大家iOS 11，iPhone X 适配问题</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[ mpvue ] 微信小程序与Vue的巧妙碰撞]]></title>
+      <url>/hexo/2017/06/07/%5B%20mpvue%20%5D%20%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8EVue%E7%9A%84%E5%B7%A7%E5%A6%99%E7%A2%B0%E6%92%9E/</url>
+      <content type="html"><![CDATA[<h3 id="mpvue-微信小程序与Vue的巧妙碰撞"><a href="#mpvue-微信小程序与Vue的巧妙碰撞" class="headerlink" title="[ mpvue ] 微信小程序与Vue的巧妙碰撞"></a>[ mpvue ] 微信小程序与Vue的巧妙碰撞</h3><a id="more"></a>
+<p><img src="https://upload-images.jianshu.io/upload_images/4985324-0ba4ed5c742997c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mpvue.png"></p>
+<p>写微信小程序有一段时间了，最近半年来张小龙大大动作频频，对应的公司里小程序业务也多了很多。<br>写了那么久的小程序，久则生变，恰巧这周美团前端技术团队开源了mpvue，一款基于vue的小程序开发框架，它可以使你写vue一样的写法小程序，也就是说可以在小程序上用上熟悉的vue开发方式，组件化、vuex、条件渲染、事件绑定、 hotReload,<br>接下来我们一起快速上手体验一番吧！<br><a href="&#39;http://mpvue.com/mpvue/quickstart/&#39;">mpvue 快速上手</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 创建一个基于 mpvue-quickstart 模板的新项目</div><div class="line">vue init mpvue/mpvue-quickstart my-project</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 安装依赖，走你</div><div class="line">cd my-project</div><div class="line">npm install</div><div class="line">npm run dev</div></pre></td></tr></table></figure>
+<p>随着运行成功的回显之后，可以看到本地多了个 dist 目录，这个目录里就是生成的小程序相关代码。</p>
+<p>接下来在小程序引入项目目录就可以开始编写小程序了。<br><img src="https://upload-images.jianshu.io/upload_images/4985324-6d35562517d38a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"><br>对照 <a href="&#39;http://mpvue.com/&#39;">mpvue 完整文档</a> 开始我们mpvue之旅。<br>使用生命周期：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-31344ddfa9663e2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="  "></p>
+<p>需要留意的几点：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-049c6b98cc14c4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不支持.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4985324-d92f67e82016151e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="注意点.png"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Babel-ES6转ES5]]></title>
+      <url>/hexo/2017/03/07/Babel-ES6%E8%BD%ACES5/</url>
+      <content type="html"><![CDATA[<h3 id="Babel-ES6转ES5"><a href="#Babel-ES6转ES5" class="headerlink" title="Babel-ES6转ES5"></a>Babel-ES6转ES5</h3><a id="more"></a>
+<p><strong>本地安装babel-preset-es2015 和 babel-cli</strong><br><code>npm install --save-dev babel-cli babel-preset-es2015</code><br><strong>新建新建.babelrc文件</strong><br>输入以下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;presets&quot;:[</div><div class="line">        &quot;es2015&quot;</div><div class="line">    ],</div><div class="line">    &quot;plugins&quot;:[]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>单文件转换</strong><br><code>babel es6/index.js -o es5/index.js</code></p>
+<p><strong>文件夹转换</strong><br><code>babel es6/index.js -d es5/index.js</code></p>
+<p><strong>babel-polyfill</strong><br><code>$ npm install --save babel-polyfill</code><br>然后，在脚本头部，加入如下一行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import &apos;babel-polyfill&apos;;</div><div class="line">// 或者</div><div class="line">require(&apos;babel-polyfill&apos;);</div><div class="line">//或者在webpack.config.js中加入babel-polyfill到你的入口数组：</div><div class="line">module.exports = &#123;</div><div class="line">    entry:[&quot;babel-polyfill&quot;,&quot;./app/js&quot;]</div><div class="line">&#125;</div><div class="line">//在浏览器中使用在用npm下载的babel-polyfill文件中找到dist/polyfill.js文件。这个需要你在babel编译代码之前引入。你可以把它添加到你的编译文件最前面或者用&lt;script&gt;标签放到最前面。</div></pre></td></tr></table></figure></p>
+<p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。</p>
+<p>举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+<hr>
+<p><strong>课外资料</strong><br><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="external">阮一峰老师Babel入门</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vue2.0实现在线商城]]></title>
+      <url>/hexo/2017/02/17/%C2%96%E4%BD%BF%E7%94%A8Vue-cli%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo"><a href="#这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo" class="headerlink" title="这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo."></a>这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo.</h3><a id="more"></a>
+<h2 id="Demo预览"><a href="#Demo预览" class="headerlink" title="Demo预览"></a><a href="https://13189449986.github.io/VueStore/dist/#/">Demo预览</a></h2><h2 id="Github源码"><a href="#Github源码" class="headerlink" title="Github源码"></a><a href="https://github.com/13189449986/VueStore" target="_blank" rel="external">Github源码</a></h2><h3 id="项目技术栈使用到"><a href="#项目技术栈使用到" class="headerlink" title="项目技术栈使用到"></a>项目技术栈使用到</h3><p><code>vue: ^2.3.3, vue-resource: ^1.3.4, vue-router: ^2.6.0 , lodash: ^4.17.4 ,webpack: ^2.6.1</code></p>
+<hr>
+<h2 id="项目爬过的坑"><a href="#项目爬过的坑" class="headerlink" title="项目爬过的坑"></a>项目爬过的坑</h2><ol>
+<li>vue-cli启动项目 <code>npm run dev</code> 后本地无法正常显示页面<ul>
+<li>此时应该检查本地的 8080 端口是否被占用，需要修改一下配置文件 config&gt;index.js 中调试端口 <code>dev{port:8075}</code></li>
+<li>另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。</li>
+</ul>
+</li>
+<li>vue-cli打包上线 <code>npm run build</code> 后在本地显示正常,在服务器上显示异常<ul>
+<li>第一就是路径问题. 此时修改一下配置文件 config&gt;index.js 中 build 配置属性 assetsPublicPathL 的值为 ‘./‘ </li>
+<li>改完了重新构建发现还是空白，检查下 vue-router 是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
+</ul>
+</li>
+</ol>
+<h3 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h3><p><img src="http://upload-images.jianshu.io/upload_images/4985324-8aa6701106dc7ee8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mark"><br><img src="http://upload-images.jianshu.io/upload_images/4985324-7fb7108a6a6a6c4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mark"><br><img src="http://upload-images.jianshu.io/upload_images/4985324-6db428c005a0e07c.gif?imageMogr2/auto-orient/strip" alt="mark"></p>
+<ul>
+<li>让知识与生活每日同行 , 每天比昨天厉害一点 </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[寒门贵子]]></title>
+      <url>/hexo/2017/02/08/%5B%E8%AF%BB%E4%B9%A6%5D%E3%80%8A%E5%AF%92%E9%97%A8%20%C2%B7%20%E8%B4%B5%E5%AD%90%E3%80%8B/</url>
+      <content type="html"><![CDATA[<h3 id="寒门贵子"><a href="#寒门贵子" class="headerlink" title="寒门贵子"></a>寒门贵子</h3><a id="more"></a>
+<p>  【7哥导读】本文是一位银行的HR写的，他工作了10年，接待了一群到银行实习的实习生，然后观察他们发生的一系列的故事。像小说，但比我们看过的小说更精彩；像现实，但比我们了解的现实更残酷。文章来源天涯社区，作者：永乐大帝二世。﻿</p>
+<p>一看标题就吸引了我，《寒门再难出贵子》。因为我出生在寒门，深刻理解作者为什么说寒门再难出贵子，如果你一会儿看到文章中治国的故事，你就可以联想到我。当然，理解不代表认同。﻿﻿</p>
+<p>文章中的寒门，还不是家庭贫困，而是小城市、小城镇的学生。讲述了好几个残酷故事，应该是真实的故事。否则我不相信作者有这个水平虚构出来。﻿﻿</p>
+<p>大家做好思想准备。这篇文章很长，长得让你读两个小时读不完；这篇文章很真实，真实的会让一些人对生活产生绝望；这篇文章很现实，现实的会毁掉一些人的梦想；这篇文章也没有正能量，但有助于我们认清我们的社会。﻿﻿</p>
+<p>文中很多观点比较悲观和现实，看完文章，也不用沮丧。原文作者不太了解互联网，也不熟悉电子商务。至少在电子商务这个行业有些不一样。我现在有些明白，为什么那么多年轻人会选择在电商领域创业和工作，因为在这里，不用太看他们的家庭；因为在这里，大家真的是在一个差不多的起跑线上，还没有太多人建立固有的壁垒。看完文章，我深深感叹自己很幸运，处于一个不错的行业。﻿﻿</p>
+<p>原文帖子有4.4万字，是几百个帖子汇聚在一起，我整理了一下午，分类，做了排版，纠正了无数错别字（如果还有错别字，大家忍耐一下，应该不会影响原文意思了，之前的真不好说），做了小目录，由于实在太长，分成两天发给大家。﻿﻿</p>
+<p>今天没有7哥闲谈，等把文章发完了再谈谈我个人的看法。虽然长，我看了两遍，校对了一遍，感触很多，强烈推荐阅读。﻿﻿</p>
+<p>——–导读结束——–﻿﻿</p>
+<p>寒门再难出贵子﻿</p>
+<p>作者：永乐大帝二世﻿﻿</p>
+<p>现在越来越看清楚“性格决定命运”，性格这东西是熔透与骨髓的，性格的养成和学校教育没有多大关系，大多决定与家庭背景，和成长环境。从大学毕业出来的第一步，往往起到至关作用的是家庭背景，也就是从起跑线普通家庭的孩子就输了一大截。﻿﻿</p>
+<p>在一个物欲横流的时代，当金钱决定一切，成为人得终极信仰的时候，这时候也是“门阀”、阶层相应出现的年代。﻿﻿</p>
+<p>一群实习的大学生﻿﻿</p>
+<p>结合我自己近半年来的观察， 我在商业银行人力资源部上班。去年招了很多学校的实习生，实习可不是正式录用了。以前自己年龄也相对年轻，没有太多关注以往的实习生，今年正好我负责这些孩子，在我们这里招了大概60名实习生，其实最后录用不会超过10人。这些实习，其实就是银行的噱头，可以找些一个月几百块钱对银行来说的免费劳动力，对学校，对外宣传，对社会某种义务交代吧。但然能进入银行实习的都是学校推荐的所谓的好学生。﻿﻿</p>
+<p>银行这种单位，在我们的体质下，纯国家垄断机构，待遇相交于其他行业待遇还是比较高，在银行工作可以得到优惠的贷款利率，买房子贷款都相对容易。总之一句话是那种世人眼里比较羡慕的单位。﻿﻿</p>
+<p>接下来讲讲这些孩子的人生的第一步究竟是怎么迈出，怎么的实际结果。有时候相处了这些比我小将近10岁的孩子，真的觉得一切的理想主义都是狗屁，只有现实无法再接触的现实。﻿﻿</p>
+<p>大学毕业，何况是大四，还是一些孩子。﻿﻿</p>
+<p>去年的2月份我接待我们这个省最好大学的这批孩子，来到我们单位，从中可以看出这些孩子都是一个名牌212重点大学即将毕业的学生，可是他妈的组成有分了这么几种：﻿﻿</p>
+<p>一类，农村家庭出来就是学习很努力的，在学校很优秀的，大概能有20多个；还有一类就是家庭县城的的孩子，有那么十几个；再就是所谓的大城市的孩子十几个，这就当时看到他们的资料的印象。﻿﻿</p>
+<p>印象很深的是去年三月份，他们第一次来到银行。因为第一天报道，我们准备了一间办公室，早上等着这些孩子来报到，上班后开始等着这些学生的到来，我的同事跟我说：我告诉你我知道哪些孩子来的早，哪些孩子进来会和我门打招呼，哪些孩子会和我们聊几句，哪些孩子会进来会给我们倒水。打赌的结果是中午请他必胜客。。。。。。﻿﻿</p>
+<p>然后，他输出了一大简历说这些孩子，会来的相对早点，然后把这部分简历交给了我，真的当时的结果，最早来的十几个孩子都是他给我的那些简历里面的。﻿﻿</p>
+<p>慢慢的陆陆续续的来了这些孩子，然后真的有的进来很紧张一句话不多说，有的笑嘻嘻的和我们聊几句；有的会自来熟的说：以后你们是领导了，给你们到点水；有的孩子会大咧咧的。其结果是我同事预测的，错误率只有两个。当时我就惊奇了，中午请他吃饭，我说你怎么看出的，他说着不是他的绝招，是以前跟着副行长接待实习学生从副行长那里得到的一个启示。其实很简单，看简历资料的户籍所在地，和父母工作单位，能归纳出群体来，也相应的能归纳这同时一所大学，几种孩子的性格特点，处事方法。因为有些东西是共同，人以类聚，物以群分。站在年长的角度上去分析就和容易得到一个初期的鱼车。下面是同时分析的过程。。﻿﻿</p>
+<p>一，来的很早的孩子，大多是农村的孩子。因为他们重视这是一生中第一次离开学校去个正式单位实习，会很重视。因为是学校推荐，自然会打电话给家里，家里父母能给与的指导无非是好好珍惜。学校重视，第一天要早去，这一类的教导，自然来的最早的是这些孩子。但是都紧张，和我们几乎无交流。﻿﻿</p>
+<p>二，进来和我们打招呼，并且还有到水的那几个孩子无意例外，父母都是在党政机关工作，真的很准。﻿﻿</p>
+<p>三，进来大咧咧，还开几句玩笑的几个孩子，家里都是经商，可大可小，但是父母身上那种灵活态度的熏染，在身上能看出影子。﻿﻿</p>
+<p>四，还有那么两三个，感觉挺冷傲，相对自信，对我们是属于那种不卑不亢的，这几个无一例外的属于大城市知识分子家庭的孩子。﻿﻿</p>
+<p>就因为这个小插曲，我开始觉得很有意思，开始觉得应该去分析这群孩子。十年前的自己也是这个群体中的一员，我内心很清楚，实习的最后结果这群孩子只有几个可以留下，大多还是得自己找工作，那时候心里只是一个念头，保留下他们的联系方式，看看半年后，一年后，一年半后他们第一步迈出的样子，也许能追寻到他们十年后的样子，也就是现在的我，现在我身边的朋友、同学、同事。﻿﻿</p>
+<p>就是这么个念头，让我注意去观察他们，去看着他们从孩子走向成人的第一步。没想到这一年多观察，真的让我总结出了很多东西，也从里面看到了自己的困扰点。﻿﻿</p>
+<p>选择哪个部门﻿﻿</p>
+<p>这群大学生参观完单位后第一天报到的下午，需要在会议室这群孩子开个见面会，这种事面子事，也是银行对外宣传点，自然会有位副行长级别的讲话，然后是人力资源部经理，然后就是具体的告诉这群孩子，去那些部门实习。﻿﻿</p>
+<p>就在领导们对着这帮孩子讲了一堆官话，套话的时候，一个小测验在我脑子里成型：让他们自己选择想去工作的部门，不能写一个，写三个，可以电话与家长交流，给他们20分钟时间考虑，他们直接在会议室不能相互交流，如果想得到指导，可以去走廊，给自己父母或亲人打电话咨询。﻿﻿</p>
+<p>结果是大概十个孩子还明确的写出部门名称，自然还岗位相当不错，有一般随便写写，有的部门是自己臆想出来的，或者具体大概知道是什么工作性质，但是无法准确说出部门名称，就自己造了一个，还有几个写了就是写了 收钱，贷款 之类的几个字，这就是他们大学四年金融专业，经济等等专业。﻿﻿</p>
+<p>然后，当然就是按照银行的实习流程，在给他们讲一下银行如何伟大，如何有前途，如何…..﻿﻿</p>
+<p>当我拿着他们的自荐部门的小纸条，有了这么一个发现：能够精确写出银行部门的那十几个孩子，大多家里是机关，和经商的；农村孩子有一个能精确写出，问了原因是自家有个亲戚在工商银行上班；知识分子家庭的孩子，大多都是什么行政，什么管理，什么内勤，是绝对不会和外联部门的业务有关系；经商的孩子都想实习客户经理；家庭父母在机关的大多都想做主管助理。真的很有意思，一点一点看出了他们的性格，一点一点看出了他们的选择。﻿﻿</p>
+<p>开完会的时候，副行长告诉我，今年行里大概会招15个应届毕业生，各个方面的关系需要应付，这群孩子，只能选择优秀的留下两个或者三个，让我们负责细心甄别一下，到最后，作为单位录用的主要依据。这件事让我扶着，回来在看到这群孩子，我就有点心颤，60个都是学校的好学生，只有两到三个实习完就可以来这里上班了，人生的第一步，就可以一这里为开始，其他的五十七八个孩子又得迈向人山人海的招聘会，又得一次次的面试打印简历，突然心里觉得很压抑。﻿﻿</p>
+<p>第二天，就是给他们安排部门了。哪个单位都一样，有的部门自然是舒服的要命，自然有的累的要死，其实哪个部门也想要跑腿的小孩，但是对我们来说的跑腿，对他们来说也是有好部门，不好的。如果被安排做大堂经理就要一直站着，挂个横幅，一天在大堂跑来跑去；安排的老总办公室的外边就是接电话，复印个材料；安排到监察部对不起跟着去安装提款机和指挥工人安装摄像头吧。因为实习不能安排做窗口从事窗口业务，大多就是内勤，外联，和打杂了。﻿﻿</p>
+<p>俗话说，有人的地方就有江湖。别看小小实习，斗争就开始了。第二天一早我总共接了四五个电话，也有直接去我办公室的同事，级别高点的有部门老总，低点的有普通同事，开始给我打招呼：把哪个哪个孩子，直接弄他的一亩三分地，无一例外要和我吃饭，哈哈。。没办法，只好按照他们的要求吧相应的孩子，分到他们的麾下，人数，五个，还有五十个多个，只好采取叫到谁，一个部门一个部门来，一个部门满了，去下一个。这里面除了家里能联系到银行打过招呼的，其他就是随机，也许是运气吧。不过出于人道主义，我定了一个活的规则：一个月后轮岗！﻿﻿</p>
+<p>小胖和他爸的故事﻿﻿</p>
+<p>时间就这么过着，我偶尔中午吃饭或者在办公楼碰到各个部门的同事，会问一下这些实习生的情况。当然了，什么情况都有，还不至于说捅娄子，但是有喜欢的，有夸的，当然也有抱怨的大学培养的是脑残吗，也有直接骂的，要我把蠢蛋弄到别的部门，给他们换给聪明伶俐的。。。。﻿﻿</p>
+<p>然后在这些同事的夸奖、褒扬、抱怨的、还有直接骂大街的当中，我发现了一个规律：﻿﻿</p>
+<p>1 农村家庭的孩子普通不会交流。当处于一个部门的新人的时候，不会去交流，不会去拉近，更谈不上和什么拉近关系。虽然不是绝对，但是这个比例超过农村家庭的90%，但是这些孩子有个很大的优点，都很勤快，很少找借口，大体属于那种可以容忍的范围内。。。﻿﻿</p>
+<p>2 受到夸奖的孩子家庭大多是经商家庭的孩子，比较活，在实习的时候，和老员工的互动能力比较强，有的家庭个别吐出不差钱的，甚至可以请老员工吃饭，有的还能在解决问题弄出个新点子。属于那种不会让人讨厌的类型，属于收到赞誉最多的一个群体。。。﻿﻿</p>
+<p>3 再就是家里在党政机关做干部的孩子，最大的优点是有礼貌，会说话，不太会唐突，比较有眼力劲，个人气质比较好，但是有时候有耍小聪明的时候，因为年龄小，很容易被年成长的发现，褒贬不一。。。。。﻿﻿</p>
+<p>4 家庭知识分子的五六个孩子，这几个孩子无一例外的在工作一段时间后，都不太受实习部门的待见。原因有那么几个：一是没有眼力劲，二是相对自我感觉比较好，但是有时候会因为言语不懂得分清场合，和年龄差别，说出一些比较固执，合着搬出让实习部门尴尬的事情。﻿﻿</p>
+<p>其中印象比较深的一个女孩子，父母是中学老师，人和自我感觉良好，对给安排的跑腿，说三道四，和谁说话也顶着来。弄得实习部门强烈不要，弄得很烦，最后没办法，只好让其检查消防器材，后来因为嫌辛苦，觉得不公平，找我谈话，最后我给的答案：如果不愿意接受，回学校吧。后来再来每天都迟到，自己就退出实习了，这是第一个自己退出的，也是唯一的一个。很奇怪的性格，后来了解到这女孩子毕业后一直留在省会没有回老家，也没找到一份正式工作，好像在去蛋糕店工作了一阵，后来又去摆地摊，在后来就一直考什么研究生。就没有能知道她消息的了。。。。﻿﻿</p>
+<p>和这个女孩形成截然相反的是个男孩，个子挺高，是个小胖子，喜欢笑，整天哈哈的。这家伙当初自动要求干大堂经理，因为姓齐，按照约定俗称就给他叫做齐小胖吧。这个孩子当初我说大堂经理挺累，他还自动要求，说可以减肥、照顾女同学。然后说自己太胖，不适合干细致工作，呵呵。就是这个小家伙告诉了我什么叫做“人熟是个宝”，什么叫永远都笑绝对没错的。﻿﻿</p>
+<p>这个孩子，家庭条件不错，父母开了一家不错的家居饰品店。当然这个小家伙学习也蛮好，从二级城市来到省会上大学，这孩子的性格很有意思，那他开玩笑，从来不会烦，见谁都笑呵呵的。这个孩子后来虽然没能最后银行工作，但是因为性格好，因为比较活，虽然没有进来，因为家庭条件可以提供一下支持。他在银行实习的六个月，混了个和谁也挺熟，最后因为在银行实习，自己开了家公司，主要是给银行安装提款机。因为这行业是个稀缺行业，一旦坐上了，就很难别人再代替。﻿﻿</p>
+<p>一年的时间，小家伙买了房子，结了婚，也是时常给我打电话。因为当时他想做这个，和他爸爸交流了意见，因为和我比较熟，他爸爸专门跑来找我，请我吃饭，也就是这次吃饭他爸爸教给他也同事教给我一个很重要的人生道理：﻿﻿</p>
+<p>“人熟就是个宝”。﻿﻿</p>
+<p>他吃饭的时候自然少不了一大堆奉承话，然后喝了点酒，就说到了自己没文化自己如何干成了一个家具城。当时我就觉得这么小胖的爸爸应该有点思维含量，他告诉我说：小胖学习挺好，是个好孩子，估计想留在银行，家里没有门路，但是既然有条件在银行实习了，那么自己在省会也没啥能量，就让这个孩子希望能从银行的下属相关业务中找点什么做，从来没有听说过银行会欠债不还吧，当时这个思路真的让我大开眼界。。。当时就很有耐心的听了小胖爸爸的话，与其说小胖这孩子不错，还不如说小胖的爸爸真不错。下面是小胖爸爸给小胖的规划。﻿﻿</p>
+<p>小胖开始进银行实习，让他爸爸很高兴。当问他爸爸说做那个部门的实习的时候，他简略的时候告诉他爸爸，他爸爸不了解银行，但是听小胖说完。立马就觉得实习吗，最重要的是弄个脸熟，去大堂站着吧，这样银行的头头可以经常见到你。这就是胖爸爸的指导，别的部门银行的头头估计不是能天天见着吧。后来因为实习时间长了，小胖也听说最后留下没几个，再次回家和他爸爸聊这个问题，胖爸爸说：我们没有关系，银行工作的那些说了算的，估计也不差我们家的这点礼物钱，老爸没有本事，能让你留下，但是是不是可以换个思路，银行也是一家单位，也需要和别人合作，小胖你捉摸一下银行有那些外联公司给银行提供服务，如果可以，小胖人活着就这样，各有个的命运，不要在想着留银行的，争取着半年你看看银行都需要什么业务，争取找出这么一个。小胖的思维转的很快，接受了他爸爸的意见，从那开始，小胖就从办公文具，什么消防器材，什么摄像头按照，什么纸张销售，等等诸如此类﻿﻿</p>
+<p>最后发现了提款机安装，每装一台的费用不低，但是还是每次都换不同的人，头脑形成了这个思维，告诉我其父亲，他爸爸么几天就来到这里，请我和小胖的主管吃饭，又是送礼，又是吃饭。了解了整个事情弄明白的时候，在离小胖毕业还有俩月的时候花了20万给小胖办了公司，因为他老爸有家具城的资质，有装修的资质，很快通过小胖找到我和小胖的主管，然后找到了主管的副行长，拿着公司，拿着资质，比装一台比原先便宜五百块的价格承包了我们银行的提款机业务。同时因为相互银行的往来，我们也给小胖介绍了合作银行，。。﻿﻿</p>
+<p>因为这个关系，小胖经常来找我，我曾问起小胖怎么那么听他爸爸的话，小胖说其实就是觉得在老家周围邻居亲戚，朋友老爸算混得很好的，老爸自己没啥文化，但是能领着几十个员工干，有几把刷子，从小认为爸爸挺能的。再就是小胖很喜欢说一句口头禅，就是自知之明。也是胖爸爸经常说的那句咱得有自知之明。。。。﻿﻿</p>
+<p>小胖有个好爸爸，能给钱，还能发现商机，能让小胖当个小老板，正是他爸爸说的那句：我生的他，了解他，他挺适合自己干，咱也得有自知之明，进不了银行，就合作呗，在省会做个小老板，总比在下面做老板强吧。人得有自知之名，抓住任何机会，这是小胖和他爸爸的故事。﻿﻿</p>
+<p>周周的工作﻿﻿</p>
+<p>就是这群孩子工作了一个月之后，大多开始隐约的知道，这个群体有可能留下的指示为数不多的几个人。因为在这里实习，多少了解了商业银行的工资，待遇，相对其他单位还是很有诱惑力的，就这样开始了。和小胖那样的理智派很少，当然这种理智来源于父辈的见识，父辈的能力和经济能力和人生智慧。这种孩子很少，就那么一个，大多数孩子，也包括我们这群成年人，都会为了一个飘渺的希望，希望自己比较幸运，去努力去争取。﻿﻿</p>
+<p>也就是从这些孩子中，我获得了一个很有价值的思维。如果有能力一定去争取，因为既然大家都说这件东西好，既然世俗的认知都认为它是好的，那么它一定是好的，不要去自认为自己能够自己打拼出另外一个天地。如果全面衡量觉得这块蛋糕争取不到，立马要转换思维，不要做自己力有不逮的事情，因为努力了，争取了，你的条件达不到，最后伤心还是你自己。这一点很重要，很重要。﻿﻿</p>
+<p>也不知道是出于好心善意，还是出于什么，差不多每个孩子，开始知道我手里有名额，当然这件事，目前只有我和副行长知道，只有两到三个，从那天开始我的办公室，和我的手机开始忙碌起来。刚开始被要走的几个孩子，自然是拉着家长，拉着银行的同事，开始一次次要约我吃饭。这个是自然，人之常情，我知道我自己那点权利，只有两个名额，这个我谁也不想得罪，就一直开拓，找个理由告诉给我电话的人说：我没有这个权利，我也要听一大推这个孩子如何如何好，也许他是全世界最优秀的孩子。接着也有孩子的家长，开始直接会找到我的家，提着东西，呵呵，鉴于我手里那点可怜的权利，这礼物我没法收，即便能收，也不想这样，因为我觉得我确定一个孩子，那么就意味着另一个孩子要去满世界的面试，心有不忍，呵呵。。﻿﻿</p>
+<p>这时候，当狼多肉少的时候，就完全体现出一条定律：小狼怎么样，完全取决于老狼。﻿﻿</p>
+<p>周周一个女孩，家就是本地的，母亲在某物价部门担任处级干部。这个女孩子家教不错，穿着打扮很时尚，重要的学过芭蕾舞气质很好，有点那种很女孩的感觉，很有礼貌。我对这个女孩子最大的印象就是：家教一定很好，总是那么不紧不慢。﻿﻿</p>
+<p>当这个消息流传到周周的时候，让我明白了真么一个道理，孩子不错，只是一个很微不足道的条件，要爸爸或者妈妈很不错才是绝对的硬性条件。实习的第三个月，我接到了行长的电话，是大头一把手的电话。告诉我周周表现很好，必须要我把实习说明给她写好，我这时候耍了点小聪明问行长：我对这个女孩子没有什么印象，长头发，短头发，是哪个啊？行长说了一句，那个样，就是那个周周的女孩子，反正不是长头发，就是短头发，记住吧她的实习报告弄好，就行！哈哈，事实上行长也不认识这个女孩子是吧，为什么行长直接打招呼，后来副行长给我说到，周周的妈妈的是物价部门的处长，通过关系找到银监局的某位副局长，这位副局长直接给了行长电话，大头只有点头的分，既然硬性条件够，别的都不重要。第一个，这是第一个，后来更是听说，这个名额确定了，周周填了工作合同，周周的妈妈，爸爸，和银监局的副局长，我们银行的几位行长，喝了一顿，挺清楚是周周签了正式的合同，人家才请客啊，小弟级别太低，这种高级别请客，没小弟啥事。﻿﻿</p>
+<p>找工作，好工作，搞定一把手，如果主管部门和本单位一把手打招呼，几乎十拿九稳，说不准单位还得巴结你。从此周周去了六楼，分行办公室，主要负责和政府部门的联系工作，当然这里面其决定作用的是什么，大家明白不能在明白了。周周现在我的同事，找了个省政府的小伙在在恋爱，小伙子也是那种家庭，呵呵，在下看来前途一片光明。 当然周周的也有下插曲，就是实习的时候和同学恋爱了，哈哈，让其妈妈找了那个男孩子。。。自然是就是几个月的恋爱。。。﻿﻿</p>
+<p>治国的故事。﻿﻿</p>
+<p>如果一对父母能对孩子起名治国，那么对孩子的期望一定很大。治国是学校的班长，也是学生会干部，篮球打得很好，皮肤黝黑，很精神，很勤快。在风控部实习，很不错的孩子，经常看着抱着一沓沓的资料跑上跑下，风控部权利最大，业务最多，资料，文件自然最多，这点比较累，没完没了的复印文件，没完没了的开会。治国被安排在风控部实习。﻿﻿</p>
+<p>风控部几乎是银行工资最高的部门，因为求的太多，当然饭局最多，当然部门收到的小礼品也最大。治国家是农村的，从小学习很努力，篮球打得很好，在大学里成了一个公众人物，在这群女孩子中也很受欢迎，当治国听到实习名额的时候，这个消息是从风控部老总那里听到的，好几次下班的时候，看见他在我停车位那里，见了也就打招呼，连着好几天。﻿﻿</p>
+<p>我知道他想干什么，有一次我说做我的车吧，正好经过你们学校，这样不用打车了。那天正好我老婆去岳母家看孩子，我也没饭局就是想开车转悠一下，就拉上他了。刚开始孩子很拘谨，很拘束。我说在风控部很好吧，好好努力争取留到风控部，那可是银行最夯的部门。治国接着这个话题开始了他的语言。快到学校他说大哥到这请你吃饭吧。当时我觉得这孩子挺有意思，一路说了那么多敲边鼓的话，到学校附近说请我吃饭，肯定这孩子盘算着附近的饭店很熟，在经济范围内请我吃饭，可是一想银行一月就给他们800块钱的实习工资，还不知道有这八百家里还给不给生活费。我说我请你吧，等你上班了，再请大哥。就这样没有听他选择的饭店，我选择我熟一点的一家饭店。开始我一场谈话。我说开车我不喝酒，让他喝点，刚开始还拘谨，喝了一瓶啤酒后，治国讲起了他的身世。﻿﻿</p>
+<p>家农村的，还有个弟弟，父母纯农民，父母对他有很大的希望，通过在银行的实习，觉得要是能留下真的再好也不过了。这时候我突然心里很压抑，不知道该对他说什么，他还是个孩子，没有经历过几次饭局。我劝他喝了两瓶啤酒后，就给我开始掏大实话，告诉我风控老总说告诉其名额的事，说如何如何想留下，说自己上学如何的努力。我发现了一个问题，这孩子不讨厌，但是总是说自己，还太小，太渴望留下工作。突然有点不忍，但是我能说的只有好好表现。最后我告诉他，我说你们部门的老总，风控的老总在行里很有分量，他比我管用。但是治国说了一句话，说老好好干，没说别的，是部门同事告诉他，我这里可能有名额。自然我只能说一堆空话套话，就在他的诉苦中我把微醉的他送回了学校。﻿﻿</p>
+<p>后来治国跑我家里来送礼，一条烟，还有一些土特产，我没有收。后来还因为一次外联活动，给他报销了500块钱。后来风控的老总说，治国给他送了一些土特产，风控的老总的老婆嫌不干净给扔了。对于老总来说那是个笑话，但是我知道，治国你在学校也许很优秀，你这孩子挺努力，但是在这个拼家庭的社会，也许已经没有这份工作了。因为风控的老总觉得这孩子挺傻，送礼送了一些扔货。治国很勤快，也会说话，在学校做学生干部，要是在三十年前也许前景 很好，但是现在，治国没有人稀罕你的土特产。治国，这不是一个使劲干别人就说你好，肯为你说话的时代。治国长得很帅，男孩子没用，没有人指导他，没有人告诉他怎么去做，什么事都是他去摸索。也许治国以后会出人头地，但是40岁之前他的命运已经确定了，要让现实碰到头破血流在知道社会的真相，才能磨合好自己。。。。﻿﻿</p>
+<p>治国后来没用留下，几经面试找了一份保险公司的工作，很辛苦，后来逛街见过一次，看得出感觉挺累，挺辛苦。﻿﻿</p>
+<p>但是我觉得治国还可以，我就想不通，为什么风控老总不肯为其说句话？如果他说的话，我也许会给他点助力。这是后来的我和风控老总一次饭局的谈话，风控老总说有一次看见治国把接待用烟，往口袋里塞了两盒，这事让他彻底的否定了治国。后来我让小胖问治国拿烟做什么，小胖给我的答案是治国想回家的时候带给父亲抽，因为中华父亲没抽过几次，我当时的感觉，真是觉得一个字：哎。。。﻿﻿</p>
+<p>还是小胖点醒了我，说治国家不是很好，也没啥坏心，就是想给父亲那点烟抽。我一下明白了，风控老总懒得去明白，也不想了解，这孩子为什么吧接待烟装走，但是这个细节让他彻底否定了这个优等生，这不是什么大事，但是这个细节让其觉得治国讨厌。﻿﻿</p>
+<p>治国觉得有那么多中华，父亲抽烟，不经意拿几盒给父亲，让父亲抽一下好烟，本来就是接待的，和偷也牙根没有关系。。但是就是治国的这份孝心，让治国的形象在他们老总那里大打折扣，也是因为没有，这个没有抽过几次，让治国没有了机会。﻿﻿</p>
+<p>我问小胖你拿吗，小胖说自己买不行啊，这种东西作为实习的拿了不好，反正就是不好。这就是差别，是小胖高尚不会有那想法吗？是小胖家里可以买，不会去做，治国也许也知道拿不好，因为自己只是实习生，但是烟很好，自买吸太贵，出于孝心，其原因还是家庭吧。后来我知道是因为这件事治国的老总烦了治国，一句话也没说，我也无法在为其说话。这个结果，真的有点无以名状，是家庭的原因，还是什么？我也没弄清楚 ，这孩子挺可惜。﻿﻿</p>
+<p>学校是不会教育你如何为人处事的，即便有思想品德课，老师也只是讲讲空泛的道理而你也未必就真听得进去。真正的做人的教育在哪里呢？全在家里呢！每个父母都有自己习惯的一套做人方法，他也习惯性地把这套原则方法传授给孩子，因为他觉得这样做是对的，否则他这辈子就不这样做了。但许多普通的父母就没有想到，他这辈子的不成功是否和自己的为人处事方法有关呢？如果有关系，那他还能把自己的老一套再教给孩子吗，让孩子也一辈子不成功？﻿﻿</p>
+<p>总结了一下，家庭优越点的孩子比较不惜财，相对性格也开朗一些。以前我一直的印象是家庭普通的孩子应该更朴实一些，但是通过观察这些孩子，在联系到自己的朋友、同事，真的，家庭条件差些大多都是有些狡黠的，做事心理有很大的计算过程。这个计算过程对父母来讲是好事，比较节省，但是对自己发展，交友，人生态度是一个很大的思维框架，往往会跟随自己的一生。﻿﻿</p>
+<p>思维方式差异就更大了。﻿﻿</p>
+<p>例如小胖的爸爸的思考方式以及对小胖的教育。自己出了哪些问题要怎样修正。如何有自知的能力。这群孩子大多遇到问题首先是抱怨，其次再想别的，而且一般不会思考自己的毛病。两种思维方式都自成体系。从外表来看你看不出它们直接产生的后果，所以作为孩子特别容易承袭父母的思维方式。但是恰恰就是思维方式是优秀与否的根本决定因素。 我们的青年一旦承袭了一种思维方式往往就决定了一生的定位，而且直至终老也未必能发现自己的思维导致了自己的命运。﻿﻿</p>
+<p>小东和原子的故事﻿﻿</p>
+<p>小东是个男孩，家境不必周周差，也许还强点，但是这是唯一一个可以留在银行，但没有留下的孩子，还是因为家境。这个孩子很幽默，不讨厌，据说已经家里给协调好了关系，可以留下，最终他的老干部爷爷，没有同意他留在银行。毕业后拿着红头文件去了南京某指挥学院，深造了一年，取得了研究生学历，然后分回本地，去做了军人。单位是后勤部，很舒服的单位，很惬意，分了一套房子，找了个军官做老婆。﻿﻿</p>
+<p>有个插曲我得讲讲，小东一直很喜欢一起实习的一个女同学，当然后来小东后来去南京，恋爱还是继续的，后来小东回来家庭父母知道这段恋情。那个女孩不错，但是小东父母的家庭会议的结果就是一个，坚决不允许，理由是女孩家事县城的，对将来小东的发展没有什么助力。为此小东和父母拍了桌子，闹了一场，但是联系的家庭会议，连续的压力，包括小东父母不让小东带女孩回家，维系了几个月，小东的同学女友提出了分手。﻿﻿</p>
+<p>然后小东开始了一次次的相亲，最后是一个爷爷战友的孙女，一个同样在军队的女孩和小东谈起了恋爱。这女孩子家境比小东还好些，家里有好几套房子。按照小东的话说，现在跑着住，已经拍了结婚照。女孩现在专业去了国家开发银行，小东还在部队，只是打电话联系，说结婚后转业，去机关吧。问他说怎么样，没觉得咋样。但是从原子那里看，当初幸亏听了父亲的话，如果就和那个同学好了，弄不好原子的路就是小东的路。小东很喜欢对我说：听爸爸的吃饱饭。。。﻿﻿</p>
+<p>原子一个极其聪明的孩子，家是乡镇的普通家庭。这孩子很聪明，或许说有心计，小孩实习的时候嘴很甜，这是给我的印象。在我们这里实习的时候，最早想追周周，很可惜没追到，追了一个同一个市区来的女孩。两个人实习的时候就拉着手，还没毕业原子就带着女孩子回了家，还没毕业两家老人见了面，刚毕业，原子就通过父母家拿了十几万，付了首付买了房子，然后顺其自然的和女孩子结婚，七月毕业，八月结婚。那时候，小胖，小东都很羡慕原子，可是这种羡慕没有维持多久。因为结婚了，原子的父母就催促让原子当爸爸，当然原子的岳父母也是这么想的。﻿﻿</p>
+<p>很快原子有了房子，有了孩子。最近听小东，小胖说起原子，已经没有了羡慕，都在叹息，说原子要不是听家里的，现在不至于那么累，太累了。。。哎。。。﻿﻿</p>
+<p>两个人的评价都是：哎。。。。﻿﻿</p>
+<p>原子毕业后，找了一份某大型国有企业做推广，也就是营销类的吧，收入还可以，原因这孩子很活，很聪明。但是因为家里的一再要求，老婆怀了孩子，没工作几天，就怀孕了，也就没了工作，等着生孩子，这样原子还可以维持下去。﻿﻿</p>
+<p>孩子生了，原子最早做了爸爸，可是原子也开始知道了什么叫承受不了。﻿﻿</p>
+<p>原子有房贷，现在有了孩子，面临很现实的问题，媳妇生了孩子，那么就需要一个老人带孩子。从媳妇生孩子开始，就已经超过了原子的承受能力，也许原子应该晚点要孩子，那样会更好。但是孩子生了就要养啊，孩子本来是爱情的结晶，可成了原子负累担负不动的开始。﻿﻿</p>
+<p>小胖说：原子生孩子后，小胖去医院看孩子，原子的媳妇就说需要请一个月嫂，差不多价格在这个城市3500左右，月嫂一般最少借俩月。现在的情况是原子贷款买了房子，自己的工资还了房贷，还得供养一家人吃。现在孩子出生了，什么奶粉，尿布，衣服，等等，家庭一切的开销都是原子的工资里面。。。原子实在是拿不出这份月嫂钱。父母说帮忙出了首付，没钱了，岳父母说的好听，没有钱也出不着。拿孩子怎么办，还得看啊，生孩子花了一万多，让原子在也没有多余的钱，只能让老妈和岳母轮流从老家来照顾孩子。因为买的房子小，住不开，一次看一个礼拜。从老家来，这样老家不是爸爸自己在，就是岳父自己在，不管是老妈还是岳母，都是那么心里放不下。﻿﻿</p>
+<p>如果物质丰盈了，孩子的出生，对家庭来说那是很美好，但是没钱孩子有生了，那么父母还得从老家来看孩子，这就是一个炸药包的导火线了。。。。。﻿﻿</p>
+<p>刚开始孩子出生的喜悦，还能维系。但是随着媳妇做完月子，母亲，和岳母轮流看孩子，也因为，原子真的没钱了，每一样都要开销，房贷、物业费、孩子的奶粉、衣服，一切一切都需要钱。﻿﻿</p>
+<p>原子你还是个孩子，当了爸爸，你的承受能力还太弱，双方家庭一个农村，一个乡镇都没有钱来支持了，矛盾就开始在孩子出生的第三个月开始出现危机。原子的媳妇，想让老人看着孩子，自己也去找份工作，缓解一下压力，但是岳母不干，觉得孩子半岁前不能上班，如果上班了，可能要烙下病。这样就有了争执，岳母开始抱怨原子家没钱原子没本事，一个刚工作刚够一年的普通的孩子能有多大本事？家里的钱都付了首付了，这样矛盾就开始积累。。。﻿﻿</p>
+<p>一切都是钱，钱，钱！还好原子的媳妇顶住压力找了一份工作，但是因为没有关系和背景，只找到了一份千把块钱的工作，但是对家里也是一份支持。﻿﻿</p>
+<p>可是这千把块钱的工作，因为上班，孩子就得老人自己在家看，这样老人看一天就很累，然而下了班，是原子累，媳妇也累，这样既因为刷碗，洗尿布开始起争执。﻿﻿</p>
+<p>女人的幸福活在比较之中。原子的媳妇开始心里不平衡了，生了儿子为什么活得这么难？中午顶着满头大汗挤车做公交累半死给孩子喂奶，吃口饭，还得下午在跑去上班。这时候原子就成了原子媳妇眼中的废物，那个同学的男朋友，那个同事的老公都比原子有本事。﻿﻿</p>
+<p>原子为了多挣点，没完没了的跑外，但是又能多拿多少呢，还是挣得不够花的，也开始抱怨，开始抱怨岳母催着要孩子，现在这么累。。。。﻿﻿</p>
+<p>就在这时候，原子的老妈在轮班看孩子，原子的爸爸在家因为自己，可能吃不好什么的引发肺炎。承认肺炎这东西很麻烦，需要住院，这样原子的老妈只能跑回家，让岳母来看孩子，岳母觉得不是自己的班，来看孩子就多少就有点怨气，自然看完孩子，就比较埋怨。事就这么凑巧，原子单位的一个单子被同事拿到，少挣了几千块钱，那天心情不好，回家媳妇和岳母吃完了饭。抱歉，原子，没有了，想吃自己做，或者去买吧。原子只好去自己做饭，这时候原子老妈打来电话，问原子咋样，原子说做饭呢，结果原子的妈妈打原子的媳妇的手机说，那么累了，怎么不给做饭，要累死他吗？就因为这个原子的媳妇也哭着喊，我也累，我够了。接着就是原子的岳母拿过电话质问原子的老妈为什么弄哭原子的媳妇，马上从电话里吵，变成了原子和岳母和媳妇的对吵。﻿﻿</p>
+<p>这是第一次爆发，吵累了，原子出去给小东打电话说：小东我真羡慕你听你爸爸的话，没有选择哪个女孩，接着就是小东听着原子哭了。﻿﻿</p>
+<p>这矛盾开了头，不是你不吵，矛盾就消失了的，矛盾还在，只是不吵压着，但是压不住还会继续爆炸。。﻿﻿</p>
+<p>原子爸爸肺炎好了以后，老妈继续在看孩子，以为可以平静了，谁知道因为上次的对吵架，又要爆发。一次原子下班去楼下打水，结果上楼发现媳妇和妈妈谁也不说话，吃饭的时候，老妈不吃，背对着饭桌，看着孩子。原子问老妈，为什么不吃饭啊，叫了几次，老妈也没说话，原子过去一拉老妈，看见老妈在流眼泪。结果原子就好像明白了肯定很媳妇有关，就问媳妇怎么回事。刚开始媳妇不说话，原子大声喊了一句：那么大年纪给你看孩子你哪里不满意，要老人哭，你大学对着屁股念了！﻿﻿</p>
+<p>这一句老婆摔了筷子开始大哭，说够了够了累死了！然后老妈也哭说攒了一辈子的钱，换来的就是职责，然后和儿媳妇就开始了争吵。原子把媳妇拉到卧室，把老妈拉到客厅沙发上，原子说那时候，感觉天地都在旋转。起因只是因为给孩子蒸鸡蛋，老妈说老了，媳妇说凑合吃吧，又不是贵族，整天给孩子都这么吃，结果就对着顶了几句，然后就有了这次争吵。﻿﻿</p>
+<p>因为吵，妈妈哭，原子借来小胖的车把老妈送回家，再去岳母家接上岳母。岳母在车上阴声怪气，原子多次对岳母说，一个草竖起来还有高低，不管怎么样，小的不能和老的骂吧，希望岳母说说给自己妈妈道歉。可是岳母一直觉得自己女儿委屈，告诉原子，一头老婆一头妈妈，说啥说。就因为这个没说，导致了一次动手，原子跑到小东那里住了三天，这其中原子的媳妇没问一句。原子告诉小东说：起先家里不同意那么早结婚，但是原子觉得自己能处理，觉得父母一生过得失败，啥意见都是废话，现在想起小东的爸爸能够阻止小东，真的很羡慕。。。真的很希望当时家里能给他一个好建议。﻿﻿</p>
+<p>后来原子回家，多次听小东，和胖子说，原子其实属于同龄孩子里边能力比较强的，错就错在结婚太早，结婚也不要紧，主要就是要孩子太早，自己的承担不了，家里也帮不了什么忙，才活着真么累，现在还是出矛盾，孩子依旧在慢慢长大。小胖对我说：这样下去可能会离婚。小东告诉我：原子这样维持下去，也许哪天会崩溃了。。﻿﻿</p>
+<p>原子我给他打过一次电话，问他为什么经常羡慕小东，原子对我说：因为自己内心否定了父母，自己心里实质觉得父母很失败，当初父母希望晚点结婚自己没有听。当然父母没有坚持，结婚了，一直催着要孩子，自己在没有积累的时候，结了婚，生了孩子，这些矛盾的出现不是偶然而是必然。﻿﻿</p>
+<p>其实我还是想说，刚踏入社会的时候，父母的意见真的很重要，如果讲不出道理，这重要的选择的时候，一定坚持一下。原子，我身边这个年龄有的依然在重复原子的另一个版本相同的故事。。﻿﻿</p>
+<p>在没有积累的时候，一定不要去做承担不了的事情，要不真的太累了。。﻿﻿</p>
+<p>小东是个男孩，家境不必周周差，也许还强点，但是这是唯一一个可以留在银行，但没有留下的孩子，还是因为家境。这个孩子很幽默，不讨厌，据说已经家里给协调好了关系，可以留下，最终他的老干部爷爷，没有同意他留在银行。毕业后拿着红头文件去了南京某指挥学院，深造了一年，取得了研究生学历，然后分回本地，去做了军人。单位是后勤部，很舒服的单位，很惬意，分了一套房子，找了个军官做老婆。﻿﻿</p>
+<p>有个插曲我得讲讲，小东一直很喜欢一起实习的一个女同学，当然后来小东后来去南京，恋爱还是继续的，后来小东回来家庭父母知道这段恋情。那个女孩不错，但是小东父母的家庭会议的结果就是一个，坚决不允许，理由是女孩家事县城的，对将来小东的发展没有什么助力。为此小东和父母拍了桌子，闹了一场，但是联系的家庭会议，连续的压力，包括小东父母不让小东带女孩回家，维系了几个月，小东的同学女友提出了分手。﻿﻿</p>
+<p>然后小东开始了一次次的相亲，最后是一个爷爷战友的孙女，一个同样在军队的女孩和小东谈起了恋爱。这女孩子家境比小东还好些，家里有好几套房子。按照小东的话说，现在跑着住，已经拍了结婚照。女孩现在专业去了国家开发银行，小东还在部队，只是打电话联系，说结婚后转业，去机关吧。问他说怎么样，没觉得咋样。但是从原子那里看，当初幸亏听了父亲的话，如果就和那个同学好了，弄不好原子的路就是小东的路。小东很喜欢对我说：听爸爸的吃饱饭。。。﻿﻿</p>
+<p>原子一个极其聪明的孩子，家是乡镇的普通家庭。这孩子很聪明，或许说有心计，小孩实习的时候嘴很甜，这是给我的印象。在我们这里实习的时候，最早想追周周，很可惜没追到，追了一个同一个市区来的女孩。两个人实习的时候就拉着手，还没毕业原子就带着女孩子回了家，还没毕业两家老人见了面，刚毕业，原子就通过父母家拿了十几万，付了首付买了房子，然后顺其自然的和女孩子结婚，七月毕业，八月结婚。那时候，小胖，小东都很羡慕原子，可是这种羡慕没有维持多久。因为结婚了，原子的父母就催促让原子当爸爸，当然原子的岳父母也是这么想的。﻿﻿</p>
+<p>很快原子有了房子，有了孩子。最近听小东，小胖说起原子，已经没有了羡慕，都在叹息，说原子要不是听家里的，现在不至于那么累，太累了。。。哎。。。﻿﻿</p>
+<p>生活就是：生下来，活下去﻿﻿</p>
+<p>这些孩子我照管了六个月，注意了一年半，觉得他们的群落就是这个社会的一个缩影。人生其实有些规律可循，只是在自己年轻的时候，去选择，自己有没有足够能力去分析自己选择的正确与否，包括楼主自己，经常过了几年后，才发现原来当初就是个小傻瓜。在没有家庭以及家族的助理完全靠自己选择，除非是上天青睐的那种人，要不然大多都得让自己错误的思维框架给摔个满头包，甚至头破血流。﻿﻿</p>
+<p>有很多白手起家的企业家，有很多励志故事。但是我们大多数人只能进行一个平凡的人生，每个人心里都渴望成为李嘉诚，但是李嘉诚之后，又出了几个李嘉诚呢？﻿﻿</p>
+<p>生下来，活下去就是生活吧。。﻿﻿</p>
+<p>如何活是一个问题，无非就是轻松简单点，安稳点，保障高点。很多孩子也包括当年的楼主在学校的时候，觉得心比天高，但是到了社会上摔打几年，有发现这个江山真是铁打的。社会不是那么好混的，很重要的一点在即将毕业将要选择进行什么工作的时候，真的需要精心来思虑一段时间，包括我们这些成年的面料跳槽，同样需要认真的去思考。指导这个思考最重要的就是一定要有自知之明，一定要明白自己的条件，自己的能力，自己的背景，这里面不能有半点幻想的成分。﻿﻿</p>
+<p>人生很有意思，你怎么对它，它怎么对待你。你拿人生开玩笑，不认真，人生立马偿还你一个你的人生笑话，你如果选择不认真，那么立马人生就对你不认真。其实人生在某种可控范围内是可以规划的，怎么规划就是看你身边和你条件差不多的两个，或者三个，甚至更多一点，有一个对比，这样去从这些曾经和你条件类似，通过不同的选择，形成的结果，这就是你参照的例子，因为他们身上有你现在的影子。如果有条件，找机会和他们详细的谈谈，年长的人一般都会比较乐意把自己成功，失败的经验，选择的得失，告诉晚辈。但是怎么选择，怎么去甄别，怎么去对待，还是那条真理，自知之明一定带着审视自己。这样或许你能少走很多弯路。﻿﻿</p>
+<p>其实，楼主不想去强调投胎是门学问，也不是在那里痛苦的呻吟，只是想探索出一些规律。也许自己水平有限，写的不是那么好，但是包括楼主自己，也想活的好一些，过得轻松一点。一年半来看这些孩子，好像七八年前的自己，水平有限，还请大家原谅，也请大家一起总结，那些曾经让你得意成功的选择，还有那些让你痛苦，懊恼，甚至后悔不已的错误选择总结一下。﻿﻿</p>
+<p>也许这整片帖子都是废话，但是总希望其中有那么一两句，能够让看到帖子的朋友去抉择的时候，有点浅显的规律可寻，尽力的让大家在人生的选择上，掌握一点点规律，放弃幻想，踏踏实实的去规划自己的人生。。。﻿﻿</p>
+<p>楼主觉得人在踏出校门走向社会的时候，真的有必要精心考虑一下的自己的家庭环境，自己的能力，自己的条件来好好想想自己应该找份什么样的工作，一个人也许一辈子两件事最重要。﻿﻿</p>
+<p>第一：是去找一份工作，一份待遇较好，有发展前途的工作。﻿﻿</p>
+<p>可能有人觉得什么叫好工作，好的，什么政府，银行，电力，我根本进不去。我作为一个工作了十年的人得经验是这样的，如果你是大学本科毕业的，能不读研究生就不要读研究生了，因为本科，研究生工资差不了几百块。所谓好工作，不是说进去养着的工作，是你在里面却是可以学到东西，将来不再这家单位做了，因为在这单位工作学习的经历，能让你很快找到下一份同类型的工作。尽量最初选择工作的几年，能进大机构就不要选择小公司，因为大机构接触的层面高，即便将来有能力，大机构本事就是个机器，你可以选择为这个机器服务，自己也能开创依附大机构服务的行业，这样路不会走死。﻿﻿</p>
+<p>要选择那些社会地位较高的单位，因为接触的人脉不一样，不要忘记了人熟就是宝。﻿﻿</p>
+<p>在初期的时候最好不要自己创业，因为这条路很难走，没有经历，没有资金，没有技术很难。即便你是IT天才，也希望你服务大机构几年后，各方面条件成熟了在自己创业。。。﻿﻿</p>
+<p>第二，是选择一个他或者她结婚。﻿﻿</p>
+<p>楼主朋友有离婚的好几对，几年来前还恨不能长在一块，最近闹离婚的，相爱的人几乎成了仇人。﻿﻿</p>
+<p>楼主的看法是感情世界是一个纯粹的想象世界，哪里没有性价比，没有安全，只有各种生活物品的价格。但是婚姻的本质是交换，没有比这更真实的东西，不要去幻想你是例外，结婚的时候，没有想离婚的，那些离婚也不傻。﻿﻿</p>
+<p>无论你是男孩还是女孩，你一定记住你一定要有自己的工作。因为工作不会抛弃你，不会嫌弃你。在婚姻里安全感和舒适感是你需要提供给对方的，然后从对方那里在获取安全感和舒适感，婚姻的基础是爱情，但是物质是基础中的基础，请相信无论你是女孩还是男孩都不用放弃工作，因为放弃经济自理就等于要失去自我。﻿﻿</p>
+<p>如果你是异地留下工作的，尽量不要选择同时异地的伴侣，因为孩子，老人很麻烦，都是现实的问题。最好有一方是父母在本地，这样你可以生活的相对轻松。﻿﻿</p>
+<p>无论是男孩子还是女孩子，在选择结婚的对象的时候一定牢记 一个原则，选择爱你的那个人结婚，而不是你爱的那个人结婚。如果你有条件追到条件优越于你的家庭的对象结婚是你福气，但是最好别比你的家庭差。。。﻿﻿</p>
+<p>在这两项中工作的地位高于婚姻感情﻿﻿</p>
+<p>工作不会抛弃你，工作能养活你，让你活着不用靠人施舍，当你的工作处理好了，婚姻是一个自然的过程的，但是如果你要是想着先成家，再立业，我会告诉你，我身边有朋友因为颠倒了顺序现在离婚了。﻿﻿</p>
+<p>人是靠本能和欲望活着的，婚姻是一个相互交换，相互承诺的本质，构成是两个人，这里面是有利益衡量的，如果婚姻的天枰不是那么平衡了，要么一个人永远受气，要不不受气就是分手。。﻿﻿</p>
+<p>我们的社会已经不再是30年前，结婚了就是一辈子，了解这些，做好自己，婚姻也差不到那里。﻿﻿</p>
+<p>现在谈个问题就是不平衡感： 中国现今的社会，最受穷的是我们的父辈，五六十年代那一辈人，但是告诉你成功相对容易也是那一辈人。如果家庭很优越，不愁工作，不愁房子，家里甚至能帮着你选择对象，那么你是很幸运的，楼主在这里祝福你。因为你前30岁的家里有能能力给你安排，有能力给你庇护。你真的很幸运，你就是社会上，被羡慕、嫉妒、恨的那个阶层。 只要不吃喝嫖赌，不乱搞男女关系，你这辈子是不会很差的。。。﻿﻿</p>
+<p>为什么要上学，为什么要读书，为什么好好读书？考个好大学，去找份好工作，这是包括楼主在内的所有人从小听到最大的话，也是家长反复唠叨的一句话。但是楼主在毕业工作后也没弄清楚这里面的必然联系。﻿</p>
+<p>我们中国从隋朝建立科举制度，古人只要刻苦参加科举考试，考中从此就成了古代朝廷的工作人员，朝廷给你官职，给你待遇，虽然也从底层做起，能力的不同，基本上两千年来这个待遇是很优厚的，古人劝人读书的方式：“书中自有黄金屋，书中自有颜如玉”。楼主读到这句话的时候，才明白古代的教育何其开明，为什么读书，科举制度在你那里，很公平你只要好好读书，参加科举，无论是物质，还是婚姻，都有国家的承诺！好好读书可以改变你的地位，你的阶层。古人的教育强调黄金屋，强调颜如玉可是很浅显的。﻿﻿</p>
+<p>我们这个社会，太远的没有必要追溯了，从77年恢复高考，到96年取消统一分配钱，其实仍然是科举制度的变量人才制度。那个时候，好好念书，考好大学，毕业国家统一分配。教育是没有打问题，因为国家的公信力还在保障。﻿﻿</p>
+<p>但是96年后，就坏了，学校开始扩招，国家取消统一分配，这时候从96年开始其实大学教育就已经不是那种保障制度，而变为一种淘汰制度。从这开始你能读到大学，所以读书的过程还不算是一个大问题。真正的大问题在于父母如何向你解释读书的意义，这个意义的主旨在什么地方，为什么？﻿﻿</p>
+<p>学习的真正作用——储备知识，锻炼思维，进而增强能力，获取更多你身边人不具备，不会，不懂得知识。因为是这样，你可以从做父母，身边人，周围人做不了的事情，你积累的越多的知识，掌握越多的思维技巧，你就会脱颖而出。遗憾的是多数家长理解不了学习的目的是淘汰不学习的，学习好的目的是淘汰学习不好的。教育，小学，初中，高中，大学，研究生，一级一级实际上是个完美的淘汰制度。﻿﻿</p>
+<p>很好理解，如果父母的文化水平不高，你连孩子初中的数学你都办不了，谈何学习的方法和思路，这样如何形成良好的思维习惯。如果父母的教育是：“儿子你想这个题是这么做，遇到那个题会怎么样呢？下一步又会产生什么呢？条件呢？……”孩子再笨在这种气氛中也能学会思考，何况这样教育方式人家两口子的基因怎么会生出笨儿子呢。﻿﻿</p>
+<p>十几年的学习的真正作用——储备知识，锻炼思维，进而增强能力。真正的目的在于建立良好的思维习惯，而不是学习得了多少分，上了那个学校。。。。﻿﻿</p>
+<p>分析背后的原因﻿﻿</p>
+<p>言归正传，开始分析。。。。。﻿﻿</p>
+<p>小胖在同龄人中我是最看好的，为什么？因为小胖的爸爸。小胖虽然没留在银行，尽管他也很想进来清闲的工作，但是小胖爸爸的教育给了小胖一个不用忧心的物质环境，所以小胖每天都嘻嘻哈哈的。有的孩子为什么开朗，有的孩子为什么沉默寡言，你能指望一个家长整天抱怨钱不够花，整天说大学的生活费太贵了，整天挣钱不容易，这样苦口婆心压力下的的孩子，内心很阳光，内心很灿烂，不可能吧。﻿﻿</p>
+<p>因为物质条件的丰盈，或者说从没有因为正常的生活消费而受到父母关于钱财的压力的孩子，一般都比较开朗，相反如果家长以为的念叨，在教育孩子的同时，抱怨什么也贵的时候，我很荣幸的告诉这位家长，您在把您的无能贯穿到孩子骨髓里。﻿﻿</p>
+<p>治国表现很好，为什么做了六个月的部门领导，到了最后都不肯为其说一句推荐的话，因为送的礼物是仍货吗？我想不是，是治国看重小利，要命在那两盒烟上。本身并没有什么大不了，只是争夺小利会损害人际关系，让周围的人对你有意见有看法。而人际关系受到损害势必会影响你在重大利益上的得失。这样一进一出，最后就不划算了。所谓“拣了芝麻，丢了西瓜”。 烟本身小事情，因为部门领导把治国归类为了：爱占小便宜。从而一句好话不愿意多讲，我深层的考虑过这个问题，治国为什么会拿烟，为什么小东、小胖不会去拿？﻿﻿</p>
+<p>为什么治国会有念头去拿，因为在治国的脑海里“中华烟”是好的东西，是家里不会买的，因为就放在那里，因为有很多，因为父亲没吸过几次，动手拿了，归根结底还是家庭贫困的原因。﻿﻿</p>
+<p>从品德上讲不见得小胖，或者小东，就比治国高尚，为什么他们不会随手拿烟？因为也许中华在他们眼里不是什么很想要的东西，小东的爸爸是副厅级干嘛，估计吸烟都应该比中华好，而小胖家里开着家具城，应该是经常请客送礼的。小胖的潜意识思维，这烟家里可以随便买，所以小东和小胖不会去拿，治国的意识里是这是好烟，爸爸没抽过几次。问题的深层原因不是什么品质，是内心看待这烟凸显的心理价值，治国被看见了拿烟被归类，其实深层次还是家庭能够提供给孩子看待物品心理价值的问题，就是治国的心理价值让其做出了拿烟的举动；还有就是治国这孩子不傻，懂礼节，知道送礼，为什么送的礼物被扔了？原因还是心理价值，治国的心理价值觉得物品不错了，觉得礼物很好了，或者是治国的父母已经觉得挺贵重了，但是就是这个治国的心理价值，用他们部门老总的心理价值来衡量是可以扔掉的心理价值。﻿﻿</p>
+<p>治国在学校的成绩，在学校的表现比小东，和小胖都强，为什么当人生刚开始迈步的时候，反差那么大？治国也请客，小胖也请客，治国也送礼，小胖也送礼，为什么结果不一样？兴许看到的会说，小胖有钱呗，治国没钱呗。﻿﻿</p>
+<p>其实这其中不是礼物好坏那么浅显的道理，这里面更深层次的是一个做人做事，接人待物的技巧的问题，治国自己请客，治国自己送礼，这当然也许治国咨询了家里，但是问题悲哀的是，治国没有助力：﻿﻿</p>
+<p>第一、治国的请吃饭，错了环境，错了对象。你想去获取工作，现阶段下工作的含义是多重大家心里清楚，治国你太小了，你一个月的生活费，也许就是人家一瓶酒钱。﻿﻿</p>
+<p>第二、治国的送礼，治国你有这个意识不错，但是你忽略双方心理价值的平衡，你的礼物是起不到作用的。﻿﻿</p>
+<p>其实治国的悲哀就是家庭的助力几乎没有的痛楚。在这个过程中，治国的心理价值还是父母农村的心理价值，还是父母农村接人待物的处世技巧，这些因为他的年龄，阅历没有办法。如果父母没有能力指导，其结果就是一头一头的包。也许孩子不错，但是社会没那么简单，现实的很，也许在同龄孩子中单纯的比较孩子，治国很不错，但是我们的社会就是这样，人都很现实。﻿﻿</p>
+<p>治国，都会狗眼看人低的；治国，为什么你请客，送礼没有预期效果？是因为治国你的心里价值太低；治国，为什么周周可以请到行长吃饭，因为周周背后的价值是做省级单位的处长。这些治国你是那么没法去比较的，这些也许你现在也不明白。﻿﻿</p>
+<p>小胖的处事方法﻿﻿</p>
+<p>小胖的爸爸很明理，懂得孩子的事情也很重要，小胖的爸爸特意来到这里给小胖的主管领导送礼；首先不会发生接受礼物不适感的错位，其次因为家里经商，小胖爸爸的礼物不会产生双方心理价值的失衡。﻿﻿</p>
+<p>自然小胖的请客，送礼的方式会达到预期效果，这点事小胖爸爸的人生阅历，外加小胖家可以这么做到，不会有压力感。正是小胖爸爸家具城老板的身份，在接触小胖爸爸的时候不会去贬低小胖。这是赤裸裸的现实。﻿﻿</p>
+<p>两下一比较小胖和治国的差别就在这里：治国忽略了心理价值和处事技巧；小胖则是按照正常的可以接受的范围在那里运作。﻿﻿</p>
+<p>其实本质的原因还是家庭，还是父母的助力，还是家庭的心理价值，这点上治国虽然成绩好，但是在社会这个圈子里治国你稚嫩的处事方法必输无疑，没有例外。源于我们的社会太现实。﻿﻿</p>
+<p>小东和原子家庭规划的区别﻿﻿</p>
+<p>小东家庭条件优越，为什么家庭可以协调关系留在银行，为什么作为老首长的爷爷给否决了？为什么让小东去拿着红头文件去南京深造，当几年军人，通过这个跳板可以直接进入省级党政机关，会有着比银行工作更美好的前途？小东的爷爷对小东的期望值更高，并且又能力去规划，小东的父母也认可。或者说小东爷爷的思维体现在小东身上，小东自然没有这个能力，这条路的规划，并且可以走通，原因是小东家庭的规划能力，和家庭对规划的实现能力，这里面包含社会地位，人脉关系，等等。﻿﻿</p>
+<p>小东的恋爱为什么那个县城的女孩子，家庭父母方面解决不同意，到了拍桌子，砸椅子的程度也要阻止这段恋爱。这是小东父母不是东西吗?我相信大家都知道不是，因为小东的条件摆在那里，是选择婚姻的问题，绝对不存在找不到媳妇的问题。既然工作是一顶一的好工作，家里可以给其购买房子，这个小东连想都不用想，这样的条件为什么要去选择一个相对家境较差的女孩子？小东父母考虑的更多，还是想让小东选择家境好的，将来的岳父母能够对小东的工作事业曾加助力，而不是因为岳父母和媳妇成为每个阶段的阻力，或者困恼。小东的家庭承担小东的婚姻很简单，为什么，父母还极力阻止小东同县城同学的恋爱，就是因为小东的父母想两好合出一个更好，小东后来的世界情况也是按照父母的路走的，找了一个同样家境的女孩，准备结婚。。﻿﻿</p>
+<p>我曾经问小东，为什么最后还是让老爹打败了，听从了安排？小东的原话：老头子是个副厅级干部，不是傻瓜吧。小东的父亲让小东去征询了小东父亲的一个下属，小东父亲的这个下属就是娶了个农村女孩，然后小东父亲的下属在叙述完自己的故事，给小东的建议是听从父亲的话，因为那是很实际，很现实的。这样简洁教育的方式，孩子是比较能接受的，还有就是小东自觉不自居的强调了，老头子是副厅级干部。为什么说这个，因为小东心底是认可爸爸的成就，认可爸爸不是个泛泛之辈，这种内心的肯定，才会遵从。从而小东的规划道理一直在良性发展。。。﻿﻿</p>
+<p>原子的悲哀在那里，也许单纯的比较，小东和原子两个孩子，原子更优秀一些，或者说原子的能力在某种程度上比小东的能力强。﻿﻿</p>
+<p>但是，加入父辈，甚至爷爷辈的家庭比较，原子就彻底被打到山底下。原子在学校就追到了媳妇，并且没毕业双方老人就见面，这的问题在那里，错的不是原子的恋爱，而是原子以及原子岳父母的目光短浅：孩子恋爱了，老人赶紧见面吧，这样咱们也算完成任务了。﻿﻿</p>
+<p>原子贷款买房子这点没错，甚至结婚都没有多大错，问题就是听从了父母的结婚后直接要孩子，这成了原子的身心俱惫的导火索。原子只是在这个城市读了四年书，毕业找了份跑销售的工作，对这个社会现实的了解程度可以说少的可怜，他这个年龄自己是没有能力规划的，那么父母呢，以及原子媳妇的父母呢，很抱歉这两对父母还处于县城和农村的认知上，恋爱，结婚，生孩子，越快越好。﻿﻿</p>
+<p>因为原子和媳妇自身的年龄摆在那里，不可能对现在直观的现实世界有个良好的认知，那么深爱下，寻求婚姻是必然的。但是这种选择很盲目，是属于头脑发热。房子是贷款的，一切的说话开销都是需要金钱的，一切的一切都是需要物质的，但是这些，包括原子和媳妇、原子父母、原子的岳父母根本就没有看清，双方老人还是自认为出个首付孩子读了大学，自然就能过上他们父母相信中的那种城市生活。﻿﻿</p>
+<p>原子的一头包也就注定了。﻿﻿</p>
+<p>原子的父母以及岳父母不是没有给原子规划，只是这种规划是给予县城农村同年龄接待的规划，这样就形成了一个金钱物质预计过低的规划，必然出现问题，必然让原子，原子媳妇都很累。甚至父母跟着累，就是这么一个把农村或者县城的规划观念，让原子在一个城市走那种父母能够接触到农村县城的规划道路。这两个环境的花费根本不是一个层次，也就是金钱物质的匮乏导致了原子的一系列矛盾。﻿﻿</p>
+<p>原子的父母曾经提出结婚晚点，但是原子不听，为什么不听，结合小东说：老爸是副厅级干嘛，总不是个傻瓜吧，原子对我说的是：当初太自以为是了，觉得父母就是一乡镇工厂职工，自己上了大学，觉得父母活得真失败，心理甚至瞧不上，他们说的觉得根本就不想听，也不会听。为什么原子会有这个状态，因为原子上了大学，因为原子的父母在上了大学的原子的眼里。在省城过了四年的原子眼里，这四年原子某个程度上已经彻底把父母的人生给否定了。所以原子没有听从父母晚点结婚的建议，我想原子的媳妇其实心里走势过程应该也是很原子相同。﻿﻿</p>
+<p>原子，小东两个孩子的道路差距巨大的我也不想去想。﻿﻿</p>
+<p>同一所大学的孩子，单纯比较孩子，也许不相上下，甚至原子更强一些。但是加入了父辈，祖辈的能力，背景，见识后，原子这个自身能力和小东差不多同学，立马在起跑线被甩了几条街，这种东西我也考虑不清楚怎么改变。﻿﻿</p>
+<p>当然有吧友说，寒门也能出贵子，什么机遇都是留给有准备的人，楼主也快工作将近十年了，从起先的观察这群孩子，总结出的一点细枝末叶，到楼主自己身边的朋友，同学，好似都在沿着一条的无形的线走，这条无形的线的开头就是家庭环境，见识，家庭规划。也许我相信天道酬勤，但是楼主身边真的没有发生过什么奇迹，通过自己的努力，摆脱了贫困的轨迹，摆脱了那条无形的线，从此过上让周围人羡慕嫉妒的人生。富人家的混蛋孩子有李天一，穷人家的就有一个马加爵。都是个例，根本代表不了所在的阶层。﻿﻿</p>
+<p>大多数出于各个层次的人还是沿着家庭开始的那条无形的线在走，在生活。其实过得好不好，压力大不大，心情舒畅不舒畅，唱高调是没有的，在那里自我强调和疯子似的想摆脱也是不现实的。马克思说过：阶级一旦形成，那么出于各个阶级的人想打破阶级的鸿沟壁垒几乎不可能。楼主自己也是追寻到细枝末节，看到一点点，也希望找到通向快乐人生钥匙。但是，楼主生活的城市，工作的单位，楼主接触的现实，阶层在固化，富有越来越富有，穷困依然还穷困。﻿﻿</p>
+<p>有位吧友留言说，年纪越大越相信命了，我挺认同，记得又一次在办公室谈起“命”，有位年长的同事说“命这个字的结构是人一叩”。然后说，古人造字是有含义的，不是象形就是会意，人为什么把一叩造成命字呢，也许就是这一叩首的的组成了命字的解释，也许人真的有命，也许很多事早就注定了，一叩首为什么叩首呢，因为自己服了，因为自己承认了，认可了才低下头叩首。﻿﻿</p>
+<p>治国和周周的新房﻿﻿</p>
+<p>治国最近频繁的拨通我的电话，治国要买房子了，在市郊的一个小区。当时听到位置的时候，第一感觉是远，从治国买房子的位置，到治国上班的保险公司，我估计要是公交车，需要倒三次，不堵车也得一个小时。当时，我就对治国说：远点吧，是不是考虑一下治国你没有车，这样单位和家的距离很远。治国的回答是：远点但是价格低些。﻿﻿</p>
+<p>原来治国给我电话是有所求的，即便是价格低点，市郊的房子，治国也只能首付30%，其他的自然要贷款了。房屋贷款也是有学问的，因为银行一般不太愿意接受“公积金贷款”，公积金贷款的利率比较低是百分之四点多，所以银行对公积金贷款卡比较严格，也就是不愿意贷，银行批复拨款快的是纯房屋商业贷款，因为利率比较高，能达到百分之六点多或者百分之七，这样每套房子拉到十几二十年里面，银行的利息收的要比纯公积金贷款多不少。﻿﻿</p>
+<p>治国想通过我给其办一个公积金贷款，这样可以少付不少利息。当时我第一反应是，治国应该找风控部曾经实习的部门吧。原因有二：第一，这不是我的工作范围，第二风控部应该说话好用点，毕竟你在那里直接实习了六个月啊。可惜的是，风控部好像没有人愿意帮治国，那么我也只好跑了一趟，去打招呼，没费什么劲，治国的贷款给批复了。﻿﻿</p>
+<p>起先这事我并没有在意，当时只是觉得举手之劳，但是后来治国因为这个非要请我吃饭，我才知道，治国为了这个贷款，跑了多少趟。治国告诉我说，没想到买房子这么难。治国告诉楼主，他为了买房子，几乎看遍了这个城市所有的楼盘，跑了三分之一二手房中介中心，就是想买一套价格相对能承受的房子。﻿﻿</p>
+<p>几乎看遍了这个城市几乎所有的楼盘。说是一句话，但是实际行动，对于没有车的治国来说，我觉得应该是几乎把所有的业余时间，和所有本该和女朋友逛街、看电影的时间全部用来看楼盘找价格合适的房子。治国在那里讲着，楼主的脑海里展现出这么一个场景，治国坐在公交车上和女朋友拿着一个楼盘、一个楼盘的资料，在那里翻看，然后一个楼盘一个楼盘的去看，去问；这里面当看到大房子，看到好小区，治国和女友因为手头的钱不够，带着羡慕无奈的眼神，在奔向下个楼盘的时候。那心中的五味杂陈应该只有治国和他的女朋友了解其中的含义吧。﻿﻿</p>
+<p>能说什么，又应该说什么？这也许就是贫苦家庭孩子留在城市工作，安家的必然过程。给治国办贷款我没觉得什么，这是楼主的实话，楼主只是从办公室走到个人部去打了个招呼，然后就是接到电话说可以。楼主没想到这件事，治国却是甚是感动。﻿﻿</p>
+<p>治国在看好这个房子，提出付首付的时候，然后贷款，本来购买房子的房产公司是有几家银行的设点的。当然这几家银行，治国每一家都递交了贷款申请，无一例外的批复都是将近7%的商业利率，治国无奈了。最起先，治国的女朋友通过自己单位的领导，请客吃饭，这个领导找到相关设点银行，据治国说废了半天劲，设点银行的批复是可以把治国的贷款分为两部分，一部分是公积金贷款，剩下的一部分按照商业房贷利率，组合贷款。﻿﻿</p>
+<p>楼主每每听到组合贷款这种奇葩招数和规定的时候，真是感叹，是什么样的牛人设置了这样的天才技巧，真是为了抠唆老百姓的那点钱，用尽脑细胞！﻿﻿</p>
+<p>治国的房屋贷款给办理了以后，楼主也很快淡忘了。直到一次机会去了治国的新房，治国的70%贷款购买的新房的时候又是一番无限感慨。﻿﻿</p>
+<p>因为楼主所在城市的南部郊区，有山有水比较风景秀丽。假日休息的时候很多城市内的人喜欢开车到南部，去踏踏青，去吃个土鸡。一次，小胖邀请楼主去南部吃土鸡，在南部吃了土鸡、猪蹄的楼主和小胖开车回市里，在刚进入市区的时候，路过一个小区，小胖对我说：治国的家就好像在这里，不知道在家吧。因为帮治国贷款的原因，楼主也有点好奇，就让小胖打电话问治国在家吗？电话的结果是，治国在家，电话既然打了，那么肯定是治国强烈要求我们去新家坐坐，那么我们自然就把车开进了治国的小区。﻿﻿</p>
+<p>治国自然和女友在楼下接我们。上楼来到治国家里，才发现治国的父母和弟弟也在，然后是冲茶倒水，加点烟。 在说着闲话的同时，我环顾了一下治国的新房，没有装修，客厅有了很简单的家具，看样子是已经住进来了。小胖说治国你应该装修一下，治国说：买了房子就没什么钱了，哪还有钱装修啊。﻿﻿</p>
+<p>小胖很聪明，立马转换了话题，开始和治国的爸爸说话。看着这个大概70来平方的房子，也许两个人住可以，但是加上治国的父母和弟弟，就觉得这房子立马挺热闹，人有点多。原来治国的弟弟没有考上大学，也来到这个城市，在治国保险公司的合作汽修厂学习修理汽车，这样父母也就跟着来了，这样算是一家五口住在这个70来平方的小房子里。﻿﻿</p>
+<p>楼主的第一感觉是治国的女朋友挺不错，能接受这种情况。真不知道这个只有两间卧室的小房子，五口人是晚上怎么睡的。谈话的过程中，才了解治国已经在老家举行了婚礼，并没有在工作的城市在请客，原因是人不多，这个城市的婚姻饭店的价格实在是高，也因为买了房子，手头实在是紧张。小胖还在那里说：治国，没有带着嫂子去旅个游啊？治国低下头没说话，治国的媳妇就在此刻起身去了厨房。我拉了小胖一下，不让他说了，楼主总觉得治国的低头，治国媳妇的起身离开，是一种无奈。﻿﻿</p>
+<p>治国的爸爸看到我们的到来，聊天的兴趣倒是很高。第一感觉治国爸爸是个倔强的老头，当楼主出于客气，问了治国的爸爸的年龄后，有点惊讶，因为治国爸爸和楼主的叔叔同岁。但是楼主的叔叔还和楼主称兄道弟拍肩膀，感觉楼主叔叔还是中年呢，但是治国爸爸已经白了一半头发，脸上刻着很深的皱纹，从那双粗黑的手，就能看出这个老头一辈子都是在从事体力活。﻿﻿</p>
+<p>治国的爸爸不断的强调，他们为治国的新房出了7万块钱，这是他打工挣的，是出了养育治国和治国弟弟一辈子的财富了。看得出老头很自豪，也对自己为治国首付出钱，感觉自己功劳不小。楼主和治国爸爸的聊天中感觉，治国爸爸有个可怕的思维，也许会形成治国以后生活道路上的强大负担。﻿﻿</p>
+<p>治国爸爸一直强调年龄大了，大儿子有出息，大学毕业，在省会找了媳妇，买了房子，自己的任务完成了，平且自己积蓄的大半给了治国付首付，治国作为哥哥自然应该承担弟弟的责任。治国爸爸对着楼主和小胖，好似在讲自己的历史任务自豪的完成了，接下来就是治国在享受了爸爸供应的大学教育后，找到工作，接受7万块钱的房子首付后，治国应该也必须要承担起弟弟，以及治国的家庭来。﻿﻿</p>
+<p>楼主看到自得意满治国爸爸，看到抱怨城市啥也贵的治国妈妈，还有治国那个一句话都没说的老实弟弟。﻿﻿</p>
+<p>楼主看着治国就是在大口大口的吸烟，也许治国大口的吸的不是烟，好像是在消化某种压力，某种难以承担的压力。﻿﻿</p>
+<p>坐了一会后，治国要留我们吃饭，早已经吃的一肚子土鸡的我和小胖赶紧起身告辞。当车子行驶出小区，小胖告诉我说：刚才问治国媳妇，新婚生活咋样？治国媳妇答复是：谁见过这样的新婚生活，早知道这样还不如租房子住。﻿﻿</p>
+<p>当小胖说完这个的时候，我突然觉得治国家里的沙发是一个炸药包，引线已经点燃，至于什么时候爆炸我不清楚，但我肯定，这个家庭炸药包肯定会爆炸。﻿﻿</p>
+<p>如果不去看治国的一家的境况。周周的婚房也许给我的感觉就是一个大房子。﻿﻿</p>
+<p>某天下午，下班碰到我的同事周周，也是那些实习生里面第一个确定留下的女孩子。下班了，楼主刚要发动汽车，看到来接周周下班男友和周周，周周对我说：我的新房装修完了，在楼主家小区隔着一条马路的新建小区里面，以后我们不仅仅是同事了，还成了隔着一条马路的邻居。﻿﻿</p>
+<p>既然同事，现在又邻居了，那么无论是出于什么，楼主也是得出于礼貌去看看周周的新房的。周周的小区，是新建小区，里面的房子大概以大户型为主，价格几乎是楼主买房子时候价格的一倍，这就是楼主最初对周周新房的了解。﻿﻿</p>
+<p>那天傍晚，我回到家里，又接到周周男友的电话，邀请去看看，楼主只好带着老婆，抱着儿子，来到隔壁马路的新小区，周周的新家。﻿﻿</p>
+<p>在迈进门口这对新人的小家之后，楼主不夸张的说，第一感觉真大啊，看着装修的欧式风格，善于接待的周周抱起了我儿子，拉着我老婆坐到了沙发上，周周的男友，陪着楼主看房子，楼主有点恍惚。这是实话，这套房子的样式、大小，就是楼主经常做梦想自己能够住上的大房子。﻿﻿</p>
+<p>周周的热情周到很快就和我老婆打成一片，然后从周周的男友口里知道这个房子，210多个平方，错层建筑，四室两厅，看着干净整洁的大房子，看着这一套欧式装修和家具，楼主头脑一直在跳跃数字，房子的价格，装修保底得三四十万，家具……..当看到装在屋顶的环绕杜比音响的时候，楼主不太懂，但是楼主老婆惊讶了，大声说这套得二十几万吧。周周说：二十七万。﻿﻿</p>
+<p>周周的一句价格，楼主心里的感觉，这个曾经跟着我实习的小姑娘，现在我的同事，这个隔着我一条马路的邻居，这个曾经被我认为是小屁孩年龄的小姑娘和他同样年龄的男友，竟然拥有这么一套大房子！楼主的感觉是，楼主被这个曾经眼里的小姑娘，小孩子甩出了至少十条街。﻿﻿</p>
+<p>楼主现在在周周家的感觉就是，楼主的家那也太寒碜了点吧，强烈的感觉。参观了超大的阳台，然后参观可尽情卫浴的大卫生间，和那全套欧式风格的卧室后，楼主已经有些不自在了，想告辞，但是抱着我儿子的周周，拉着我老婆，一定坚持要请我们吃饭。周周的男友，恰当适宜的说：“媳妇的老领导带着嫂子和侄子来，我不请客，这没法向组织交代啊。”说完，就拿起挎包，拉着我，周周抱着孩子，拉着我老婆去了饭店。﻿﻿</p>
+<p>吃饭的时候，感觉周周的男友不愧是省政府开工资的组织人员，说话的方式，劝酒的态度，照顾孩子的方法，起引饭局的话题的水平，楼主自叹不如。也就是那天我发现周周的交际能力，把第一次见面还略显拘谨的我老婆，等到吃晚饭已经好像熟悉的不能在熟悉了。楼主的感觉是，这俩孩子挺好，真的挺好，挺活，真的！说话方式，为人处世，接人待物超过楼主两口子。﻿﻿</p>
+<p>当吃完晚饭楼主和妻子回家的时候，妻子开始抱怨起了她这个深爱的小家。﻿﻿</p>
+<p>楼主晚上和老婆夜谈的时候，两个人一起得出结论：背景、条件太重要了，人比人得死，货比货得扔。﻿﻿</p>
+<p>周周的婚礼﻿﻿</p>
+<p>周周的婚礼，是包含了两个大厅的盛大婚礼，餐桌上写着周周母亲单位名称，父亲的单位名称，然后是周周单位省政府的餐桌，然后是我们银行的餐桌。第一次感觉婚姻餐桌有了层次，第一次看见，几位行长同时出席一个人的婚宴，婚礼上光彩照人的周周，和英俊潇洒的周周老公，以及每张餐桌对新人的祝福。﻿﻿</p>
+<p>听着周周老公讲着那曾经的恋爱故事，听着这对新人要在婚嫁里去欧洲11国游玩，楼主就在这时候突然想起了治国。看着周周作为新娘的光彩夺目，看着周周老公的满脸醉意，我脑海里一直闪现着治国的大口吸烟，和治国媳妇的因为旅游话题的无奈起身离开。﻿﻿</p>
+<p>参加的是周周盛大的婚礼，但是治国和治国媳妇无奈的神情在楼主脑海里定格，怎么也挥不去，弄不走。楼主觉得脑子里还是混沌，知道周周的父母和周周的公婆四个人相继对新人的祝福，楼主明白了什么。﻿﻿</p>
+<p>周周的老爸讲道：周周出嫁了，长大了，周周未来的人生，就是老爸的一切，老爸会继续帮助这对新人，会继续呵护他们的新人家庭。周周的老妈更是说道：今后两家老人会全心全意地共同心力浇筑在这对新人家庭上，如何如何的不遗余力。 周周的公婆自然是承诺：周周进了他们的家门，周周的公婆会如何如何对待周周，让周爸爸，周妈妈放心。 最后周周的老公的爸爸在最后强调：无论这对新人，将来怎样、如何，周周的父母周周的公婆都是他们坚强的后盾！﻿﻿</p>
+<p>就是这句话，就是这句话！楼主彻底的感动了……﻿﻿</p>
+<p>楼主听到这句话后在看每张餐桌上的单位号牌，已经不是餐桌，是一张大网，一张无形的大网，一张人际关系的大网。一个人的力量是有限的，假如他认识十个人，这十个人都可以帮助他解决问题，这样十个人的力量都加在他身上就变成了十，而这十个人每个人都再认识十个人，于是他的力量就变成了一百。如此连接，人际关系形成一张大网，很多个人力量解决不了的问题通过人脉网就可以解决了。﻿﻿</p>
+<p>周周父母给周周建立这张网，这个人际关系脉络，周周父母为周周参考的婚姻，让这张网继续扩大了一倍。﻿﻿</p>
+<p>盛大豪华的婚姻下面是这种巨大的关系网在支持周周小两口未来人生，那么在这张网的保护下，周周的家教，周周的亲和力，周周的老公的为人处事风格，让我觉得这对新人前途无量。也许从这开始周周这对新人，已经把工作10年的楼主摔到二十条街开外了。﻿﻿</p>
+<p>参加完婚礼，小胖送楼主回家，小胖告诉楼主治国和治国媳妇没有来参加婚礼，治国的媳妇还曾经和周周一个宿舍。楼主当时心里想：小胖你还小，楼主已经看出了，治国媳妇即便在学生时代和周周是很要好的同宿舍同学，她来参加周周的婚礼，无异于在某种程度上恶心自己。同是重点大学的一个年级一个学院一个宿舍的同学，说现实境况一个天上，一个地下毫无差别吧。﻿﻿</p>
+<p>怎么来？看着周周220平方的房子，看着周周雪白的婚纱，看着周周盛大的婚礼，比较自己70平方还住着五口人，公婆，外带小叔子，你让她怎么说服自己，怎么安慰自己？是人就有攀比心，是人就有比较心，当初四年在一起朝夕相处的同学毕业没两年，这么大的差距谁也受不了。来受刺激，还不如不来。也许从此两种人生，两条道路再不相交，何苦来呢？﻿﻿</p>
+<p>参加周周的婚礼。听到双方父母的讲的最多的是：孩子的人生刚开始，刚起步，双方父母还得奉献，双方父母还得保驾护航。看得最多的就是双方父母拜托双方单位领导要照顾好自己的女儿或者儿媳妇。然后就是开始拉近私人关系，相互交换名片，然后就是在端着酒杯的同时，周周的四位老人已经和我们的行长约定了下次的聚会时间。这是交际，也是现实，也是社会地位，也是心理价值的体现。周周的父母公婆还在继续为这女儿，儿媳妇夯实基础。﻿﻿</p>
+<p>在周周公婆父母的眼里他们依旧是一对新人，依旧稚嫩，依旧需要他们再把基础夯实的牢固一些，再把人际关系网络建立的牢固一些。这是思维，这是现实，这对新人还是在享受着双方父母的保护奉献。结婚是个开端，双方父母依然要沿着婚姻的开端作为开始，为两个孩子借助各自家庭的优势弥补各自家庭的劣势，即便在普通人眼里他们一个家庭就很让人羡慕了，但是几个家长不约而同，还是认为应该在努力把孩子弄更好些，基础打得更牢固些。这就是出于这个社会比较上层的家长的想法，对自己孩子的关怀，对自己孩子的规划。这样的周周怎么能走的不顺呢？﻿﻿</p>
+<p>反观治国。治国的父母已经觉得自己努力了，给了治国奉献，治国到了回馈弟弟的时候，治国已经长大了，治国大学毕业了，治国有工作了，治国结婚了，治国买房子了，治国你应该是让父母安心，负担起弟弟的时候了。﻿﻿</p>
+<p>对比一下吧，残酷的现实，治国的压力来源于哪里？周周的舒适来源于哪里？是治国家的穷困？是周周家的优越？这不是深层次的问题，深层次的问题，是观念，是思维，周周的父母公婆和治国的父母仅仅因为物质条件不同吗？楼主觉得不是物质那么浅显，那么单纯，是两个思维价值体系的完全体现。﻿﻿</p>
+<p>写到这里，楼主想分析一下这两种思维体系：﻿﻿</p>
+<p>治国的父母，没有错，但是相对自私。为什么？因为治国父母一生劳苦可以理解，攒钱不容易可以理解，但是把治国弟弟再附加到治国身上，对本来还处于稚嫩承受能力有限的治国，本来就活得艰难的治国，加上更大的负担。在一个相对狭小的房子里住上一对新人，一对老人，还外加一个小叔子，这么一个组合，治国和治国媳妇就可想而知了。这里面治国的父亲觉得自己自豪，供了一个大学生，并且首付买了房子，自然该是享受治国回报的时候了，治国的孝心也觉得应当承担家庭，承担起弟弟，也接来父母。这不简单的是一个人之常情，是一个思维框架，一个思维体系。这种思维体系可以出现无数的变种，就是让本来在城市里相对艰难的治国，背上一个更沉重的包袱。大家掰着脚趾头想，也能预测治国的家庭矛盾会不会爆发，治国本来就情商不高的水平，在压上这么一个大包袱治国能过成什么样，大家自己就能揣测的出来。﻿﻿</p>
+<p>治国父母不是条件不好、家境困难那么简单，指导他们的一直是思维，一种可以简单的理解为付出必须回报，生育孩子，养育孩子，给孩子付出到一定程度上孩子必须回报。虽然露骨，但是事实就是如此，也是一直推卸责任的行为。但是加上孝这就是一个体系，这种体系会有无数个变种。﻿﻿</p>
+<p>这个思维体系的错误之处在于，父母付出的还不足以让孩子可以达到回报的程度上，就开始索取，就开始觊觎孩子的回报。这是个程度掌握的问题。但是这种思维体系下，必然孩子是老牛拉破车，一步更比一步难。﻿﻿</p>
+<p>周周父母公婆采取了奉献式样的指导思维体系。。。﻿﻿</p>
+<p>在帮着孩子有了房子，有了车子，有了工作，再用自己的人际关系网，为孩子夯实好基础，协调好单位领导，他们懂得这俩还是孩子，还需要在结婚后进一步奉献，让他们的路走的再平坦一些，再顺利一些，让其两个家庭的关系网，再给两个孩子增加助力，在这种奉献的指导思维体系之下，孩子的各项必备基础打坚实之后，孩子自然在顺利的人生路上，并且切实有能力去回馈父母。﻿﻿</p>
+<p>周周父母公婆打造的是人生的良性循环轨迹， 而治国的父母在为治国打造恶性循环轨迹。这两种思维价值体系，能注定孩子的一生走向。﻿﻿</p>
+<p>“宝宝哥”的故事﻿﻿</p>
+<p>宝宝哥，是楼主的一个学长，当年楼主刚考上楼主所在城市的这所百年学府的时候，是当时宝宝哥这个大四学长，接待了作为大学新生的楼主，这大概是十年前了。但是现在想起来，记忆依旧深刻。﻿﻿</p>
+<p>宝宝哥，因为名字里面有个宝字，那时候他们宿舍的人都喜欢叫他“宝宝”，因为宝宝哥学习很好，最大的优点是，人很干净，宿舍的卫生一直都是宝宝哥打扫，而且从来没有怨言，也从来不和舍友计较。因为楼主刚上大学的时候，是宝宝接待的新生，自然和宝宝哥走的很近。﻿﻿</p>
+<p>这样也形成了大一的楼主和大四的宝宝，成了关系相当不错的朋友。宝宝有个很漂亮的女友，叫丽丽。那时候楼主很羡慕宝宝哥，觉得宝宝快毕业了，还有个漂亮女友，楼主觉得宝宝哥毕业以后，就能过上很幸福的生活。﻿﻿</p>
+<p>每次，在校园见到宝宝和他的女友，我都会起哄，问姐姐啥时候准备嫁给宝宝啊，我觉得起哄挺开心，他们听到我的起哄也挺甜蜜。10年前的楼主那时候还是属于活宝的类型，经常厚着脸皮跑去宝宝哥的宿舍，混吃混喝。那是一个单纯的年纪，快乐的时间段，那时候除了生活费不太够花，和考试偶尔让楼主担心犯愁，别的真是简单不能再简单，快乐不能再快乐。﻿﻿</p>
+<p>楼主的大一新生岁月，也是宝宝哥毕业抉择的大四。宝宝学习不错，但是宝宝那时候在打扑克、踢球的时候，楼主经常听到宝宝哥说:丽丽要考研究生，也动员宝宝考本校的研究生，宝宝一直在和他的朋友，同学，舍友谈论这个话题。﻿﻿</p>
+<p>楼主年龄的关系，那时候是不太理解研究生和本科生毕业工作之间的差别，那时候的意识还觉得研究生一定很棒。大概研究生一毕业，所学专业的用人单位，大概就是应该会像抢宝贝一样把这些研究生抢走，然后就给他们一个吓人的高工资，从此过上了幸福的生活。这就是楼主当时的眼光，也是楼主当时幼稚的见识。但宝宝他们好像从来不那么觉得，他们一直在讨论三年的社会经历重要，还是研究生的学位更让人认可。无论怎么说，爱情的力量对年轻的大学生来讲，那是原动力和奋发力，宝宝每天晚上都在复习，那时候宝宝是很努力的。﻿﻿</p>
+<p>时间就这么过着。楼主大一下学期的时候，一个阳光灿烂的日子，宝宝给楼主宿舍打电话，要楼主去跟着吃饭，聚一下。原因是宝宝和丽丽都考上本校本学院的研究生，值得祝贺。楼主那时候心里真的觉得宝宝和丽丽很牛，楼主那时候的单纯真的让楼主好怀念。当然那是一场大醉，连当时单纯的楼主也跟着喝了一个不亦乐乎，好像宝宝已经踏上了幸福生活。原来宝宝宿舍参加研究生考试的同学，只有宝宝自己考上了，更幸福的是宝宝的女友丽丽也考上了研究生。楼主觉得宝宝真命好，当时的楼主觉得宝宝肯定是天底下最幸运的人。﻿﻿</p>
+<p>就这样，宝宝宿舍的人在欢天喜地的迎接毕业，忙忙碌碌的找工作的时候，宝宝哥已经确定在这个学校，还要多待三年，那时候的宝宝最快乐，那时候的丽丽也最快乐。﻿﻿</p>
+<p>当一个暑假回来，楼主成了大二的学生，宝宝哥也搬去了研究生宿舍。宝宝哥开始了研究生的岁月，因为宝宝哥的本科同学飞奔了全国各地的工作岗位，这下宝宝变得有些孤单。宝宝哥进入一个对这个学校熟悉，但对同学有些生疏的奇怪状态。自然楼主这个小师弟，就没事依然跑宝宝哥的宿舍，也是因为这样，楼主和宝宝一起踢球，一起打篮球的日子更多起来。楼主那时候一人没心没肺，但是宝宝却不像在本科的时候那么快乐了，这是一种压在心里的感觉，但是能感觉到，当时的楼主是没有能力去理解的。﻿﻿</p>
+<p>有几次去宝宝的宿舍，会发现丽丽和宝宝在闹矛盾，这是以前从没见过的，但是楼主搞不清楚为什么。偶尔宝宝的那些已经工作的同学会来学校请宝宝吃饭，当然如果遇到，楼主也是厚着脸皮，叫着师兄，跟着去混饭吃。那对楼主来说是件快乐的事，但是对宝宝来说好像不是。至于为什么，楼主那时候不清楚。﻿﻿</p>
+<p>慢慢的楼主发现，丽丽开始抱怨宝宝哥。具体的原因没有探究过，那时候的楼主也满学校的追女孩，但是心里还是向往能遇到一个丽丽一样的女孩，楼主也能展开一段宝宝哥和丽丽那样的恋爱。呵呵，十年后的楼主依然记得这个曾经脑海中很清晰的小目标。﻿﻿</p>
+<p>楼主大三，宝宝研二，日子还是这么过。但在没有丽丽在场的时候，宝宝哥经常会说：不知道读研究生是不是一个错误。那时候的楼主心里还觉得宝宝哥可能是书读太多，脑子坏了。最让楼主佩服的是，宝宝哥学的法学专业，宝宝在研二考到了司法证，那时候觉得宝宝肯定将来会是法官或者检察官，让楼主羡慕许久。﻿﻿</p>
+<p>楼主的大四，也是宝宝的研三。那年楼主不知道为什么，总是伤感，总是郁闷，总是不那么开心，迷茫，混沌，迷糊。宝宝哥的状态和楼主没有什么不同，我们俩差着三岁，但是却有着相同的话题，毕业了做什么。虽然宝宝是研究生学历，还手拿司法证，但是当时楼主就觉得宝宝的压力一点也不必楼主的压力小。﻿﻿</p>
+<p>当楼主问宝宝哥，我是不是要考研的时候，宝宝哥斩铁截钉告诉楼主：别上了！举出了一堆他当年本科同学、舍友的例子，现在有的都新房住上，新车开上了，如果我还打算住宿舍那就考吧。宝宝完全鄙视，绝对鄙视我的考研想法，好像他自己不是研究生一样。说实话，楼主当时的成绩和水平，还真考不上研究生。楼主就死心塌地找工作，当然是全家总动员的找工作。楼主的老妈是很想楼主考研究生，但楼主的老爸好像压根就没期望楼主上什么研究生，用楼主爸爸的话说：考上本科，已经走狗屎运了，还研究生，赶紧弄份工作混社会吧。楼主跟着当年的实习生大军进了现在的单位实习，也通过楼主老爸的运作，楼主留在现在的工作单位。﻿﻿</p>
+<p>那年楼主做实习生的时候，宝宝参加了公务员考试，笔试很棒，但是面试宝宝落选了，什么原因落选十年后宝宝才知道。丽丽的公务员考试，很直接，笔试都没过。﻿﻿</p>
+<p>那年，楼主作为单位实习生在满楼跑的时候，宝宝出现了两难抉择。﻿﻿</p>
+<p>宝宝和丽丽都要毕业了，这有个问题，丽丽老家是南方“明珠”城市，宝宝则是本地的，丽丽是独生女自然很希望回到那个被称为“明珠”的城市。当然那个城市比我们这个省会知名度高许多倍。“明珠”解放前就是冒险家的乐园啊，民国时代的故事大多以其为蓝图，当然对宝宝的吸引力也很大。﻿﻿</p>
+<p>但是，宝宝的父母却是不太愿意，或者是不愿意。不知道当年的宝宝是怎么说服的父母，依然拉着皮箱牵着女友丽丽的手踏上了南下的列车。﻿﻿</p>
+<p>楼主在工作单位，开始了朝九晚五的上班生活，毕业了，有工作了，楼主每月有工资了，这是一件开心的事。另外那时候的楼主感觉突然好像身边的同事，没法在像学生时代，同学、老师那样相处了。呵呵，楼主进入社会了。﻿﻿</p>
+<p>楼主无聊的时候，会跑回学校，宴请楼主留在大学读研究生的同学。但是慢慢的楼主不想去了，最早楼主坐公交车去请客，后来坐出租车去请客，在后来楼主开单位的车去请客。在楼主毕业的第三年开自己的车去请客，这些被宴请的同学，找到他们的地方很容易，不用打电话，操场、公交楼、宿舍、网吧，从无例外。慢慢的，和这样研究生同学已经没有了共同的话语。我聊的内容，他们没兴趣，他们聊的我慢慢也没了兴趣。﻿﻿</p>
+<p>也就是这时候，我明白了那时候的宝宝为什么总是说，读研是不是一个错误；也明白了总是被宴请的人心里的别扭，因为关注话题的不同，因为楼主觉得自己的研究生同学还是那么幼稚，那时候宝宝的同学一定也觉得宝宝幼稚。没办法，这是角度的问题；也明白为什么宝宝极力反对我再上研究生，为什么总是给我苦口婆心的讲那些没读研的同学。现在都明白了，年龄摆在那里，不是你想单纯就能单纯的，人都会自我比较，也慢慢明白了丽丽和宝宝那时候为了什么而争吵。﻿﻿</p>
+<p>楼主毕业第二年因公出差第一次去“明珠”城市，坐着报销的飞机，住进报销的酒店，在忙完单位的公事后，很想找宝宝哥大醉一场。﻿﻿</p>
+<p>在拨通电话的时候，听到宝宝很惊喜，但是又支支吾吾的说在外地忙，然后说了一大堆抱歉的话。当时的楼主并没有在意什么。然后是第二次去“明珠”城市，再次给宝宝电话的时候，他依然是在支支吾吾的出差，依然是抱歉不能来，依然是一大堆抱歉。但是楼主好像从这一大堆抱歉里面觉察出，宝宝仿佛有什么难言之隐。并不是出差没法见那么简单。﻿﻿</p>
+<p>以后的日子，楼主和宝宝依然偶尔通个电话，问问近况。也就是那时候楼主发现，朋友、同学、同事其实都是阶段性的，以前天天见，天天打闹，然而在特定的某个时间段，这些人成为了你记忆的某个元素，再想联系就只剩下手机里那一串号码，有时候想起会伤感……﻿﻿</p>
+<p>在一次宴请我另外的一个师兄也就是宝宝的同班同学的时候，听到宝宝和丽丽分手了的消息，有些惊讶，但是好像心理又有着某种预期，觉得不是那么意外。和宝宝的电话依然那么联系，听到宝宝从最早的律师事务所辞职，去了一家外贸公司，然后再问起丽丽，宝宝不愿意提，自然我也不去多追问。在以后的三年里我和宝宝没有再见面，只是电话还是偶尔会联系，问一下近况，我毕业的第五年，也是宝宝毕业的第五年，宝宝有重新从外贸公司辞职，去了一家新律师事务所，然后就是宝宝重新恋爱，重新结婚，但是宝宝的电话口气，已经没有了前几年那种沉闷。﻿﻿</p>
+<p>到了楼主毕业第九年也是宝宝毕业第九年的时候，楼主和宝宝的再次见面，证明有些友情是不随时间改变而改变的，这点很重要。也就是那时候楼主知道，男人之间情义，兄弟感情在关键时刻的决定作用。﻿﻿</p>
+<p>事情是这样的，楼主在工作到第九年的时候，也算是单位的中层了。但是就在楼主顺风顺水的时候，楼主部门的一个下属，做了些违规的事情。一旦损失形成，对楼主单位是个不小的损失，当然楼主需要负领导责任，也要肩负监察不严的的责任。楼主的下属在帮一个公司搞贷款的时候，通过虚假材料，还有通过自身关系，拉拢信贷部某个员工造假，使得该公司成功从楼主单位贷出了一比数目不小的资金，但该公司的的还款能力直接没有。这是楼主工作以来一个很严重的危机，直接影响到楼主以后在单位的前途。这里可笑的是，楼主下属出的问题不是联合信贷部员工造假，这不是楼主直接工作范围，但是造假的主事者却是楼主的下属。单位责惩楼主必须善后，把损失降低到最小点。这样楼主和信贷部当时签署文件的副总，成了热锅上的蚂蚁。﻿﻿</p>
+<p>楼主在与本单位法律顾问多次商谈，有利点是，贷款的这家公司只是一家分公司，幸好还有总公司，可以向总公司追偿；不利点是这件事必须在该公司总部设置地的“明珠”城市起诉，因为这样才能在诉讼胜诉后，可以追偿。如果在本地起诉，即便是诉讼胜利了，那么作为该公司分公司所在地，根本就难以追偿到什么有价值的赔偿。在楼主的下属和信贷部造假的两个员工被开除并接受检察院闻讯的时候，楼主就接下了这件事情的烂摊子，楼主和那位信贷副总都很冤，但是没办法，必须把单位的损失给追缴回来，要不然，楼主和信贷副总卷铺盖的可能性也很大。﻿﻿</p>
+<p>楼主和单位的几个法律顾问，来到该公司的总部所在地“明珠”开始了诉讼。这段时间，楼主和几个法律顾问天天研究文件，建立证明材料，一份一份的电传在本单位和”明珠”城市之间流动着。经过长达两周的审理，楼主和几位法律顾问，脱了几层皮的禅精竭虑中，楼主盼来了我们胜诉的判决，但那时楼主才明白，胜诉了就是几张纸，离着具体执行回来追偿，还有十万八千里呢！﻿﻿</p>
+<p>这时候我和那位副总司天天跑执行庭，拜托“明珠”城市我们分行的同僚，找关系，走门子，还是效果寥寥。甚至楼主单位的，几位行长也动用自己的私人关系，还是没什么作用，这里不是我们的一亩三分地，执行了几次效果根本就是没作用。楼主和那位副总甚至在夜里讨论，如果实在追不回来，我们将来该怎么弄，是不是要重新择业了。叹息和烟草成了我俩那时最大的慰藉，但问题不是你叹息、嗑药就能解决了的。后来单位派来一位副行长，主要抓这件事，其结果让我明白了，在我们本地他老人家是个人物，但是在这个“明珠”城市，他和我们一样一样的，一样的抓瞎，一样的屁用没有。那时候的楼主都开始了准备卷铺盖，呵呵，这下是三个人整天得吸烟，整天的叹息，整天的跑路子，走关系。﻿﻿</p>
+<p>就在楼主万般无奈的时候，楼主拨通了宝宝的电话。在电话里简要的叙述了整个过程，宝宝说：有点难度，还不至于办不了。于是让我们在酒店等着，派车来酒店接我们，去他的律师事务所详谈。事情最后办得了办不了，不知道，起码我们捞到一根救命稻草，这样就在宝宝的安排下，我们来到宝宝的律所，已经没有了心情和宝宝叙述什么这些年怎样的客套话，直接就是拿出几包材料，和审理结果，给宝宝讲述完整的事件过程。﻿﻿</p>
+<p>宝宝细心的了解了过程后，告诉我他试着给办一下，尽量挽回损失，也就是宝宝的话，让我们的老副行长皱了大半月的眉头总算有点舒展。当晚在宝宝的引荐下，我们见到了这个“明珠”城市一位法院高级别领导，在叙述了过程后，给人家拜托，诉述我们处境，弄得指导人家不耐烦之后，我们才闭嘴。﻿﻿</p>
+<p>有些事情，可能难死你，但是让别人来办，也许就是简单不能再简单。在宝宝引荐的这位领导的帮助下，我们的诉讼追偿被升格为高院督办的案件，这样自然在一周内，那个总公司，完全偿还了我们的损失，还给了一部分赔偿，这个结果比我们预想的还要好！那天在宝宝的陪同下，我和信贷部的副总，我们的副行长，像三个孩子敬仰长辈那样说了无数感谢肉麻的话，只能用一个个“一口闷”（喝酒）来代表我们的感谢情义。﻿﻿</p>
+<p>那天是喝得酩酊大醉，四个人趴下了仨，最后怎么回的酒店都不知道。宝宝救了我，也救了信贷副总，也让副行长很有面子。通过这次的事情，楼主充分了解危机为什么是危险的机会这句至理名言。楼主不但没有因为下属违规而受处罚，反而通过这次帮助单位的危机解除，拉近了与副行长的私人关系，甚至行长都对楼主另眼相看。在以后有遇到在“明珠”城市，我们单位几次比较数额小的诉讼上，宝宝都帮了忙。因为这个关系，楼主在行长那里成了一个在“明珠”有关系的人物，让楼主受益匪浅。﻿﻿</p>
+<p>这次危机解除后，行里特意批了几万块钱，给楼主三天假让楼主专门跑趟“明珠”感谢宝宝，感谢那位领导。﻿﻿</p>
+<p>去了“明珠”没有感谢到那位领导，人家只是同意吃了顿饭，我说了无尽的感谢的话，甚至觉得人家真是一个“包青天”。也许这位领导的举手之劳搭救了我，人家觉得微不足道，我觉得他是个好人，好领导，还是个廉洁的好领导。算我走狗屎运！﻿﻿</p>
+<p>在“明珠”的三天，去了宝宝家里，看了宝宝的妻子，和一对双胞胎，也就是在我们俩个老同学、老朋友那次聊天中，让楼主逐渐有些茅塞顿开，如同醍醐灌顶。﻿﻿</p>
+<p>宝宝哥的故事2﻿﻿</p>
+<p>专门感谢宝宝的“明珠”之行的时候，宝宝开车带我走进一间很有特色的江浙菜酒店。我们开始了学士时代的那种豪饮，豪饮到需要宝宝媳妇来开车。我们酒喝了不少，但是没有大醉的感觉，还是那种说不完话的状态。直到喝到实在喝不下去了，我们结账离开，又去了一家很豪华的茶楼，在宝宝的媳妇把我们送到茶楼，看到我们还不是那么醉，只是同学、兄弟想说话，很知趣的告诉我们：她要回家照顾孩子，让我们喝会儿茶，醒醒酒，然后打车回去。她就离开茶楼回家了。﻿﻿</p>
+<p>这让我感觉宝宝的老婆挺好，真的挺好。这种豪饮不醉的感觉我不知道别人怎么样，但是我只有在和那些小时候就认识的同学和朋友才会有，工作后和同事从没有过这感觉。﻿﻿</p>
+<p>在这个“明珠”城市也甚为豪华的茶楼里，在我和宝宝喝着极品大红袍，说起了上学时代，说起了这些年的遇到的人，遇到的事。直到这次，我才弄清楚了宝宝这些年在这个城市究竟经历什么样的人生历程，也是在和宝宝的谈话中，我的这位师兄，让我茅塞顿开。﻿﻿</p>
+<p>当年，宝宝毕业和丽丽来到“明珠”，对于宝宝来说，这是一个大都市，大的他很头晕。宝宝在这里没有关系，没有人脉，甚至除了丽丽之外，连个同学，朋友都没有，就是这样，宝宝开始他的第一份工作。﻿﻿</p>
+<p>宝宝当来到这里才发现，对怀里仅有一个硕士学位、一本司法证的他来讲，找份工作是如何的不容易。宝宝在经历三个月的简历快递员的奋斗后，找到了一个律师事务所的实习律师的工作，宝宝和丽丽好好的喝了一顿，以为幸福生活就如此开始了。﻿﻿</p>
+<p>可是现实不是那时候的宝宝能明了的，一个小律师事务所，一个更小的实习律师，底薪只有800块，其他的要靠提成收入来讲，完完全全的把宝宝打懵了。﻿﻿</p>
+<p>在这个全中国的中国人聚集的城市，宝宝知道了自己的渺小，自己的苍白，自己的无能为力。﻿﻿</p>
+<p>律师业纯粹竞争行业，10%的律师或者律师事务所挣得了这个行业90%的收入，那么剩下的90%的律师就只有那10%的收入，很遗憾宝宝的律所是小律所，宝宝又是里面最小的实习律师，可想其发展前景了。宝宝的房租，吃饭，根本不是800就能够了的，宝宝只好节俭再节俭，节约再节约，住最破的筒子楼，吃弄堂里最便宜的饭菜。﻿﻿</p>
+<p>还好，宝宝还有丽丽，宝宝还有爱情。偶尔一个很小很小的小案子让宝宝的收入多几百块钱，带丽丽买件很便宜的衣服，和丽丽吃顿饭，或者和丽丽去看一场电影，就是宝宝那时候最开心的事。﻿﻿</p>
+<p>可是随着年龄的增长，宝宝和丽丽是研究生毕业，年龄本来就大了，婚姻提上了日程，丽丽的母亲一次次和宝宝谈话，每一次谈话宝宝自己说：恨不得找个地缝钻进去。﻿﻿</p>
+<p>丽丽的母亲是小学老师，丽丽的父亲是中学老师，没有多少积蓄，没有多少社会能力，丽丽的工作就是在一个小公司，做行政。英语专业研究生，英语专业八级毕业，一个月只能三千块，还好比宝宝多点，但是在八九年前的“明珠”这点薪水还是很可怜。﻿﻿</p>
+<p>这就是俩人那时候的真实状态， 理想很丰满，现实骨感的TM吓人。﻿﻿</p>
+<p>宝宝面对残酷的现实，面对和丽丽不断上长的年龄，面对丽丽妈妈一次次的质问，已经没有了当初牵着丽丽的手南下“明珠”那份豪气，手里就是每月两千甚至还不到两千的工资，然后面对的是这个全国最大的城市。﻿﻿</p>
+<p>宝宝曾经想获取父母的帮助，但是等到父母来到“明珠”看到宝宝租的房子，看到宝宝的那时候的状况，自然是心酸，还有一肚子的憋屈。当与丽丽的父母见了面，面对丽丽父母要求的房子，要求的一切一切，宝宝的父母也无奈了几点，攒了一辈子，不够宝宝在“明珠”的首付。宝宝工作两年是任何积蓄都没有，丽丽家则是男孩子娶妻买房，天经地义。宝宝说：当时的那次父母见面是他人生觉得最羞愧的时刻。﻿﻿</p>
+<p>宝宝说：﻿﻿</p>
+<p>第一、觉得自己读了研究生，觉得自己工作了两年，要父母不远千里来到“明珠”接受丽丽父母的质问，自己真的太羞愧了。﻿﻿</p>
+<p>第二、即便是父母拿出所有钱，但是按照莉莉妈妈的逻辑。宝宝根本付不了首付，即便付了首付，宝宝是根本没有还款能力的。﻿﻿</p>
+<p>第三、宝宝开始反思自己七八年的感情在现实面前，脆弱的就像一张纸。在现实社会的面前随时都会撕裂。﻿﻿</p>
+<p>最后、觉得自己上了那么多年学，毕业了，毕业了，怎么弄了这么一个效果？当时宝宝说：真是羞愧窝囊的跳江的心都有！﻿﻿</p>
+<p>这次家长见面，宝宝父母的意见是回老家，何必在这受罪。丽丽家境一般也就罢了，但是丽丽妈的精明算计，即便宝宝能结婚，将来也够受的，但是宝宝心理还是舍不下丽丽，还是舍不下自己心里的那个成功梦。在好言好语下把父母送上火车后，宝宝选择留下来，但是宝宝留下来，不等于还能留住宝宝的爱情。﻿﻿</p>
+<p>宝宝和丽丽的矛盾在累积，现实摆在那里，想结婚？但现实就是一座山，两个人的能力实在翻越不了，丽丽妈妈的坚持让丽丽分手，终于动摇了这段维持七八年的的感情。﻿﻿</p>
+<p>在一个阳光灿然的日子，丽丽告诉宝宝说：太累了，太难了，再也不想看见妈妈流泪，再也想不想听见丽丽妈妈的大声指责，分手吧！分手吧！﻿﻿</p>
+<p>宝宝对我说，当时的宝宝什么都没说，因为话没有用了，因为语言那时候什么都不是。分手吧！三个字，给七八年的感情画了一个超级遗憾的句号。 宝宝那那个阳光灿然的日子后，在“明珠”彻底成了一个孤家寡人，再也没人没事给他发短信，再也没人来他的出租屋，再也没人挎着他的胳膊，月末哪怕工资再多点，也没有那个女孩了。宝宝说：世界空了，心凉了，觉得自己走不动了。﻿﻿</p>
+<p>然后宝宝说大概在他分手后的一周，接到楼主第一次去“明珠”想见宝宝，聚一下。那时候宝宝刚交了房租，实在是拿不出钱，请当时的楼主搓一顿。宝宝说，当时心情复杂到了极点。觉得跟着自己屁股后面玩了五六年的小师弟来到“明珠”给他电话，他竟然连请客吃饭的钱都没有！宝宝说：那时候觉得自己废物，觉得对不起我这个小师弟。反正那时候是万般滋味在心头。﻿﻿</p>
+<p>但是，这些还不是宝宝最坏的结果﻿﻿</p>
+<p>七八年前的“明珠”的房价是几天一个价，自然房租的价格是三不五时就上涨，即便是最破的筒子楼。宝宝当时的那点工资，再扣了吃饭钱，再扣交通费，几乎房租都承担不起。本来就孤独得只剩下影子的宝宝已经够难了，在房东给宝宝上涨房租的那天，宝宝几乎到了崩溃的边缘。 怎么那么难，怎么那么难……﻿﻿</p>
+<p>宝宝曾经想辞职回老家。当时宝宝牵着丽丽的手，大声宣布对父母说要去“明珠”，大声对父母说着宝宝在追寻爱情的同时也并将收获一份美好的事业，可是现在的工资收入低，维持生活都有难度，相恋七八年的女友已经离他而去。这些过往字宝宝脑海里挣扎出现的时候，好像两个声音，一直在斗争。一个声音告诉宝宝说：拉到吧，回老家吧，在这里除了等死，你还有啥？女朋友甩你，自己没本事赚钱，还不走在这里困死自己吗？另外一个声音则对宝宝说：你是个男人，这样回家，你还有脸见爸爸妈妈，女友甩你，你就认怂了，你这样回去，爸爸妈妈会看不起你，丽丽会庆幸分手的选择，不能走，留下来，不能走 ！﻿﻿</p>
+<p>最后，宝宝选择没有走。﻿﻿</p>
+<p>不走，不回老家，但是不代表宝宝就能付得起房租，即便从家里拿几个，应付了这三个月，下三个月怎么办，找朋友借款，得还啊。﻿﻿</p>
+<p>一声叹息之后，宝宝退了租的房子，把能扔都扔了，一个小皮箱装重要的学历证书等重要必须物品。一个大皮箱装着衣服，被褥生活用品，开始了借宿。 借宿就是找到朋友打混，混着住，张三家四天，李四家三天，去了打开自己的大皮箱铺下就睡，人家有事卷起铺盖就走，继续找下个朋友、同事，甚至在单位办公室，接着加班的名义，不走，在办公室打地铺。宝宝说到这些的时候，眼睛是红的，很红，楼主觉得是想哭的那种红。﻿﻿</p>
+<p>这样维持了将近七八个月，宝宝的心理在接受煎熬的同时，也开始一次心灵的反思，既然觉得身为男人，在没有混好的时候回家无脸见江东父老，但是这样混，除了锻炼自己的脸皮厚了不少，心理能力承受的加强之外，还有什么呢？现实还是一如既往。宝宝最难的时候，曾经给丽丽发了几次短信，希望丽丽可以帮点忙，找套便宜的房子，或者能借宝宝点钱。但是丽丽只回过一次短信：对不起。又是三个字，宝宝知道了这段感情结束了，那个在月亮底下发誓非宝宝不嫁的女孩子，已经从此在和自己的人生没有任何瓜葛。这是现实，不接受也得接受。﻿﻿</p>
+<p>宝宝那时候恨透了自己法学专业，恨透了自己的研究生学历。﻿﻿</p>
+<p>宝宝那时候的反思是律师行业太难了，不能这样继续了，两年多的辛苦工作，换来的是父母无奈的眼神，一声声的叹气；换来的是，相恋七八年的女友因为想结婚，自己没钱而离开自己；换来的是连房租都交不起。这一切一切究竟为什么？﻿﻿</p>
+<p>宝宝开始了找新的工作，又是一次次的简历投递，宝宝发现自己法学研究生竟然成了牵绊，竟然成了一些单位拒绝的借口，司法证竟然成了迈入别的行业的阻碍。宝宝做了一件我到现在都不太理解的事情，宝宝不再用研究生毕业证去应聘，而是拿着自己的本科毕业证。宝宝找工作最注重的一点，就是提供住宿，因为“明珠”这个中国最大的江畔城市的房租，让当时的宝宝实在无力负担。﻿﻿</p>
+<p>宝宝哥的故事3﻿﻿</p>
+<p>几经努力，几经煎熬，宝宝找到了一份外贸公司文员的工作。不需要研究生学历，不需要司法证，本科证就绰绰有余。宝宝当时最欣慰的是，这家公司有员工宿舍，这让在外流浪七八个月的宝宝终于可以有个稳定的住所。宝宝从律所辞职来到这个外贸公司，宝宝哥告诉楼主说：没经历过，真不知道那时候的心境，言语都无力，那时候身体的劳累不打紧，主要是心理的煎熬，心灵的孤寂，不知道还有没有明天，剩下的只有死撑，只有死撑，什么梦想，一切一切那时候就是想找个稳定的住所！太难了……太难了…….﻿﻿</p>
+<p>外贸公司的宝宝哥，没有人知道他是研究生，没有人知道他有司法证。这份可以提供员工住宿的工作，让宝宝哥终于可以每月有点余下的钱，终于让宝宝不再拖着皮箱找下个住的地方，不用再厚着脸皮，不用在心里滴血。也许没经历过得，像楼主一样，那只是一个故事。﻿﻿</p>
+<p>但是那却是宝宝哥两年多经历，真真实实的经历。我相信宝宝哥的曾经的这段经历不是个例，现在各大城市也许正有着无数个青年还在拖着皮箱走着另一个城市和宝宝当年同样的路，心理经受着宝宝当年同样的心理煎熬过程。。。﻿﻿</p>
+<p>这一份工作，给了宝宝慰藉，让宝宝那颗心，终于可以安稳一点点，但是也就是那么一点点。靠着这份工作宝宝还是弥补不了，丽丽分手的那个伤疤。宝宝哥告诉楼主：刚分手的那一年，想起丽丽，看到曾经和丽丽一起去过的地方，宝宝心里有种滴血的感觉，真的心口疼…… 有时候半夜醒来，想起和丽丽一起的校园岁月，想起牵着丽丽的日子，心如刀绞，但是能怎么样，怎么办？午夜梦回醒来的时候，烟成了缓解这种心情，缓解这种疼痛的替代品。说到这里的时候：宝宝哭了，捂着脸，没有声音，眼泪一直掉的那种哭……﻿﻿</p>
+<p>当楼主听到宝宝哥的讲述的时候：脑海中放佛是一个个镜头，在那里看到一个年轻的男孩子心路历程。这里面全是苦水，全是难以承受，全是死撑，全是不得不接受。能说什么，又该说什么?那时候在茶楼的楼主，只能默默的递给宝宝哥一支烟，一只点燃的烟……那次不知道为什么，楼主觉得烟怎么那么苦，真的，那次烟不知道为什么那么苦……﻿﻿</p>
+<p>宝宝哥缓解了一下情绪后，继续给楼主叙述着他去外贸公司之后的故事。﻿﻿</p>
+<p>宝宝在进入外贸公司后，因为公司能提供一份住宿，让他安心，宝宝工作很卖力，很认真，从来不嫌东嫌西，从来没有半句怨言。﻿﻿</p>
+<p>也是这份表现引起一个行政主管的注意。这个主管年龄和楼主差不多，但是确实宝宝哥的领导，随着和宝宝哥的接触，这个作为行政主管的女孩子，开始对宝宝哥有了一些好感，当然仅仅是好感。我说实话，宝宝哥当年在学校可是少数“帅锅”之一，在加上工作的任劳任怨，这样就和这个行政主管，这个比他小三岁的女孩子有了一些工作之外的交流。在一次宝宝的外贸公司组织旅游的时候，行政主管和宝宝在闲暇休闲的聊天中得知了，原来宝宝是研究生，原来宝宝有司法证，原来宝宝有律师证！可是弄不明白宝宝为什么拿着本科生应聘文员工作。也就是从那时开始，这个比宝宝哥年龄小的小主管开始走进宝宝的生活，开始对宝宝有了些小主管权利范围内的照顾。﻿﻿</p>
+<p>当然还是那句“人熟就是宝”。在一次谈话中，小主管说：宝宝，既然有研究生学历，既然有司法证，那么在外贸公司工作，简直就是埋没浪费，简直是宝宝哥傻瓜了……也就是在哪个下午，宝宝第一次对着这个女孩子讲了自己的经历，讲了自己的现状，讲了自己的实际情况。也是这次谈话给了宝宝人生最大的转机。就是这个年龄比宝宝哥小的女孩子行政主管，成为了宝宝人生翻盘最大的贵人。﻿﻿</p>
+<p>随着一次次的聊天，小主管和宝宝哥开始了单独吃饭，单独去星巴克喝咖啡，这时候的宝宝在不用交纳房租的时候，能够请得起最奢侈的地方也就是星巴克了。 我承认宝宝是块金子，要不然怎么能考上研究生，要不怎么能在学校就拿出司法证，要不怎么能通过公务员笔试？慢慢的宝宝哥任劳任怨的工作态度，宝宝哥的言语谈吐使得这个小主管开始更照顾宝宝，两个人也经常私下的见面，吃饭，喝咖啡，去踏青。﻿﻿</p>
+<p>直到有一天，宝宝哥在员工宿舍接到一个小主管电话，让他赶紧下来。这次小主管带来了这样一个消息：小主管爸爸的一个朋友是一个不错的律师事务所合伙人，如果宝宝愿意的话，可以带宝宝去见见这个人合伙人。那天宝宝哥跟着小主管去见了这个合伙人，小主管的爸爸的朋友是个“明珠”很有名气的律师事务所，当然作为合伙人的小主管爸爸的朋友，是可以决定宝宝哥能否进去工作的。﻿﻿</p>
+<p>就在那天下午小主管爸爸的朋友，也观察了宝宝，虽然没有明说，但是话里话外好像愿意接受宝宝来工作的。那天下午小主管说了很多话，其实宝宝知道如果能进去这家律所起码收入是有大保证了，但是曾经的两年多艰难，还是让宝宝有点不舍得舍弃这份外贸公司的工作。﻿﻿</p>
+<p>就是那天后第二天，小主管租了一个房子，并且付了半年房租，半逼着宝宝哥搬出了员工宿舍。有了住处，宝宝的心踏实了三分之二，然后顺理成章去了小主管爸爸朋友的律师事务所，跟着这个朋友重新做起了律师。 这次不一样了，完全不一样了，好像有助力一样，因为是小主管的介绍，因为跟着合伙人，因为在一家知名律所，一切，一切好像都开始顺利了。﻿﻿</p>
+<p>宝宝的收入开始增多，宝宝当然倍加珍惜这次机会，工作更加务实，更加任劳任怨。因为辛苦工作，宝宝的工资有时候是翻翻的增长，宝宝和小主管也水到渠成的建立了恋爱关系，也就是宝宝现在的妻子。﻿﻿</p>
+<p>当宝宝进入这家知名律所后，自己的优秀也慢慢体现，得到了当初用他的律所合伙人的赏识，自己的收入慢慢的开始增加。等到和小主管恋爱了一年的时候，等到去小主管家里提亲的时候，是这位合伙人作为老师，和宝宝一起去提亲的。本来就和宝宝的老丈人是朋友，这样的场景自然是皆大欢喜，当然那时候宝宝提亲的时候，宝宝的月收入也过万了，宝宝觉得自己有资格提亲了。作为小主管的父母自然能从作为律所合伙人那里得知宝宝的人品，宝宝的能力，宝宝的收入，这成了一个皆大欢喜又水到渠成的婚姻。也就是提亲在宝宝哥老丈人和岳母正式同意宝宝做女婿的那天，宝宝哥的岳父母竟然还有一套八十平方的房子可以作为宝宝和妻子的新房。﻿﻿</p>
+<p>一切一切在半年里有翻天覆地的变化，宝宝哥重新进入了自己专业，律师行业，一个“明珠”知名的律师事务所，宝宝有了新女友，宝宝有了月薪过万的收入，而且竟然女友家里可以提供一套婚房。这是宝宝在“明珠”的第六年。和妻子的相识，让宝宝哥命运有了翻天覆地的变化和蜕变。﻿﻿</p>
+<p>结婚后的宝宝哥，有了一个真心爱自己妻子，有了一个关心自己岳父母，宝宝更加在工作努力，更加拼命。因为结婚了，宝宝也真是一个好女婿，宝宝出于对岳父给了自己一个良好的职业，对妻子改变自己的命运感激，反正诸如此类吧。﻿﻿</p>
+<p>宝宝对自己的妻子那是自然没的说。我也听宝宝的妻子说过，这辈子找了宝宝挺好，宝宝这个女婿比她这个女儿对自己父母都好。楼主知道为什么。因为宝宝难过，宝宝被抛弃过，孤零零的一个人，因为这个女孩子，给了他一个家，帮助他找了一份好工作，让他能展现自己，让宝宝的人生重新找了价值感，或者说重生。﻿﻿</p>
+<p>宝宝结婚后，宝宝一如既往的努力，因为岳父朋友也是自己律所合伙人的提携，宝宝开始真的上了轨道，在律师这行业算是这的摸进了门，真的走通了。也许是老天还要补偿他，妻子的叔叔是“明珠”外贸局的一个处级干部，这个叔叔的也希望自己侄女，侄女婿能够过得好点，当然就通过自己的能力，自己的关系，给宝宝找了大量案源，让宝宝开始大范围的接触到高质量的诉讼案源，这样宝宝的事业开始飞速发展，进入了良性循环。﻿﻿</p>
+<p>这样循环一直到那次，楼主拜托宝宝哥，帮楼主解决单位的那次诉讼。宝宝这几年的奋斗，已经使得宝宝也成了这家律所的合伙人，宝宝的月收入，用楼主的话说，比我们行长还牛气。自然有了案源，有了高收入，宝宝在司法界也是越混越开。自然当楼主找到宝宝哥的时候，宝宝哥已经有能力在他的一亩三分地上，解决楼主的问题了。﻿﻿</p>
+<p>人生，无法说，无法评价。这就是宝宝的故事。﻿﻿</p>
+<p>人生的对话﻿﻿</p>
+<p>听完了宝宝在“明珠”的这些年。我们两个人开始一次对人生探讨的谈话﻿﻿</p>
+<p>我问宝宝说：我说现在这一切，也是宝宝哥你努力啊，你要是个垃圾废物，也混不成现在这样。﻿﻿</p>
+<p>宝宝对我说：是你这么认为。什么努力？我能翻盘的原因是你嫂子，她才是我命里的福星。说努力谁不努力？我们那批法学院毕业的，有三分之二改行了，剩下的三分之一，除了几个进入法院、检察院，相对清闲的，做律师做成器真没有几个。要不是你嫂子，我现在还不知道一个什么样呢。﻿﻿</p>
+<p>这时候我们喝茶的茶楼下面有个环卫工，在打扫卫生的环卫工。宝宝指着环卫工对我说：兄弟，你说努力还有人比环卫工努力的吗？他们有时会早晨早班凌晨三点半就起来打扫这个城市，晚班晚上十一二点还下不了班。寒来暑往还有他们那么下力气的人吗？但是他们的收入可是这个城市最微薄的，至于努力就有回报，你看看这些环卫工就知道根本不成立，根本就是一个笼统的欺骗人的说法。﻿﻿</p>
+<p>是啊，楼主那时候也意识到，多数人在为了一份薪水，或者为了自己创业那点小生意，起早贪黑，可是他们真的很卖力，真的很贫穷，为什么还是那么艰辛？其实重要的是，忽略了努力是需要有方向的，需要有指导的，如果在一个错误的思维指导下，也许累死你的努力换来的就是一个只能糊口微薄收入，谈何改变自己。付出真的就有回报吗？前提是你的付出是正确的付出，要不在努力付出自己也只是一个机器，一个日复一日损耗生命力换取微薄薪资挣扎在生存线的悲哀一族。﻿﻿</p>
+<p>宝宝对楼主说：兄弟我现在能变成这样，是谁的功劳？是你嫂子，是我岳父的面子，让我进入现在的律所，给了我机会，让我跟着合伙人踏上了一个律师正确应该走的道路。如果没有这层关系，我不是在外贸公司做个小职员，就是挣扎在律师执业的生存线上，谈何今天我们能坐在这里喝600元一壶的大红袍。有多少律师在自己家办公？有多少律师满处散发名片？有多少律师在苦苦挣扎？这些人不努力吗？这些人在学校也是好学生，踏入社会也玩命的努力，但是为什么还过得那么艰辛？是因为什么？是没有跟对人，是没有做对事，绝对不能说他们不努力！也恰恰因为这样，”努力就有回报”成了一个骗局。因为努力就有回报是有前提条件的，前提条件，是要跟对人，是要人给你机会，是要做对事，如果忽略了这些前提，努力不但没有回报，努力会让你让越走越错，越努力越限制。正如著名拿破仑的论点：﻿﻿</p>
+<p>“愚蠢而又勤奋的人，绝对不能任用。”﻿﻿</p>
+<p>什么是愚蠢的人？要是真的愚蠢就不烦恼了，拿破仑的愚蠢是有着错误思维的那群人，一开始就忽略了正确的思维，在那里抱残守缺坚守着，还在这个方向上一直勤奋耕耘，除了错上加错，没有别的任何结局。跟对人，做对事，在一个完善的思维才有可能使得努力成为回报，要不然真的是抱残守缺成了愚蠢而又勤奋，那种就是绝对会失败，绝对不会被拿破仑任用的那群人。﻿﻿</p>
+<p>顺着这个话题，楼主和宝宝聊起了思维的建立，聊起了性格决定命运，甚至聊起了宗教，聊起了命运。﻿﻿</p>
+<p>聊得过程中，我们两人都承认，家庭才是性格的养成地。思维的形成，做人做事的外延内涵的思维框架一直有着家庭成长环境的烙印。﻿﻿</p>
+<p>性格决定命运，思维决定发展，人的机遇决定一切。﻿﻿</p>
+<p>同样是那个宝宝，和丽丽恋爱的宝宝走进了绝境，换了一个女友,宝宝混得风生水起。这是楼主朋友、同学、同事里面人生最有戏剧化的一个师兄，宝宝还是那个宝宝，遇到人不同，遇到了最重要的人生的另一半的不同，使得人生完全发展成了两个极端，这是让楼主最为震撼的。﻿﻿</p>
+<p>宝宝的命不错，因为妻子，因为岳父，因为妻子的叔叔，因为妻子爸爸的朋友，我认同宝宝的妻子是宝宝命中的福星，一个有点形而上的结论。但是事实又的确摆在那里，宝宝曾经两年混得几乎无法留在这个城市，但是因为有了妻子的相助，宝宝成为了这个被成为“明珠”的中国最大城市的知名律师。这是个例子，里面有着天命的成分，宝宝无疑是幸运的，但是宝宝当年那批学法律的同学，和楼主很多朋友、同学依然在挣扎。﻿﻿</p>
+<p>但是这里面宝宝的坚持留下，和宝宝的耐受力是宝宝后来翻盘的基础，宝宝的人品，宝宝硬件也是让人肯定的最大优点。﻿﻿</p>
+<p>但是思考到这里楼主迷茫了，究竟是宝宝的能力是决定作用，还是宝宝妻子的福星高照是决定作用呢？﻿﻿</p>
+<p>楼主曾经问宝宝哥：会恨丽丽吗，想起那段七八年的恋爱岁月，那段拿着吉他在月亮下发誓非你不娶、非你不嫁的感情最后成了这样，心里会记恨吗？﻿﻿</p>
+<p>宝宝的是这样回答楼主的：不恨，一点都不！丽丽的家境和宝宝差不多，那时候的丽丽依然也是看待人生一片迷茫，一头雾水，根本不知道人生的路那时候该迈向那里。对于贫穷的压力，现实的残酷，一个人，尤其是一个女人在面对这些压力，本能而选择退出是可以理解的。宝宝情感上难以接受，和理解丽丽当初的选择分手完全两个概念。﻿﻿</p>
+<p>宝宝也同时告诉楼主：现在我们都是父亲了，当我们的孩子在面临恋爱的时候，在面临选择结婚对象的时候，我们该怎么选择？我说自然是选择嫂子这样的，自然选择有助力的，爱情太苍白了，在现实面前什么都不是，在物质那里脆弱的就像一张沾水的纸张。﻿﻿</p>
+<p>楼主同事也希望看到帖子还没有结婚的朋友，在选择的婚姻上面，最后想想宝宝的两种境遇，再去抉择。﻿﻿</p>
+<p>楼主和宝宝那次谈话中，聊到如何才能避免犯错，如何才能让自己的人生道路走到顺利一些，如何才能完善自我，如何才能更完善自我。﻿﻿</p>
+<p>那些成功人士﻿﻿</p>
+<p>那晚我们谈起了那些榜样人物，那些曾经年少时代佩服的英雄豪杰，其实小时候宝宝和楼主，都犯过这么一个错误。今天说出来，希望大家借鉴，也希望那些父母可以借鉴，不要再犯这种认知错误。﻿﻿</p>
+<p>每个孩子，从小到大都有崇拜的人物，每位家长，老师也都在家里或者学校千篇一律的强调这些成果故事，例如香港商人李嘉诚，台塑老板王永庆，又例如那些领袖人物，还有一些例如比尔盖茨，苹果乔布斯，乃至当下中国的IT新贵，马云、李彦宏、张朝阳等等这些人物的故事。﻿﻿</p>
+<p>虽然每个人的故事都不一样，从事的行业也不一样，但是从楼主小时候，乃至现在小孩子，常常听到的就是这些人都曾经出身家境一般甚至家境贫寒，但是都成了古代，或者当今首屈一指的成功人物。很多的家长，很多的老师都是这么教育孩子的：这些人现在如何如何有钱，当初如何如何困穷。传递给孩子的观念就是不管现在家庭多不好，或者现在处境多难，因为有这些例子，你可以学习，可以作为榜样，可以安慰自己，也许将来你也会成为榜样中的一员。﻿﻿</p>
+<p>对于成人来说，现在的企业文化培训，乃至书店里无数的成功学书记，还有那些歇斯底里的培训讲师都在强调这些故事。﻿﻿</p>
+<p>这些在楼主看来那些人的成功与否，你能学到也就是他们身上的优秀品质，除了这些之外，只能通过这些成功人士的故事自我慰藉，或者模仿他们。用这个当做心理安慰，甚至狡辩自己现实不如意的的态度，只会让你过的更失败。﻿﻿</p>
+<p>因为每个成功人士，每个成功机会都是有着当初的时代背景，社会发展机遇，和个人机遇作为强力辅助形成了这是优秀人物的人生辉煌。﻿﻿</p>
+<p>举例来说：谈李嘉诚这些人生导师就是泛泛而谈李嘉诚幼年如何贫困，然后就是成功后的业绩。楼主想说的是李嘉诚的岳父，也就是李嘉诚的舅舅，在李嘉诚少年时代已经是很成功的商人了，李嘉诚的妻子也就是李嘉诚的表妹家族，对李嘉诚后来的创业提供很大的助力，这种助力可以参照宝宝的故事扩大1万倍。但是绝大多数父母家长，甚至成功培训是不会告诉你李嘉诚从岳父那里得到了多少资助，起了多大作用，只是告诉你李嘉诚少年很穷，然后就学徒，学徒，然后就发财了，然后就成了塑胶厂的老板，然后就成了地产大亨。﻿﻿</p>
+<p>这种掐头去尾的描述最害人了，忽略了里面的重点，只是告诉你那些他们想说的，甚至有些家长拿着这种掐头去尾的故事，自己根本不了解的成功故事，去教育孩子，一方面掩盖自己没有给孩子创造好的基础的现实，一方面在那里给孩子灌输一些忽略了成功必要因素的掐头去尾的成功故事来励志孩子，掩盖自己的不足。﻿﻿</p>
+<p>至于比尔盖茨，乔布斯，麦克戴尔，是因为那个时候美国的生产关系大环境发展到了计算机硬件，软件巨大飞跃的时候，这些人物因为兴趣爱好，因为自身掌握的技术，或者是因为兴趣，使得这个划时代的机会体现在他们身上，他们的能力使得IT行业发展成为了一个必然因素。他们取得了世界级的成功，这是有一个很大的因素，是世界时代发展机遇的转折点。即使在美国这个一流国家体制，如果想复制这些人的成功，即便你是IT天才没有那个时代背景，也成就不了微软、苹果这样的科学革命一样的伟大的企业。﻿﻿</p>
+<p>至于李彦宏，马云，张朝阳，马化腾，丁磊的故事也是同样，听着很励志，财富很炫目，但是根本无法复制。因为他们这群人在90年代后期中国的网络突飞猛进的时候，他们的机遇、留学背景，在美国已经发展的很完善的技术，拿到中国，成就了中国的互联网传奇，成了科技新贵。但是同样是一个历史时期，他们遇到了，有远见，有能力，有技术，各种优势因素促成了他们的成功。﻿﻿</p>
+<p>在楼主看来这些成功人士的的成功轨迹包含了时代发展机遇，社会发展状况，个人机遇，个人能力，等等诸多状况成就了他们的成功。但是这种成功根本无法复制，因为这种成功因素仔细分析一点不亚于一个严密的数学模型，如果只是一味的强调个人努力，不服输努力，就想强调一个数学模型的中的一个字母或者一个公式，只是在那里以偏概全。让听到这些故事的孩子，或者成年人，在那里沿着一个掐头去尾的概念模仿成功，从而大错特错。﻿﻿</p>
+<p>这些成功人士，我们普通人只能学习他们的个人品质，除此之外那些成功故事，也就是听听，然后结合自己的去理性分析。如果接受的只是少年家庭一般，甚至贫困，成年后拼命努力就成就了伟大事业的是掐头去尾的概念，忽略了那些社会发展关键特点，时代发展背景，个人机遇，背景因素，等等不可复制成功要素，还在那里大谈特谈，就是在毁掉孩子，毁掉员工。﻿﻿</p>
+<p>那天，也就是那天的谈话，谈了很多，也就是从那天聊天的结束后，楼主有了一种思维完全颠覆的感觉。自己的旧思维开始被冲破，楼主也逐渐开始从身边周围人的人生中去总结，去观察，去反思，去理解，何为人生。﻿﻿</p>
+<p>还是那句话：也许这篇帖子全是废话，但是希望看到帖子的您，能从中看到那么一两句有用的让您在选择、认知、思维上有个理性的认识，能够少走弯路，能够走的更稳妥一下，走的更简单一些，走的更平顺一些……（全文完）﻿﻿</p>
+<p>《论寒门与贵子》，文/鬼脚七﻿﻿</p>
+<p>古人云：寒门出贵子。意思就是很有成就的人，出身于比较贫困的家庭。我前两天推送了连载的《寒门再难出贵子》，里面通过好几个故事，讲述这个俗语不再适用于现在的社会。而且文章中的寒门，还不只是指那些家庭贫困的人，包括小城镇出来的年轻人。﻿﻿</p>
+<p>那是一篇很有意思的文章，我理解作者的很多观点，虽然不一定认同。之所以喜欢那篇文章，因为我也出生于寒门，真正的寒门，从上小学开始，到中学、大学，家里都付不起学费的那种，如果大家感兴趣，可以看看我的211号文章《记忆碎片·有钱难买少年穷》。文章中有些观点我非常有感触，也认同：﻿﻿</p>
+<p>出生于寒门的年轻人，大多从小就有明显不足：交际能力。去银行实习的那些实习生，上班去得最早的，最紧张不善言谈的是从农村来的。他的判断我绝对相信，因为我以前就是这样，我上大学就是第一次出远门，非常羡慕城市里的那些人，而且自卑，觉得差距太大。直到现在还有影响，我后面的文章会谈到。﻿﻿</p>
+<p>出生于寒门的年轻人，毕业以后就要承担很多家庭责任。文章中提到的治国，简直是我的翻版，而且治国运气还算不错，他老爸给了他7万元帮助付房子首付。我研究生还没毕业，就要帮助家里还债；刚毕业就要借钱帮我哥做生意，还要帮家里建房子，还没毕业的时候，已经在承担家里很多责任了。等我买房子的时候，家里也帮不上任何忙。﻿﻿</p>
+<p>出生于寒门的成功人士的案例不可复制，我们只能学习他们身上的优秀品质，但不要期待自己就能成为他们那样的人。这个观点很正确，我一直都很支持！无论是对成功的企业，还是对成功的职业经理人，大多都是如此。以前有个打个皇帝写一本书叫《我的成功可以复制》，我觉得很扯蛋。如果我做自媒体也算小成功的话，虽然有些方法可以教大家，但《我的成功不可复制》，哪怕这个成功还很小。﻿﻿</p>
+<p>出生于寒门的年轻人，很容易从内心否定其父母，很多意见不会听父母的。父母可能跟不上时代的发展，但他们在生活上的经验很值得借鉴，他们会更关注生活质量而不是儿女情长；他们会更关注职业前景而不是兴趣爱好。但在农村出来上大学的年轻人，从内心就否定了父母的成功，从而所有决定都会自己来做。﻿﻿</p>
+<p>出生于寒门的年轻人，经常会算计很多，有的人会很精明。我很认同，我以前就很精明。上大学我会考虑早餐是喝一毛五分钱一份的白米粥还是喝一毛钱二分一份的小米粥（我一开始不知道是小米粥，还以为是质量不太好的白米粥）。给大家讲两个我精明的故事吧。﻿﻿</p>
+<p>我上大学当班长，大学一年级我组织班级文体活动，是组织中国象棋比赛，因为我的象棋下得好，知道我会获奖，而且可能是第一名。于是我把第一名的奖品设置的很高档（三四十块钱的东西），二三名的奖品就比较低，连奖品都是我最想要的。最后这个奖品光明正大的归我了。﻿﻿</p>
+<p>在大四我和一位同宿舍的同学打赌，忘记赌什么了，我排行老六，和宿舍的二哥打赌，我俩都相信自己能赢。后来我们问刚睡醒的老大：老大，你觉得谁会赢？老大说：我不知道你们赌什么，但我知道文德一定会赢。包括我在内宿舍其他人都很奇怪问为什么，老大说：你们回想一下，咱们大学这几年，文德打赌什么时候输过？﻿﻿</p>
+<p>第一个故事后来想起来我觉得非常惭愧，我得了第一，但我后来从来不跟别人提这件事情。虽然没有像文章中治国拿烟放在自己口袋，但我觉得这个和拿烟的性质差不多；第二个故事让我当时就感触很大，不是因为得意，而是我意识到自己太精明了。从那以后，我开始有意识让自己慢慢变得没那么精明，直到过了七八年才真正改得差不多，现在我以吃亏是福来为人处世了。﻿﻿</p>
+<p>文章还有很多很有意思的情节，以及作者的思考，文章中对教育体制、对思维模式、对人脉作用的思考是作者最希望传达的观点。﻿﻿</p>
+<p>看那篇文章，你还可以测试一下，看看是否已经建立自己的价值观和人生观。如果你看完文章以后能够很淡定，对于作者的观点，无论是认同还是不认同，虽然有些感慨，但很淡定，说明你的价值观已经形成了，而且还很稳固；如果你很不淡定，甚至觉得生活从此失去了希望，一切努力都没有意义，那么说明你的价值观完全没有形成；如果你处于前面两种情况之间，说明你的价值观还在完善。﻿﻿</p>
+<p>孔子说：三十而立。我理解三十而立的意思不是人到了三十岁需要建立自己的事业，拥有多少财富，而是指在三十岁建立自己的人生观和价值观。孔子的原话是这样的：﻿﻿</p>
+<p>子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命， 六十而耳顺，七十而从心所欲，不逾矩。”﻿﻿</p>
+<p>孔子自己才能三十而立，一般人做不到的，至少我做不到，我最近几年才建立自己的价值观体系。﻿﻿</p>
+<p>我相信大部分人看了这篇文章，都不那么淡定，包括我。如果仔细思考，文章中的很多结论有片面，下面我来讲讲的一些认识：﻿﻿</p>
+<p>1 文章以银行为背景，没有代表性。在银行这个行业，现在问任何一个人，都会得出同样的结论：如果没有家庭背景，在这个行业就别想有太好的机会，更不用说出人头地了。文章只不过把现实众所周知的结论用故事的方式叙述一遍了而已。如果以公务员、政府部门为题材来写，会更加残酷和现实一些。在互联网行业，在电商行业会很不一样，即使在制造业，家电行业等等，那些关系户和家庭好的人能进来，但最终有成绩的真的不一定是他们。﻿﻿</p>
+<p>2 文章只描述了两年不到的时间，然后对人做判断，太武断了。我在想我刚毕业的经历，别说两年，我毕业了4年，有一段时间还5口人住在才50平米的房子里，住了快一年，而且房子还是租的。如果作者看见那时候的鬼脚七，估计要感叹鬼脚七这辈子就如此了。家庭的那点压力，对于文章的作者来说觉得已经是顶天了，其实是原文作者小看了寒门出生的人的忍耐力和承受力。﻿﻿</p>
+<p>3 文章中定义的成功很狭隘：留在好单位、有大房子就是成功。如果看明白了作者的定义，就真的不觉得有多悲观。而且文章中的留在银行的周周，还有去部队的东子那些人（他们应该算官二代吧），最后能有多大成功？我能想像得出来，他们的会少受一些苦，但他们的烦恼不会少。每个人的烦恼都很多，和金钱、工作、房子没有关系。如果还不明白，你看看那些离婚的、自杀的、得抑郁症的，是因为家庭条件不好么？﻿﻿</p>
+<p>4 文章中对农村家庭的思维模式进行了彻底的批判。认为治国的父母，让治国过早的承担了家庭的责任，承担了弟弟的责任，过早的要求治国的回馈，反而周周的父母还在帮周周。从我看来，二者父母的思维模式是一样的。做父母都是在用自己最大的能力帮助子女，治国的父母已经把所有的能力贡献完了，而周周的父母的能力还没有贡献完。不是思维模式的错误，而是父母能力的强弱。﻿﻿</p>
+<p>5 文章中的几个优秀的寒门学生，找的工作都不好，甚至连房租都付不起。这些例子很极端，估计作者把原型夸大了一些。我周围也有很多同学毕业，无论高中、本科还是研究生的同学，无论是学文科、理科还是工科，毕业几年虽然不是都出人头地，但所有人都还好，没有那种困境。﻿﻿</p>
+<p>6 文章中宝宝哥的故事，吸引并打动了很多人，最后作者得出的结论是：“努力就有回报”是个欺骗人的说法，成功最大的因素是有贵人。我真的觉得有些反了，如果宝宝哥在那个外贸公司不遇到那个小主管，一定会遇到另外的人发现他的才能，我说一定，是120%的相信！如果把鬼脚七现在放在任何一个小的公司做文员，我相信几个月后一定会有人能发现我的才能，而且会有贵人来帮我。是宝宝哥媳妇幸运，还是宝宝哥的幸运？真的不好说，因为反过来也成立的。那个清洁工的例子，根本就站不住脚的，因为清洁工的技能不具备竞争力。﻿﻿</p>
+<p>7 文章中关于爱情，关于婚姻，关于工作，关于读研究生的很多观点，其实我都不认同，但我能理解。文章的作者是个典型的悲观现实主义者。用作者自己的话说，因为环境，和十年的时间，决定了他的思维模式。他以后也会用这套模式来教育他的子女，我觉得同样是恶性循环。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[封装用于vue项目使用的jsonp库]]></title>
+      <url>/hexo/2017/02/07/Flex%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B%C2%96%20-%20%E5%89%AF%E6%9C%AC/</url>
+      <content type="html"><![CDATA[<p><strong>一个方便使用的jsonp库</strong><br><a id="more"></a><br>API: jsonp(url, data, option)<br>    /<em><br>形参 :<br>        url(String) , 拼接数据(Object) , 选项(Object) {<br>            param (String) 指定回调函数名称(defaults is callback),<br>            timeout (Number) 响应时长(defaults is 60000)<br>        } 
+    </em>/</p>
+<hr>
+<ul>
+<li><ul>
+<li>cnpm install jsonp –save       // 项目中 npm 安装 jsonp</li>
+</ul>
+</li>
+<li><ul>
+<li>new jsonp.js                    // 建立自己的jsonp.js文件<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-836edf60b57fed15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jsonp.png"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>使用<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-a5f7026354c10e8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="play.png"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[http状态码]]></title>
       <url>/hexo/2017/01/11/http%E7%8A%B6%E6%80%81%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="状态码查询"><a href="#状态码查询" class="headerlink" title="状态码查询"></a>状态码查询</h3><a id="more"></a>
@@ -1312,41 +2602,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[微博图床]]></title>
-      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
-      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
-<ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
-</ul>
-<blockquote>
-<p>实用微博图床推荐 </p>
-</blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 实用工具 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 实用工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/hexo/2016/12/11/hello-world/</url>
       <content type="html"><![CDATA[<p><strong> 欢迎您 !  </strong><br><strong> 主人不在随便坐哈 ~ </strong><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
@@ -1370,6 +2625,413 @@ alert( $(this).text() );
         <tags>
             
             <tag> 年轻真好 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[npm教程]]></title>
+      <url>/hexo/2016/08/07/%C2%96npm%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="总结npm常用命令"><a href="#总结npm常用命令" class="headerlink" title="总结npm常用命令"></a>总结npm常用命令</h3><p>npm (Node Package Manager)</p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<ul>
+<li>npm 默认与Node绑定在一起的，所以安装Node，自然就安装了npm。<br><a href="https://www.npmjs.com/" target="_blank" rel="external">npm 的官网</a></li>
+<li><strong>PS:</strong> npm安装插件过程：从<a href="http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器" target="_blank" rel="external">http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），因此建议设置镜像站点或者是使用淘宝提供的镜像包管理器</a> cnpm </li>
+<li>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
+</ul>
+</blockquote>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><h5 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h5><blockquote>
+<ul>
+<li><p>npm install gulp –save-dev<br>–save： 将该模配置信息保存至 package.json 文件中的Dependencies属性内。<br>-dev : 指明将配置信息保存至 package.json 文件中的的 Devdependencies 内。</p>
+</li>
+<li><p>全局安装<br>npm install gulp -g</p>
+</li>
+<li><p>安装指定版本号的模块<br>npm install rimraf@2.6.1</p>
+</li>
+<li><p>根据package.json配置文件安装模块<br>npm install</p>
+</li>
+</ul>
+</blockquote>
+<h5 id="速记安装"><a href="#速记安装" class="headerlink" title="速记安装"></a>速记安装</h5><blockquote>
+<ul>
+<li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
+</li>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x70;&#x61;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#x65;&#x5b;&#x40;&#x76;&#101;&#114;&#115;&#x69;&#111;&#110;&#93;">&#x70;&#x61;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#x65;&#x5b;&#x40;&#x76;&#101;&#114;&#115;&#x69;&#111;&#110;&#93;</a> [-g] [–save-dev]</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h2><h5 id="卸载本地模块"><a href="#卸载本地模块" class="headerlink" title="卸载本地模块"></a>卸载本地模块</h5><blockquote>
+<ul>
+<li>npm uninstall rimraf<br>或者也可以简写为</li>
+<li>npm uni rimraf</li>
+</ul>
+</blockquote>
+<h5 id="卸载全局模块"><a href="#卸载全局模块" class="headerlink" title="卸载全局模块"></a>卸载全局模块</h5><blockquote>
+<ul>
+<li>npm uninstall gulp -g</li>
+</ul>
+</blockquote>
+<h5 id="删除模块并卸载配置信息"><a href="#删除模块并卸载配置信息" class="headerlink" title="删除模块并卸载配置信息"></a>删除模块并卸载配置信息</h5><blockquote>
+<ul>
+<li>npm uninstall rimraf –save-dev</li>
+</ul>
+</blockquote>
+<h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
+<ul>
+<li>npm (uni | unistall ) <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#112;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#x5d;">&#112;&#97;&#99;&#x6b;&#x61;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#x76;&#x65;&#x72;&#115;&#x69;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
+</ul>
+</blockquote>
+<h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
+<ul>
+<li>npm update [packageName] [-g] [–save-dev]</li>
+</ul>
+</blockquote>
+<h5 id="如果你要更新所有的插件的话"><a href="#如果你要更新所有的插件的话" class="headerlink" title="如果你要更新所有的插件的话"></a>如果你要更新所有的插件的话</h5><blockquote>
+<ul>
+<li>npm update [–save-dev]</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[封装localStorage数据存取方法]]></title>
+      <url>/hexo/2016/08/07/%C2%96%E5%B0%81%E8%A3%85localStorage%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="localStroages是HMTL5新型客户端数据存取新方式IE"><a href="#localStroages是HMTL5新型客户端数据存取新方式IE" class="headerlink" title="localStroages是HMTL5新型客户端数据存取新方式IE"></a>localStroages是HMTL5新型客户端数据存取新方式IE</h3><a id="more"></a>
+<blockquote>
+<p>欢迎收看饿了么系列 之 localStroage封装</p>
+<ul>
+<li><em>window.localStorage</em><ul>
+<li>读取： localStroage.getItem(‘key’)</li>
+<li>储存： localStroage.setItem(‘key’,’value’)</li>
+<li>兼容性： IE8+</li>
+<li>大小： 5M</li>
+<li>数据类型： String</li>
+<li>有效期： 永久</li>
+<li>在浏览器的隐私模式下面是不可读取且无法给爬虫抓取数据</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>封装localStroage<ul>
+<li>getter  saveToLocal(id,key,value){}</li>
+<li>setter loadFromLocal(id,key,def){}</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-04ad73300d6c4d07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mark"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[input[type=file]属性]]></title>
+      <url>/hexo/2016/07/07/%C2%96input-type-file-%E5%B1%9E%E6%80%A7%E8%AF%A6%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h3 id="input-type-file-控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。"><a href="#input-type-file-控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。" class="headerlink" title=" input[type=file]  控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到File对象。"></a><strong> input[type=file] </strong> 控件用来上传文件。当使用控件时，就授权了网页和服务器访问对应的文件，就可以得到<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File" target="_blank" rel="external">File</a>对象。</h3><a id="more"></a>
+<blockquote>
+<p>在Android手机webview中，是不支持上传文件的，网上说是修改Android端的代码导致的。</p>
+</blockquote>
+<ol>
+<li><p>accept属性<br>该属性表明了服务器端可接受的文件类型，可以限制你手机选择相关的文件，如果限制多个，可以用逗号分割，下面的代码就表示只能选择图片与音频相关的文件：<code>&lt;input accept=&quot;image/*,audio/*&quot; type=&quot;file&quot;/&gt;</code> </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-5de3e5937061e2ef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="属性值"></p>
+</li>
+<li><p>change事件<br> 当用户点击控件上传文件会触发change事件，在移动端点击控件时会弹出键盘，体验非常不友好，通过设置属性<code>onfocus=&quot;this.blur()&quot;</code>使其失去焦点<br><code>&lt;input type=&quot;file&quot; id=&quot;upload&quot; onfocus=&quot;this.blur()&quot;/&gt;</code></p>
+</li>
+<li><p>file对象<br> 用户所选择的文件都存储在了一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileList" target="_blank" rel="external">FileList</a>对象上，其中每个文件都对应了一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File" target="_blank" rel="external">File</a>对象<br>file对象一共由9个属性 获取上次修改的时间<code>file[0].lastModifiedDate)</code> 获取文件名<code>file[0].name</code> 获取大小<code>file[0].size</code> 获取类型<code>file[0].type</code></p>
+</li>
+<li><p>参考资料：<br><a href="http://www.cnblogs.com/strick/p/5181701.html" target="_blank" rel="external">http://www.cnblogs.com/strick/p/5181701.html</a>  移动端图片操作（一）<br><a href="https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications</a>    在web应用中使用文件<br><a href="http://javascript.ruanyifeng.com/htmlapi/file.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/htmlapi/file.html</a>  文件和二进制数据的操作<a href="http://www.iunbug.com/archives/2012/06/04/208.html" target="_blank" rel="external">http://www.iunbug.com/archives/2012/06/04/208.html</a>   [译]JavaScript文件操作基础<br><a href="http://www.iunbug.com/archives/2012/06/05/254.html" target="_blank" rel="external">http://www.iunbug.com/archives/2012/06/05/254.html</a>   [译]JavaScript文件操作URL对象<a href="http://www.html5rocks.com/zh/tutorials/file/dndfiles" target="_blank" rel="external">http://www.html5rocks.com/zh/tutorials/file/dndfiles</a>     通过 File API 使用 JavaScript 读取文件</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[jq教程]]></title>
+      <url>/hexo/2016/02/07/%C2%96%C2%96jq%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="350行jQuery常用脚本"><a href="#350行jQuery常用脚本" class="headerlink" title="350行jQuery常用脚本"></a>350行jQuery常用脚本</h3><a id="more"></a>
+<p>0、常用选择器<br><code>$(&#39;#div1&#39;)   //id为div1的节点，如&lt;div id=&#39;div1&#39;&gt;&lt;/div&gt;</code></p>
+<figcaption>  //所有的span结点，一个包装集</code><br><code>$(&#39;p span&#39;)   //p标签下的所有span节点，后代节点</code><br><code>$(&#39;p&gt;span&#39;)   //p标签下的所有span子节点，子代节点</code></p></figcaption><pre class=" language-$(&#39;span&#39;)"><code class="language-$(&#39;span&#39;)"><p><code>$('.red')  //使用样式red的节点，如<span class="red"></span></code></p>
+<p><code>$('*')  //所有节点</code></p>
+<p><code>$("div,span,p.cls")  //选取所有<div>，<span>和拥有class为cls的<p>标签的一组元素</code></p>
+<p>1、基本筛选器<br><code>$('span:first')    //第一个节点</code><br><code>$('span:last')     //最后一个节点</code></p>
+<p><code>$("td:even")     //索引为偶数的节点，从 0 开始</code><br><code>$("td:odd")      //索引为奇数的节点，从 0 开始</code></p>
+<p><code>$("td:eq(1)")    //给定索引值的节点</code><br><code>$("td:gt(0)")    //大于给定索引值的节点</code><br><code>$("td:lt(2)")    //小于给定索引值的节点</code></p>
+<p><code>$(":focus")      //当前获取焦点的节点</code><br><code>$(":animated")   //正在执行动画效果的节点</code></p>
+<p>2、内容选择器<br><code>$("div:contains('hello')")    //包含hello文本的节点</code><br><code>$("td:empty")    //不包含子节点或者文本的空节点</code><br><code>$("div:has(p)")  //含有选择器所匹配的节点</code><br><code>$("td:parent")   //含有子节点或者文本的节点</code></p>
+<p>3、表单选择器<br><code>$("input:checked")    //所有选中的节点</code><br><code>$("select option:selected")    //select中所有选中的option节点</code></p>
+<p><code>$(":input")      //匹配所有 input, textarea, select 和 button 节点</code><br><code>$(":text")       //所有的单行文本框</code><br><code>$(":password")   //所有密码框</code><br><code>$(":radio")      //所有单选按钮</code><br><code>$(":checkbox")   //所有复选框</code><br><code>$(":submit")     //所有提交按钮</code><br><code>$(":reset")      //所有重置按钮</code><br><code>$(":button")     //所有button按钮</code><br><code>$(":file")       //所有文件域</code></p>
+<p>4、筛选与查找<br><code>$("p").eq(0)       //当前操作中第N个jQuery对象,类似索引</code><br><code>$('li').first()    //第一个节点</code><br><code>$('li').last()     //最后一个节点</code><br><code>$(this).hasClass("node")    //节点是否含有某个特定的类,返回布尔值</code><br><code>$('li').has('ul')  //包含特定后代的节点</code></p>
+<p><code>$("div").children()      //div中的每个子节点,第一层</code><br><code>$("div").find("span")    //查找div下的所有span节点</code></p>
+<p><code>$("p").next()       　　　//紧邻p节点后的一个同辈节点</code><br><code>$("p").nextAll()         //p节点之后所有的同辈节点</code><br><code>$("#node").nextUntil("#node2")    //id为"#node"节点之后到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").prev()            //紧邻p节点前的一个同辈节点</code><br><code>$("p").prevAll()         //p节点之前所有的同辈节点</code><br><code>$("#node").prevUntil("#node2")    //id为"#node"节点之前到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").parent()          //每个p节点的父节点</code><br><code>$("p").parents()         //每个p节点的所有祖先节点,body,html</code><br><code>$("#node").parentsUntil("#node2")    //id为"#node"节点到id为'#node2'之间所有的父级节点,掐头去尾</code></p>
+<p><code>$("div").siblings()      //所有的同辈节点,不包括自己</code></p>
+<p>5、属性操作<br><code>$("img").attr("src");    　　　　　　 //返回文档中所有图像的src属性值</code><br><code>$("img").attr("src","node.jpg");    //设置所有图像的src属性</code><br><code>$("img").removeAttr("src");    　　　//将文档中图像的src属性删除</code></p>
+<p><code>$("input[type='checkbox']").prop("checked", true);    //选中复选框</code><br><code>$("input[type='checkbox']").prop("checked", false);   //不选中复选框</code><br><code>$("img").removeProp("src");    　　 //删除img的src属性</code></p>
+<p>6、样式操作<br><code>$("p").addClass("selected");    　　//为p节点加上 'selected' 类</code><br><code>$("p").removeClass("selected");    //从p节点中删除 'selected' 类</code><br><code>$("p").toggleClass("selected");    //如果存在就删除,否则就添加HTML代码/文本/值</code></p>
+<p>7、内容操作<br><code>$('p').html();    　　　　　　　　　　 //返回p节点的html内容</code><br><code>$("p").html("Hello <b>hello</b>!");  //设置p节点的html内容</code><br><code>$('p').text();    　　　　　　　　　　 //返回p节点的文本内容</code><br><code>$("p").text("hello");    　　　　　　　//设置p节点的文本内容</code><br><code>$("input").val();    　　　　　　　　 //获取文本框中的值</code><br><code>$("input").val("hello");     　　　　 //设置文本框中的内容</code></p>
+<p>8、CSS操作<br><code>$("p").css("color");          //访问查看p节点的color属性</code><br><code>$("p").css("color","red");    //设置p节点的color属性为red</code><br><code>$("p").css({ "color": "red", "background": "yellow" });    //</code>设置p节点的color为red，background属性为yellow（设置多个属性要用{}字典形式）</p>
+<p>9、定位与偏移<br><code>$('p').offset()     //节点在当前视口的相对偏移,对象 {top: 5, left: 9}</code><br><code>$('p').offset().top</code><br><code>$('p').offset().left</code><br><code>$("p").position()   //节点相对父节点的偏移,对可见节点有效，Object {top: 5, left: 8}</code></p>
+<p><code>$(window).scrollTop()    //获取滚轮滑的高度</code><br><code>$(window).scrollLeft()   //获取滚轮滑的宽度</code><br><code>$(window).scrollTop('25')    //设置滚轮滑的高度为25</code></p>
+<p>10、尺寸<br><code>$("p").height();    //获取p节点的高度</code><br><code>$("p").width();     //获取p节点的宽度</code></p>
+<p><code>$("p:first").innerHeight()    //获取第一个匹配节点内部区域高度(包括补白、不包括边框)</code><br><code>$("p:first").innerWidth()     //获取第一个匹配节点内部区域宽度(包括补白、不包括边框)</code></p>
+<p><code>$("p:first").outerHeight()    //匹配节点外部高度(默认包括补白和边框)</code><br><code>$("p:first").outerWidth()     //匹配节点外部宽度(默认包括补白和边框)</code><br><code>$("p:first").outerHeight(true)    //为true时包括边距</code></p>
+<p>11、DOM内部插入<br><code>$("p").append("<b>hello</b>");    //每个p节点内后面追加内容</code><br><code>$("p").appendTo("div");    　　　 //p节点追加到div内后</code><br><code>$("p").prepend("<b>Hello</b>");  //每个p节点内前面追加内容</code><br><code>$("p").prependTo("div");    　   //p节点追加到div内前</code></p>
+<p>12、DOM外部插入<br><code>$("p").after("<b>hello</b>");     //每个p节点同级之后插入内容</code><br><code>$("p").before("<b>hello</b>");    //在每个p节点同级之前插入内容</code><br><code>$("p").insertAfter("#node");     //所有p节点插入到id为node节点的后面</code><br><code>$("p").insertBefore("#node");    //所有p节点插入到id为node节点的前面</code></p>
+<p>13、DOM替换<br><code>$("p").replaceWith("<b>Paragraph. </b>");    //将所有匹配的节点替换成指定的HTML或DOM节点</code><br><code>$("<b>Paragraph. </b>").replaceAll("p");     //用匹配的节点替换掉所有 selector匹配到的节点</code></p>
+<p>14、DOM删除<br><code>$("p").empty();     //删除匹配的节点集合中所有的子节点，不包括本身</code><br><code>$("p").remove();    //删除所有匹配的节点,包括本身</code><br><code>$("p").detach();    //删除所有匹配的节点(和remove()不同的是:所有绑定的事件、附加的数据会保留下来)</code></p>
+<p>15、DOM复制<br><code>$("p").clone()    　　//克隆节点并选中克隆的副本</code><br><code>$("p").clone(true)   //布尔值指事件处理函数是否会被复制</code></p>
+<p>16、DOM加载完成事件<br><code>$(document).ready(function(){
+  您的代码...
+});</code></p>
+<p>//缩写<br><code>$(function($) {
+  您的代码...
+});</code></p>
+<p>17、绑定事件<br>//bind 为每个匹配节点绑定事件处理函数，绑定多个用{}。<br><code>$("p").bind("click", function(){
+  alert( $(this).text() );
+});</code><br><code>$('#div1').bind({
+    "mouseover":function () {
+     $('#div1').parent().removeClass("hide");
+     },"mouseout":function () {
+     $('#div1').parent().addClass("hide");
+}
+});</code>         </p>
+<p><code>$("p").one( "click", function(){})    //事件绑定后只会执行一次</code><br><code>$("p").unbind( "click" )        //反绑一个事件</code></p>
+<p>// 与bind 不同的是当时间发生时才去临时绑定。<br><code>$("p").delegate("click",function(){</code><br>  您的代码<br>});</p>
+<p><code>$("p").undelegate();    　　　//p节点删除由 delegate() 方法添加的所有事件</code><br><code>$("p").undelegate("click")   //从p节点删除由 delegate() 方法添加的所有click事件</code></p>
+<p><code>$("p").click();    　　//单击事件</code><br><code>$("p").dblclick();    //双击事件</code><br><code>$("input[type=text]").focus()  //节点获得焦点时,触发 focus 事件</code><br><code>$("input[type=text]").blur()   //节点失去焦点时,触发 blur事件</code><br><code>$("button").mousedown()//当按下鼠标时触发事件</code><br><code>$("button").mouseup()  //节点上放松鼠标按钮时触发事件</code><br><code>$("p").mousemove()     //当鼠标指针在指定的节点中移动时触发事件</code><br><code>$("p").mouseover()     //当鼠标指针位于节点上方时触发事件</code><br><code>$("p").mouseout()    　//当鼠标指针从节点上移开时触发事件</code><br><code>$(window).keydown()    //当键盘或按钮被按下时触发事件</code><br><code>$(window).keypress()   //当键盘或按钮被按下时触发事件,每输入一个字符都触发一次</code><br><code>$("input").keyup()     //当按钮被松开时触发事件</code><br><code>$(window).scroll()     //当用户滚动时触发事件</code><br><code>$(window).resize()     //当调整浏览器窗口的大小时触发事件</code><br><code>$("input[type='text']").change()    //当节点的值发生改变时触发事件</code><br><code>$("input").select()    //当input 节点中的文本被选择时触发事件</code><br><code>$("form").submit()     //当提交表单时触发事件</code><br><code>$(window).unload()     //用户离开页面时</code></p>
+<p>18、事件对象<br><code>$("p").click(function(event){
+ alert(event.type); //"click"  
+});</code></p>
+<p>(evnet object)属性方法：<br><code>event.pageX 　 //事件发生时，鼠标距离网页左上角的水平距离</code><br><code>event.pageY 　 //事件发生时，鼠标距离网页左上角的垂直距离</code><br><code>event.type 　　//事件的类型</code><br><code>event.which 　 //按下了哪一个键</code><br><code>event.data 　　//在事件对象上绑定数据，然后传入事件处理函数</code><br><code>event.target 　//事件针对的网页节点</code><br><code>event.preventDefault() 　//阻止事件的默认行为(比如点击链接，会自动打开新页面)</code><br><code>event.stopPropagation()  //停止事件向上层节点冒泡</code></p>
+<p>19、动态事件绑定<br><code>$("p").on("click",'span',function(){
+alert( $(this).text() );
+});</code><br>//当p中增加span时仍然有效</p>
+<p>20、动画效果<br><code>$("p").show()    　　　　//显示隐藏的匹配节点</code><br><code>$("p").show("slow");    //参数表示速度,("slow","normal","fast"),也可为600毫秒</code><br><code>$("p").hide()    　　　　//隐藏显示的节点</code><br><code>$("p").toggle();   　　 //切换 显示/隐藏</code></p>
+<p><code>$("p").slideDown("600");    //用600毫秒时间将段落滑下</code><br><code>$("p").slideUp("600");    　//用600毫秒时间将段落滑上</code><br><code>$("p").slideToggle("600");  //用600毫秒时间将段落滑上，滑下淡入淡出</code></p>
+<p><code>$("p").fadeIn("600");    　　  //用600毫秒时间将段落淡入</code><br><code>$("p").fadeOut("600");    　　 //用600毫秒时间将段落淡出</code><br><code>$("p").fadeToggle("600");    　//用600毫秒时间将段落淡入,淡出</code><br><code>$("p").fadeTo("slow", 0.6);    //用600毫秒时间将段落的透明度调整到0.6</code></p>
+<p>21、工具方法<br><code>$("#form1").serialize()    //序列表表格内容为字符串。</code><br><code>$("select, :radio").serializeArray();  //序列化表单元素为数组返回 JSON 数据结构数据</code><br><code>$.trim() 　　//去除字符串两端的空格</code><br><code>$.each() 　　//遍历一个数组或对象，for循环</code><br><code>$.inArray() //返回一个值在数组中的索引位置，不存在返回-1</code><br><code>$.grep() 　 //返回数组中符合某种标准的节点</code><br><code>$.extend({a:1,b:2},{b:3,c:4},{c:5:d:6})  //将多个对象，合并到第一个对象{a:1,b:3,c:5,d:6}</code><br><code>$.makeArray() //将对象转化为数组</code><br><code>$.type()    //判断对象的类别（函数对象、日期对象、数组对象、正则对象等等</code><br><code>$.isArray() //判断某个参数是否为数组</code><br><code>$.isEmptyObject() //判断某个对象是否为空(不含有任何属性)</code><br><code>$.isFunction()    //判断某个参数是否为函数</code><br><code>$.isPlainObject() //判断某个参数是否为用"{}"或"new Object"建立的对象</code><br><code>$.support()       //判断浏览器是否支持某个特性</code></p>
+<p>22、AJAX<br>//保存数据到服务器，成功时显示信息<br><code>$.ajax({
+   type: "POST",
+   url: "some.php",
+   data: "name=John&location=Boston",
+   success: function(msg){
+     alert( "Data Saved: " + msg );
+   }
+});</code></p>
+<p>//加载 feeds.html 文件内容。<br><code>$("#feeds").load("feeds.html");</code></p>
+<p>//请求 test.php 网页，传送2个参数，忽略返回值。<br><code>$.get("test.php", { name: "John", time: "2pm" } );</code></p>
+<p>//从 Flickr JSONP API 载入 4 张最新的关于猫的图片。<br><code>$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format
+=json&jsoncallback=?", function(data){
+  $.each(data.items, function(i,item){
+    $("<img/>").attr("src", item.media.m).appendTo("#images");
+    if ( i == 3 ) return false;
+  });
+});</code></p>
+<p>//加载并执行 test.js ，成功后显示信息<br><code>$.getScript("test.js", function(){
+  alert("Script loaded and executed.");
+});</code></p>
+<p>//向页面 test.php 发送数据，并输出结果（HTML 或 XML，取决于所返回的内容）：<br><code>$.post("test.php", { name: "John", time: "2pm" },
+   function(data){
+     alert("Data Loaded: " + data);
+   });</code></p>
+<p>//AJAX 请求完成时执行函数。<br><code>$("#msg").ajaxComplete(function(event,request, settings){
+   $(this).append("<li>请求完成.</li>");
+ });</code></p>
+<p>//AJAX 请求失败时显示信息。<br><code>$("#msg").ajaxError(function(event,request, settings){
+     $(this).append("<li>出错页面:" + settings.url + "</li>");
+});</code></p>
+<p>//AJAX 请求发送前显示信息。<br><code>$("#msg").ajaxSend(function(evt, request, settings){
+   $(this).append("<li>开始请求: " + settings.url + "</li>");
+ });</code></p>
+<p> //AJAX 请求开始时显示信息。<br><code>$("#loading").ajaxStart(function(){
+   $(this).show();
+ });</code></p>
+<p>//AJAX 请求结束后隐藏信息。<br><code>$("#loading").ajaxStop(function(){
+   $(this).hide();
+ });</code></p>
+<p>//当 AJAX 请求成功后显示消息。<br><code>$("#msg").ajaxSuccess(function(evt, request, settings){
+   $(this).append("<li>请求成功!</li>");
+ });</code></p>
+<p>//请求前过滤<br><code>$.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+   // Modify options, control originalOptions, store jqXHR, etc 
+ });</code></p>
+<p> //设置全局 AJAX 默认选项，设置 AJAX 请求默认地址为 “/xmlhttp/“，禁止触发全局 AJAX 事件，用 POST 代替默认 GET 方法。其后的 AJAX 请求不再设置任何选项参数。<br><code>$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});</code><br><code>$.ajax({ data: myData });</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2016/01/11/%C2%96%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ECMAScript 6 - 解构赋值]]></title>
+      <url>/hexo/2015/08/07/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%9F%A5%E8%AF%A2%E6%89%8B%E5%86%8C/</url>
+      <content type="html"><![CDATA[<h3 id="CSS选择器的一些使用总结"><a href="#CSS选择器的一些使用总结" class="headerlink" title="CSS选择器的一些使用总结"></a><a href="https://13189449986.github.io/MyBckup/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">CSS选择器</a>的一些使用总结</h3><a id="more"></a>
+<p><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="external">CSS 选择器参考手册</a></p>
+<p><a href="http://www.w3cplus.com/css3/basic-selectors" target="_blank" rel="external">CSS3 选择器——基本选择器 </a></p>
+<p><a href="http://www.w3cplus.com/css3/attribute-selectors" target="_blank" rel="external">CSS3 选择器——属性选择器</a></p>
+<p><a href="http://www.w3cplus.com/css3/pseudo-class-selector" target="_blank" rel="external">CSS3 选择器——伪类选择器</a></p>
+<p><a href="http://www.w3cplus.com/content/css-selection" target="_blank" rel="external">CSS ::Selection</a></p>
+<p><a href="http://ued.ctrip.com/blog/?p=2545" target="_blank" rel="external">使用CSS选择器在页面中插入内容</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[探索CSS3动画、过渡]]></title>
+      <url>/hexo/2015/03/07/%E6%8E%A2%E7%B4%A2CSS3%E5%8A%A8%E7%94%BB%E3%80%81%E8%BF%87%E6%B8%A1/</url>
+      <content type="html"><![CDATA[<p>###让我们一起来探索 Transiton(过渡), Transform(变化) , Animation(动画)属性吧！<br><a id="more"></a></p>
+<hr>
+<p>###Transiton(过渡)<br><strong>transition 属性简写：</strong><br><em>transition: property(过渡的css属性) duration(持续时间)  timing-function(过渡类型) delay(延迟过渡时间);</em></p>
+<p><strong>默认值：</strong><br><em>transition：all 0 ease 0</em></p>
+<p><strong>详细属性值：</strong><br><em>transition-property :  //设置过渡效果的 CSS 属性的名称<br>transition-duration:   //指定这个过渡的持续时间<br>transition-delay:       //延迟过渡时间<br>transition-timing-function:  指定过渡类型，linear //线性过度，ease-in //由慢到快，ease-out //由快到慢，ease-in-out //由慢到快在到慢，cubic-bezier//贝塞尔曲线</em></p>
+<p><strong>DEMO:</strong><br>鼠标移动到div上出发hover事件出发背景的过渡动画</p>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-794b1a10ca742a4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="transition-demo1.png"></p>
+</blockquote>
+<hr>
+<p>###Transform(变化)<br>transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</p>
+<p><strong>默认值</strong><br>transform: skew(35deg) scale(1, 0.5) rotate(45deg) translate(10px, 20px);<br>skew(倾斜) scale(缩放) rotate(旋转) translate(偏移)<br><strong>元素变化过渡的起始位置</strong><br>语法：<em>transform-origin: x-axis y-axis z-axis;</em><br>值: <em>transform-origin：top left || 0% 0%//设置为左上点</em><br>参考：<a href="http://www.runoob.com/cssref/css3-pr-transform-origin.html" target="_blank" rel="external">transform-orgin属性</a></p>
+<p><strong>详细属性:</strong><br><strong>*translate(x,y)    位置偏移</strong><br>translateX(x)    沿X轴偏移<br>translateY(y)    沿Y轴偏移*</p>
+<p><strong>*scale(x,y)    缩放</strong><br>scaleX(x)    沿 X 轴的值来进行缩放<br>scaleY(y)    沿 Y 轴的值来进行缩放*    </p>
+<p><strong><em>rotate(angle)    定义 2D 旋转,在参数中规定角度</em></strong>    </p>
+<p><strong>*skew(x-angle,y-angle)    倾斜</strong><br>skewX(angle)    定义沿着 X 轴倾斜<br>skewY(angle)    定义沿着 Y 轴倾斜*    </p>
+<p><em>matrix(n,n,n,n,n,n)    定义 2D ,使用六个值的矩阵<br>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)    定义 3D ,使用 16 个值的 4x4 矩阵</em></p>
+<p><strong>*translate3d(x,y,z)    定义 3D</strong><br>translateZ(z)    定义 3D ,只是用 Z 轴的值*    </p>
+<p><strong>*scale3d(x,y,z)    定义 3D 缩放</strong><br>scaleZ(z)    通过设置 Z 轴的值来定义 3D 缩放*    </p>
+<p><strong>*rotate3d(x,y,z,angle)    定义 3D 旋转</strong><br>rotateX(angle)    定义沿着 X 轴的 3D 旋转<br>rotateY(angle)    定义沿着 Y 轴的 3D 旋转<br>rotateZ(angle)    定义沿着 Z 轴的 3D 旋转*</p>
+<p>**DEMO:<br>鼠标移入触发变化并形成过渡效果</p>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-eeb7c1b4200c5565.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="transform-demo.png"><br>**    </p>
+</blockquote>
+<hr>
+<p>###Animation（动画）<br><strong>简写:</strong><br>animation: name(关键帧名) duration(动画时长) timing-function(动画类型) delay(延迟时间) iteration-count(动画播放次数)</p>
+<p><strong>详细属性</strong><br><strong>animation-name</strong>    //指定要绑定到选择器的关键帧的名称<br><strong>animation-duration</strong>    //动画指定需要多少秒或毫秒完成<br><strong>animation-timing-function</strong>:linear    ease    ease-in    ease-out<br>                          ease-in-out    cubic-bezier(n,n,n,n)//设置动画将如何完成一个周期<br><strong>animation-delay</strong>    //设置动画在启动前的延迟间隔<br><strong>animation-iteration-count</strong> : Number||infinite(循环)    //定义动画的播放次数<br><strong>animation-direction</strong>    //指定是否应该轮流反向播放动画<br><strong>animation-fill-mode</strong>    //规定当动画不播放时（当动画完成时,或当动画有一个延迟未开始播放时）,要应用到元素的样式<br><strong>animation-play-state</strong>    //指定动画是否正在运行或已暂停<br><strong>initial</strong>    //设置属性为其默认值<br><strong>inherit</strong>    //从父元素继承属性 </p>
+<p>###@keyframes 关键帧<br><strong>写法:</strong><br>inCSS：<br>…<br>@keyframes  name(关键帧名)｛<br>    0% {<br>        padding: 0;<br>    }<br>    50% {<br>        padding: 20px;<br>    }<br>    100% {<br>        padding: 100px;<br>    }<br>｝<br><em>或者</em><br>@keyframes  name(关键帧名)｛<br>    form {<br>        padding: 0;<br>    }<br>    to {<br>        padding: 100px;<br>    }<br>｝</p>
+<p><strong>兼容性写法</strong><br>@keyframes mymove{}<br>@-moz-keyframes mymove /<em> Firefox </em>/{}<br>@-webkit-keyframes mymove /<em> Safari 和 Chrome </em>/{}<br>@-o-keyframes mymove /<em> Opera </em>/{}</p>
+<p><strong>DEMO:</strong><br>快乐的制作自己的呼吸灯效果</p>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-4eafe35fac76b2e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="animation-demo.png"></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
             
         </tags>
         
@@ -1400,13 +3062,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -1428,9 +3083,10 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>/hexo/about/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
@@ -1438,6 +3094,12 @@ alert( $(this).text() );
       <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/hexo/about/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
     </entry>
     
     <entry>

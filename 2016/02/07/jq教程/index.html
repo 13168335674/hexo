@@ -1,0 +1,872 @@
+<!doctype html>
+<html class="" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  
+  
+    
+    
+  <script src="/hexo/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/hexo/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/hexo/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/hexo/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/hexo/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="教程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/hexo/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="350行jQuery常用脚本">
+<meta name="keywords" content="教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jq教程">
+<meta property="og:url" content="http://13189449986.github.io/hexo/2016/02/07/jq教程/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="350行jQuery常用脚本">
+<meta property="og:updated_time" content="2018-05-07T13:45:31.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jq教程">
+<meta name="twitter:description" content="350行jQuery常用脚本">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/hexo/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://13189449986.github.io/hexo/2016/02/07/jq教程/"/>
+
+
+
+
+
+  <title>jq教程 | 前端学习笔记</title>
+<link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  <!-- 页面点击小红心 -->
+  <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/hexo/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">热爱前端</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/hexo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/hexo/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/hexo/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://13189449986.github.io/hexo/hexo/2016/02/07/jq教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="家伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jq教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-07T07:34:33+08:00">
+                2016-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hexo/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="350行jQuery常用脚本"><a href="#350行jQuery常用脚本" class="headerlink" title="350行jQuery常用脚本"></a>350行jQuery常用脚本</h3><a id="more"></a>
+<p>0、常用选择器<br><code>$(&#39;#div1&#39;)   //id为div1的节点，如&lt;div id=&#39;div1&#39;&gt;&lt;/div&gt;</code></p>
+<figcaption>  //所有的span结点，一个包装集</code><br><code>$(&#39;p span&#39;)   //p标签下的所有span节点，后代节点</code><br><code>$(&#39;p&gt;span&#39;)   //p标签下的所有span子节点，子代节点</code></p></figcaption><pre class=" language-$(&#39;span&#39;)"><code class="language-$(&#39;span&#39;)"><p><code>$('.red')  //使用样式red的节点，如<span class="red"></span></code></p>
+<p><code>$('*')  //所有节点</code></p>
+<p><code>$("div,span,p.cls")  //选取所有<div>，<span>和拥有class为cls的<p>标签的一组元素</code></p>
+<p>1、基本筛选器<br><code>$('span:first')    //第一个节点</code><br><code>$('span:last')     //最后一个节点</code></p>
+<p><code>$("td:even")     //索引为偶数的节点，从 0 开始</code><br><code>$("td:odd")      //索引为奇数的节点，从 0 开始</code></p>
+<p><code>$("td:eq(1)")    //给定索引值的节点</code><br><code>$("td:gt(0)")    //大于给定索引值的节点</code><br><code>$("td:lt(2)")    //小于给定索引值的节点</code></p>
+<p><code>$(":focus")      //当前获取焦点的节点</code><br><code>$(":animated")   //正在执行动画效果的节点</code></p>
+<p>2、内容选择器<br><code>$("div:contains('hello')")    //包含hello文本的节点</code><br><code>$("td:empty")    //不包含子节点或者文本的空节点</code><br><code>$("div:has(p)")  //含有选择器所匹配的节点</code><br><code>$("td:parent")   //含有子节点或者文本的节点</code></p>
+<p>3、表单选择器<br><code>$("input:checked")    //所有选中的节点</code><br><code>$("select option:selected")    //select中所有选中的option节点</code></p>
+<p><code>$(":input")      //匹配所有 input, textarea, select 和 button 节点</code><br><code>$(":text")       //所有的单行文本框</code><br><code>$(":password")   //所有密码框</code><br><code>$(":radio")      //所有单选按钮</code><br><code>$(":checkbox")   //所有复选框</code><br><code>$(":submit")     //所有提交按钮</code><br><code>$(":reset")      //所有重置按钮</code><br><code>$(":button")     //所有button按钮</code><br><code>$(":file")       //所有文件域</code></p>
+<p>4、筛选与查找<br><code>$("p").eq(0)       //当前操作中第N个jQuery对象,类似索引</code><br><code>$('li').first()    //第一个节点</code><br><code>$('li').last()     //最后一个节点</code><br><code>$(this).hasClass("node")    //节点是否含有某个特定的类,返回布尔值</code><br><code>$('li').has('ul')  //包含特定后代的节点</code></p>
+<p><code>$("div").children()      //div中的每个子节点,第一层</code><br><code>$("div").find("span")    //查找div下的所有span节点</code></p>
+<p><code>$("p").next()       　　　//紧邻p节点后的一个同辈节点</code><br><code>$("p").nextAll()         //p节点之后所有的同辈节点</code><br><code>$("#node").nextUntil("#node2")    //id为"#node"节点之后到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").prev()            //紧邻p节点前的一个同辈节点</code><br><code>$("p").prevAll()         //p节点之前所有的同辈节点</code><br><code>$("#node").prevUntil("#node2")    //id为"#node"节点之前到id为'#node2'之间所有的同辈节点,掐头去尾</code></p>
+<p><code>$("p").parent()          //每个p节点的父节点</code><br><code>$("p").parents()         //每个p节点的所有祖先节点,body,html</code><br><code>$("#node").parentsUntil("#node2")    //id为"#node"节点到id为'#node2'之间所有的父级节点,掐头去尾</code></p>
+<p><code>$("div").siblings()      //所有的同辈节点,不包括自己</code></p>
+<p>5、属性操作<br><code>$("img").attr("src");    　　　　　　 //返回文档中所有图像的src属性值</code><br><code>$("img").attr("src","node.jpg");    //设置所有图像的src属性</code><br><code>$("img").removeAttr("src");    　　　//将文档中图像的src属性删除</code></p>
+<p><code>$("input[type='checkbox']").prop("checked", true);    //选中复选框</code><br><code>$("input[type='checkbox']").prop("checked", false);   //不选中复选框</code><br><code>$("img").removeProp("src");    　　 //删除img的src属性</code></p>
+<p>6、样式操作<br><code>$("p").addClass("selected");    　　//为p节点加上 'selected' 类</code><br><code>$("p").removeClass("selected");    //从p节点中删除 'selected' 类</code><br><code>$("p").toggleClass("selected");    //如果存在就删除,否则就添加HTML代码/文本/值</code></p>
+<p>7、内容操作<br><code>$('p').html();    　　　　　　　　　　 //返回p节点的html内容</code><br><code>$("p").html("Hello <b>hello</b>!");  //设置p节点的html内容</code><br><code>$('p').text();    　　　　　　　　　　 //返回p节点的文本内容</code><br><code>$("p").text("hello");    　　　　　　　//设置p节点的文本内容</code><br><code>$("input").val();    　　　　　　　　 //获取文本框中的值</code><br><code>$("input").val("hello");     　　　　 //设置文本框中的内容</code></p>
+<p>8、CSS操作<br><code>$("p").css("color");          //访问查看p节点的color属性</code><br><code>$("p").css("color","red");    //设置p节点的color属性为red</code><br><code>$("p").css({ "color": "red", "background": "yellow" });    //</code>设置p节点的color为red，background属性为yellow（设置多个属性要用{}字典形式）</p>
+<p>9、定位与偏移<br><code>$('p').offset()     //节点在当前视口的相对偏移,对象 {top: 5, left: 9}</code><br><code>$('p').offset().top</code><br><code>$('p').offset().left</code><br><code>$("p").position()   //节点相对父节点的偏移,对可见节点有效，Object {top: 5, left: 8}</code></p>
+<p><code>$(window).scrollTop()    //获取滚轮滑的高度</code><br><code>$(window).scrollLeft()   //获取滚轮滑的宽度</code><br><code>$(window).scrollTop('25')    //设置滚轮滑的高度为25</code></p>
+<p>10、尺寸<br><code>$("p").height();    //获取p节点的高度</code><br><code>$("p").width();     //获取p节点的宽度</code></p>
+<p><code>$("p:first").innerHeight()    //获取第一个匹配节点内部区域高度(包括补白、不包括边框)</code><br><code>$("p:first").innerWidth()     //获取第一个匹配节点内部区域宽度(包括补白、不包括边框)</code></p>
+<p><code>$("p:first").outerHeight()    //匹配节点外部高度(默认包括补白和边框)</code><br><code>$("p:first").outerWidth()     //匹配节点外部宽度(默认包括补白和边框)</code><br><code>$("p:first").outerHeight(true)    //为true时包括边距</code></p>
+<p>11、DOM内部插入<br><code>$("p").append("<b>hello</b>");    //每个p节点内后面追加内容</code><br><code>$("p").appendTo("div");    　　　 //p节点追加到div内后</code><br><code>$("p").prepend("<b>Hello</b>");  //每个p节点内前面追加内容</code><br><code>$("p").prependTo("div");    　   //p节点追加到div内前</code></p>
+<p>12、DOM外部插入<br><code>$("p").after("<b>hello</b>");     //每个p节点同级之后插入内容</code><br><code>$("p").before("<b>hello</b>");    //在每个p节点同级之前插入内容</code><br><code>$("p").insertAfter("#node");     //所有p节点插入到id为node节点的后面</code><br><code>$("p").insertBefore("#node");    //所有p节点插入到id为node节点的前面</code></p>
+<p>13、DOM替换<br><code>$("p").replaceWith("<b>Paragraph. </b>");    //将所有匹配的节点替换成指定的HTML或DOM节点</code><br><code>$("<b>Paragraph. </b>").replaceAll("p");     //用匹配的节点替换掉所有 selector匹配到的节点</code></p>
+<p>14、DOM删除<br><code>$("p").empty();     //删除匹配的节点集合中所有的子节点，不包括本身</code><br><code>$("p").remove();    //删除所有匹配的节点,包括本身</code><br><code>$("p").detach();    //删除所有匹配的节点(和remove()不同的是:所有绑定的事件、附加的数据会保留下来)</code></p>
+<p>15、DOM复制<br><code>$("p").clone()    　　//克隆节点并选中克隆的副本</code><br><code>$("p").clone(true)   //布尔值指事件处理函数是否会被复制</code></p>
+<p>16、DOM加载完成事件<br><code>$(document).ready(function(){
+  您的代码...
+});</code></p>
+<p>//缩写<br><code>$(function($) {
+  您的代码...
+});</code></p>
+<p>17、绑定事件<br>//bind 为每个匹配节点绑定事件处理函数，绑定多个用{}。<br><code>$("p").bind("click", function(){
+  alert( $(this).text() );
+});</code><br><code>$('#div1').bind({
+    "mouseover":function () {
+     $('#div1').parent().removeClass("hide");
+     },"mouseout":function () {
+     $('#div1').parent().addClass("hide");
+}
+});</code>         </p>
+<p><code>$("p").one( "click", function(){})    //事件绑定后只会执行一次</code><br><code>$("p").unbind( "click" )        //反绑一个事件</code></p>
+<p>// 与bind 不同的是当时间发生时才去临时绑定。<br><code>$("p").delegate("click",function(){</code><br>  您的代码<br>});</p>
+<p><code>$("p").undelegate();    　　　//p节点删除由 delegate() 方法添加的所有事件</code><br><code>$("p").undelegate("click")   //从p节点删除由 delegate() 方法添加的所有click事件</code></p>
+<p><code>$("p").click();    　　//单击事件</code><br><code>$("p").dblclick();    //双击事件</code><br><code>$("input[type=text]").focus()  //节点获得焦点时,触发 focus 事件</code><br><code>$("input[type=text]").blur()   //节点失去焦点时,触发 blur事件</code><br><code>$("button").mousedown()//当按下鼠标时触发事件</code><br><code>$("button").mouseup()  //节点上放松鼠标按钮时触发事件</code><br><code>$("p").mousemove()     //当鼠标指针在指定的节点中移动时触发事件</code><br><code>$("p").mouseover()     //当鼠标指针位于节点上方时触发事件</code><br><code>$("p").mouseout()    　//当鼠标指针从节点上移开时触发事件</code><br><code>$(window).keydown()    //当键盘或按钮被按下时触发事件</code><br><code>$(window).keypress()   //当键盘或按钮被按下时触发事件,每输入一个字符都触发一次</code><br><code>$("input").keyup()     //当按钮被松开时触发事件</code><br><code>$(window).scroll()     //当用户滚动时触发事件</code><br><code>$(window).resize()     //当调整浏览器窗口的大小时触发事件</code><br><code>$("input[type='text']").change()    //当节点的值发生改变时触发事件</code><br><code>$("input").select()    //当input 节点中的文本被选择时触发事件</code><br><code>$("form").submit()     //当提交表单时触发事件</code><br><code>$(window).unload()     //用户离开页面时</code></p>
+<p>18、事件对象<br><code>$("p").click(function(event){
+ alert(event.type); //"click"  
+});</code></p>
+<p>(evnet object)属性方法：<br><code>event.pageX 　 //事件发生时，鼠标距离网页左上角的水平距离</code><br><code>event.pageY 　 //事件发生时，鼠标距离网页左上角的垂直距离</code><br><code>event.type 　　//事件的类型</code><br><code>event.which 　 //按下了哪一个键</code><br><code>event.data 　　//在事件对象上绑定数据，然后传入事件处理函数</code><br><code>event.target 　//事件针对的网页节点</code><br><code>event.preventDefault() 　//阻止事件的默认行为(比如点击链接，会自动打开新页面)</code><br><code>event.stopPropagation()  //停止事件向上层节点冒泡</code></p>
+<p>19、动态事件绑定<br><code>$("p").on("click",'span',function(){
+alert( $(this).text() );
+});</code><br>//当p中增加span时仍然有效</p>
+<p>20、动画效果<br><code>$("p").show()    　　　　//显示隐藏的匹配节点</code><br><code>$("p").show("slow");    //参数表示速度,("slow","normal","fast"),也可为600毫秒</code><br><code>$("p").hide()    　　　　//隐藏显示的节点</code><br><code>$("p").toggle();   　　 //切换 显示/隐藏</code></p>
+<p><code>$("p").slideDown("600");    //用600毫秒时间将段落滑下</code><br><code>$("p").slideUp("600");    　//用600毫秒时间将段落滑上</code><br><code>$("p").slideToggle("600");  //用600毫秒时间将段落滑上，滑下淡入淡出</code></p>
+<p><code>$("p").fadeIn("600");    　　  //用600毫秒时间将段落淡入</code><br><code>$("p").fadeOut("600");    　　 //用600毫秒时间将段落淡出</code><br><code>$("p").fadeToggle("600");    　//用600毫秒时间将段落淡入,淡出</code><br><code>$("p").fadeTo("slow", 0.6);    //用600毫秒时间将段落的透明度调整到0.6</code></p>
+<p>21、工具方法<br><code>$("#form1").serialize()    //序列表表格内容为字符串。</code><br><code>$("select, :radio").serializeArray();  //序列化表单元素为数组返回 JSON 数据结构数据</code><br><code>$.trim() 　　//去除字符串两端的空格</code><br><code>$.each() 　　//遍历一个数组或对象，for循环</code><br><code>$.inArray() //返回一个值在数组中的索引位置，不存在返回-1</code><br><code>$.grep() 　 //返回数组中符合某种标准的节点</code><br><code>$.extend({a:1,b:2},{b:3,c:4},{c:5:d:6})  //将多个对象，合并到第一个对象{a:1,b:3,c:5,d:6}</code><br><code>$.makeArray() //将对象转化为数组</code><br><code>$.type()    //判断对象的类别（函数对象、日期对象、数组对象、正则对象等等</code><br><code>$.isArray() //判断某个参数是否为数组</code><br><code>$.isEmptyObject() //判断某个对象是否为空(不含有任何属性)</code><br><code>$.isFunction()    //判断某个参数是否为函数</code><br><code>$.isPlainObject() //判断某个参数是否为用"{}"或"new Object"建立的对象</code><br><code>$.support()       //判断浏览器是否支持某个特性</code></p>
+<p>22、AJAX<br>//保存数据到服务器，成功时显示信息<br><code>$.ajax({
+   type: "POST",
+   url: "some.php",
+   data: "name=John&location=Boston",
+   success: function(msg){
+     alert( "Data Saved: " + msg );
+   }
+});</code></p>
+<p>//加载 feeds.html 文件内容。<br><code>$("#feeds").load("feeds.html");</code></p>
+<p>//请求 test.php 网页，传送2个参数，忽略返回值。<br><code>$.get("test.php", { name: "John", time: "2pm" } );</code></p>
+<p>//从 Flickr JSONP API 载入 4 张最新的关于猫的图片。<br><code>$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format
+=json&jsoncallback=?", function(data){
+  $.each(data.items, function(i,item){
+    $("<img/>").attr("src", item.media.m).appendTo("#images");
+    if ( i == 3 ) return false;
+  });
+});</code></p>
+<p>//加载并执行 test.js ，成功后显示信息<br><code>$.getScript("test.js", function(){
+  alert("Script loaded and executed.");
+});</code></p>
+<p>//向页面 test.php 发送数据，并输出结果（HTML 或 XML，取决于所返回的内容）：<br><code>$.post("test.php", { name: "John", time: "2pm" },
+   function(data){
+     alert("Data Loaded: " + data);
+   });</code></p>
+<p>//AJAX 请求完成时执行函数。<br><code>$("#msg").ajaxComplete(function(event,request, settings){
+   $(this).append("<li>请求完成.</li>");
+ });</code></p>
+<p>//AJAX 请求失败时显示信息。<br><code>$("#msg").ajaxError(function(event,request, settings){
+     $(this).append("<li>出错页面:" + settings.url + "</li>");
+});</code></p>
+<p>//AJAX 请求发送前显示信息。<br><code>$("#msg").ajaxSend(function(evt, request, settings){
+   $(this).append("<li>开始请求: " + settings.url + "</li>");
+ });</code></p>
+<p> //AJAX 请求开始时显示信息。<br><code>$("#loading").ajaxStart(function(){
+   $(this).show();
+ });</code></p>
+<p>//AJAX 请求结束后隐藏信息。<br><code>$("#loading").ajaxStop(function(){
+   $(this).hide();
+ });</code></p>
+<p>//当 AJAX 请求成功后显示消息。<br><code>$("#msg").ajaxSuccess(function(evt, request, settings){
+   $(this).append("<li>请求成功!</li>");
+ });</code></p>
+<p>//请求前过滤<br><code>$.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+   // Modify options, control originalOptions, store jqXHR, etc 
+ });</code></p>
+<p> //设置全局 AJAX 默认选项，设置 AJAX 请求默认地址为 “/xmlhttp/“，禁止触发全局 AJAX 事件，用 POST 代替默认 GET 方法。其后的 AJAX 请求不再设置任何选项参数。<br><code>$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});</code><br><code>$.ajax({ data: myData });</code></pre>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://orf1ycv0g.bkt.clouddn.com/blog/170722/hk9DdBjd0G.jpg?imageslim" alt="家伟 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://orf1ycv0g.bkt.clouddn.com/blog/170612/DAk9B8g72H.jpg?imageslim" alt="家伟 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hexo/tags/教程/" rel="tag"># 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/2016/01/11/微博图床/" rel="next" title="微博图床">
+                <i class="fa fa-chevron-left"></i> 微博图床
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo/2016/07/07/input-type-file-属性详解/" rel="prev" title="input[type=file]属性">
+                input[type=file]属性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ooo.0o0.ooo/2017/06/11/593d1d489122d.jpg"
+               alt="家伟" />
+          <p class="site-author-name" itemprop="name">家伟</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/hexo/">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/hexo/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#350行jQuery常用脚本"><span class="nav-number">1.</span> <span class="nav-text">350行jQuery常用脚本</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">家伟</span>
+</div>
+
+<!-- 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">家伟</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div> -->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/hexo/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/hexo/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/hexo/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/hexo/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/hexo/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/hexo/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/hexo/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/hexo/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/hexo/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
