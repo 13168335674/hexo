@@ -3,122 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[[Hot] Vue-cli 引入VueAwesomeSwiper]]></title>
-      <url>/hexo/2018/05/07/%5BHot%5D%20Vue-cli%20%E5%BC%95%E5%85%A5VueAwesomeSwiper/</url>
-      <content type="html"><![CDATA[<h3 id="Hot-Vue-cli-引入VueAwesomeSwiper"><a href="#Hot-Vue-cli-引入VueAwesomeSwiper" class="headerlink" title="[Hot] Vue-cli 引入VueAwesomeSwiper"></a>[Hot] Vue-cli 引入VueAwesomeSwiper</h3><a id="more"></a>
-<p>Vue脚手架引入Swiper最新实操步骤:</p>
-<blockquote>
-<p>//npm<br>npm install vue-awesome-swiper –save</p>
-</blockquote>
-<p>//可以全局 or 局部引用<br>全局:</p>
-<blockquote>
-<p>//main.js<br>import Vue from ‘vue’<br>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’  //<strong>这个css要去官网下载然后放进项目引入</strong><br>Vue.use(VueAwesomeSwiper)</p>
-</blockquote>
-<p>局部:</p>
-<blockquote>
-<p>// *.vue<br>import { swiper, swiperSlide } from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’<br>//  <script><br>  components: {<br>    swiper,<br>    swiperSlide<br>  }</p>
-</blockquote>
-<p><strong>使用</strong></p>
-<blockquote>
-<template><br>  <div id="app"><br>    <swiper :options="swiperOption" ref="mySwiper"><br>    <!-- slides --><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <!-- Optional controls --><br>    <div class="swiper-pagination"  slot="pagination"></div><br>    <div class="swiper-button-prev" slot="button-prev"></div><br>    <div class="swiper-button-next" slot="button-next"></div><br>    <div class="swiper-scrollbar"   slot="scrollbar"></div><br>  </swiper><br>  </div><br></template>
-
-</blockquote>
-<p><strong>js and css</strong></p>
-<blockquote>
-<script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import './swiper4/swiper.css'
-export default {
-  name: 'carrousel',
-  data() {
-    return {
-      swiperOption: {
-        notNextTick: true, // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
-        autoplay: true,
-        autoplay: {
-          disableOnInteraction: false,  //用户左划右划后恢复自动轮播
-          delay: 1000
-        },
-        loop: true,
-        direction: 'horizontal',
-        grabCursor: true,
-        setWrapperSize: true,
-        autoHeight: true,
-        pagination: {
-          el: '.swiper-pagination'
-        },
-        centeredSlides: true,
-        paginationClickable: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        keyboard: true,
-        mousewheelControl: true,
-        observeParents: true, // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
-        debugger: true
-      }
-    }
-  },computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    }
-  },
-  mounted() {
-    // current swiper instance
-    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-    // this.swiper.slideTo(3, 1000, false)
-  },
-  components: {
-    swiper, swiperSlide
-  }
-}
-</script>
-
-<style>
-.jia {
-  height: 300px;
-  line-height: 300px;
-  font-size: 30px;
-  color: #fff;
-  background: red;
-  text-align: center;
-}
-</style>
-
-</p></blockquote>
-<p><strong>提示</strong><br>新版的VueAwesomeSwiper是从Swiper4改写的,<br>api写法有变化,老版本的写法会引起组件失效<br>比如autoplay,pagination,prevButton,nextButton等属性</p>
-<p>在新版的api文档中新增了组件选项,使用新写法就可以正常使用了<br><a href="&quot;http://www.swiper.com.cn/api/pagination/pagination.html&quot;">查看新版api文档</a><br><img src="http://upload-images.jianshu.io/upload_images/4985324-04515dc6038756fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
-<p>点个赞就成功啦哈!</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Vue2.0实现在线商城]]></title>
-      <url>/hexo/2018/05/07/%C2%96Vue2-0%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[我对移动端适配的了解]]></title>
       <url>/hexo/2018/03/08/%5B%E6%80%BB%E7%BB%93%5D%E6%88%91%E5%AF%B9%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E7%9A%84%E4%BA%86%E8%A7%A3/</url>
-      <content type="html"><![CDATA[<h3 id="我对移动端适配的了解"><a href="#我对移动端适配的了解" class="headerlink" title="我对移动端适配的了解"></a>我对移动端适配的了解</h3><a id="more"></a>
+      <content type="html"><![CDATA[<h3 id="总结-我对移动端适配的了解"><a href="#总结-我对移动端适配的了解" class="headerlink" title="[总结]我对移动端适配的了解"></a>[总结]我对移动端适配的了解</h3><a id="more"></a>
 <p>  不知不觉做前端已经两年了，从PC端，移动端，微信小程序一路走来到今天刚刚开放注册的快应用(手机厂商对抗小程序的新技能,所以在注册时用的是qq邮箱的话要去垃圾箱里才能找到注册邮件)，对于前端圈日新月异的磅礴发展对于大前端发展是喜闻乐见的，这次的快应用的手机厂商们为其开放了应用入口和系统推广引流入口。这些新能力为前端开发者们带来更强的作战能力。</p>
 <p>  我们在开发PC站时经常在浏览器兼容问题上耗费巨大的时间，到了移动端，面对webkit内核的Safari与Chrome会舒心很多。but，我们要对于市面上的手机各式各样的分辨率进行适配，刚接触移动端开发的时候是不是有点猝不及防哈哈，尤其是去年年中以前老版本的微信内置浏览器用的X5内核，给网友们戏称移动端IE…<br><img src="https://upload-images.jianshu.io/upload_images/4985324-aa50e99413bd064e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
 <p>  今天的主题是讲的是我对移动端多终端适配的解决方案和移动端适配的有关布局的知识总结，下面正式开始。</p>
@@ -168,7 +55,8 @@ export default {
     <entry>
       <title><![CDATA[Vue-cli引入lib-flexible&&ElementUI]]></title>
       <url>/hexo/2018/03/07/Vue-cli%E5%BC%95%E5%85%A5lib-flexible&amp;&ElementUI/</url>
-      <content type="html"><![CDATA[<p>2018年1月23日 18:27:19<br>好久不见我的小伙伴们,从毕业到参加参加工作已经三个月了,这段时间过的很有意义哈哈<br>参加工作为了快速上手项目这两个月都是996,学到了 很多好东西,接下来的日子不加班我就晚上回去把他们分享出来,摸摸哒~ </p>
+      <content type="html"><![CDATA[<h3 id="Vue-cli引入lib-flexible-amp-amp-ElementUI"><a href="#Vue-cli引入lib-flexible-amp-amp-ElementUI" class="headerlink" title="Vue-cli引入lib-flexible&amp;&amp;ElementUI"></a>Vue-cli引入lib-flexible&amp;&amp;ElementUI</h3><a id="more"></a>
+<p>2018年1月23日 18:27:19<br>好久不见我的小伙伴们,从毕业到参加参加工作已经三个月了,这段时间过的很有意义哈哈<br>参加工作为了快速上手项目这两个月都是996,学到了 很多好东西,接下来的日子不加班我就晚上回去把他们分享出来,摸摸哒~ </p>
 <hr>
 <p><strong>移动端自适应</strong><br>来自手淘的 flexible</p>
 <blockquote>
@@ -210,28 +98,6 @@ export default {
         <tags>
             
             <tag> 教程 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[ES6-Promise]]></title>
-      <url>/hexo/2018/01/03/p/</url>
-      <content type="html"><![CDATA[<h3 id="回调函数真正的问题在于他剥夺了我们使用-return-和-throw-这些关键字的能力。而-Promise-很好地解决了这一切。"><a href="#回调函数真正的问题在于他剥夺了我们使用-return-和-throw-这些关键字的能力。而-Promise-很好地解决了这一切。" class="headerlink" title="回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切。"></a>回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切。</h3><a id="more"></a>
-<h4 id="ES6-原生提供了-Promise-对象。"><a href="#ES6-原生提供了-Promise-对象。" class="headerlink" title="ES6 原生提供了 Promise 对象。"></a>ES6 原生提供了 Promise 对象。</h4><h4 id="所谓-Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的-API，可供进一步处理。"><a href="#所谓-Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的-API，可供进一步处理。" class="headerlink" title="所谓 Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理。"></a>所谓 Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理。</h4><h4 id="Promise-对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称-Fulfilled）和-Rejected（已失败）"><a href="#Promise-对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称-Fulfilled）和-Rejected（已失败）" class="headerlink" title="Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）"></a>Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）</h4><p>#### </p>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> js </tag>
             
         </tags>
         
@@ -655,6 +521,36 @@ export default {
     </entry>
     
     <entry>
+      <title><![CDATA[[New] Vue中使用Sass]]></title>
+      <url>/hexo/2017/09/07/%5BNew%5D%20Vue%E4%B8%AD%E4%BD%BF%E7%94%A8Sass/</url>
+      <content type="html"><![CDATA[<h3 id="New-Vue中使用Sass"><a href="#New-Vue中使用Sass" class="headerlink" title="[New] Vue中使用Sass"></a>[New] Vue中使用Sass</h3><a id="more"></a>
+<p><strong>安装依赖</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm install --save-dev sass-loader</div><div class="line">cnpm install --save-dev node-sass</div></pre></td></tr></table></figure></p>
+<p><strong>在build文件夹下的webpack.base.conf.js的rules里面添加配置</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-284b328b33e4ac0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="webpack.png"></p>
+<p><strong>.vue中修改style标签</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;sass&quot;&gt; or &lt;style lang=&quot;scss&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-84f67b7ab6ef92c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="change.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-6a0f4a63b1749d14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="scss.png"></p>
+<p><strong>漂亮完成</strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-28376a6eaf595ba0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="style.png"></p>
+<p><strong>谢邀退场，有事私信call我</strong></p>
+<p>ps:<br><a href="https://segmentfault.com/q/1010000009187765" target="_blank" rel="external">postcss-px2rem在vue-cli中，为什么.vue页面内的样式可以转变，@import ‘.css’样式却不能转变？</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[[CSS预处理器]Stylus in Vue]]></title>
       <url>/hexo/2017/09/07/%5BCSS%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%5DStylus%20in%20Vue/</url>
       <content type="html"><![CDATA[<h3 id="CSS预处理器-Stylus-in-Vue"><a href="#CSS预处理器-Stylus-in-Vue" class="headerlink" title="[CSS预处理器]Stylus in Vue"></a>[CSS预处理器]Stylus in Vue</h3><a id="more"></a>
@@ -683,36 +579,6 @@ export default {
 <p><strong>需要的资料</strong><br><a href="&quot;http://www.zhangxinxu.com/jq/stylus/&quot;">中文文档</a></p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/4985324-c20cecc2effdc1b2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="346871-106.jpg"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[[New] Vue中使用Sass]]></title>
-      <url>/hexo/2017/09/07/%5BNew%5D%20Vue%E4%B8%AD%E4%BD%BF%E7%94%A8Sass/</url>
-      <content type="html"><![CDATA[<h3 id="New-Vue中使用Sass"><a href="#New-Vue中使用Sass" class="headerlink" title="[New] Vue中使用Sass"></a>[New] Vue中使用Sass</h3><a id="more"></a>
-<p><strong>安装依赖</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm install --save-dev sass-loader</div><div class="line">cnpm install --save-dev node-sass</div></pre></td></tr></table></figure></p>
-<p><strong>在build文件夹下的webpack.base.conf.js的rules里面添加配置</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-284b328b33e4ac0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="webpack.png"></p>
-<p><strong>.vue中修改style标签</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;sass&quot;&gt; or &lt;style lang=&quot;scss&quot;&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-84f67b7ab6ef92c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="change.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-6a0f4a63b1749d14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="scss.png"></p>
-<p><strong>漂亮完成</strong><br><img src="http://upload-images.jianshu.io/upload_images/4985324-28376a6eaf595ba0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="style.png"></p>
-<p><strong>谢邀退场，有事私信call我</strong></p>
-<p>ps:<br><a href="https://segmentfault.com/q/1010000009187765" target="_blank" rel="external">postcss-px2rem在vue-cli中，为什么.vue页面内的样式可以转变，@import ‘.css’样式却不能转变？</a></p>
 ]]></content>
       
         <categories>
@@ -865,7 +731,7 @@ export default {
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#112;&#x61;&#x63;&#107;&#97;&#x67;&#x65;&#x4e;&#x61;&#109;&#101;&#91;&#64;&#118;&#101;&#x72;&#x73;&#x69;&#x6f;&#x6e;&#x5d;">&#112;&#x61;&#x63;&#107;&#97;&#x67;&#x65;&#x4e;&#x61;&#109;&#101;&#91;&#64;&#118;&#101;&#x72;&#x73;&#x69;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#112;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#101;&#91;&#64;&#x76;&#x65;&#114;&#x73;&#105;&#x6f;&#x6e;&#x5d;">&#112;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#x6d;&#101;&#91;&#64;&#x76;&#x65;&#114;&#x73;&#105;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -887,7 +753,7 @@ export default {
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x70;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#109;&#101;&#x5b;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;">&#x70;&#x61;&#x63;&#107;&#x61;&#x67;&#x65;&#78;&#x61;&#109;&#101;&#x5b;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x70;&#x61;&#99;&#107;&#97;&#x67;&#x65;&#78;&#x61;&#x6d;&#101;&#x5b;&#x40;&#x76;&#x65;&#114;&#x73;&#105;&#111;&#x6e;&#x5d;">&#x70;&#x61;&#99;&#107;&#97;&#x67;&#x65;&#78;&#x61;&#x6d;&#101;&#x5b;&#x40;&#x76;&#x65;&#114;&#x73;&#105;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -1726,17 +1592,93 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[[ mpvue ] 微信小程序与Vue的巧妙碰撞]]></title>
-      <url>/hexo/2017/06/07/%5B%20mpvue%20%5D%20%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8EVue%E7%9A%84%E5%B7%A7%E5%A6%99%E7%A2%B0%E6%92%9E/</url>
-      <content type="html"><![CDATA[<h3 id="mpvue-微信小程序与Vue的巧妙碰撞"><a href="#mpvue-微信小程序与Vue的巧妙碰撞" class="headerlink" title="[ mpvue ] 微信小程序与Vue的巧妙碰撞"></a>[ mpvue ] 微信小程序与Vue的巧妙碰撞</h3><a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/4985324-0ba4ed5c742997c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mpvue.png"></p>
-<p>写微信小程序有一段时间了，最近半年来张小龙大大动作频频，对应的公司里小程序业务也多了很多。<br>写了那么久的小程序，久则生变，恰巧这周美团前端技术团队开源了mpvue，一款基于vue的小程序开发框架，它可以使你写vue一样的写法小程序，也就是说可以在小程序上用上熟悉的vue开发方式，组件化、vuex、条件渲染、事件绑定、 hotReload,<br>接下来我们一起快速上手体验一番吧！<br><a href="&#39;http://mpvue.com/mpvue/quickstart/&#39;">mpvue 快速上手</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 创建一个基于 mpvue-quickstart 模板的新项目</div><div class="line">vue init mpvue/mpvue-quickstart my-project</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 安装依赖，走你</div><div class="line">cd my-project</div><div class="line">npm install</div><div class="line">npm run dev</div></pre></td></tr></table></figure>
-<p>随着运行成功的回显之后，可以看到本地多了个 dist 目录，这个目录里就是生成的小程序相关代码。</p>
-<p>接下来在小程序引入项目目录就可以开始编写小程序了。<br><img src="https://upload-images.jianshu.io/upload_images/4985324-6d35562517d38a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"><br>对照 <a href="&#39;http://mpvue.com/&#39;">mpvue 完整文档</a> 开始我们mpvue之旅。<br>使用生命周期：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-31344ddfa9663e2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="  "></p>
-<p>需要留意的几点：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-049c6b98cc14c4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不支持.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4985324-d92f67e82016151e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="注意点.png"></p>
+      <title><![CDATA[[Hot] Vue-cli 引入VueAwesomeSwiper]]></title>
+      <url>/hexo/2017/06/07/%5BHot%5D%20Vue-cli%20%E5%BC%95%E5%85%A5VueAwesomeSwiper/</url>
+      <content type="html"><![CDATA[<h3 id="Hot-Vue-cli-引入VueAwesomeSwiper"><a href="#Hot-Vue-cli-引入VueAwesomeSwiper" class="headerlink" title="[Hot] Vue-cli 引入VueAwesomeSwiper"></a>[Hot] Vue-cli 引入VueAwesomeSwiper</h3><a id="more"></a>
+<p>Vue脚手架引入Swiper最新实操步骤:</p>
+<blockquote>
+<p>//npm<br>npm install vue-awesome-swiper –save</p>
+</blockquote>
+<p>//可以全局 or 局部引用<br>全局:</p>
+<blockquote>
+<p>//main.js<br>import Vue from ‘vue’<br>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’  //<strong>这个css要去官网下载然后放进项目引入</strong><br>Vue.use(VueAwesomeSwiper)</p>
+</blockquote>
+<p>局部:</p>
+<blockquote>
+<p>// *.vue<br>import { swiper, swiperSlide } from ‘vue-awesome-swiper’<br>import ‘./swiper4/swiper.css’<br>//  <script><br>  components: {<br>    swiper,<br>    swiperSlide<br>  }</p>
+</blockquote>
+<p><strong>使用</strong></p>
+<blockquote>
+<template><br>  <div id="app"><br>    <swiper :options="swiperOption" ref="mySwiper"><br>    <!-- slides --><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <swiper-slide><div class="jia">jia1</div></swiper-slide><br>    <!-- Optional controls --><br>    <div class="swiper-pagination"  slot="pagination"></div><br>    <div class="swiper-button-prev" slot="button-prev"></div><br>    <div class="swiper-button-next" slot="button-next"></div><br>    <div class="swiper-scrollbar"   slot="scrollbar"></div><br>  </swiper><br>  </div><br></template>
+
+</blockquote>
+<p><strong>js and css</strong></p>
+<blockquote>
+<script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import './swiper4/swiper.css'
+export default {
+  name: 'carrousel',
+  data() {
+    return {
+      swiperOption: {
+        notNextTick: true, // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+        autoplay: true,
+        autoplay: {
+          disableOnInteraction: false,  //用户左划右划后恢复自动轮播
+          delay: 1000
+        },
+        loop: true,
+        direction: 'horizontal',
+        grabCursor: true,
+        setWrapperSize: true,
+        autoHeight: true,
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        centeredSlides: true,
+        paginationClickable: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        keyboard: true,
+        mousewheelControl: true,
+        observeParents: true, // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
+        debugger: true
+      }
+    }
+  },computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  mounted() {
+    // current swiper instance
+    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+    // this.swiper.slideTo(3, 1000, false)
+  },
+  components: {
+    swiper, swiperSlide
+  }
+}
+</script>
+
+<style>
+.jia {
+  height: 300px;
+  line-height: 300px;
+  font-size: 30px;
+  color: #fff;
+  background: red;
+  text-align: center;
+}
+</style>
+
+</p></blockquote>
+<p><strong>提示</strong><br>新版的VueAwesomeSwiper是从Swiper4改写的,<br>api写法有变化,老版本的写法会引起组件失效<br>比如autoplay,pagination,prevButton,nextButton等属性</p>
+<p>在新版的api文档中新增了组件选项,使用新写法就可以正常使用了<br><a href="&quot;http://www.swiper.com.cn/api/pagination/pagination.html&quot;">查看新版api文档</a><br><img src="http://upload-images.jianshu.io/upload_images/4985324-04515dc6038756fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<p>点个赞就成功啦哈!</p>
 ]]></content>
       
         <categories>
@@ -1785,32 +1727,17 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[[推荐]Vue-devtools安装]]></title>
-      <url>/hexo/2017/05/07/%5B%E6%8E%A8%E8%8D%90%5DVue-devtools%E5%AE%89%E8%A3%85/</url>
-      <content type="html"><![CDATA[<h3 id="推荐-Vue-devtools安装"><a href="#推荐-Vue-devtools安装" class="headerlink" title="[推荐]Vue-devtools安装"></a>[推荐]Vue-devtools安装</h3><a id="more"></a>
-<p><strong>vue-devtools是一款vue浏览器开发者工具调试插件</strong></p>
-<ol>
-<li><p>首先从github上将vue-devtools clone到本地</p>
-<blockquote>
-<p>git clone <a href="https://github.com/vuejs/vue-devtools.git" target="_blank" rel="external">https://github.com/vuejs/vue-devtools.git</a></p>
-</blockquote>
-</li>
-<li><p>安装项目所需要的包</p>
-<blockquote>
-<p>npm install</p>
-</blockquote>
-</li>
-<li><p>编译文件</p>
-<blockquote>
-<p>npm run build</p>
-</blockquote>
-</li>
-</ol>
-<p>4.添加至游览器<br><img src="http://upload-images.jianshu.io/upload_images/4985324-91d61d942d4bf82c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Developer Tools.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-371400af30129003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="select.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-7ea206f2e105b08f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="success.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-38aa7eaf9634950f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="result.png"></p>
-<p><strong>结束撒花~</strong></p>
+      <title><![CDATA[[ mpvue ] 微信小程序与Vue的巧妙碰撞]]></title>
+      <url>/hexo/2017/06/07/%5B%20mpvue%20%5D%20%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8EVue%E7%9A%84%E5%B7%A7%E5%A6%99%E7%A2%B0%E6%92%9E/</url>
+      <content type="html"><![CDATA[<h3 id="mpvue-微信小程序与Vue的巧妙碰撞"><a href="#mpvue-微信小程序与Vue的巧妙碰撞" class="headerlink" title="[ mpvue ] 微信小程序与Vue的巧妙碰撞"></a>[ mpvue ] 微信小程序与Vue的巧妙碰撞</h3><a id="more"></a>
+<p><img src="https://upload-images.jianshu.io/upload_images/4985324-0ba4ed5c742997c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mpvue.png"></p>
+<p>写微信小程序有一段时间了，最近半年来张小龙大大动作频频，对应的公司里小程序业务也多了很多。<br>写了那么久的小程序，久则生变，恰巧这周美团前端技术团队开源了mpvue，一款基于vue的小程序开发框架，它可以使你写vue一样的写法小程序，也就是说可以在小程序上用上熟悉的vue开发方式，组件化、vuex、条件渲染、事件绑定、 hotReload,<br>接下来我们一起快速上手体验一番吧！<br><a href="&#39;http://mpvue.com/mpvue/quickstart/&#39;">mpvue 快速上手</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 创建一个基于 mpvue-quickstart 模板的新项目</div><div class="line">vue init mpvue/mpvue-quickstart my-project</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 安装依赖，走你</div><div class="line">cd my-project</div><div class="line">npm install</div><div class="line">npm run dev</div></pre></td></tr></table></figure>
+<p>随着运行成功的回显之后，可以看到本地多了个 dist 目录，这个目录里就是生成的小程序相关代码。</p>
+<p>接下来在小程序引入项目目录就可以开始编写小程序了。<br><img src="https://upload-images.jianshu.io/upload_images/4985324-6d35562517d38a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"><br>对照 <a href="&#39;http://mpvue.com/&#39;">mpvue 完整文档</a> 开始我们mpvue之旅。<br>使用生命周期：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-31344ddfa9663e2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="  "></p>
+<p>需要留意的几点：<br><img src="https://upload-images.jianshu.io/upload_images/4985324-049c6b98cc14c4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不支持.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4985324-d92f67e82016151e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="注意点.png"></p>
 ]]></content>
       
         <categories>
@@ -1867,6 +1794,50 @@ alert( $(this).text() );
 <li><p>参考文档 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">阮一蜂老师</a></p>
 </li>
 </ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[推荐]Vue-devtools安装]]></title>
+      <url>/hexo/2017/05/07/%5B%E6%8E%A8%E8%8D%90%5DVue-devtools%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h3 id="推荐-Vue-devtools安装"><a href="#推荐-Vue-devtools安装" class="headerlink" title="[推荐]Vue-devtools安装"></a>[推荐]Vue-devtools安装</h3><a id="more"></a>
+<p><strong>vue-devtools是一款vue浏览器开发者工具调试插件</strong></p>
+<ol>
+<li><p>首先从github上将vue-devtools clone到本地</p>
+<blockquote>
+<p>git clone <a href="https://github.com/vuejs/vue-devtools.git" target="_blank" rel="external">https://github.com/vuejs/vue-devtools.git</a></p>
+</blockquote>
+</li>
+<li><p>安装项目所需要的包</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+</li>
+<li><p>编译文件</p>
+<blockquote>
+<p>npm run build</p>
+</blockquote>
+</li>
+</ol>
+<p>4.添加至游览器<br><img src="http://upload-images.jianshu.io/upload_images/4985324-91d61d942d4bf82c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Developer Tools.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-371400af30129003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="select.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-7ea206f2e105b08f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="success.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-38aa7eaf9634950f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="result.png"></p>
+<p><strong>结束撒花~</strong></p>
 ]]></content>
       
         <categories>
@@ -1947,6 +1918,45 @@ alert( $(this).text() );
         <tags>
             
             <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vue2.0实现在线商城]]></title>
+      <url>/hexo/2017/03/07/%C2%96Vue2-0%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/</url>
+      <content type="html"><![CDATA[<h3 id="这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo"><a href="#这周学习了-尤大大的MVVM框架-Vue-和-Vue周边-按耐不住心中的喜欢-使用vue实现一个商城Demo" class="headerlink" title="这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo."></a>这周学习了 尤大大的MVVM框架 Vue 和 Vue周边.按耐不住心中的喜欢,使用vue实现一个商城Demo.</h3><a id="more"></a>
+<h2 id="Demo预览"><a href="#Demo预览" class="headerlink" title="Demo预览"></a><a href="https://13189449986.github.io/VueStore/dist/#/">Demo预览</a></h2><h2 id="Github源码"><a href="#Github源码" class="headerlink" title="Github源码"></a><a href="https://github.com/13189449986/VueStore" target="_blank" rel="external">Github源码</a></h2><h3 id="项目技术栈使用到"><a href="#项目技术栈使用到" class="headerlink" title="项目技术栈使用到"></a>项目技术栈使用到</h3><p><code>vue: ^2.3.3, vue-resource: ^1.3.4, vue-router: ^2.6.0 , lodash: ^4.17.4 ,webpack: ^2.6.1</code></p>
+<hr>
+<h2 id="项目爬过的坑"><a href="#项目爬过的坑" class="headerlink" title="项目爬过的坑"></a>项目爬过的坑</h2><ol>
+<li>vue-cli启动项目 <code>npm run dev</code> 后本地无法正常显示页面<ul>
+<li>此时应该检查本地的 8080 端口是否被占用，需要修改一下配置文件 config&gt;index.js 中调试端口 <code>dev{port:8075}</code></li>
+<li>另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。</li>
+</ul>
+</li>
+<li>vue-cli打包上线 <code>npm run build</code> 后在本地显示正常,在服务器上显示异常<ul>
+<li>第一就是路径问题. 此时修改一下配置文件 config&gt;index.js 中 build 配置属性 assetsPublicPathL 的值为 ‘./‘ </li>
+<li>改完了重新构建发现还是空白，检查下 vue-router 是不是使用了 history 模式，去掉即可。(原因是我在 vue-router 里使用了 mode: ‘history’ ,history 模式可以让 url 更像一个链接，然而需要后台做一些设置，page 服务不能做后台设置)</li>
+</ul>
+</li>
+</ol>
+<h3 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h3><p><img src="http://upload-images.jianshu.io/upload_images/4985324-8aa6701106dc7ee8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mark"><br><img src="http://upload-images.jianshu.io/upload_images/4985324-7fb7108a6a6a6c4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mark"><br><img src="http://upload-images.jianshu.io/upload_images/4985324-6db428c005a0e07c.gif?imageMogr2/auto-orient/strip" alt="mark"></p>
+<ul>
+<li>让知识与生活每日同行 , 每天比昨天厉害一点 </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 项目 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vue </tag>
             
         </tags>
         
@@ -2584,7 +2594,7 @@ alert( $(this).text() );
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#112;&#97;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#x61;&#109;&#x65;&#x5b;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#x6f;&#x6e;&#x5d;">&#112;&#97;&#x63;&#x6b;&#x61;&#x67;&#x65;&#78;&#x61;&#109;&#x65;&#x5b;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#112;&#x61;&#99;&#107;&#97;&#103;&#101;&#78;&#97;&#x6d;&#x65;&#x5b;&#x40;&#118;&#101;&#x72;&#115;&#x69;&#111;&#x6e;&#93;">&#112;&#x61;&#99;&#107;&#97;&#103;&#101;&#78;&#97;&#x6d;&#x65;&#x5b;&#x40;&#118;&#101;&#x72;&#115;&#x69;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -2606,7 +2616,7 @@ alert( $(this).text() );
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x70;&#97;&#99;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#109;&#101;&#91;&#x40;&#x76;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#x5d;">&#x70;&#97;&#99;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#109;&#101;&#91;&#x40;&#x76;&#x65;&#114;&#x73;&#x69;&#x6f;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x70;&#x61;&#99;&#x6b;&#97;&#103;&#101;&#78;&#x61;&#109;&#101;&#91;&#64;&#x76;&#x65;&#x72;&#115;&#x69;&#111;&#x6e;&#x5d;">&#x70;&#x61;&#99;&#x6b;&#97;&#103;&#101;&#78;&#x61;&#109;&#101;&#91;&#64;&#x76;&#x65;&#x72;&#115;&#x69;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -3019,13 +3029,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -3044,6 +3047,13 @@ alert( $(this).text() );
   <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
 </body>
 </html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
