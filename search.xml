@@ -732,7 +732,7 @@
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x70;&#97;&#99;&#107;&#97;&#103;&#101;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#105;&#x6f;&#110;&#x5d;">&#x70;&#97;&#99;&#107;&#97;&#103;&#101;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#118;&#x65;&#x72;&#115;&#105;&#x6f;&#110;&#x5d;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x70;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;">&#x70;&#97;&#x63;&#107;&#x61;&#103;&#x65;&#x4e;&#x61;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#x72;&#x73;&#105;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -754,7 +754,7 @@
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#112;&#97;&#99;&#107;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#101;&#x5b;&#x40;&#118;&#101;&#x72;&#115;&#105;&#111;&#x6e;&#x5d;">&#112;&#97;&#99;&#107;&#x61;&#103;&#101;&#x4e;&#x61;&#109;&#101;&#x5b;&#x40;&#118;&#101;&#x72;&#115;&#105;&#111;&#x6e;&#x5d;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#x70;&#97;&#99;&#107;&#x61;&#103;&#101;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#114;&#115;&#105;&#111;&#110;&#93;">&#x70;&#97;&#99;&#107;&#x61;&#103;&#101;&#78;&#x61;&#x6d;&#101;&#91;&#x40;&#x76;&#x65;&#114;&#115;&#105;&#111;&#110;&#93;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -943,6 +943,46 @@
     </entry>
     
     <entry>
+      <title><![CDATA[vue2.0父子组件及非父子组件间实现通信]]></title>
+      <url>/hexo/2017/08/07/vue2.0%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E5%8F%8A%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%97%B4%E5%AE%9E%E7%8E%B0%E9%80%9A%E4%BF%A1/</url>
+      <content type="html"><![CDATA[<p>tags: css<br>categories: 教程</p>
+<h2 id="author-“JiaWei”"><a href="#author-“JiaWei”" class="headerlink" title="author: “JiaWei”"></a>author: “JiaWei”</h2><h3 id="vue2-0父子组件及非父子组件间实现通信"><a href="#vue2-0父子组件及非父子组件间实现通信" class="headerlink" title="vue2.0父子组件及非父子组件间实现通信"></a>vue2.0父子组件及非父子组件间实现通信</h3><a id="more"></a>
+<h3 id="1-父组件与子组件通信"><a href="#1-父组件与子组件通信" class="headerlink" title="1. 父组件与子组件通信"></a>1. 父组件与子组件通信</h3><blockquote>
+<p>父组件<br><img src="http://upload-images.jianshu.io/upload_images/4985324-50d0c3c290608967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="父组件与子组件通信-父组件.png"></p>
+<p>子组件通过props来接收数据:<br>格式1：<br><code>props: [&#39;childMsg&#39;]</code><br>格式2 :<br><code>props: {
+    childMsg: Array //指定传入的类型
+}</code><br>格式3：<br><code>props: {
+    childMsg: {
+        type: Array,
+        default: [0,0,0] //指定默认的值
+    }
+}</code></p>
+</blockquote>
+<p>###2.子组件与父组件通信<br><strong>在vue中是不允许子组件直接修改父组件的值，在vue中只允许单向数据传递</strong></p>
+<blockquote>
+<p>子组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f2e0c20c7ffc0fd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-子组件.png"></p>
+<p>父组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-c140d859e0b96880.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-父组件.png"><br><strong>PS</strong><br><em>vue2.3可以使用.sync修饰符进行子组件改变props值(注意这里是改变。想使用props值的话通过computed进行处理)</em><br>3.非父子组件间通信<br>创建事件中心<br><img src="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="busJs.png"></p>
+<p>组件1触发：<br><img src="http://upload-images.jianshu.io/upload_images/4985324-e2e43d46d207324f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HiVue.png"></p>
+<p>组件2接收:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f76db22b2bde6354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hellloVue.png"></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ECMAScript 6 - 解构赋值]]></title>
       <url>/hexo/2017/08/07/ECMAScript%206%20-%20%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</url>
       <content type="html"><![CDATA[<h4 id="ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"><a href="#ES6-允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。" class="headerlink" title="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。"></a>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</h4><p> 最近在学习vuex中actions的参数中使用到了对象的解构赋值，故此前来学习了解 解构赋值语法<br><a id="more"></a></p>
@@ -1084,46 +1124,6 @@
         <tags>
             
             <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[vue2.0父子组件及非父子组件间实现通信]]></title>
-      <url>/hexo/2017/08/07/vue2.0%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E5%8F%8A%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%97%B4%E5%AE%9E%E7%8E%B0%E9%80%9A%E4%BF%A1/</url>
-      <content type="html"><![CDATA[<p>tags: css<br>categories: 教程</p>
-<h2 id="author-“JiaWei”"><a href="#author-“JiaWei”" class="headerlink" title="author: “JiaWei”"></a>author: “JiaWei”</h2><h3 id="vue2-0父子组件及非父子组件间实现通信"><a href="#vue2-0父子组件及非父子组件间实现通信" class="headerlink" title="vue2.0父子组件及非父子组件间实现通信"></a>vue2.0父子组件及非父子组件间实现通信</h3><a id="more"></a>
-<h3 id="1-父组件与子组件通信"><a href="#1-父组件与子组件通信" class="headerlink" title="1. 父组件与子组件通信"></a>1. 父组件与子组件通信</h3><blockquote>
-<p>父组件<br><img src="http://upload-images.jianshu.io/upload_images/4985324-50d0c3c290608967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="父组件与子组件通信-父组件.png"></p>
-<p>子组件通过props来接收数据:<br>格式1：<br><code>props: [&#39;childMsg&#39;]</code><br>格式2 :<br><code>props: {
-    childMsg: Array //指定传入的类型
-}</code><br>格式3：<br><code>props: {
-    childMsg: {
-        type: Array,
-        default: [0,0,0] //指定默认的值
-    }
-}</code></p>
-</blockquote>
-<p>###2.子组件与父组件通信<br><strong>在vue中是不允许子组件直接修改父组件的值，在vue中只允许单向数据传递</strong></p>
-<blockquote>
-<p>子组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f2e0c20c7ffc0fd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-子组件.png"></p>
-<p>父组件:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-c140d859e0b96880.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子组件与父组件通信-父组件.png"><br><strong>PS</strong><br><em>vue2.3可以使用.sync修饰符进行子组件改变props值(注意这里是改变。想使用props值的话通过computed进行处理)</em><br>3.非父子组件间通信<br>创建事件中心<br><img src="http://upload-images.jianshu.io/upload_images/4985324-073b9ce82adc3851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="busJs.png"></p>
-<p>组件1触发：<br><img src="http://upload-images.jianshu.io/upload_images/4985324-e2e43d46d207324f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HiVue.png"></p>
-<p>组件2接收:<br><img src="http://upload-images.jianshu.io/upload_images/4985324-f76db22b2bde6354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hellloVue.png"></p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> css </tag>
             
         </tags>
         
@@ -1593,36 +1593,6 @@ alert( $(this).text() );
     </entry>
     
     <entry>
-      <title><![CDATA[移动端适配iPhoneX方案]]></title>
-      <url>/hexo/2017/06/07/%5BHOT%5D%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8DiPhoneX%E6%96%B9%E6%A1%88/</url>
-      <content type="html"><![CDATA[<h3 id="移动端适配iPhoneX方案"><a href="#移动端适配iPhoneX方案" class="headerlink" title="移动端适配iPhoneX方案"></a>移动端适配iPhoneX方案</h3><a id="more"></a>
-<p><strong>对页面进行iPhoneX适配处理教程</strong></p>
-<ul>
-<li><strong>在viewport 中添加 viewport-fit=cover 属性</strong><br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0, viewport-fit=cover&quot;&gt;</code></li>
-<li><strong>安全区设置</strong><br>iOS 11中包含了一个新的CSS函数 env()，以及一组四个预定义的常量：<code>safe-area-inset-left</code>, <code>safe-area-inset-right</code>, <code>safe-area-inset-top</code>和 <code>safe-area-inset-bottom</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123; </div><div class="line">  padding-bottom: env(safe-area-inset-bottom); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4985324-3c315c9bdb8b3e0b..png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>一般我们只希望 iPhoneX 适配样式，可以配合 <a href="https://www.w3cplus.com/css3/css3-supports.html" target="_blank" rel="external">@supports</a> 进行css条件判断使用样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@supports (bottom: constant(safe-area-inset-bottom)) &#123; </div><div class="line">  div &#123; </div><div class="line">    margin-bottom: constant(safe-area-inset-bottom); </div><div class="line">  &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<hr>
-<p>拓展阅读<br><a href="https://www.w3cplus.com/mobile/designing-websites-for-iphone-x.html" target="_blank" rel="external">iPhone X的Web设计</a><br><a href="https://github.com/2877025939/iOS11" target="_blank" rel="external">这里总结了大家iOS 11，iPhone X 适配问题</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[[Hot] Vue-cli 引入VueAwesomeSwiper]]></title>
       <url>/hexo/2017/06/07/%5BHot%5D%20Vue-cli%20%E5%BC%95%E5%85%A5VueAwesomeSwiper/</url>
       <content type="html"><![CDATA[<h3 id="Hot-Vue-cli-引入VueAwesomeSwiper"><a href="#Hot-Vue-cli-引入VueAwesomeSwiper" class="headerlink" title="[Hot] Vue-cli 引入VueAwesomeSwiper"></a>[Hot] Vue-cli 引入VueAwesomeSwiper</h3><a id="more"></a>
@@ -1710,6 +1680,36 @@ export default {
 <p><strong>提示</strong><br>新版的VueAwesomeSwiper是从Swiper4改写的,<br>api写法有变化,老版本的写法会引起组件失效<br>比如autoplay,pagination,prevButton,nextButton等属性</p>
 <p>在新版的api文档中新增了组件选项,使用新写法就可以正常使用了<br><a href="&quot;http://www.swiper.com.cn/api/pagination/pagination.html&quot;">查看新版api文档</a><br><img src="http://upload-images.jianshu.io/upload_images/4985324-04515dc6038756fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
 <p>点个赞就成功啦哈!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[移动端适配iPhoneX方案]]></title>
+      <url>/hexo/2017/06/07/%5BHOT%5D%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8DiPhoneX%E6%96%B9%E6%A1%88/</url>
+      <content type="html"><![CDATA[<h3 id="移动端适配iPhoneX方案"><a href="#移动端适配iPhoneX方案" class="headerlink" title="移动端适配iPhoneX方案"></a>移动端适配iPhoneX方案</h3><a id="more"></a>
+<p><strong>对页面进行iPhoneX适配处理教程</strong></p>
+<ul>
+<li><strong>在viewport 中添加 viewport-fit=cover 属性</strong><br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0, viewport-fit=cover&quot;&gt;</code></li>
+<li><strong>安全区设置</strong><br>iOS 11中包含了一个新的CSS函数 env()，以及一组四个预定义的常量：<code>safe-area-inset-left</code>, <code>safe-area-inset-right</code>, <code>safe-area-inset-top</code>和 <code>safe-area-inset-bottom</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123; </div><div class="line">  padding-bottom: env(safe-area-inset-bottom); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4985324-3c315c9bdb8b3e0b..png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>一般我们只希望 iPhoneX 适配样式，可以配合 <a href="https://www.w3cplus.com/css3/css3-supports.html" target="_blank" rel="external">@supports</a> 进行css条件判断使用样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@supports (bottom: constant(safe-area-inset-bottom)) &#123; </div><div class="line">  div &#123; </div><div class="line">    margin-bottom: constant(safe-area-inset-bottom); </div><div class="line">  &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>拓展阅读<br><a href="https://www.w3cplus.com/mobile/designing-websites-for-iphone-x.html" target="_blank" rel="external">iPhone X的Web设计</a><br><a href="https://github.com/2877025939/iOS11" target="_blank" rel="external">这里总结了大家iOS 11，iPhone X 适配问题</a></p>
 ]]></content>
       
         <categories>
@@ -2408,41 +2408,6 @@ export default {
     </entry>
     
     <entry>
-      <title><![CDATA[微博图床]]></title>
-      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
-      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
-<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
-<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
-<ul>
-<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
-</ul>
-<blockquote>
-<p>实用微博图床推荐 </p>
-</blockquote>
-<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
-<blockquote>
-<p>实用云图床推荐 </p>
-</blockquote>
-<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 实用工具 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 实用工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[http状态码]]></title>
       <url>/hexo/2017/01/11/http%E7%8A%B6%E6%80%81%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="状态码查询"><a href="#状态码查询" class="headerlink" title="状态码查询"></a>状态码查询</h3><a id="more"></a>
@@ -2539,6 +2504,41 @@ export default {
     </entry>
     
     <entry>
+      <title><![CDATA[微博图床]]></title>
+      <url>/hexo/2017/01/11/%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p><strong> 首先感谢新浪微博提供的免费图床(对外链无限制),以及吊炸天的cdn图片加速服务,从此妈妈再也不用担心我的图床不能用了 </strong><br><a id="more"></a><br><strong> 微博图床原理: </strong></p>
+<p>访问<em> <a href="http://weibo.com/minipublish" target="_blank" rel="external">http://weibo.com/minipublish</a> </em><br>使用新浪微博账号登陆<br>进入到发微博的界面:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1797266-ae337adb941f15d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微博"></p>
+<p>点击下方的上传图片按钮,并上传本地图片,上传成功后,会在下方出现一张预览图,打开控制台找到这张图片的url,这就是新浪图床的url.</p>
+<ul>
+<li>不需要发布微博,图片只要上传就会存在于图床中 </li>
+</ul>
+<blockquote>
+<p>实用微博图床推荐 </p>
+</blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E6%2596%25B0%25E6%25B5%25AA%25E5%25BE%25AE%25E5%258D%259A%25E5%259B%25BE%25E5%25BA%258A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床 - Chrome 网上应用店</a><br><a href="https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/%25E5%259B%25B4%25E8%2584%2596%25E6%2598%25AF%25E4%25B8%25AA%25E5%25A5%25BD%25E5%259B%25BE%25E5%25BA%258A/pngmcllbdfgmhdgnnpfaciaolgbjplhe" target="_blank" rel="external">围脖是个好图床 - Chrome 网上应用店</a></p>
+<blockquote>
+<p>实用云图床推荐 </p>
+</blockquote>
+<p><a href="https://www.tuchuang001.com/" target="_blank" rel="external">https网页一建生产图床</a><br><a href="https://portal.qiniu.com/signup/choice?code=3lk20icty4daq" target="_blank" rel="external">七牛云存储</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 实用工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/hexo/2016/12/11/hello-world/</url>
       <content type="html"><![CDATA[<p><strong> 欢迎您 !  </strong><br><strong> 主人不在随便坐哈 ~ </strong><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
@@ -2595,7 +2595,7 @@ export default {
 <ul>
 <li><p>实际上，像 install、–save、-dev 等关键字是可以省略书写的。<br>npm i gulp 等效于 npm install gulp<br>npm i gulp -S 等效于 npm install gulp –save<br>npm i gulp -D 等效于 npm install gulp –save-dev</p>
 </li>
-<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x70;&#97;&#99;&#x6b;&#97;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#93;">&#x70;&#97;&#99;&#x6b;&#97;&#103;&#101;&#x4e;&#97;&#x6d;&#x65;&#91;&#x40;&#118;&#101;&#x72;&#x73;&#105;&#111;&#x6e;&#93;</a> [-g] [–save-dev]</p>
+<li><p>总的来说，使用npm安装一个模块或插件，其格式如下：<br>npm (i | install) <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#112;&#97;&#99;&#x6b;&#x61;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#110;&#x5d;">&#112;&#97;&#99;&#x6b;&#x61;&#103;&#x65;&#78;&#x61;&#109;&#x65;&#91;&#64;&#118;&#x65;&#114;&#x73;&#x69;&#x6f;&#110;&#x5d;</a> [-g] [–save-dev]</p>
 </li>
 </ul>
 </blockquote>
@@ -2617,7 +2617,7 @@ export default {
 </blockquote>
 <h5 id="总的来说，卸载模块的格式："><a href="#总的来说，卸载模块的格式：" class="headerlink" title="总的来说，卸载模块的格式："></a>总的来说，卸载模块的格式：</h5><blockquote>
 <ul>
-<li>npm (uni | unistall ) <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x70;&#97;&#99;&#107;&#x61;&#103;&#x65;&#x4e;&#97;&#x6d;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#93;">&#x70;&#97;&#99;&#107;&#x61;&#103;&#x65;&#x4e;&#97;&#x6d;&#101;&#x5b;&#64;&#x76;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#93;</a> [-g] [–save-dev]</li>
+<li>npm (uni | unistall ) <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#x70;&#x61;&#99;&#x6b;&#97;&#103;&#101;&#78;&#x61;&#109;&#101;&#91;&#64;&#118;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#x5d;">&#x70;&#x61;&#99;&#x6b;&#97;&#103;&#101;&#78;&#x61;&#109;&#101;&#91;&#64;&#118;&#101;&#x72;&#115;&#x69;&#x6f;&#110;&#x5d;</a> [-g] [–save-dev]</li>
 </ul>
 </blockquote>
 <h2 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h2><h5 id="模块的更新与模块的安装和卸载在使用上格式相同"><a href="#模块的更新与模块的安装和卸载在使用上格式相同" class="headerlink" title="模块的更新与模块的安装和卸载在使用上格式相同"></a>模块的更新与模块的安装和卸载在使用上格式相同</h5><blockquote>
@@ -3030,6 +3030,13 @@ alert( $(this).text() );
     </entry>
     
     <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/404/404.html</url>
+      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
+<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>/hexo/404/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -3052,28 +3059,21 @@ alert( $(this).text() );
     
     <entry>
       <title><![CDATA[标签]]></title>
-      <url>/hexo/404/404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
       <url>/hexo/404/index.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br>  <meta http-equiv="content-type" content="text/html;charset=utf-8;"><br>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br>  <meta name="robots" content="all"><br>  <meta name="robots" content="index,follow"><br>  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"><br><link rel="stylesheet" href="/hexo/css/prism.css" type="text/css"></head><br><body><br>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页"><br>  </script><br>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script><br>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script><br></body><br></html>]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/hexo/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/hexo/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现"><a href="#欢迎您访问我的网站-如果您在阅读过程中发现有更好的想法欢迎您与我一同实现" class="headerlink" title="欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现."></a>欢迎您访问我的网站,如果您在阅读过程中发现有更好的想法欢迎您与我一同实现.</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/hexo/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
